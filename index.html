@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The People's Home — A Sovereign Learning System</title>
+<meta name="description" content="A complete learning journey from childhood to opportunity. A national capability-building ecosystem to help people learn, think, build, earn, and create opportunity.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2a1c12;
+    --ink-soft:#5b4636;
+    --cream:#f7efe2;
+    --cream-deep:#efe3cf;
+    --terracotta:#c75a36;
+    --terracotta-deep:#a8401f;
+    --gold:#e8a13a;
+    --gold-soft:#f2c878;
+    --green:#3f6b4a;
+    --green-deep:#2c4d36;
+    --teal:#2f7e7e;
+    --plum:#7a4a63;
+    --maxw:1180px;
+    --display:"Fraunces", Georgia, serif;
+    --body:"Hanken Grotesk", system-ui, sans-serif;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--body);
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  /* grain overlay */
+  body::after{
+    content:"";
+    position:fixed; inset:0;
+    pointer-events:none; z-index:9999;
+    opacity:.045; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 28px;
+    backdrop-filter:blur(8px);
+    background:linear-gradient(180deg, rgba(247,239,226,.85), rgba(247,239,226,0));
+    transition:background .3s, box-shadow .3s;
+  }
+  nav.scrolled{background:rgba(247,239,226,.94);box-shadow:0 1px 0 rgba(42,28,18,.08);}
+  .brand{display:flex;align-items:center;gap:11px;font-family:var(--display);font-weight:700;font-size:1.12rem;letter-spacing:-.01em;}
+  .brand .mark{
+    width:30px;height:30px;border-radius:9px;
+    background:radial-gradient(circle at 32% 28%, var(--gold-soft), var(--terracotta) 75%);
+    box-shadow:0 3px 10px rgba(167,64,31,.35);
+    display:grid;place-items:center;color:#fff;font-size:.95rem;
+  }
+  .nav-links{display:flex;gap:30px;align-items:center;}
+  .nav-links a{color:var(--ink-soft);text-decoration:none;font-weight:500;font-size:.94rem;transition:color .2s;}
+  .nav-links a:hover{color:var(--terracotta-deep);}
+  @media(max-width:820px){.nav-links a:not(.btn){display:none;}}
+
+  /* ---------- HERO ---------- */
+  header{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;}
+  .hero-art{position:absolute;inset:0;width:100%;height:100%;z-index:0;}
+  .hero-art svg{width:100%;height:100%;object-fit:cover;display:block;}
+  .hero-veil{
+    position:absolute;inset:0;z-index:1;
+    background:linear-gradient(105deg, rgba(31,18,10,.64) 0%, rgba(31,18,10,.32) 42%, rgba(31,18,10,.06) 70%);
+  }
+
+  .hero-inner{position:relative;z-index:2;width:100%;}
+  .hero-content{max-width:780px;color:#fdf6ea;padding:120px 0 80px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;
+    font-size:.78rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--gold-soft);margin-bottom:26px;
+    opacity:0;animation:rise .9s .15s forwards;
+  }
+  .eyebrow::before{content:"";width:30px;height:1.5px;background:var(--gold-soft);display:inline-block;}
+  h1{
+    font-family:var(--display);font-weight:600;
+    font-size:clamp(3.1rem,9vw,6.3rem);
+    line-height:.96;letter-spacing:-.025em;
+    text-shadow:0 2px 30px rgba(20,10,4,.4);
+    opacity:0;animation:rise 1s .3s forwards;
+  }
+  h1 em{font-style:italic;font-weight:500;color:var(--gold-soft);}
+  .verbs{
+    font-family:var(--display);font-style:italic;
+    font-size:clamp(1.3rem,3.2vw,2rem);font-weight:500;
+    margin:22px 0 6px;color:#fce9c8;
+    opacity:0;animation:rise 1s .5s forwards;
+  }
+  .verbs span{opacity:.55;font-style:normal;padding:0 .35em;}
+  .hero-sub{
+    font-size:clamp(1.05rem,1.6vw,1.28rem);
+    max-width:500px;color:rgba(253,246,234,.86);margin-top:18px;line-height:1.55;
+    opacity:0;animation:rise 1s .68s forwards;
+  }
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap;margin-top:38px;opacity:0;animation:rise 1s .85s forwards;}
+  .btn{
+    font-family:var(--body);font-weight:600;font-size:.98rem;
+    padding:15px 30px;border-radius:999px;text-decoration:none;cursor:pointer;border:none;
+    transition:transform .22s cubic-bezier(.2,.8,.2,1), box-shadow .22s;
+  }
+  .btn-primary{background:var(--gold);color:#3a2410;box-shadow:0 8px 26px rgba(232,161,58,.4);}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(232,161,58,.5);}
+  .btn-ghost{background:rgba(253,246,234,.1);color:#fdf6ea;border:1.5px solid rgba(253,246,234,.4);}
+  .btn-ghost:hover{background:rgba(253,246,234,.2);transform:translateY(-3px);}
+
+  .scroll-hint{
+    position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;
+    color:rgba(253,246,234,.7);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;
+    display:flex;flex-direction:column;align-items:center;gap:8px;
+    opacity:0;animation:rise 1s 1.1s forwards;
+  }
+  .scroll-hint::after{content:"";width:1px;height:34px;background:linear-gradient(rgba(253,246,234,.7),transparent);animation:pulse 2s ease-in-out infinite;}
+
+  @keyframes rise{from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:translateY(0);}}
+  @keyframes pulse{0%,100%{opacity:.3;transform:scaleY(.6);}50%{opacity:1;transform:scaleY(1);}}
+  @keyframes sunGlow{0%,100%{opacity:.85;}50%{opacity:1;}}
+  @keyframes drift{from{transform:translateX(0);}to{transform:translateX(-30px);}}
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;}
+    .eyebrow,h1,.verbs,.hero-sub,.hero-cta,.scroll-hint{opacity:1!important;}
+  }
+
+  /* ---------- JOURNEY STRIP ---------- */
+  .journey{background:var(--ink);color:var(--cream);padding:30px 0;}
+  .journey-track{display:flex;align-items:center;flex-wrap:wrap;justify-content:center;gap:6px 4px;font-family:var(--display);}
+  .journey-track .step{font-size:clamp(.95rem,1.6vw,1.2rem);font-weight:500;padding:4px 6px;}
+  .journey-track .arrow{color:var(--gold);opacity:.7;font-size:1rem;}
+  .journey-track .step.end{color:var(--gold-soft);font-style:italic;}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:96px 0;}
+  .sec-head{max-width:680px;margin-bottom:54px;}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .sec-tag{font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--terracotta);margin-bottom:14px;}
+  .sec-head h2{font-family:var(--display);font-weight:600;font-size:clamp(2.1rem,4.5vw,3.4rem);line-height:1.04;letter-spacing:-.02em;}
+  .sec-head p{margin-top:18px;font-size:1.12rem;color:var(--ink-soft);}
+
+  /* ---------- PILLARS ---------- */
+  .pillars{background:linear-gradient(180deg,var(--cream),var(--cream-deep));}
+  .pillar-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:22px;}
+  .card{
+    grid-column:span 2;
+    background:#fffaf0;border-radius:22px;padding:32px 30px;
+    border:1px solid rgba(42,28,18,.07);
+    box-shadow:0 1px 0 rgba(255,255,255,.7) inset, 0 18px 40px -28px rgba(42,28,18,.35);
+    position:relative;overflow:hidden;
+    transition:transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s;
+  }
+  .card::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:var(--accent);}
+  .card:hover{transform:translateY(-6px);box-shadow:0 30px 56px -30px rgba(42,28,18,.45);}
+  .card.feature{grid-column:span 3;}
+  .ico{
+    width:58px;height:58px;border-radius:16px;display:grid;place-items:center;font-size:1.7rem;
+    background:color-mix(in srgb, var(--accent) 16%, #fff);margin-bottom:20px;
+  }
+  .step-no{position:absolute;top:24px;right:28px;font-family:var(--display);font-weight:600;font-size:1.1rem;color:color-mix(in srgb, var(--accent) 55%, #cdbfa8);}
+  .card h3{font-family:var(--display);font-weight:600;font-size:1.42rem;letter-spacing:-.01em;}
+  .card .lead{color:var(--ink-soft);font-size:.97rem;margin:8px 0 18px;}
+  .apps{display:flex;flex-wrap:wrap;gap:8px;}
+  .app{
+    font-size:.84rem;font-weight:600;padding:6px 13px;border-radius:999px;
+    background:color-mix(in srgb, var(--accent) 12%, #fff);
+    color:color-mix(in srgb, var(--accent) 78%, #2a1c12);
+    border:1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+  }
+  .app.soon{opacity:.62;}
+  .app.soon::after{content:" · soon";font-weight:500;opacity:.7;}
+  .sublist{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px;}
+  .sublist .chip{font-size:.78rem;padding:4px 11px;border-radius:8px;background:rgba(42,28,18,.05);color:var(--ink-soft);}
+  @media(max-width:860px){
+    .pillar-grid{grid-template-columns:1fr 1fr;}
+    .card,.card.feature{grid-column:span 1;}
+  }
+  @media(max-width:560px){
+    .pillar-grid{grid-template-columns:1fr;}
+    .card,.card.feature{grid-column:span 1;}
+  }
+
+  /* ---------- THE MISSING PIECE ---------- */
+  .missing{background:var(--cream-deep);}
+  .missing .sec-head h2 em{font-style:italic;color:var(--terracotta-deep);}
+  .ladder-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:30px;align-items:stretch;}
+  .panel{
+    border-radius:22px;padding:34px 32px;position:relative;overflow:hidden;
+  }
+  .panel.without{
+    background:#efe2cf;border:1px dashed rgba(168,64,31,.4);
+    display:flex;flex-direction:column;justify-content:center;
+  }
+  .panel.with{
+    background:var(--green-deep);color:#fdf6ea;
+    box-shadow:0 26px 60px -34px rgba(44,77,54,.8);
+  }
+  .panel .plabel{font-size:.74rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:20px;}
+  .panel.without .plabel{color:var(--terracotta-deep);}
+  .panel.with .plabel{color:var(--gold-soft);}
+  .rung{font-family:var(--display);font-size:1.18rem;font-weight:500;padding:7px 0;display:flex;align-items:center;gap:12px;}
+  .rung .dot{width:9px;height:9px;border-radius:50%;flex:none;}
+  .panel.without .rung{color:var(--ink-soft);}
+  .panel.without .rung .dot{background:var(--terracotta);}
+  .panel.without .qmark{font-family:var(--display);font-size:2.4rem;font-weight:600;color:var(--terracotta-deep);opacity:.8;padding-top:6px;}
+  .panel.with .rung{color:rgba(253,246,234,.92);}
+  .panel.with .rung .dot{background:var(--gold);}
+  .panel.with .rung.end{color:var(--gold-soft);font-style:italic;font-weight:600;}
+  .panel.with .rung.end .dot{background:var(--gold-soft);box-shadow:0 0 0 5px rgba(242,200,120,.18);}
+  .missing-note{margin-top:26px;font-size:1.05rem;color:var(--ink-soft);max-width:760px;}
+  .missing-note strong{color:var(--terracotta-deep);}
+  @media(max-width:720px){.ladder-grid{grid-template-columns:1fr;}}
+
+  /* ---------- CONNECTORS ---------- */
+  .connectors{background:var(--green-deep);color:var(--cream);position:relative;overflow:hidden;}
+  .connectors::before{
+    content:"";position:absolute;inset:0;opacity:.5;
+    background:radial-gradient(circle at 85% 15%, rgba(232,161,58,.22), transparent 45%),
+               radial-gradient(circle at 10% 90%, rgba(47,126,126,.3), transparent 50%);
+  }
+  .connectors .sec-tag{color:var(--gold-soft);}
+  .connectors .sec-head h2{color:#fdf6ea;}
+  .connectors .sec-head p{color:rgba(253,246,234,.8);}
+  .conn-grid{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .conn{
+    background:rgba(255,255,255,.05);border:1px solid rgba(253,246,234,.13);
+    border-radius:16px;padding:24px;backdrop-filter:blur(4px);
+    transition:background .25s, transform .25s;
+  }
+  .conn:hover{background:rgba(255,255,255,.09);transform:translateY(-4px);}
+  .conn .cn{font-size:1.4rem;margin-bottom:10px;display:block;}
+  .conn h4{font-family:var(--display);font-weight:600;font-size:1.12rem;margin-bottom:5px;}
+  .conn p{font-size:.9rem;color:rgba(253,246,234,.72);}
+  @media(max-width:720px){.conn-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:460px){.conn-grid{grid-template-columns:1fr;}}
+
+  /* ---------- BLUEPRINT ---------- */
+  .blueprint{background:var(--ink);color:var(--cream);position:relative;overflow:hidden;}
+  .blueprint::before{
+    content:"";position:absolute;inset:0;opacity:.4;
+    background:radial-gradient(circle at 50% 0%, rgba(232,161,58,.18), transparent 55%);
+  }
+  .bp-inner{position:relative;z-index:1;}
+  .bp-top{text-align:center;margin-bottom:48px;}
+  .bp-top .bp-kicker{font-size:.78rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-soft);}
+  .bp-top h2{font-family:var(--display);font-weight:600;font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.05;margin-top:12px;letter-spacing:-.02em;color:#fdf6ea;}
+  .bp-top p{margin-top:16px;color:rgba(253,246,234,.75);max-width:620px;margin-left:auto;margin-right:auto;}
+
+  .bp-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:30px;}
+  .bp-pill{
+    border-radius:18px;padding:26px 24px;
+    background:color-mix(in srgb, var(--accent) 14%, #1f130d);
+    border:1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+    position:relative;
+  }
+  .bp-pill .bp-emoji{font-size:1.9rem;}
+  .bp-pill h4{font-family:var(--display);font-weight:600;font-size:1.18rem;margin:10px 0 4px;color:#fdf6ea;}
+  .bp-pill p{font-size:.86rem;color:rgba(253,246,234,.65);}
+  .bp-pill .bp-bar{position:absolute;left:0;top:0;bottom:0;width:5px;border-radius:18px 0 0 18px;background:var(--accent);}
+  @media(max-width:820px){.bp-pillars{grid-template-columns:1fr 1fr;}}
+  @media(max-width:520px){.bp-pillars{grid-template-columns:1fr;}}
+
+  .bp-rails{
+    border-top:1px solid rgba(253,246,234,.14);
+    border-bottom:1px solid rgba(253,246,234,.14);
+    padding:26px 0;margin-bottom:34px;
+    display:flex;flex-wrap:wrap;justify-content:center;gap:10px 14px;
+  }
+  .bp-rail{
+    font-size:.86rem;font-weight:600;color:rgba(253,246,234,.85);
+    background:rgba(253,246,234,.06);border:1px solid rgba(253,246,234,.16);
+    padding:8px 16px;border-radius:999px;
+  }
+  .bp-rail span{opacity:.7;margin-right:7px;}
+  .bp-power{text-align:center;}
+  .bp-power .pw-line{font-family:var(--display);font-size:1.05rem;color:#fdf6ea;}
+  .bp-power .pw-line strong{color:var(--gold-soft);font-weight:600;}
+  .bp-power .pw-sub{font-size:.86rem;color:rgba(253,246,234,.6);margin-top:8px;}
+
+  /* ---------- MISSION QUOTE ---------- */
+  .mission{background:var(--terracotta);color:#fff;text-align:center;}
+  .mission .wrap{max-width:880px;}
+  .mission blockquote{font-family:var(--display);font-weight:500;font-style:italic;font-size:clamp(1.7rem,3.8vw,2.7rem);line-height:1.22;letter-spacing:-.01em;}
+  .mission blockquote b{font-style:normal;font-weight:600;}
+  .mission .attrib{margin-top:26px;font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.82);}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink);color:rgba(253,246,234,.6);padding:64px 0 40px;}
+  .foot-top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:30px;padding-bottom:40px;border-bottom:1px solid rgba(253,246,234,.12);}
+  .foot-brand{font-family:var(--display);font-weight:700;font-size:1.7rem;color:#fdf6ea;letter-spacing:-.01em;}
+  .foot-brand span{display:block;font-family:var(--body);font-weight:400;font-size:.9rem;color:rgba(253,246,234,.55);margin-top:6px;letter-spacing:0;}
+  .foot-credits{text-align:right;font-size:.92rem;line-height:1.9;}
+  .foot-credits strong{color:#fdf6ea;font-weight:600;}
+  .foot-bottom{padding-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.82rem;}
+  @media(max-width:600px){.foot-credits{text-align:left;}.foot-top{align-items:flex-start;}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="brand"><span class="mark">⌂</span> The People's Home</div>
+  <div class="nav-links">
+    <a href="#pillars">The Journey</a>
+    <a href="#missing">Why It Matters</a>
+    <a href="#connectors">How It Connects</a>
+    <a href="#mission">Mission</a>
+    <a href="partners.html">Architecture</a>
+    <a href="#start" class="btn btn-primary" style="padding:10px 22px;">Enter</a>
+  </div>
+</nav>
+
+<header>
+  <!-- HERO IMAGE: hand-built sunrise-over-the-home illustration behind the hero text -->
+  <div class="hero-art" aria-hidden="true">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"  stop-color="#1d2a4a"/>
+          <stop offset="32%" stop-color="#5a4a6e"/>
+          <stop offset="58%" stop-color="#c96a4a"/>
+          <stop offset="80%" stop-color="#e89a4f"/>
+          <stop offset="100%" stop-color="#f3c277"/>
+        </linearGradient>
+        <radialGradient id="sun" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#fff3d6"/>
+          <stop offset="40%" stop-color="#ffd98a"/>
+          <stop offset="100%" stop-color="#f6a94e" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="hill1" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#8a4f33"/><stop offset="100%" stop-color="#6e3b27"/>
+        </linearGradient>
+        <linearGradient id="hill2" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#5d3a2a"/><stop offset="100%" stop-color="#43271e"/>
+        </linearGradient>
+        <linearGradient id="hill3" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#3a2418"/><stop offset="100%" stop-color="#241510"/>
+        </linearGradient>
+      </defs>
+
+      <!-- sky -->
+      <rect width="1440" height="900" fill="url(#sky)"/>
+
+      <!-- stars (fading top-left) -->
+      <g fill="#fdf6ea">
+        <circle cx="180" cy="90" r="1.6" opacity=".8"/><circle cx="340" cy="60" r="1.1" opacity=".5"/>
+        <circle cx="520" cy="120" r="1.3" opacity=".6"/><circle cx="90" cy="200" r="1.2" opacity=".5"/>
+        <circle cx="700" cy="70" r="1" opacity=".4"/><circle cx="270" cy="160" r="1" opacity=".5"/>
+        <circle cx="430" cy="40" r="1.4" opacity=".55"/>
+      </g>
+
+      <!-- sun glow -->
+      <g style="animation:sunGlow 6s ease-in-out infinite;transform-origin:center;">
+        <circle cx="960" cy="560" r="320" fill="url(#sun)"/>
+        <circle cx="960" cy="560" r="96" fill="#fff0cf"/>
+      </g>
+
+      <!-- birds -->
+      <g stroke="#2a1c12" stroke-width="3" fill="none" stroke-linecap="round" opacity=".45" style="animation:drift 14s linear infinite;">
+        <path d="M250 230 q14 -12 28 0 q14 -12 28 0"/>
+        <path d="M360 280 q11 -9 22 0 q11 -9 22 0"/>
+        <path d="M180 300 q9 -8 18 0 q9 -8 18 0"/>
+      </g>
+
+      <!-- far hills -->
+      <path d="M0 640 Q280 560 560 620 T1120 600 T1440 640 V900 H0 Z" fill="url(#hill1)"/>
+      <!-- mid hills -->
+      <path d="M0 720 Q360 640 760 710 T1440 700 V900 H0 Z" fill="url(#hill2)"/>
+
+      <!-- the path (journey from foreground to home) -->
+      <path d="M620 900 C660 800 760 760 760 700 C760 660 700 640 720 600 C735 568 800 560 820 540"
+            fill="none" stroke="#caa05f" stroke-width="34" stroke-linecap="round" opacity=".85"/>
+      <path d="M620 900 C660 800 760 760 760 700 C760 660 700 640 720 600 C735 568 800 560 820 540"
+            fill="none" stroke="#e7c98a" stroke-width="12" stroke-linecap="round" stroke-dasharray="2 30" opacity=".9"/>
+
+      <!-- foreground hill -->
+      <path d="M0 770 Q400 700 860 760 T1440 760 V900 H0 Z" fill="url(#hill3)"/>
+
+      <!-- THE HOME -->
+      <g transform="translate(792 470)">
+        <ellipse cx="22" cy="60" rx="120" ry="40" fill="#ffcf7a" opacity=".25"/>
+        <rect x="-18" y="22" width="80" height="60" rx="3" fill="#2e1d14"/>
+        <path d="M-30 24 L22 -8 L74 24 Z" fill="#1f130d"/>
+        <rect x="6" y="50" width="20" height="32" rx="2" fill="#0f0907"/>
+        <rect x="34" y="40" width="18" height="18" rx="2" fill="#ffd98a"/>
+        <rect x="-12" y="40" width="14" height="14" rx="2" fill="#ffc463" opacity=".9"/>
+      </g>
+
+      <!-- sprout / tree of growth -->
+      <g transform="translate(380 720)">
+        <path d="M0 0 C-4 -40 -4 -70 0 -100" stroke="#1f130d" stroke-width="7" fill="none" stroke-linecap="round"/>
+        <path d="M0 -60 C-26 -78 -40 -70 -48 -96" stroke="#1f130d" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <path d="M0 -78 C24 -94 40 -86 50 -110" stroke="#1f130d" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <circle cx="0" cy="-108" r="30" fill="#3f6b4a" opacity=".92"/>
+        <circle cx="-46" cy="-100" r="20" fill="#355c40" opacity=".92"/>
+        <circle cx="52" cy="-114" r="22" fill="#3f6b4a" opacity=".92"/>
+      </g>
+
+      <!-- two small figures walking the path (childhood -> opportunity) -->
+      <g transform="translate(700 720)" fill="#160d08">
+        <circle cx="0" cy="-26" r="8"/><rect x="-6" y="-18" width="12" height="22" rx="5"/>
+      </g>
+      <g transform="translate(666 760)" fill="#160d08">
+        <circle cx="0" cy="-20" r="6"/><rect x="-5" y="-13" width="10" height="17" rx="4"/>
+      </g>
+    </svg>
+  </div>
+  <div class="hero-veil"></div>
+
+  <div class="hero-inner">
+    <div class="wrap hero-content">
+      <span class="eyebrow">A Sovereign Learning System</span>
+      <h1>The People's<br><em>Home</em></h1>
+      <p class="verbs">Think.<span>·</span>Build.<span>·</span>Question.<span>·</span>Create.</p>
+      <p class="hero-sub">A complete learning journey from childhood to opportunity — knowledge in your pocket, built for ordinary people, not gatekeepers.</p>
+      <div class="hero-cta">
+        <a href="#pillars" class="btn btn-primary">Begin the Journey</a>
+        <a href="#mission" class="btn btn-ghost">Why We Built This</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">Scroll</div>
+</header>
+
+<!-- JOURNEY STRIP -->
+<div class="journey" id="start">
+  <div class="wrap">
+    <div class="journey-track">
+      <span class="step">Learn</span><span class="arrow">→</span>
+      <span class="step">Qualify</span><span class="arrow">→</span>
+      <span class="step">Apply</span><span class="arrow">→</span>
+      <span class="step">Study</span><span class="arrow">→</span>
+      <span class="step">Work</span><span class="arrow">→</span>
+      <span class="step">Build</span><span class="arrow">→</span>
+      <span class="step end">Create Opportunity</span>
+    </div>
+  </div>
+</div>
+
+<!-- PILLARS -->
+<section class="pillars" id="pillars">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Six Capabilities · One Home</div>
+      <h2>Not a collection of apps.<br>A way to grow.</h2>
+      <p>Each pillar carries a learner one step further — from their first numbers and words to building real opportunity in the world.</p>
+    </div>
+
+    <div class="pillar-grid">
+      <!-- 1 · Foundations -->
+      <div class="card feature" style="--accent:var(--terracotta);">
+        <span class="step-no">01</span>
+        <div class="ico">🧮</div>
+        <h3>Foundations</h3>
+        <p class="lead">Where every journey starts — the numbers, letters and stories that hold everything else up.</p>
+        <div class="apps"><span class="app">Math Adventure RPG</span><span class="app soon">ReadAfrica</span></div>
+      </div>
+
+      <!-- 2 · Curiosity -->
+      <div class="card feature" style="--accent:var(--green);">
+        <span class="step-no">02</span>
+        <div class="ico">🌱</div>
+        <h3>Curiosity &amp; Knowledge</h3>
+        <p class="lead">Wonder, turned into understanding — science that grows from a child's own questions.</p>
+        <div class="apps"><span class="app soon">Science Sprouts</span></div>
+      </div>
+
+      <!-- 3 · Creation -->
+      <div class="card" style="--accent:var(--teal);">
+        <span class="step-no">03</span>
+        <div class="ico">🔧</div>
+        <h3>Creation &amp; Technology</h3>
+        <p class="lead">From user to maker.</p>
+        <div class="apps"><span class="app soon">Tech Makers</span></div>
+      </div>
+
+      <!-- 4 · Reasoning -->
+      <div class="card" style="--accent:var(--plum);">
+        <span class="step-no">04</span>
+        <div class="ico">🧠</div>
+        <h3>Thinking &amp; Reasoning</h3>
+        <p class="lead">Learning to tell true from false.</p>
+        <div class="apps"><span class="app soon">Truth Seekers</span></div>
+      </div>
+
+      <!-- 5 · Empowerment -->
+      <div class="card" style="--accent:var(--gold);">
+        <span class="step-no">06</span>
+        <div class="ico">🚀</div>
+        <h3>Real-World Empowerment</h3>
+        <p class="lead">Turning skill into a living.</p>
+        <div class="apps"><span class="app soon">Micro Founders</span></div>
+      </div>
+
+      <!-- 5 · Money & Opportunity (full width — the bridge) -->
+      <div class="card" style="--accent:var(--terracotta-deep);grid-column:1 / -1;">
+        <span class="step-no">05</span>
+        <div class="ico">💰</div>
+        <h3>Money &amp; Opportunity</h3>
+        <p class="lead">The answer to <em>“What now?”</em> — the bridge from learning to a real future. Education alone is not enough; this is where it becomes a pathway.</p>
+        <div class="apps">
+          <span class="app">Mzansi Money</span>
+          <span class="app">Opportunity Hub</span>
+        </div>
+        <div class="sublist">
+          <span class="chip">University Navigator</span>
+          <span class="chip">TVET Navigator</span>
+          <span class="chip">Bursary Finder</span>
+          <span class="chip">Career Explorer</span>
+          <span class="chip">Learnership Hub</span>
+          <span class="chip">Internship Hub</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE MISSING PIECE -->
+<section class="missing" id="missing">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">The Missing Piece</div>
+      <h2>Education alone is not enough.<br>Every learner eventually asks: <em>“What now?”</em></h2>
+      <p>Most learning ends at a certificate. The People's Home is built to answer the question that comes next — turning knowledge into a pathway, not a dead end.</p>
+    </div>
+
+    <div class="ladder-grid">
+      <div class="panel without">
+        <div class="plabel">Without the bridge</div>
+        <div class="rung"><span class="dot"></span> Learn</div>
+        <div class="qmark">↓ &nbsp;?&nbsp;?&nbsp;?</div>
+      </div>
+
+      <div class="panel with">
+        <div class="plabel">With Opportunity Hub</div>
+        <div class="rung"><span class="dot"></span> Learn</div>
+        <div class="rung"><span class="dot"></span> Qualify</div>
+        <div class="rung"><span class="dot"></span> Apply</div>
+        <div class="rung"><span class="dot"></span> Study</div>
+        <div class="rung"><span class="dot"></span> Work</div>
+        <div class="rung"><span class="dot"></span> Build</div>
+        <div class="rung end"><span class="dot"></span> Create Opportunity</div>
+      </div>
+    </div>
+
+    <p class="missing-note">This is why <strong>Opportunity Hub is not a nice-to-have — it is essential.</strong> It is the difference between learning that stops at a test, and learning that ends in a livelihood.</p>
+  </div>
+</section>
+
+<!-- CONNECTORS -->
+<section class="connectors" id="connectors">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Cross-System Connectors</div>
+      <h2>One learner. One home. One thread.</h2>
+      <p>The pillars don't stand alone. Shared rails carry a learner's identity, progress and rewards across every part of the journey — online or off.</p>
+    </div>
+    <div class="conn-grid">
+      <div class="conn"><span class="cn">👤</span><h4>Shared Identity</h4><p>One profile that follows the learner everywhere.</p></div>
+      <div class="conn"><span class="cn">📈</span><h4>Shared Progress</h4><p>Growth tracked across every pillar, never lost.</p></div>
+      <div class="conn"><span class="cn">🏅</span><h4>Shared Rewards</h4><p>Effort recognised the same way, end to end.</p></div>
+      <div class="conn"><span class="cn">📖</span><h4>Shared Lore</h4><p>A single living world that ties the learning together.</p></div>
+      <div class="conn"><span class="cn">📡</span><h4>Shared Offline Engine</h4><p>Built to work without data — knowledge that travels.</p></div>
+      <div class="conn"><span class="cn">👨‍👩‍👧</span><h4>Parent Dashboard</h4><p>A clear window for families to walk alongside.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BLUEPRINT -->
+<section class="blueprint" id="blueprint">
+  <div class="wrap bp-inner">
+    <div class="bp-top">
+      <div class="bp-kicker">The Complete Vision</div>
+      <h2>The People's Home</h2>
+      <p>Not a collection of apps. Not an EdTech startup. A national capability-building ecosystem — six pillars, one home.</p>
+    </div>
+
+    <div class="bp-pillars">
+      <div class="bp-pill" style="--accent:var(--terracotta);"><span class="bp-bar"></span><div class="bp-emoji">🧮</div><h4>Foundations</h4><p>Numbers, letters, stories.</p></div>
+      <div class="bp-pill" style="--accent:var(--green);"><span class="bp-bar"></span><div class="bp-emoji">🌱</div><h4>Curiosity &amp; Knowledge</h4><p>Wonder into understanding.</p></div>
+      <div class="bp-pill" style="--accent:var(--teal);"><span class="bp-bar"></span><div class="bp-emoji">🔧</div><h4>Creation &amp; Technology</h4><p>From user to maker.</p></div>
+      <div class="bp-pill" style="--accent:var(--plum);"><span class="bp-bar"></span><div class="bp-emoji">🧠</div><h4>Thinking &amp; Reasoning</h4><p>Tell true from false.</p></div>
+      <div class="bp-pill" style="--accent:var(--terracotta-deep);"><span class="bp-bar"></span><div class="bp-emoji">💰</div><h4>Money &amp; Opportunity</h4><p>Learning into a livelihood.</p></div>
+      <div class="bp-pill" style="--accent:var(--gold);"><span class="bp-bar"></span><div class="bp-emoji">🚀</div><h4>Real-World Empowerment</h4><p>Skill into a living.</p></div>
+    </div>
+
+    <div class="bp-rails">
+      <div class="bp-rail"><span>👤</span>Shared Identity</div>
+      <div class="bp-rail"><span>📈</span>Shared Progress</div>
+      <div class="bp-rail"><span>🏅</span>Shared Rewards</div>
+      <div class="bp-rail"><span>📡</span>Shared Offline Engine</div>
+      <div class="bp-rail"><span>👨‍👩‍👧</span>Parent Dashboard</div>
+    </div>
+
+    <div class="bp-power">
+      <p class="pw-line">Powered by <strong>iKhaya AI</strong> · An <strong>ARISAN SIFISO Holdings</strong> Initiative</p>
+      <p class="pw-sub">Supported by The People's Home Foundation (NPC)</p>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="mission" id="mission">
+  <div class="wrap">
+    <blockquote>Technology should empower society — <b>not gatekeep it.</b> The People's Home is a national capability-building ecosystem to help people learn, think, build, earn, and create opportunity.</blockquote>
+    <div class="attrib">One Step Closer · One Step Ahead</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">The People's Home
+          <span>A Sovereign Learning System</span>
+        </div>
+      </div>
+      <div class="foot-credits">
+        Built by <strong>iKhaya AI</strong><br>
+        An <strong>ARISAN SIFISO Holdings</strong> Initiative<br>
+        Supported by <strong>The People's Home Foundation</strong> (NPC)
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> ARISAN SIFISO Holdings. Knowledge in your pocket.</span>
+      <span>Foundations · Curiosity · Creation · Reasoning · Opportunity · Empowerment</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav=document.getElementById('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+  document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
