@@ -182,6 +182,9 @@
   }
   .app.soon{opacity:.62;}
   .app.soon::after{content:" · soon";font-weight:500;opacity:.7;}
+  a.app{text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:transform .2s, box-shadow .2s, background .2s;}
+  a.app:hover{transform:translateY(-2px);box-shadow:0 8px 18px -8px rgba(42,28,18,.55);background:color-mix(in srgb, var(--accent) 22%, #fff);}
+  a.app.live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px color-mix(in srgb, var(--green) 22%, transparent);}
   .sublist{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px;}
   .sublist .chip{font-size:.78rem;padding:4px 11px;border-radius:8px;background:rgba(42,28,18,.05);color:var(--ink-soft);}
   @media(max-width:860px){
@@ -466,7 +469,7 @@
         <div class="ico">🧮</div>
         <h3>Foundations</h3>
         <p class="lead">Where every journey starts — the numbers, letters and stories that hold everything else up.</p>
-        <div class="apps"><span class="app">Math Adventure RPG</span><span class="app soon">ReadAfrica</span></div>
+        <div class="apps"><a class="app live" href="https://play.google.com/store/apps/details?id=com.sifiso.mathadventurerpg" target="_blank" rel="noopener">Math Adventure RPG ↗</a><span class="app soon">ReadAfrica</span></div>
       </div>
 
       <!-- 2 · Curiosity -->
