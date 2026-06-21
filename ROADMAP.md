@@ -1,0 +1,67 @@
+# THE PEOPLE'S HOME — Roadmap & Status
+
+> What's live, what's next, and the sequencing logic. **Source of truth.**
+> Last updated: 2026-06-21.
+
+See also: [`BLUEPRINT.md`](./BLUEPRINT.md) · [`ECOSYSTEM.md`](./ECOSYSTEM.md) · [`DECISIONS.md`](./DECISIONS.md).
+
+---
+
+## Strategy in one line
+**Web-first.** Ship each learning app as an offline, installable **Cloudflare Pages PWA**, then
+surface it on this site. (Superseded the Google-Play "release machine" — see
+[`DECISIONS.md`](./DECISIONS.md) → "Web-first pivot".) Learning apps are **offline · no-data ·
+no-account · #FreeForever · ages-not-grades · age-ceiling-17 · SA-first.**
+
+---
+
+## Status board (World A — learning apps)
+
+| App | Pillar | Status |
+|---|---|---|
+| Math Adventure RPG | Foundations | **LIVE** (web PWA + Android). Numeracy 3–17. |
+| ReadAfrica | Foundations | **LIVE** (web PWA). Literacy 3–17. Hosts the TPH Core SDK (embedded). |
+| Science Sprouts | Curiosity | **LIVE** (web PWA). Science 3–12 → **must extend to 17** (age-ceiling rule). |
+| Tech Makers | Creation | **LIVE** (web PWA). Maker arc 3–17. |
+| SIFISO — Learn Python | Creation | **LIVE** (web PWA). 100% offline (self-hosted Pyodide/Monaco). |
+| **Truth Seekers** | Reasoning | **NEXT FOR EXECUTION** — v1 teens 13–17; scaffold from `exam-studio`. |
+| Everyday Foundations | Foundations | Planned (adult/never-schooled on-ramp; multi-module). |
+| Our World | Curiosity | Planned (geography/history/cultures). |
+| Mzansi Money | Money | Planned (financial literacy → hands off to iKhaya). |
+| Micro Founders | Empowerment | Planned (venture course → hands off to iKhaya). |
+| SIFISO Learn — Web / AI | Creation | Planned (tracks inside SIFISO Learn). |
+| Digital Creator Academy | Creation | Parked (future, undecided). |
+
+## Status board (World B — opportunity infrastructure = iKhaya)
+| Surface | Status |
+|---|---|
+| iKhaya core (jobs/social loop) | Prototype ~4/10 (Lovable). 2026 = one-suburb closed beta goal; 2027 = People's Home flagship. |
+| Opportunity Hub (6 navigators + job/funding surfaces) | Lives inside iKhaya (bundled static data). |
+| Community & Mentor Services | Inside iKhaya. |
+
+---
+
+## What's next (near-term sequence)
+1. **Truth Seekers v1 (teens 13–17)** — new repo, port `exam-studio`, author the reasoning spine
+   (Logic Lab · Media Detective · Systems Thinking · Decision Maker · Problem Solver · Debate SA as
+   modules), deploy as PWA, flip the People's Home Reasoning card.
+2. **Science Sprouts → age 17** — close the age-ceiling gap (teen science tier).
+3. Then the remaining World-A apps per the blueprint (Everyday Foundations, Our World, Mzansi Money,
+   Micro Founders), each as a deep multi-module product, not a thin app.
+4. **TPH Core SDK** — extract from ReadAfrica into a shared package; adopt across apps (platform track).
+5. **iKhaya** — steady background track toward a one-suburb beta; the funding-model decision must be
+   resolved before its 2027 launch.
+
+## Definition of done (a learning app)
+Live PWA (offline-verified) + on this site (card flipped to live, incognito-checked) + unique PWA
+manifest `id` + **0 grade strings** + isiZulu present (DRAFT) + no runtime network calls.
+
+---
+
+## Standing backlog / debts
+- **isiZulu native-speaker review** — all apps ship English-first; zu is **DRAFT** until a batched
+  December review.
+- **Foundations adult on-ramp** — now named (Everyday Foundations) but not built.
+- **"Expert Approved" (Play)** — Math Adventure's badge was rejected (text volume for young ages +
+  disruptive sounds); fix carries over to the PWA.
+- **Keystore off-machine backup** — outstanding, high priority (see `DECISIONS.md`).
