@@ -23,7 +23,7 @@ See also: [`BLUEPRINT.md`](./BLUEPRINT.md) (the capability architecture) ·
 | App | Pillar | GitHub repo | Live URL | Stack | Build (cmd · output · node) |
 |---|---|---|---|---|---|
 | **Math Adventure RPG** | Foundations | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/math-adventure-rpg` | https://math-adventure-rpg.pages.dev/ | React 19 · TS · Vite · Tailwind v4 · Capacitor 8 | `npm run build` · `dist` · 20 (web build flag) |
-| **ReadAfrica** | Foundations | `SifisoScS/read-africa` *(private — verify)* | https://read-africa.pages.dev/ | Vite 6 · React 19 · TS · Tailwind v4 | `npm run build` · `dist` · 20 |
+| **ReadAfrica** | Foundations | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/read-africa` | https://read-africa.pages.dev/ | Vite 6 · React 19 · TS · Tailwind v4 | `npm run build` · `dist` · 20 |
 | **Science Sprouts** | Curiosity | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/science-sprouts` | https://science-sprouts-65b.pages.dev/ | React 19 · TS · Vite · Tailwind · Capacitor | `npm run build` · `dist` · 20 |
 | **Tech Makers** | Creation | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/tech-makers` | https://tech-makers.pages.dev/ | Vite 8 · React 19 · TS 6 · Tailwind v4 · Capacitor 8 | `npm run build` · `dist` · 20 · **lockfile gitignored** |
 | **SIFISO — Learn Python** | Creation | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/sifiso-learn-python` | https://sifiso-learn-python.pages.dev/ | CRA (react-scripts 5) · React 19 · Monaco · Pyodide · Tailwind v3 | **`CI=false npm run build`** · `build` · 20 · **lockfile gitignored** |
