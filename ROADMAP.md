@@ -21,7 +21,7 @@ no-account · #FreeForever · ages-not-grades · age-ceiling-17 · SA-first.**
 |---|---|---|
 | Math Adventure RPG | Foundations | **LIVE** (web PWA + Android). Numeracy 3–17. |
 | ReadAfrica | Foundations | **LIVE** (web PWA). Literacy 3–17. Hosts the TPH Core SDK (embedded). |
-| Science Sprouts | Curiosity | **LIVE** (web PWA). Science 3–12 → **must extend to 17** (age-ceiling rule). **Play: production access GRANTED (2026-06-21)** — promoting to Play production next; audio hardened in code (device-audio gate before 100%). |
+| Science Sprouts | Curiosity | **LIVE** (web PWA). Science 3–12 → **must extend to 17** (age-ceiling rule). **Play: ROLLING OUT TO PRODUCTION (2026-06-21)** — staged rollout underway. SS is the **last app on Google Play ever**; Play track now closed. |
 | Tech Makers | Creation | **LIVE** (web PWA). Maker arc 3–17. |
 | SIFISO — Learn Python | Creation | **LIVE** (web PWA). 100% offline (self-hosted Pyodide/Monaco). |
 | **Truth Seekers** | Reasoning | **NEXT FOR EXECUTION** — v1 teens 13–17; scaffold from `exam-studio`. |
@@ -57,6 +57,11 @@ Live PWA (offline-verified) + on this site (card flipped to live, incognito-chec
 manifest `id` + **0 grade strings** + isiZulu present (DRAFT) + no runtime network calls.
 
 ---
+
+## Milestones
+- **2026-06-21 — Google Play track CLOSED.** Science Sprouts (the final Play release) is rolling
+  out to production; Math Adventure + SS are maintenance-only on Play. All future apps are
+  web-first PWA only.
 
 ## Standing backlog / debts
 - **isiZulu native-speaker review** — all apps ship English-first; zu is **DRAFT** until a batched
