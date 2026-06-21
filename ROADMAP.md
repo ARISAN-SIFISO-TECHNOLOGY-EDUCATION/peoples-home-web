@@ -21,7 +21,7 @@ no-account · #FreeForever · ages-not-grades · age-ceiling-17 · SA-first.**
 |---|---|---|
 | Math Adventure RPG | Foundations | **LIVE** (web PWA + Android). Numeracy 3–17. |
 | ReadAfrica | Foundations | **LIVE** (web PWA). Literacy 3–17. Hosts the TPH Core SDK (embedded). |
-| Science Sprouts | Curiosity | **LIVE** (web PWA). Science 3–12 → **must extend to 17** (age-ceiling rule). |
+| Science Sprouts | Curiosity | **LIVE** (web PWA). Science 3–12 → **must extend to 17** (age-ceiling rule). **Play: production access GRANTED (2026-06-21)** — promoting to Play production next; audio hardened in code (device-audio gate before 100%). |
 | Tech Makers | Creation | **LIVE** (web PWA). Maker arc 3–17. |
 | SIFISO — Learn Python | Creation | **LIVE** (web PWA). 100% offline (self-hosted Pyodide/Monaco). |
 | **Truth Seekers** | Reasoning | **NEXT FOR EXECUTION** — v1 teens 13–17; scaffold from `exam-studio`. |
