@@ -39,6 +39,11 @@ See also: [`BLUEPRINT.md`](./BLUEPRINT.md) · [`ECOSYSTEM.md`](./ECOSYSTEM.md) �
   learning apps as offline, installable **Cloudflare Pages PWAs** + a card on this site. The apps
   were already React+Vite, so PWA conversion is cheap. Azure-for-Startups credits are a candidate
   answer to iKhaya's AI/backend funding.
+- **Science Sprouts = the LAST app on Google Play (2026-06-21).** SS was already in the Play
+  pipeline and was *granted production access*, so it's being finished out (promote the tested
+  versionCode 2 build → production, staged rollout). **After SS, the Play release machine is
+  retired** — every other app (Truth Seekers onward) ships **web-first PWA only**, no Play track.
+  This is the clean tail of the wind-down, not a return to Play.
 - **PWA conventions:** `vite-plugin-pwa` (Vite apps) / Workbox (CRA); **unique manifest `id`** per
   app (sibling-collision rule); SW registered web-only (gate native via Capacitor when present).
 - **Cloudflare/lockfile:** gitignore `package-lock.json` where `npm ci` is brittle (Vite 8 `@emnapi`;
