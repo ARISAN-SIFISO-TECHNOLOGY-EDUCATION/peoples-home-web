@@ -27,7 +27,7 @@ See also: [`BLUEPRINT.md`](./BLUEPRINT.md) (the capability architecture) ·
 | **Science Sprouts** | Curiosity | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/science-sprouts` | https://science-sprouts-65b.pages.dev/ | React 19 · TS · Vite · Tailwind · Capacitor | `npm run build` · `dist` · 20 |
 | **Tech Makers** | Creation | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/tech-makers` | https://tech-makers.pages.dev/ | Vite 8 · React 19 · TS 6 · Tailwind v4 · Capacitor 8 | `npm run build` · `dist` · 20 · **lockfile gitignored** |
 | **SIFISO — Learn Python** | Creation | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/sifiso-learn-python` | https://sifiso-learn-python.pages.dev/ | CRA (react-scripts 5) · React 19 · Monaco · Pyodide · Tailwind v3 | **`CI=false npm run build`** · `build` · 20 · **lockfile gitignored** |
-| **Truth Seekers** | Reasoning | *(not created — next build)* | *(pending)* | Vite · React · TS (scaffold from exam-studio) | *(tbd)* |
+| **Truth Seekers** | Reasoning | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/truth-seekers` | https://truth-seekers.pages.dev/ | Vite 6 · React 19 · TS · Tailwind v4 · vite-plugin-pwa (built on the Gemini "Atelier" UI) | `npm run build` · `dist` · 20 · **lockfile gitignored** |
 
 **Local checkouts:** `C:\Users\sifis\Next-Level-Projects\{math-adventure-rpg, tech-makers,
 sifiso-learn-python, peoples-home}` · `C:\Users\sifis\mobile-projects\science-sprouts`.

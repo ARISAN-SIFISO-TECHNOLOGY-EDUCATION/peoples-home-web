@@ -24,7 +24,7 @@ no-account · #FreeForever · ages-not-grades · age-ceiling-17 · SA-first.**
 | Science Sprouts | Curiosity | **LIVE** (web PWA). Science 3–12 → **must extend to 17** (age-ceiling rule). **Play: ROLLING OUT TO PRODUCTION (2026-06-21)** — staged rollout underway. SS is the **last app on Google Play ever**; Play track now closed. |
 | Tech Makers | Creation | **LIVE** (web PWA). Maker arc 3–17. |
 | SIFISO — Learn Python | Creation | **LIVE** (web PWA). 100% offline (self-hosted Pyodide/Monaco). |
-| **Truth Seekers** | Reasoning | **NEXT FOR EXECUTION** — v1 teens 13–17; scaffold from `exam-studio`. |
+| **Truth Seekers** | Reasoning | **LIVE** (web PWA, 13–17). Five muscles: Fact Finders · Logic Builders (fallacies) · Data Detectives (stats) · System Builders (bias slider) · Truth Makers (evidence board). Built on the Atelier UI base; early ages 3–12 deferred until TPH matures. |
 | Everyday Foundations | Foundations | Planned (adult/never-schooled on-ramp; multi-module). |
 | Our World | Curiosity | Planned (geography/history/cultures). |
 | Mzansi Money | Money | Planned (financial literacy → hands off to iKhaya). |
