@@ -28,7 +28,7 @@ no-account · #FreeForever · ages-not-grades · age-ceiling-17 · SA-first.**
 | Everyday Foundations | Foundations | Planned (adult/never-schooled on-ramp; multi-module). |
 | Our World | Curiosity | Planned (geography/history/cultures). |
 | Mzansi Money | Money | Planned (financial literacy → hands off to iKhaya). |
-| Micro Founders | Empowerment | **LIVE** (web PWA, 13–17). 5-stage Venture Journey ([`MICRO_FOUNDERS.md`](./MICRO_FOUNDERS.md)): Spot it + Cost it playable; Sell/Build/Pitch in build. "My Venture" through-line, Atelier chassis. |
+| Micro Founders | Empowerment | **LIVE** (web PWA, 13–17). Full 5-stage Venture Journey ([`MICRO_FOUNDERS.md`](./MICRO_FOUNDERS.md)) playable: Spot · Cost · Sell · Build · Pitch, + 3 bespoke activities (price board · pitch builder · venture canvas). "My Venture" through-line, Atelier chassis. |
 | SIFISO Learn — Web / AI | Creation | Planned (tracks inside SIFISO Learn). |
 | Digital Creator Academy | Creation | Parked (future, undecided). |
 

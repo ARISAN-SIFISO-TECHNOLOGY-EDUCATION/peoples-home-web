@@ -1,8 +1,8 @@
 # MICRO FOUNDERS — App Blueprint (Pillar 05 · Real-World Empowerment)
 
 > **"Turning skill into a living."** Pillar 05 · Real-World Empowerment.
-> Blueprint **LOCKED 2026-06-23**. **LIVE (scaffold)** at https://micro-founders.pages.dev/ — Spot it +
-> Cost it playable; Sell/Build/Pitch in build. Repo `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/micro-founders`.
+> Blueprint **LOCKED 2026-06-23**. **LIVE** at https://micro-founders.pages.dev/ — full 5-stage journey
+> playable + all 3 bespoke activities. Repo `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/micro-founders`.
 > Last updated: 2026-06-23.
 
 See also: [`BLUEPRINT.md`](./BLUEPRINT.md) (the master capability map) · [`ROADMAP.md`](./ROADMAP.md) ·
