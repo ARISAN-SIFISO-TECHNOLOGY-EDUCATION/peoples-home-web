@@ -28,7 +28,7 @@ no-account · #FreeForever · ages-not-grades · age-ceiling-17 · SA-first.**
 | Everyday Foundations | Foundations | Planned (adult/never-schooled on-ramp; multi-module). |
 | Our World | Curiosity | Planned (geography/history/cultures). |
 | Mzansi Money | Money | Planned (financial literacy → hands off to iKhaya). |
-| Micro Founders | Empowerment | Planned (venture course → hands off to iKhaya). |
+| Micro Founders | Empowerment | **Next for execution.** Blueprint LOCKED ([`MICRO_FOUNDERS.md`](./MICRO_FOUNDERS.md)): teens 13–17, 5-stage Venture Journey, "My Venture" through-line, Atelier chassis. Not yet scaffolded. |
 | SIFISO Learn — Web / AI | Creation | Planned (tracks inside SIFISO Learn). |
 | Digital Creator Academy | Creation | Parked (future, undecided). |
 

@@ -55,6 +55,13 @@ See also: [`BLUEPRINT.md`](./BLUEPRINT.md) · [`ECOSYSTEM.md`](./ECOSYSTEM.md) �
 ## App-boundary calls
 - **SIFISO stays separate** from Tech Makers *(2026-06-20)* — different audience/depth; merging would
   bolt Pyodide+Monaco onto Tech Makers' light bundle. SIFISO Learn = its own app (Python/Web/AI tracks).
+- **Micro Founders = Venture Journey, not age-muscles** *(2026-06-23)* — the Pillar-05 app's spine is a
+  **5-stage sequence** (Spot → Cost → Sell → Build → Pitch, sequential unlock) carrying one persistent
+  "My Venture", **not** Truth Seekers' parallel age-muscle shape. Founding is *directional* (you can't
+  cost what you haven't spotted); reasoning skills are *independent* (any order). Age survives as a
+  within-stage difficulty dial, not the top axis. Full brief: [`MICRO_FOUNDERS.md`](./MICRO_FOUNDERS.md).
+- **Micro Founders vs Mzansi Money** *(2026-06-23)* — Micro Founders = *make* money via a venture
+  (entrepreneurship); Mzansi Money = *manage* your own money (financial literacy). Distinct apps.
 - **iKhaya = the Opportunity layer**, absorbs the 6 navigators as in-app sections (not separate apps).
   Server-backed + PII = Play "data IS collected" + POPIA. **The #FreeForever funding fork** — its
   backend cost is the one place "free forever" needs a sustainability answer; resolve before 2027.
