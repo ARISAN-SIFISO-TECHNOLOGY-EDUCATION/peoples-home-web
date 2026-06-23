@@ -23,13 +23,13 @@ no-account · #FreeForever · ages-not-grades · age-ceiling-17 · SA-first.**
 | ReadAfrica | Foundations | **LIVE** (web PWA). Literacy 3–17. Hosts the TPH Core SDK (embedded). |
 | Science Sprouts | Curiosity | **LIVE** (web PWA). Science 3–12 → **must extend to 17** (age-ceiling rule). **Play: ROLLING OUT TO PRODUCTION (2026-06-21)** — staged rollout underway. SS is the **last app on Google Play ever**; Play track now closed. |
 | Tech Makers | Creation | **LIVE** (web PWA). Maker arc 3–17. |
-| SIFISO — Learn Python | Creation | **LIVE** (web PWA). 100% offline (self-hosted Pyodide/Monaco). |
+| SIFISO — The Golden Hand | Creation | **LIVE** (web PWA). A **five-app-in-one system** — a journey: Golden Learn (Python) → Golden AI (AI literacy) → Golden Quiz (mastery) → Golden Startup (*1M Startups*) → Golden Commons (*Each One, Teach One*). 100% offline (self-hosted Pyodide/Monaco). |
 | **Truth Seekers** | Reasoning | **LIVE** (web PWA, 13–17). Five muscles: Fact Finders · Logic Builders (fallacies) · Data Detectives (stats) · System Builders (bias slider) · Truth Makers (evidence board). Built on the Atelier UI base; early ages 3–12 deferred until TPH matures. |
 | Everyday Foundations | Foundations | Planned (adult/never-schooled on-ramp; multi-module). |
 | Our World | Curiosity | Planned (geography/history/cultures). |
 | Mzansi Money | Money | Planned (financial literacy → hands off to iKhaya). |
 | Micro Founders | Empowerment | **LIVE** (web PWA, 13–17). Full 5-stage Venture Journey ([`MICRO_FOUNDERS.md`](./MICRO_FOUNDERS.md)) playable: Spot · Cost · Sell · Build · Pitch, + 3 bespoke activities (price board · pitch builder · venture canvas). "My Venture" through-line, Atelier chassis. |
-| SIFISO Learn — Web / AI | Creation | Planned (tracks inside SIFISO Learn). |
+| Golden Hand — Web track | Creation | Planned (a Web/HTML-CSS-JS step inside The Golden Hand; AI literacy already ships as **Golden AI**). |
 | Digital Creator Academy | Creation | Parked (future, undecided). |
 
 ## Status board (World B — opportunity infrastructure = iKhaya)

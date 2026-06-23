@@ -88,11 +88,11 @@ to connect the learner to real opportunity — that handoff is "the bridge."
 | App | DNA | Modules |
 |---|---|---|
 | **Tech Makers** *(live)* | Offline | Maker Studio · Coding arc (block → web → projects) · Robotics (electronics/automation basics) |
-| **SIFISO Learn** *(Python live)* | Offline | Python · Web (HTML/CSS/JS) · AI literacy |
+| **SIFISO — The Golden Hand** *(live)* | Offline | A five-step journey: Golden Learn (Python) · Golden AI (AI literacy) · Golden Quiz (mastery) · Golden Startup (*1M Startups*) · Golden Commons (*Each One, Teach One*). Web (HTML/CSS/JS) step planned. |
 
 *Parked (future, undecided):* **Digital Creator Academy** (video/audio/graphics) — a genuine
 capability but media-tooling is heavy and off-stack. **App Builder Lab / Open Source Builder** are
-candidate *capstone modules* inside Tech Makers / SIFISO Learn, not separate apps.
+candidate *capstone modules* inside Tech Makers / The Golden Hand, not separate apps.
 
 ## PILLAR 4 · THINKING & REASONING
 **Capability:** Judgment — telling true from false.
@@ -158,7 +158,7 @@ World B — they live in iKhaya / TPH Core, not in the offline apps.)
 | Science Sprouts | App | Offline Learning |
 | Our World *(new)* | App (multi-module) | Offline Learning |
 | Tech Makers | App | Offline Learning |
-| SIFISO Learn | App (Python/Web/AI) | Offline Learning |
+| SIFISO — The Golden Hand | App (5-in-1: Learn/AI/Quiz/Startup/Commons) | Offline Learning |
 | Truth Seekers | App (6 modules) | Offline Learning |
 | Mzansi Money | App | Offline Learning |
 | Micro Founders | App | Offline Learning |

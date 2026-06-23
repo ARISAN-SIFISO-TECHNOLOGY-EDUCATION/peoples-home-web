@@ -55,6 +55,14 @@ See also: [`BLUEPRINT.md`](./BLUEPRINT.md) · [`ECOSYSTEM.md`](./ECOSYSTEM.md) �
 ## App-boundary calls
 - **SIFISO stays separate** from Tech Makers *(2026-06-20)* — different audience/depth; merging would
   bolt Pyodide+Monaco onto Tech Makers' light bundle. SIFISO Learn = its own app (Python/Web/AI tracks).
+- **Renamed "SIFISO — Learn Python" → "SIFISO — The Golden Hand"** *(2026-06-23)* — the app was never
+  just a Python course; it's a **five-app-in-one system** (a journey: Golden Learn → Golden AI →
+  Golden Quiz → Golden Startup → Golden Commons) — effectively the original prototype of The People's
+  Home ("one shell, five apps"). The in-app title already said "The Golden Hand"; this propagates the
+  real name across the ecosystem (card, ECOSYSTEM/ROADMAP/BLUEPRINT, manifest, README). **Repo slug
+  `sifiso-learn-python` + the `.pages.dev` URL are kept** (renaming them would break the Cloudflare
+  connection + live link — display name only). *Golden Startup carries the user's "1 Million Startups
+  in 12 Months" campaign — the same vision that became Micro Founders (Pillar 05).*
 - **Micro Founders = Venture Journey, not age-muscles** *(2026-06-23)* — the Pillar-05 app's spine is a
   **5-stage sequence** (Spot → Cost → Sell → Build → Pitch, sequential unlock) carrying one persistent
   "My Venture", **not** Truth Seekers' parallel age-muscle shape. Founding is *directional* (you can't
