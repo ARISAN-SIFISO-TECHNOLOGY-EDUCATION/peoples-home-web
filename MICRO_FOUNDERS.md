@@ -1,7 +1,8 @@
 # MICRO FOUNDERS — App Blueprint (Pillar 05 · Real-World Empowerment)
 
-> **"Turning skill into a living."** The next World-A app for execution after Truth Seekers.
-> Blueprint **LOCKED 2026-06-23**. Not yet scaffolded — this doc is the build brief.
+> **"Turning skill into a living."** Pillar 05 · Real-World Empowerment.
+> Blueprint **LOCKED 2026-06-23**. **LIVE (scaffold)** at https://micro-founders.pages.dev/ — Spot it +
+> Cost it playable; Sell/Build/Pitch in build. Repo `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/micro-founders`.
 > Last updated: 2026-06-23.
 
 See also: [`BLUEPRINT.md`](./BLUEPRINT.md) (the master capability map) · [`ROADMAP.md`](./ROADMAP.md) ·
