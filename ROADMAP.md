@@ -27,7 +27,7 @@ no-account · #FreeForever · ages-not-grades · age-ceiling-17 · SA-first.**
 | **Truth Seekers** | Reasoning | **LIVE** (web PWA, 13–17). Five muscles: Fact Finders · Logic Builders (fallacies) · Data Detectives (stats) · System Builders (bias slider) · Truth Makers (evidence board), 24 SA scenarios. **Phase 2 polish (2026-06-24): now fully reasoning-native** — the Atelier engine scaffold (STACK/POUR/ROLL/MAKE) was purged and case content ~doubled. Early ages 3–12 deferred until TPH matures. |
 | Everyday Foundations | Foundations | Planned (adult/never-schooled on-ramp; multi-module). |
 | Our World | Curiosity | Planned (geography/history/cultures). |
-| Mzansi Money | Money | **BUILT — pending Cloudflare deploy** (2026-06-24). Money-wisdom journey, teens 13–17, "My Money, sorted": Earn → Budget → Save → Borrow → Protect, Grow & Plan, on the Micro Founders chassis. Money Situations picker + Budget Board + Credit Calculator. Money wisdom, never advice; hands off to iKhaya for jobs/funding. Repo `ARISAN.../mzansi-money`. Flip the Pillar-5 card live once the `.pages.dev` URL exists. |
+| Mzansi Money | Money | **LIVE** (web PWA, 13–17) — https://mzansi-money.pages.dev/ . Money-wisdom journey "My Money, sorted": Earn → Budget → Save → Borrow → Protect, Grow & Plan, on the Micro Founders chassis. Money Situations picker + Budget Board + Credit Calculator + My Money Plan. Money wisdom, never advice; hands off to iKhaya for jobs/funding. |
 | Micro Founders | Empowerment | **LIVE** (web PWA, 13–17). Full 5-stage Venture Journey ([`MICRO_FOUNDERS.md`](./MICRO_FOUNDERS.md)) playable: Spot · Cost · Sell · Build · Pitch, + 3 bespoke activities (price board · pitch builder · venture canvas). "My Venture" through-line, Atelier chassis. |
 | Golden Hand — Web track | Creation | Planned (a Web/HTML-CSS-JS step inside The Golden Hand; AI literacy already ships as **Golden AI**). |
 | Digital Creator Academy | Creation | Parked (future, undecided). |
@@ -44,11 +44,13 @@ no-account · #FreeForever · ages-not-grades · age-ceiling-17 · SA-first.**
 ## What's next (near-term sequence)
 1. ~~**Truth Seekers v1 (teens 13–17)**~~ — ✅ DONE. Live PWA; Phase 2 made it fully reasoning-native
    (engine scaffold purged) and ~doubled the case content (2026-06-24).
-2. **Science Sprouts → age 17** — close the age-ceiling gap (teen science tier). **Now the lead item.**
-3. Then the remaining World-A apps per the blueprint (Everyday Foundations, Our World, Mzansi Money,
-   Micro Founders), each as a deep multi-module product, not a thin app.
-4. **TPH Core SDK** — extract from ReadAfrica into a shared package; adopt across apps (platform track).
-5. **iKhaya** — steady background track toward a one-suburb beta; the funding-model decision must be
+2. ~~**Mzansi Money (Pillar 5, teens 13–17)**~~ — ✅ DONE. Live PWA (mzansi-money.pages.dev), 5-stage
+   Money Journey on the Micro Founders chassis (2026-06-24).
+3. **Science Sprouts → age 17** — close the age-ceiling gap (teen science tier). **Now the lead item.**
+4. Then the remaining World-A apps per the blueprint (Everyday Foundations, Our World), each as a deep
+   multi-module product, not a thin app.
+5. **TPH Core SDK** — extract from ReadAfrica into a shared package; adopt across apps (platform track).
+6. **iKhaya** — steady background track toward a one-suburb beta; the funding-model decision must be
    resolved before its 2027 launch.
 
 ## Definition of done (a learning app)
