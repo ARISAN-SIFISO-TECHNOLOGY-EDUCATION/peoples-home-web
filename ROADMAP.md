@@ -24,7 +24,7 @@ no-account · #FreeForever · ages-not-grades · age-ceiling-17 · SA-first.**
 | Science Sprouts | Curiosity | **LIVE** (web PWA). Science 3–12 → **must extend to 17** (age-ceiling rule). **Play: ROLLING OUT TO PRODUCTION (2026-06-21)** — staged rollout underway. SS is the **last app on Google Play ever**; Play track now closed. |
 | Tech Makers | Creation | **LIVE** (web PWA). Maker arc 3–17. |
 | SIFISO — The Golden Hand | Creation | **LIVE** (web PWA). A **five-app-in-one system** — a journey: Golden Learn (Python) → Golden AI (AI literacy) → Golden Quiz (mastery) → Golden Startup (*1M Startups*) → Golden Commons (*Each One, Teach One*). 100% offline (self-hosted Pyodide/Monaco). |
-| **Truth Seekers** | Reasoning | **LIVE** (web PWA, 13–17). Five muscles: Fact Finders · Logic Builders (fallacies) · Data Detectives (stats) · System Builders (bias slider) · Truth Makers (evidence board). Built on the Atelier UI base; early ages 3–12 deferred until TPH matures. |
+| **Truth Seekers** | Reasoning | **LIVE** (web PWA, 13–17). Five muscles: Fact Finders · Logic Builders (fallacies) · Data Detectives (stats) · System Builders (bias slider) · Truth Makers (evidence board), 24 SA scenarios. **Phase 2 polish (2026-06-24): now fully reasoning-native** — the Atelier engine scaffold (STACK/POUR/ROLL/MAKE) was purged and case content ~doubled. Early ages 3–12 deferred until TPH matures. |
 | Everyday Foundations | Foundations | Planned (adult/never-schooled on-ramp; multi-module). |
 | Our World | Curiosity | Planned (geography/history/cultures). |
 | Mzansi Money | Money | Planned (financial literacy → hands off to iKhaya). |
@@ -42,10 +42,9 @@ no-account · #FreeForever · ages-not-grades · age-ceiling-17 · SA-first.**
 ---
 
 ## What's next (near-term sequence)
-1. **Truth Seekers v1 (teens 13–17)** — new repo, port `exam-studio`, author the reasoning spine
-   (Logic Lab · Media Detective · Systems Thinking · Decision Maker · Problem Solver · Debate SA as
-   modules), deploy as PWA, flip the People's Home Reasoning card.
-2. **Science Sprouts → age 17** — close the age-ceiling gap (teen science tier).
+1. ~~**Truth Seekers v1 (teens 13–17)**~~ — ✅ DONE. Live PWA; Phase 2 made it fully reasoning-native
+   (engine scaffold purged) and ~doubled the case content (2026-06-24).
+2. **Science Sprouts → age 17** — close the age-ceiling gap (teen science tier). **Now the lead item.**
 3. Then the remaining World-A apps per the blueprint (Everyday Foundations, Our World, Mzansi Money,
    Micro Founders), each as a deep multi-module product, not a thin app.
 4. **TPH Core SDK** — extract from ReadAfrica into a shared package; adopt across apps (platform track).
