@@ -27,7 +27,7 @@ no-account · #FreeForever · ages-not-grades · age-ceiling-17 · SA-first.**
 | **Truth Seekers** | Reasoning | **LIVE** (web PWA, 13–17). Five muscles: Fact Finders · Logic Builders (fallacies) · Data Detectives (stats) · System Builders (bias slider) · Truth Makers (evidence board), 24 SA scenarios. **Phase 2 polish (2026-06-24): now fully reasoning-native** — the Atelier engine scaffold (STACK/POUR/ROLL/MAKE) was purged and case content ~doubled. Early ages 3–12 deferred until TPH matures. |
 | Everyday Foundations | Foundations | Planned (adult/never-schooled on-ramp; multi-module). |
 | Our World | Curiosity | Planned (geography/history/cultures). |
-| Mzansi Money | Money | Planned (financial literacy → hands off to iKhaya). |
+| Mzansi Money | Money | **BUILT — pending Cloudflare deploy** (2026-06-24). Money-wisdom journey, teens 13–17, "My Money, sorted": Earn → Budget → Save → Borrow → Protect, Grow & Plan, on the Micro Founders chassis. Money Situations picker + Budget Board + Credit Calculator. Money wisdom, never advice; hands off to iKhaya for jobs/funding. Repo `ARISAN.../mzansi-money`. Flip the Pillar-5 card live once the `.pages.dev` URL exists. |
 | Micro Founders | Empowerment | **LIVE** (web PWA, 13–17). Full 5-stage Venture Journey ([`MICRO_FOUNDERS.md`](./MICRO_FOUNDERS.md)) playable: Spot · Cost · Sell · Build · Pitch, + 3 bespoke activities (price board · pitch builder · venture canvas). "My Venture" through-line, Atelier chassis. |
 | Golden Hand — Web track | Creation | Planned (a Web/HTML-CSS-JS step inside The Golden Hand; AI literacy already ships as **Golden AI**). |
 | Digital Creator Academy | Creation | Parked (future, undecided). |
