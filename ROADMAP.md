@@ -1,7 +1,7 @@
 # THE PEOPLE'S HOME — Roadmap & Status
 
 > What's live, what's next, and the sequencing logic. **Source of truth.**
-> Last updated: 2026-06-21.
+> Last updated: 2026-06-25.
 
 See also: [`BLUEPRINT.md`](./BLUEPRINT.md) · [`ECOSYSTEM.md`](./ECOSYSTEM.md) · [`DECISIONS.md`](./DECISIONS.md).
 
@@ -21,7 +21,7 @@ no-account · #FreeForever · ages-not-grades · age-ceiling-17 · SA-first.**
 |---|---|---|
 | Math Adventure RPG | Foundations | **LIVE** (web PWA + Android). Numeracy 3–17. |
 | ReadAfrica | Foundations | **LIVE** (web PWA). Literacy 3–17. Hosts the TPH Core SDK (embedded). |
-| Science Sprouts | Curiosity | **LIVE** (web PWA). Science 3–12 → **must extend to 17** (age-ceiling rule). **Play: ROLLING OUT TO PRODUCTION (2026-06-21)** — staged rollout underway. SS is the **last app on Google Play ever**; Play track now closed. |
+| Science Sprouts | Curiosity | **LIVE** (web PWA). Science **3–17** ✅ — teen **Science Academy** tier added 2026-06-25 (data-driven exam-prep on the ported exam-studio engine; 5-school arc 13 Explorers → 17 Thinkers, 12 topics / 36 levels), so the **age-ceiling rule is satisfied**. **Play: ROLLING OUT TO PRODUCTION (2026-06-21)**. SS is the **last app on Google Play ever**; Play track now closed. |
 | Tech Makers | Creation | **LIVE** (web PWA). Maker arc 3–17. |
 | SIFISO — The Golden Hand | Creation | **LIVE** (web PWA). A **five-app-in-one system** — a journey: Golden Learn (Python) → Golden AI (AI literacy) → Golden Quiz (mastery) → Golden Startup (*1M Startups*) → Golden Commons (*Each One, Teach One*). 100% offline (self-hosted Pyodide/Monaco). |
 | **Truth Seekers** | Reasoning | **LIVE** (web PWA, 13–17). Five muscles: Fact Finders · Logic Builders (fallacies) · Data Detectives (stats) · System Builders (bias slider) · Truth Makers (evidence board), 24 SA scenarios. **Phase 2 polish (2026-06-24): now fully reasoning-native** — the Atelier engine scaffold (STACK/POUR/ROLL/MAKE) was purged and case content ~doubled. Early ages 3–12 deferred until TPH matures. |
@@ -46,9 +46,10 @@ no-account · #FreeForever · ages-not-grades · age-ceiling-17 · SA-first.**
    (engine scaffold purged) and ~doubled the case content (2026-06-24).
 2. ~~**Mzansi Money (Pillar 5, teens 13–17)**~~ — ✅ DONE. Live PWA (mzansi-money.pages.dev), 5-stage
    Money Journey on the Micro Founders chassis (2026-06-24).
-3. **Science Sprouts → age 17** — close the age-ceiling gap (teen science tier). **Now the lead item.**
-4. Then the remaining World-A apps per the blueprint (Everyday Foundations, Our World), each as a deep
-   multi-module product, not a thin app.
+3. ~~**Science Sprouts → age 17**~~ — ✅ DONE (2026-06-25). Teen Science Academy tier live in the
+   science-sprouts PWA; age-ceiling rule now satisfied across all Curiosity apps.
+4. **Remaining World-A apps** per the blueprint (Everyday Foundations, Our World), each as a deep
+   multi-module product, not a thin app. **Now the lead item.**
 5. **TPH Core SDK** — extract from ReadAfrica into a shared package; adopt across apps (platform track).
 6. **iKhaya** — steady background track toward a one-suburb beta; the funding-model decision must be
    resolved before its 2027 launch.
