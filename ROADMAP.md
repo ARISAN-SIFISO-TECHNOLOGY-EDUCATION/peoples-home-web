@@ -25,7 +25,7 @@ no-account · #FreeForever · ages-not-grades · age-ceiling-17 · SA-first.**
 | Tech Makers | Creation | **LIVE** (web PWA). Maker arc 3–17. |
 | SIFISO — The Golden Hand | Creation | **LIVE** (web PWA). A **five-app-in-one system** — a journey: Golden Learn (Python) → Golden AI (AI literacy) → Golden Quiz (mastery) → Golden Startup (*1M Startups*) → Golden Commons (*Each One, Teach One*). 100% offline (self-hosted Pyodide/Monaco). |
 | **Truth Seekers** | Reasoning | **LIVE** (web PWA, 13–17). Five muscles: Fact Finders · Logic Builders (fallacies) · Data Detectives (stats) · System Builders (bias slider) · Truth Makers (evidence board), 24 SA scenarios. **Phase 2 polish (2026-06-24): now fully reasoning-native** — the Atelier engine scaffold (STACK/POUR/ROLL/MAKE) was purged and case content ~doubled. Early ages 3–12 deferred until TPH matures. |
-| Everyday Foundations | Foundations | **LIVE** (web PWA) — https://everyday-foundations.pages.dev/ . The adult **second front door** (NOT remedial — confidence-building). 5 areas (Reading · Numbers · Digital Skills · Everyday Life · Languages), voice-first, progress-as-abilities, Household Mode. full shell + **Everyday Life** and **Digital Skills** authored deep (12 lessons; other 3 areas "Coming soon"). Satisfies the Foundations adult on-ramp. |
+| Everyday Foundations | Foundations | **LIVE** (web PWA) — https://everyday-foundations.pages.dev/ . The adult **second front door** (NOT remedial — confidence-building). 5 areas (Reading · Numbers · Digital Skills · Everyday Life · Languages), voice-first, progress-as-abilities, Household Mode. full shell + **Everyday Life · Digital Skills · Numbers** authored deep (18 lessons; Reading & Languages "Coming soon"). Satisfies the Foundations adult on-ramp. |
 | Our World | Curiosity | Planned (geography/history/cultures). |
 | Mzansi Money | Money | **LIVE** (web PWA, 13–17) — https://mzansi-money.pages.dev/ . Money-wisdom journey "My Money, sorted": Earn → Budget → Save → Borrow → Protect, Grow & Plan, on the Micro Founders chassis. Money Situations picker + Budget Board + Credit Calculator + My Money Plan. Money wisdom, never advice; hands off to iKhaya for jobs/funding. |
 | Micro Founders | Empowerment | **LIVE** (web PWA, 13–17). Full 5-stage Venture Journey ([`MICRO_FOUNDERS.md`](./MICRO_FOUNDERS.md)) playable: Spot · Cost · Sell · Build · Pitch, + 3 bespoke activities (price board · pitch builder · venture canvas). "My Venture" through-line, Atelier chassis. |
@@ -50,8 +50,8 @@ no-account · #FreeForever · ages-not-grades · age-ceiling-17 · SA-first.**
    science-sprouts PWA; age-ceiling rule now satisfied across all Curiosity apps.
 4. ~~**Everyday Foundations (Pillar 1, adult on-ramp)**~~ — ✅ DONE (2026-06-26). Live PWA
    (everyday-foundations.pages.dev): the adult second front door, 5-area shell + Everyday Life authored
-   deep, voice-first, Household Mode; **Digital Skills** added next (now 2 of 5 areas live, 12 lessons).
-   *Deepen pass later: author Reading · Numbers · Languages (currently "Coming soon").*
+   deep, voice-first, Household Mode; **Digital Skills** + **Numbers** added (now 3 of 5 areas live, 18 lessons).
+   *Deepen pass later: author Reading · Languages (currently "Coming soon").*
 5. **Our World** (Curiosity — geography/history/cultures) — the remaining World-A app per the blueprint,
    built as a deep multi-module product, not a thin app. **Now the lead item.**
 6. **TPH Core SDK** — extract from ReadAfrica into a shared package; adopt across apps (platform track).
@@ -73,7 +73,7 @@ manifest `id` + **0 grade strings** + isiZulu present (DRAFT) + no runtime netwo
 - **isiZulu native-speaker review** — all apps ship English-first; zu is **DRAFT** until a batched
   December review.
 - ~~**Foundations adult on-ramp**~~ — ✅ built & live as **Everyday Foundations** (2026-06-26). Deepen
-  pass remaining: author the other 3 areas (Reading · Numbers · Languages; Digital Skills now live).
+  pass remaining: author Reading · Languages (Everyday Life · Digital Skills · Numbers now live).
 - **"Expert Approved" (Play)** — Math Adventure's badge was rejected (text volume for young ages +
   disruptive sounds); fix carries over to the PWA.
 - **Keystore off-machine backup** — outstanding, high priority (see `DECISIONS.md`).
