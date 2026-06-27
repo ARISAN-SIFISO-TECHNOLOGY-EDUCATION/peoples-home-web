@@ -127,6 +127,13 @@ See [`platform/README.md`](./platform/README.md):
 | iKhaya | [`platform/ikhaya.md`](./platform/ikhaya.md) |
 | iKhaya Learn | [`platform/ikhaya-learn.md`](./platform/ikhaya-learn.md) |
 
+### DNA and Playbooks
+
+| File / Directory | Purpose |
+|---|---|
+| [`PROJECT_DNA.md`](./PROJECT_DNA.md) | The twelve immutable principles — if a proposal violates one, the proposal is wrong |
+| [`playbooks/`](./playbooks/) | Step-by-step operational runbooks: new app, deploy, bot update, review checklist |
+
 ### Deep dives
 
 | Directory | Purpose |
