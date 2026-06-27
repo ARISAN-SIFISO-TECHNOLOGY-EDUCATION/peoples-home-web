@@ -38,6 +38,45 @@
 
 ---
 
+## 2026-06-27 (session 2) — Security Constitution + DNA extended to 16 principles
+
+**Done this session:**
+- **`brain/SECURITY_CONSTITUTION.md` (NEW):** Full Universal Security Engineering Constitution stored permanently. Covers: security roles + mission, 12 security principles, security mindset assumptions, all 22 review domains (Data, Child Safety, Privacy, Trust Boundaries, Identity & Auth, Authorization, Platform, AI Security, Brain Security, Knowledge Governance, Secrets, Supply Chain, Input Validation, Cryptography, APIs, Databases, File Handling, Business Logic, Availability, Secure Defaults, Deployment, Compliance), 10 threat modelling questions, adversarial review (6 attacker personas), security governance rules, Security Review Report template (Security/Privacy/Resilience/Child Safety/Supply Chain/Production Ready scores /10), Final Principle.
+- **`brain/PROJECT_DNA.md` (v1.2):** Principle 16 added — Secure by Design. "Security is not a feature. Security is a permanent architectural constraint." Header updated (Fifteen → Sixteen). Cross-reference to SECURITY_CONSTITUTION.md added. Evolution log appended.
+- **`brain/AI_ONBOARDING.md`:** Phase 4 extended with item 19 (SECURITY_CONSTITUTION.md). Security section updated to point to Constitution for security-focused sessions.
+- **`brain/README.md`:** Core navigation table updated with SECURITY_CONSTITUTION.md entry. DNA entry corrected to "sixteen principles."
+- **`brain/AI_SYSTEM_PROMPT.md`:** Security Review Framework section updated — cross-reference to SECURITY_CONSTITUTION.md added (quick-check list + pointer to full 22-domain reference).
+- **Commit:** `3be6bff` — 695 insertions, 5 files. Pushed to `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/peoples-home-web` main.
+
+**State of ongoing work:**
+- Security Constitution is complete. Brain now has a three-layer security model:
+  - `PROJECT_DNA.md` principle 16 — what cannot be broken
+  - `SECURITY_CONSTITUTION.md` — how to operate as security engineering partner
+  - `AI_SYSTEM_PROMPT.md` — quick-check list + pointer to Constitution
+- All planned brain documents are now complete for this sprint.
+
+**Next steps (in order):**
+1. **Keystore backup (URGENT 🔴)** — `upload-new.jks` is local-only. If lost, Math Adventure Google Play account is unrecoverable. Back up now.
+2. **TPH Core SDK extraction** — extract shared code from ReadAfrica into `@tph/core` standalone package. This is the lead platform item for H2 2026.
+3. **Wave 12 planning** — wait for ChatGPT brief before starting. Do not plan ahead of the brief.
+4. **Engine playbooks** — `new-wave.md`, `debug-batch.md` in engine-1000 `docs/playbooks/`.
+5. **Engine `PROJECT_GLOSSARY.md`** — follow the same pattern as `brain/PROJECT_GLOSSARY.md`.
+6. **Deepening passes** — more Journeys, more areas in the live apps.
+7. **isiZulu native-speaker review** — ~December 2026.
+8. **iKhaya one-suburb beta** — 2026 H2.
+
+**Unresolved issues / risks:**
+- Keystore backup: `upload-new.jks` at local path only. HIGH risk of permanent loss. Action required immediately.
+
+**Files changed (key ones):**
+- `brain/SECURITY_CONSTITUTION.md` — new: full 22-domain security operating charter
+- `brain/PROJECT_DNA.md` — extended: principle 16 (Secure by Design), v1.2
+- `brain/AI_ONBOARDING.md` — updated: item 19 added to Phase 4 reading path
+- `brain/README.md` — updated: SECURITY_CONSTITUTION indexed in Core navigation
+- `brain/AI_SYSTEM_PROMPT.md` — updated: cross-reference to SECURITY_CONSTITUTION
+
+---
+
 ## 2026-06-27 — The People's Home Brain built + Kilimanjaro Phases 5–7
 
 **Done this session:**
