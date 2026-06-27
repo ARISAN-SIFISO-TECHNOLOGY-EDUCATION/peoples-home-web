@@ -95,8 +95,11 @@ Read in this order. The first four (~10 minutes) are enough to act safely.
 13. [`decisions/`](./decisions/) + [`history/`](./history/) — reasoning archive and incident log.
 14. [`patterns/`](./patterns/) — reusable patterns (offline-first, journey-progression, etc.).
 15. [`PROJECT_GLOSSARY.md`](./PROJECT_GLOSSARY.md) — terminology and names.
-16. [`PROJECT_DNA.md`](./PROJECT_DNA.md) — the twelve immutable principles; check before any build decision.
+16. [`PROJECT_DNA.md`](./PROJECT_DNA.md) — the fifteen immutable principles; check before any build decision.
 17. [`playbooks/`](./playbooks/) — step-by-step runbooks for recurring tasks.
+18. [`AI_SYSTEM_PROMPT.md`](./AI_SYSTEM_PROMPT.md) — **the operating charter**. How to think,
+    review, and act as an engineering partner. Read this after the reading path to understand
+    the review frameworks, engineering philosophy, and Final Review format.
 
 ---
 

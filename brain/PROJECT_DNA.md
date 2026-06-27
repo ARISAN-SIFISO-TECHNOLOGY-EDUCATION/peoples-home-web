@@ -14,7 +14,7 @@
 
 ---
 
-## The Twelve Principles
+## The Fifteen Principles
 
 ---
 
@@ -180,11 +180,78 @@ All repositories and products in this ecosystem are private. They are an interna
 
 ---
 
+### 13. Accessibility by Default
+
+Every app is designed for every learner from the first line of code.
+Accessibility is never retrofitted. Never treated as an edge case.
+
+**What this means in practice:**
+- Touch targets are ≥44×44px on every interactive element
+- Colour contrast meets WCAG AA minimum (4.5:1 for text) in every screen
+- Cognitive load is evaluated: can a 6-year-old complete this activity?
+- Motor accessibility is evaluated: can someone with limited fine motor control use this?
+- Low-end devices: every app must run on a 3-year-old Android mid-range phone
+- Shared devices: Household Mode is the standard for all-ages and adult apps
+- Screen readers: interactive elements have accessible labels
+- No audio-only or visual-only content without an alternative
+
+**Relationship to Voice First (Principle 7):** Voice First covers narration as the
+primary interface for low-literacy users. Accessibility by Default covers the full
+spectrum: motor, cognitive, visual, auditory, and device constraints.
+Both principles are required. Neither replaces the other.
+
+---
+
+### 14. Modular Architecture
+
+No monoliths. Every component must be separable, reusable, and composable.
+
+**What this means in practice:**
+- Any logic that appears in two or more apps belongs in TPH Core SDK
+- Any pattern that appears in two or more contexts belongs in `brain/patterns/`
+- No app should contain functionality that another app has to reimplement
+- Components within an app have clear, single responsibilities
+- Adding a new feature must not require modifying unrelated code
+- The "touch one thing, break another" failure mode is a design defect
+
+**Why this matters at scale:** With 10+ apps sharing a foundation, monolithic design
+compounds. A bug in duplicated code must be fixed 10 times. A refactor must be
+coordinated across 10 repos. Modular design makes each of those 1 fix, 1 refactor.
+
+**The test:** can this component be extracted and used in a new app tomorrow without
+rewriting it? If no — it is not yet modular enough.
+
+---
+
+### 15. Long-Term Maintainability
+
+Every decision must survive 10 years without a dedicated maintenance team.
+
+**What this means in practice:**
+- Prefer readable over clever — code that reads like prose beats code that requires
+  deciphering
+- Prefer stable over fashionable — a framework that will exist in 5 years beats the
+  one that is popular today
+- Prefer documented over implicit — a comment explaining *why* is more valuable
+  than one explaining *what*
+- Prefer boring technology over cutting-edge for its own sake
+- Prefer composable over monolithic (see Principle 14)
+- Dependencies must be evaluated for long-term support, not just capability
+
+**The measure:** can a new developer — or a future AI with no prior context — read
+this code, understand it, and safely extend it within one working day?
+
+**Why this matters for The People's Home specifically:** This project is a decade-long
+mission. The apps built in 2026 should still be running and updateable in 2036. Code
+that is clever today is a liability in 5 years.
+
+---
+
 ## How to use this file
 
 ### If you are an AI
 
-Before proposing any feature, architecture, or change, check it against the twelve principles.
+Before proposing any feature, architecture, or change, check it against the fifteen principles.
 
 If a proposal conflicts with any principle:
 1. Name the conflict explicitly
@@ -210,3 +277,9 @@ But never implement something that violates the DNA without making the contradic
 - Session knowledge from building all 10 World-A apps
 - Founder guidance: "Capability Before Content", "Journey Before Apps",
   "Platform Before Duplication" identified as structural principles
+
+**2026-06-27 — v1.1:** Three new principles added (13–15):
+- Accessibility by Default — from the Universal AI Engineering Prompt
+- Modular Architecture — from the Universal AI Engineering Prompt
+- Long-Term Maintainability — from the Universal AI Engineering Prompt
+- Source: `brain/AI_SYSTEM_PROMPT.md` (founder-authored operating charter)

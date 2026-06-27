@@ -77,6 +77,7 @@ If you are continuing from a previous session → `brain/SESSION_HANDOFF.md`
 | File | Purpose |
 |---|---|
 | [`AI_ONBOARDING.md`](./AI_ONBOARDING.md) | How any AI should read, work in, and update this project |
+| [`AI_SYSTEM_PROMPT.md`](./AI_SYSTEM_PROMPT.md) | **Operating charter** — how to think, review, and act as an engineering partner |
 | [`SESSION_HANDOFF.md`](./SESSION_HANDOFF.md) | Session continuity log — the last thing an AI wrote before context ended |
 | [`CURRENT_STATE.md`](./CURRENT_STATE.md) | Snapshot of every app, track, and platform piece right now |
 | [`PROJECT_TIMELINE.md`](./PROJECT_TIMELINE.md) | Chronological evolution of the whole project |
