@@ -26,7 +26,7 @@ no-account · #FreeForever · ages-not-grades · age-ceiling-17 · SA-first.**
 | SIFISO — The Golden Hand | Creation | **LIVE** (web PWA). A **five-app-in-one system** — a journey: Golden Learn (Python) → Golden AI (AI literacy) → Golden Quiz (mastery) → Golden Startup (*1M Startups*) → Golden Commons (*Each One, Teach One*). 100% offline (self-hosted Pyodide/Monaco). |
 | **Truth Seekers** | Reasoning | **LIVE** (web PWA, 13–17). Five muscles: Fact Finders · Logic Builders (fallacies) · Data Detectives (stats) · System Builders (bias slider) · Truth Makers (evidence board), 24 SA scenarios. **Phase 2 polish (2026-06-24): now fully reasoning-native** — the Atelier engine scaffold (STACK/POUR/ROLL/MAKE) was purged and case content ~doubled. Early ages 3–12 deferred until TPH matures. |
 | Everyday Foundations | Foundations | **LIVE** (web PWA) — https://everyday-foundations.pages.dev/ . The adult **second front door** (NOT remedial — confidence-building). 5 areas (Reading · Numbers · Digital Skills · Everyday Life · Languages), voice-first, progress-as-abilities, Household Mode. full shell + **Everyday Life · Digital Skills · Numbers · Reading** authored deep (24 lessons; only Languages "Coming soon" — deferred to the isiZulu review batch). Satisfies the Foundations adult on-ramp. |
-| Our World | Curiosity | Planned (geography/history/cultures). |
+| Our World | Curiosity | **LIVE** (web PWA) — https://our-world-b0t.pages.dev/ . The Curiosity pillar's signature companion to Science Sprouts: a **belonging journey** (Place · People · Planet), not a geography quiz. Six Journeys (South Africa **deep** — 7 hand-verified discoveries; Africa · The World · Nature · Cultures · Big Trips "Coming soon"); 🏡 My Home opener + 📘 My Passport (first-person stamps, never %); voice-first; Household Mode. All-ages, EF chassis. |
 | Mzansi Money | Money | **LIVE** (web PWA, 13–17) — https://mzansi-money.pages.dev/ . Money-wisdom journey "My Money, sorted": Earn → Budget → Save → Borrow → Protect, Grow & Plan, on the Micro Founders chassis. Money Situations picker + Budget Board + Credit Calculator + My Money Plan. Money wisdom, never advice; hands off to iKhaya for jobs/funding. |
 | Micro Founders | Empowerment | **LIVE** (web PWA, 13–17). Full 5-stage Venture Journey ([`MICRO_FOUNDERS.md`](./MICRO_FOUNDERS.md)) playable: Spot · Cost · Sell · Build · Pitch, + 3 bespoke activities (price board · pitch builder · venture canvas). "My Venture" through-line, Atelier chassis. |
 | Golden Hand — Web track | Creation | Planned (a Web/HTML-CSS-JS step inside The Golden Hand; AI literacy already ships as **Golden AI**). |
@@ -52,9 +52,13 @@ no-account · #FreeForever · ages-not-grades · age-ceiling-17 · SA-first.**
    (everyday-foundations.pages.dev): the adult second front door, 5-area shell + Everyday Life authored
    deep, voice-first, Household Mode; **Digital Skills · Numbers · Reading** added (now 4 of 5 areas live, 24 lessons).
    *Remaining: Languages — deferred to the batched isiZulu/multilingual review (it's inherently multilingual).*
-5. **Our World** (Curiosity — geography/history/cultures) — the remaining World-A app per the blueprint,
-   built as a deep multi-module product, not a thin app. **Now the lead item.**
+5. ~~**Our World** (Curiosity)~~ — ✅ DONE (2026-06-27). Live PWA (our-world-b0t.pages.dev): the
+   belonging-journey app (Place · People · Planet) — six Journeys, South Africa authored deep (7
+   discoveries), 🏡 My Home opener + 📘 My Passport, voice-first, Household Mode. **All World-A "current"
+   apps per the BLUEPRINT are now shipped** (one live app in every pillar). Deepen passes (other 5
+   Journeys, age-band depths, bespoke activities, multilingual) are the post-2026 backlog.
 6. **TPH Core SDK** — extract from ReadAfrica into a shared package; adopt across apps (platform track).
+   **Now the lead item** alongside the deepen passes.
 7. **iKhaya** — steady background track toward a one-suburb beta; the funding-model decision must be
    resolved before its 2027 launch.
 
