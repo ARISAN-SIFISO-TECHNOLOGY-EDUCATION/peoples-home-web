@@ -254,6 +254,13 @@ Review:
 - **Least Privilege** — does each component have only the access it needs?
 - **Future Cloud Integration** — when iKhaya goes live, will World A stay safe?
 
+> **For the full security review framework** — 22 review domains, threat modelling,
+> adversarial review checklist, and the Security Review Report template — see
+> [`SECURITY_CONSTITUTION.md`](./SECURITY_CONSTITUTION.md).
+>
+> This section is the quick-check list. The Constitution is the complete reference
+> for any security-focused session.
+
 ---
 
 ## Knowledge Review Framework

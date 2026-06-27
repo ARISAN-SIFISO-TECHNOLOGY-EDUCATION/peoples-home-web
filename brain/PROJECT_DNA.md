@@ -14,7 +14,7 @@
 
 ---
 
-## The Fifteen Principles
+## The Sixteen Principles
 
 ---
 
@@ -247,6 +247,36 @@ that is clever today is a liability in 5 years.
 
 ---
 
+### 16. Secure by Design
+
+Security is never added after the fact. It is designed in from the first architectural
+decision. Every component, every data flow, every dependency, and every feature is
+evaluated for security impact before it is built.
+
+**What this means in practice:**
+- Security is the first question, not the last — ask "what can go wrong?" before "does it work?"
+- Never retrofit security controls onto an existing design; design them into the foundation
+- Every new dependency is evaluated for supply chain risk before it is added
+- Child data receives the highest protection — POPIA child protection rules apply always
+- Secrets never appear in source code, git history, client-side JavaScript, or AI conversations
+- The trust model is documented before any cross-boundary data flow is implemented
+- Every new World-B (iKhaya) feature is threat-modelled before being built
+- The Security Constitution (`brain/SECURITY_CONSTITUTION.md`) is the reference
+  for all security review work
+
+**What this does not mean:** every feature requires a formal security audit before shipping.
+It means that security is a continuous engineering habit, not a one-time gate.
+
+**Why this is DNA and not just a principle:** Principle 4 (No Tracking) covers privacy outputs.
+Principle 12 (Private by Default) covers configuration. Neither covers the engineering
+discipline of designing security into every component from the start. Secure by Design
+fills that gap.
+
+**The test:** before building any component, can you answer: what is the trust boundary?
+What data crosses it? What happens if the input is malicious? What happens if this is stolen?
+
+---
+
 ## How to use this file
 
 ### If you are an AI
@@ -269,6 +299,16 @@ But never implement something that violates the DNA without making the contradic
 
 ---
 
+## Security DNA reference
+
+For the full security engineering framework that supports Principle 16, see:
+[`brain/SECURITY_CONSTITUTION.md`](./SECURITY_CONSTITUTION.md)
+
+The Security Constitution contains the 22 security review domains, threat modelling
+questions, adversarial review approach, and the Security Review Report template.
+
+---
+
 ## Evolution log
 
 **2026-06-27 — v1.0:** Twelve principles extracted from:
@@ -283,3 +323,8 @@ But never implement something that violates the DNA without making the contradic
 - Modular Architecture — from the Universal AI Engineering Prompt
 - Long-Term Maintainability — from the Universal AI Engineering Prompt
 - Source: `brain/AI_SYSTEM_PROMPT.md` (founder-authored operating charter)
+
+**2026-06-27 — v1.2:** One new principle added (16):
+- Secure by Design — from the Universal Security Engineering Constitution
+- Security is a permanent architectural constraint, not a feature or a gate
+- Source: `brain/SECURITY_CONSTITUTION.md` (founder-authored security charter)

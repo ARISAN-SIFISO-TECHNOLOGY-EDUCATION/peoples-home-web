@@ -95,11 +95,15 @@ Read in this order. The first four (~10 minutes) are enough to act safely.
 13. [`decisions/`](./decisions/) + [`history/`](./history/) — reasoning archive and incident log.
 14. [`patterns/`](./patterns/) — reusable patterns (offline-first, journey-progression, etc.).
 15. [`PROJECT_GLOSSARY.md`](./PROJECT_GLOSSARY.md) — terminology and names.
-16. [`PROJECT_DNA.md`](./PROJECT_DNA.md) — the fifteen immutable principles; check before any build decision.
+16. [`PROJECT_DNA.md`](./PROJECT_DNA.md) — the sixteen immutable principles; check before any build decision.
 17. [`playbooks/`](./playbooks/) — step-by-step runbooks for recurring tasks.
 18. [`AI_SYSTEM_PROMPT.md`](./AI_SYSTEM_PROMPT.md) — **the operating charter**. How to think,
     review, and act as an engineering partner. Read this after the reading path to understand
     the review frameworks, engineering philosophy, and Final Review format.
+19. [`SECURITY_CONSTITUTION.md`](./SECURITY_CONSTITUTION.md) — **the security operating charter**.
+    How to operate as a security engineering partner. 22 review domains, threat modelling,
+    adversarial review, and the Security Review Report template. Read this whenever security
+    review, threat modelling, or secure architecture is the task.
 
 ---
 
@@ -127,6 +131,11 @@ are internal solo infrastructure. Do not suggest:
 - Making repos public
 - Publishing npm packages publicly
 - Exposing APIs without explicit auth
+
+For any security review, threat modelling, or security architecture work, read
+[`SECURITY_CONSTITUTION.md`](./SECURITY_CONSTITUTION.md) before proceeding.
+It defines the 22 review domains, the adversarial mindset, and the Security Review
+Report format that every security review must produce.
 
 ### When working on the WhatsApp bot (Kilimanjaro)
 

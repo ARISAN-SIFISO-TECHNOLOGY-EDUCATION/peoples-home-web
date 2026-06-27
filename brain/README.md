@@ -78,6 +78,7 @@ If you are continuing from a previous session → `brain/SESSION_HANDOFF.md`
 |---|---|
 | [`AI_ONBOARDING.md`](./AI_ONBOARDING.md) | How any AI should read, work in, and update this project |
 | [`AI_SYSTEM_PROMPT.md`](./AI_SYSTEM_PROMPT.md) | **Operating charter** — how to think, review, and act as an engineering partner |
+| [`SECURITY_CONSTITUTION.md`](./SECURITY_CONSTITUTION.md) | **Security operating charter** — 22 review domains, threat modelling, adversarial review, Security Review Report |
 | [`SESSION_HANDOFF.md`](./SESSION_HANDOFF.md) | Session continuity log — the last thing an AI wrote before context ended |
 | [`CURRENT_STATE.md`](./CURRENT_STATE.md) | Snapshot of every app, track, and platform piece right now |
 | [`PROJECT_TIMELINE.md`](./PROJECT_TIMELINE.md) | Chronological evolution of the whole project |
@@ -132,7 +133,7 @@ See [`platform/README.md`](./platform/README.md):
 
 | File / Directory | Purpose |
 |---|---|
-| [`PROJECT_DNA.md`](./PROJECT_DNA.md) | The twelve immutable principles — if a proposal violates one, the proposal is wrong |
+| [`PROJECT_DNA.md`](./PROJECT_DNA.md) | The sixteen immutable principles — if a proposal violates one, the proposal is wrong |
 | [`playbooks/`](./playbooks/) | Step-by-step operational runbooks: new app, deploy, bot update, review checklist |
 
 ### Deep dives
