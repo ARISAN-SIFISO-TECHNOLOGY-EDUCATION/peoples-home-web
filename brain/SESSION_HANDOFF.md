@@ -12,6 +12,72 @@
 
 ---
 
+## ✅ 2026-06-28 (session 10) — Founding story locked + AI principle established
+
+**Done this session:**
+
+### 1. The People's Home origin story captured (brain/history/HISTORY.md)
+
+The founding moment had never been written down. It is now:
+
+- Sifiso built **Math Adventure RPG** and published it to Google Play Store — the first app.
+- While building **Science Sprouts**, two things crystallised:
+  1. Google Play has policies that contradict the core belief — the store controls distribution,
+     can delist, and gatekeeps the relationship between builder and learner.
+  2. The vision was bigger than "publishing apps." It needed to be a *home* — for the apps
+     and for the people — where they learn, build, and achieve.
+- **Science Sprouts** became the last app ever published to Google Play.
+- **The People's Home** was founded — not as a technical decision, but as a values decision.
+
+**Founder verbatim (2026-06-28):**
+> *"I wanted to build a home for my apps and the people — where they'll learn, build, and achieve."*
+
+This is the lived expression of the one belief: *"Technology should empower society — not gatekeep it."*
+Google was gatekeeping. The People's Home was the answer.
+
+### 2. AI principle: Wire AI, don't activate it (PROJECT_DNA.md — Principle 17)
+
+The tension: #FreeForever means learners never pay. AI API calls cost money per learner per use.
+At scale, per-learner AI runtime cost is unsustainable without charging someone — and that someone
+cannot be the learner.
+
+**The rule (now Principle 17 in PROJECT_DNA.md):**
+- **AI builds the product** → ✅ acceptable. One-time build cost per feature (Claude Code,
+  ChatGPT planning). Falls on the builder, not the learner.
+- **AI runs the product for learners** → ❌ wired, not activated. Scales with users.
+  #FreeForever cannot survive per-learner API cost at scale without a funding model.
+
+**What "wired not activated" means in practice:**
+- iKhaya Phase 9 built the full AI matching architecture: consent page, Cloudflare proxy,
+  two-tier intelligence engine. All of it is there. None of it is running.
+- `ANTHROPIC_API_KEY` stays unset. The local tag-matching tier (zero API cost) IS the
+  #FreeForever product. AI ranking is the upgrade path for when economics allow.
+
+**Three conditions required before any AI tier activates in production:**
+1. A funding model covers the per-call cost without charging learners
+2. The feature degrades gracefully to the free local alternative if funding ends
+3. The decision is logged in DECISIONS.md with the funding model documented
+
+### 3. Brain files updated
+
+| File | Change |
+|---|---|
+| `brain/history/HISTORY.md` | New "Origins" section at the top — the founding moment |
+| `brain/decisions/DECISIONS.md` | D-11 (founding decision) + D-12 (wire AI, don't activate) |
+| `brain/PROJECT_DNA.md` | Principle 17 appended — Wire AI, Don't Activate It |
+| `brain/SESSION_HANDOFF.md` | This entry |
+
+**Commit:** `e9069f2` → `peoples-home-web` main
+
+**No code was written this session. All work was institutional memory.**
+
+**Next steps:**
+- Wait for ChatGPT brief on Wave 12 planning
+- 🔴 Keystore backup still outstanding (`upload-new.jks` — local-only, unrecoverable)
+- Set `ANTHROPIC_API_KEY` in Cloudflare only when a funding model is in place (see Principle 17)
+
+---
+
 ## ✅ 2026-06-28 (session 9) — iKhaya Phase 10 (Production Hardening)
 
 **Done this session:**
