@@ -12,6 +12,34 @@
 
 ---
 
+## ✅ 2026-06-28 (session 5) — iKhaya wired into The People's Home website + Kilimanjaro bot
+
+**Done this session:**
+- **`peoples-home/index.html`** — Opportunity Hub placeholder `<span>` converted to a live link:
+  `<a class="app live" href="https://ikhaya.pages.dev/" target="_blank" rel="noopener">Opportunity Hub ↗</a>`
+  iKhaya is now discoverable from the People's Home website. Commit `08b0f09`.
+- **`kilimanjaro/src/knowledge/platform.ts`** — Added `IKHAYA` WorldBEntry constant and updated
+  `formatPlatformContext()`. The bot now knows iKhaya is ✅ LIVE (was "coming 2027"), knows all
+  6 opportunity types, highlights 25 SA opportunities, and can direct learners to `ikhaya.pages.dev`
+  when they ask about bursaries, jobs, grants, learnerships, freelancing, or community opportunities.
+  Commit `91debf6`.
+
+**State of ongoing work:**
+- iKhaya Opportunity Hub Phase 7 (Application workspace) is the next build phase — not started.
+
+**Next steps (in order):**
+1. Phase 7 — Application workspace (CV builder, motivation helper, document checklist, deadline tracker)
+2. Phase 8 — Synchronisation layer (live opportunity data, notification engine)
+3. Phase 9 — Opportunity Intelligence Engine (AI matching with Capability Profile)
+4. Phase 10 — Production hardening (POPIA, security review, auth)
+5. Keystore backup (URGENT 🔴) — `upload-new.jks` local-only. Unrecoverable if lost.
+
+**Files changed:**
+- `peoples-home/index.html` — Opportunity Hub is now a live link (commit `08b0f09`)
+- `kilimanjaro/src/knowledge/platform.ts` — iKhaya added as live World-B entry (commit `91debf6`)
+
+---
+
 ## ✅ 2026-06-28 (session 4) — iKhaya Opportunity Hub Phase 4+5 built and pushed
 
 **Done this session:**
