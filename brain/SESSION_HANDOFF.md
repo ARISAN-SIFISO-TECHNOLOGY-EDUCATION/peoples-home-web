@@ -12,6 +12,45 @@
 
 ---
 
+## ✅ 2026-06-28 (session 4) — iKhaya Opportunity Hub Phase 4+5 built and pushed
+
+**Done this session:**
+- **GitHub repo created:** `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/ikhaya` (PRIVATE)
+- **Local path:** `C:\Users\sifis\Next-Level-Projects\ikhaya`
+- **Stack:** Vite + React 19 + TypeScript + vite-plugin-pwa + idb + react-router-dom
+- **Commit:** `305414c` — 25 files, 8,697 insertions
+- **Phases done:** Phase 2 (domain model as TS types) + Phase 4 (offline PWA foundation) + Phase 5 (discovery engine) + Phase 6 MVP (eligibility engine)
+
+**What was built:**
+- `src/types/opportunity.ts` — full domain model: 6 opportunity types, 9 provinces, 9 qualification levels, all entities
+- `src/data/seed-opportunities.ts` — 25 real SA opportunities (NSFAS, YES, NYDA, WeThinkCode_, GADS, Upwork, Harambee, etc.)
+- `src/storage/db.ts` — IndexedDB layer (idb), namespace: `tph_oh_db`
+- `src/engines/discoveryEngine.ts` — full-text search, 8 filter types, sorted results
+- `src/engines/eligibilityEngine.ts` — age/province/qualification/citizenship checks, ✓/⚠/✗/— verdicts
+- `src/pages/DiscoverPage.tsx` — search bar, type chips, filter chips, opportunity cards with eligibility
+- `src/pages/OpportunityDetailPage.tsx` — full detail, eligibility breakdown, Apply Now CTA
+- `src/pages/ApplicationsPage.tsx` — application tracking (empty state — Phase 7 needed)
+- `src/pages/ProfilePage.tsx` — local profile: age, province, qualification, citizenship, interests
+- PWA: service worker, workbox precache, manifest, `_redirects` for SPA routing
+- Build: ✓ 275 kB JS, 6 kB CSS, no errors
+
+**Cloudflare Pages deploy — PENDING manual setup:**
+- Wrangler CLI failed (TLS cert issue in this environment)
+- **Action required:** Cloudflare Dashboard → Workers & Pages → Create → Pages → Connect to Git
+  - Repo: `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/ikhaya`
+  - Branch: `main` · Build: `npm run build` · Output: `dist` · NODE_VERSION: `20`
+
+**Next steps (in order):**
+1. ⏳ **Connect Cloudflare Pages** (manual — see above)
+2. Phase 7 — Application workspace (CV builder, motivation helper, checklist)
+3. Phase 8 — Sync layer (fetch live opportunities, notification engine)
+4. Phase 9 — Opportunity Intelligence Engine (AI matching)
+
+**Files changed (this session):**
+- `C:\Users\sifis\Next-Level-Projects\ikhaya\` — new repo, 25 files
+
+---
+
 ## ✅ 2026-06-27 (session 3) — Opportunity Hub defined and locked in Brain
 
 **Done this session:**
