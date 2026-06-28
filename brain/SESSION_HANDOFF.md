@@ -12,128 +12,43 @@
 
 ---
 
-## ⏳ 2026-06-27 (session 3) — PENDING EXECUTION: Opportunity Hub Brain Definition
+## ✅ 2026-06-27 (session 3) — Opportunity Hub defined and locked in Brain
 
-> **STATUS: PLAN APPROVED. NOTHING HAS BEEN WRITTEN YET. EXECUTE THIS NEXT.**
+**Done this session:**
+- **`brain/platform/opportunity-hub.md`** (NEW) — Full permanent definition of Opportunity Hub:
+  purpose, mission, vision, the 5-step philosophy chain, the single sentence definition,
+  position in the iKhaya ecosystem, all 6 opportunity types with examples, all 7 engines
+  with full specs, relationship to World A / TPH Core / iKhaya, 3 architectural tensions,
+  8 guiding principles, 5 success metrics, current status, link to build playbook.
+- **`brain/playbooks/build-opportunity-hub.md`** (NEW) — 10-phase implementation blueprint:
+  Phase 1 (done) through Phase 10 (production hardening). Each phase has goal, inputs needed,
+  key decisions, key files, done condition, and POPIA/security considerations.
+- **`brain/platform/ikhaya.md`** (UPDATED) — Platform module map appended. iKhaya's full
+  module set documented: OH, Learning Hub, Skills Passport, Funding Hub, Career Hub,
+  Entrepreneurship Hub, Community Hub. Cross-reference to opportunity-hub.md added.
+- **`brain/PROJECT_GLOSSARY.md`** (UPDATED) — 7 new entries added: Opportunity Hub,
+  iKhaya Platform Modules, Opportunity Intelligence Engine, Eligibility Engine,
+  Discovery Engine, Application Engine, Capability Profile, #FreeForever Funding Fork.
 
-**What to do at the start of the next session:**
+**Architecture locked:**
+- iKhaya = platform brand. Opportunity Hub = flagship module. This distinction is now
+  in the brain and must never collapse.
+- Capability chain: Capability → Confidence → Readiness → Opportunity → Real-World Outcomes
+- 6 opportunity types: Education, Employment, Entrepreneurship, Funding, Community, Global & Digital
+- 7 engines: Opportunity, Eligibility, Discovery, Application, Progress, Notification, Intelligence
 
-Execute the approved Opportunity Hub plan. Say "build it" or read below and execute directly.
+**Next steps (in order):**
+1. **Keystore backup (URGENT 🔴)** — `upload-new.jks` is local-only. Back up now.
+2. **Wave 12 planning** — wait for ChatGPT brief before starting.
+3. **TPH Core SDK extraction** — extract from ReadAfrica into `@tph/core`.
+4. **Opportunity Hub Phase 2** — domain model. Begin only when directed.
+   Start with: tech stack decision, opportunity data source, entity ownership.
 
-**The 5 files to create/update (in order):**
-
-### 1. CREATE `brain/platform/opportunity-hub.md`
-
-Full permanent definition of Opportunity Hub. Must include:
-
-- **What it is NOT**: not a job board, not a learning app
-- **Purpose**: connect capable people with real opportunities (teaching happens in World A)
-- **Mission**: ensure every learner can discover pathways to education, work, entrepreneurship, funding, and community opportunities that match their capabilities
-- **Vision**: a South Africa (and ultimately Africa) where no opportunity remains hidden from someone who has the capability to pursue it
-- **Philosophy chain**: Capability → Confidence → Readiness → Opportunity → Real-World Outcomes
-- **Single sentence definition** (verbatim from founder):
-  > *"Opportunity Hub is the transition layer of The People's Home, transforming demonstrated capability into discoverable real-world opportunities by matching learners, workers, founders, and families with education, employment, entrepreneurship, funding, and community pathways."*
-- **Position**: inside iKhaya (World B). Not a World-A app. iKhaya is the platform; Opportunity Hub is its flagship module.
-- **The 6 opportunity types** (each with examples):
-  1. Education — bursaries, scholarships, learnerships, TVET, universities, online
-  2. Employment — jobs, internships, graduate programmes, casual/seasonal work
-  3. Entrepreneurship — startup programmes, incubators, accelerators, competitions, mentorship
-  4. Funding — grants, seed funding, competitions, government/NGO support
-  5. Community — volunteering, youth programmes, civic projects, leadership initiatives
-  6. **Global & Digital Opportunities** — freelancing, remote work, open-source, hackathons, AI challenges
-- **The 7 engines** (each with purpose):
-  1. Opportunity Engine — stores/indexes all opportunity records (title, category, location, requirements, deadline, org, skills, age, language, process)
-  2. Eligibility Engine — answers "Can I apply?" (age ✓, province ✓, qualification ✓, missing requirements ⚠)
-  3. Discovery Engine — search/filter by age, province, category, interest, free-only
-  4. Application Engine — helps prepare (CV, motivation letter, checklist, documents, deadlines)
-  5. Progress Engine — tracks Interested → Preparing → Applied → Interview → Accepted
-  6. Notification Engine — offline-first; syncs and notifies only relevant opportunities when online
-  7. **Opportunity Intelligence Engine** — consumes TPH Core Capability Profile (with consent) → surfaces ranked, relevant opportunities; AI-assisted matching
-- **Relationship to World A**: consumes Capability Profile from TPH Core (user consent required)
-- **Relationship to iKhaya**: flagship module; iKhaya is the overarching platform brand
-- **Architectural tensions to hold**:
-  - Offline-capable UI vs. live data (server needed for freshness) → cache locally, degrade gracefully
-  - Privacy-first vs. personalisation → local profile by default, explicit consent for cloud matching
-  - #FreeForever vs. backend costs → unresolved funding fork (link to ikhaya.md)
-- **8 guiding principles** (derive from the vision — e.g., capability-first, not job-first; equity-of-access; privacy-by-default; opportunity breadth over depth; no dark patterns; Africa-ready not just SA-ready; dignity-first UX; measurable outcomes)
-- **Success Metrics**:
-  1. Opportunities discovered (browse/search → ≥1 opportunity viewed)
-  2. Applications started (user entered Application Engine)
-  3. Applications completed (user marked as submitted)
-  4. Opportunities accepted (marked as accepted/enrolled/hired)
-  5. Learner transitions (moved from World-A learning into a real-world pathway)
-- **Status**: In Planning — 2026-06-27
-- **Link**: `brain/playbooks/build-opportunity-hub.md`
-
----
-
-### 2. CREATE `brain/playbooks/build-opportunity-hub.md`
-
-10-phase implementation blueprint. Not a coding session — a reference for future builds.
-
-| Phase | Name | Key deliverable |
-|---|---|---|
-| 1 | Vision & Brain | Canonical definition locked (this session — done) |
-| 2 | Domain model | Data model: Opportunity, Organisation, Application, Eligibility, UserProfile, CapabilitySignal |
-| 3 | UX & navigation | User journeys for each of 6 opportunity types; wireframes |
-| 4 | Offline-first foundation | PWA shell, service worker, localStorage schema, offline-capable browse |
-| 5 | Opportunity discovery engine | Search, filter, browse with locally cached data |
-| 6 | Eligibility engine | "Can I apply?" matching rules against local profile |
-| 7 | Application workspace | CV builder, checklist, document tracker, deadlines |
-| 8 | Synchronisation layer | Online/offline sync, Notification Engine, freshness |
-| 9 | Opportunity Intelligence Engine | Capability Profile → ranked recommendations, AI matching |
-| 10 | Production hardening | Auth (if needed), POPIA review, Security Constitution review, deploy |
-
-Each phase entry: Goal / Inputs needed / Key decisions / Key files / Outputs / POPIA/Security notes.
-
----
-
-### 3. UPDATE `brain/platform/ikhaya.md`
-
-Append (do not rewrite) these sections:
-
-**iKhaya Platform Architecture (2026-06-27 update)**
-
-The full platform module map:
-```
-iKhaya (World B platform)
-├── Opportunity Hub      ← flagship module (defined 2026-06-27 — see opportunity-hub.md)
-├── Learning Hub
-├── Skills Passport
-├── Funding Hub
-├── Career Hub
-├── Entrepreneurship Hub
-├── Community Hub
-└── Future Modules
-```
-
-iKhaya = platform brand. Opportunity Hub = flagship module and first product to be built.
-Cross-reference: `brain/platform/opportunity-hub.md`
-
----
-
-### 4. UPDATE `brain/PROJECT_GLOSSARY.md`
-
-Add under "Product and platform terms":
-- **Opportunity Hub** — iKhaya's flagship module and discovery/matching engine; transforms demonstrated capability into discoverable real-world opportunity across 6 types: Education, Employment, Entrepreneurship, Funding, Community, Global & Digital Opportunities
-- **iKhaya Platform Modules** — the full module set: Opportunity Hub, Learning Hub, Skills Passport, Funding Hub, Career Hub, Entrepreneurship Hub, Community Hub
-- **Opportunity Intelligence Engine** — the 7th engine in Opportunity Hub; consumes the Capability Profile from TPH Core and surfaces ranked, AI-assisted opportunity recommendations
-- **Eligibility Engine** — answers "Can I apply?" by matching opportunity requirements against the learner's local profile
-- **Discovery Engine** — powers search, filter, and browse across all 6 opportunity types
-- **Capability Profile** — a TPH Core construct; the summary of what a learner has demonstrated across World-A apps; consumed by Opportunity Hub (with consent) for personalised matching
-- **#FreeForever Funding Fork** — the unresolved question of how iKhaya's backend costs are sustained while World A stays free forever; must be resolved before 2027 launch
-
----
-
-### 5. UPDATE `brain/SESSION_HANDOFF.md`
-
-Replace this `⏳ PENDING` entry with a `✅ DONE` entry after execution.
-
----
-
-**Full plan file**: `C:\Users\sifis\.claude\plans\as-i-am-building-unified-dove.md`
-
-**Commit to**: `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/peoples-home-web` main
+**Files changed:**
+- `brain/platform/opportunity-hub.md` — new: full definition
+- `brain/playbooks/build-opportunity-hub.md` — new: 10-phase build blueprint
+- `brain/platform/ikhaya.md` — updated: platform module map + cross-reference
+- `brain/PROJECT_GLOSSARY.md` — updated: 7 new entries
 
 ---
 

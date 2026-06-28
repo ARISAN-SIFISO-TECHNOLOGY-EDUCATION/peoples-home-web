@@ -62,6 +62,53 @@ The three-level classification of every product in the system.
 
 ## Product and platform terms
 
+**Opportunity Hub**
+iKhaya's flagship module and discovery/matching engine. Transforms demonstrated capability
+into discoverable real-world opportunity across 6 types: Education, Employment,
+Entrepreneurship, Funding, Community, and Global & Digital Opportunities. Contains 7 engines.
+The "transition layer" of The People's Home — it does not teach (World A does that);
+it connects capable people to real-world pathways. Not a job board.
+Full definition: `brain/platform/opportunity-hub.md`.
+
+**iKhaya Platform Modules**
+The full set of products that live inside iKhaya (World B):
+Opportunity Hub (flagship, first to be built), Learning Hub, Skills Passport, Funding Hub,
+Career Hub, Entrepreneurship Hub, Community Hub, and future modules.
+iKhaya is the platform brand; these are its products. Never conflate one module with the platform.
+
+**Opportunity Intelligence Engine**
+The 7th engine in Opportunity Hub. Consumes the Capability Profile from TPH Core SDK
+(with explicit learner consent) and surfaces ranked, AI-assisted opportunity recommendations.
+Two layers: local tag-matching (offline, no consent needed) + Claude-powered ranking
+(online, opt-in only). Separates Opportunity Hub from a directory.
+
+**Eligibility Engine**
+Engine 2 in Opportunity Hub. Answers "Can I apply?" by matching opportunity requirements
+(age, province, qualification level, citizenship) against the learner's local profile.
+Shows ✓ / ⚠ / ✗ indicators without making the learner read wall-of-text requirements.
+
+**Discovery Engine**
+Engine 3 in Opportunity Hub. Powers search, filter, and browse across all 6 opportunity types.
+Works offline using locally cached opportunity data. Debounced search, multi-filter support.
+
+**Application Engine**
+Engine 4 in Opportunity Hub. Helps learners prepare and track applications: CV builder,
+motivation letter helper, document checklist, deadline tracker, application history.
+Addresses the core problem: most SA learners have never written a formal application.
+
+**Capability Profile**
+A TPH Core SDK construct. The structured summary of what a learner has demonstrated across
+World-A apps: completed journeys, earned stamps, capability tags. Consumed by the Opportunity
+Intelligence Engine (with explicit consent) to personalise opportunity recommendations.
+Stored locally on the device; never shared without learner consent.
+
+**#FreeForever Funding Fork**
+The unresolved sustainability question for iKhaya/World B: the backend infrastructure
+(server, database, AI calls) has real running costs, but learners must never pay.
+Candidate resolutions: Foundation grants, Microsoft-for-Startups Azure credits, organisation-side
+listing fees (free to apply; paid to post featured opportunities). Must be resolved before
+the 2027 iKhaya flagship launch.
+
 **TPH Core SDK**
 The shared code library embedded across World-A apps: narration engine, progress tracking,
 People's Home Passport, shared activity types. Currently embedded in ReadAfrica; extraction

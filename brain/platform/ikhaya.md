@@ -53,8 +53,43 @@ Build toward the one-suburb beta as a steady background track (parallel to the W
 passes); **resolve the funding fork before 2027.** This is the long arc — the apps are the proof,
 iKhaya is the payoff.
 
+## iKhaya Platform Architecture (2026-06-27 update)
+
+**iKhaya is the platform. Its products are modules.**
+
+This distinction was clarified on 2026-06-27 when Opportunity Hub was fully defined as
+the flagship module — not as a synonym for iKhaya.
+
+```
+iKhaya (World B — opportunity platform)
+│
+├── Opportunity Hub          ← flagship module (defined 2026-06-27)
+│     The discovery and matching engine: 6 opportunity types, 7 engines,
+│     capability-to-opportunity transition layer.
+│     Full definition: brain/platform/opportunity-hub.md
+│
+├── Learning Hub             ← server-backed tutoring (see ikhaya-learn.md)
+│
+├── Skills Passport          ← formal credential and verified achievement layer
+│
+├── Funding Hub              ← dedicated funding discovery (grants, seed, competitions)
+│
+├── Career Hub               ← long-term career pathway navigation
+│
+├── Entrepreneurship Hub     ← venture building support and incubation
+│
+├── Community Hub            ← local community projects and coordination
+│
+└── Future Modules           ← not yet defined; iKhaya grows as needs emerge
+```
+
+**Build sequence:** Opportunity Hub is built first. Its data model, sync layer, and
+Intelligence Engine will be reused and extended by future modules. See
+[`../playbooks/build-opportunity-hub.md`](../playbooks/build-opportunity-hub.md).
+
 ## Related
 - [`../architecture/02-world-a-world-b-dna.md`](../architecture/02-world-a-world-b-dna.md) (why it's separate) ·
   [`ikhaya-learn.md`](./ikhaya-learn.md) (a related server-backed learning portal) ·
+  [`opportunity-hub.md`](./opportunity-hub.md) (flagship module — full definition) ·
   [`../apps/mzansi-money.md`](../apps/mzansi-money.md) · [`../apps/micro-founders.md`](../apps/micro-founders.md)
   (the apps that bridge into it).
