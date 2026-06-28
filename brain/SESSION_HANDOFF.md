@@ -12,6 +12,61 @@
 
 ---
 
+## ✅ 2026-06-28 (session 11) — Keystore backup + Science Sprouts signing config
+
+**Done this session:**
+
+### 1. Keystore backup bundle created
+
+Both Google Play upload keystores are now bundled and ready for off-machine storage.
+
+**Backup location (LOCAL — must be moved off-machine):**
+```
+C:\Users\sifis\Desktop\TPH-KEYSTORES-BACKUP-2026-06-28\
+```
+
+**Contents:**
+| File | App | Alias |
+|---|---|---|
+| `math-adventure-rpg--upload-new.jks` | Math Adventure RPG | `upload` |
+| `math-adventure-rpg--keystore.properties` | Math Adventure RPG | — |
+| `science-sprouts--upload.jks` | Science Sprouts | `upload` |
+| `README.txt` | Instructions + alias info (no passwords) | — |
+
+**Password:** same for both apps — stored in your password manager under `TPH Android Keystores`.
+
+**🔴 OUTSTANDING ACTION:** Copy `TPH-KEYSTORES-BACKUP-2026-06-28/` to Google Drive
+(private folder) + a second off-machine location. This is the only thing not yet done.
+Once copied, the keystore 🔴 is fully resolved.
+
+### 2. Science Sprouts — signing config added (commit `e4176ae`)
+
+Science Sprouts had no `keystore.properties` and no signing config in `build.gradle`.
+Release builds were unsigned. Fixed to match Math Adventure RPG exactly.
+
+**Files changed:**
+- `android/app/science-sprouts-upload.jks` — keystore copied into `android/app/`
+  (was at project root; now consistent with MA layout; gitignored)
+- `android/keystore.properties` — created (gitignored): storeFile, storePassword,
+  keyAlias=`upload`, keyPassword
+- `android/app/build.gradle` — added keystoreProps loader + `signingConfigs.release`
+  block; enabled `minifyEnabled true` + `shrinkResources true` (was `false`)
+- `android/.gitignore` — uncommented `*.jks` / `*.keystore`; added `keystore.properties`
+  rule (was commented out — risked accidental commit of secrets)
+
+**Result:** `gradle assembleRelease` / `bundleRelease` now produces a properly signed
+AAB on the dev machine without any credentials in source control.
+
+**Note:** the original `science-sprouts-upload.jks` at the project root is still there
+but can be deleted — the active copy is now in `android/app/`.
+
+**Next steps:**
+1. 🔴 Copy keystore backup to Google Drive (5 minutes)
+2. Add `TPH Android Keystores` entry to password manager with the shared password
+3. Wait for ChatGPT brief on Wave 12 planning
+
+---
+
 ## ✅ 2026-06-28 (session 10) — Founding story locked + AI principle established
 
 **Done this session:**
