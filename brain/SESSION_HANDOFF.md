@@ -12,6 +12,71 @@
 
 ---
 
+## ✅ 2026-06-28 (session 7) — iKhaya Phase 8 (Synchronisation Layer + Notification Engine)
+
+**Done this session:**
+
+- **Phase 8 — Synchronisation Layer (commit `1ec4edb`):**
+  - `public/api/opportunities.json` — static "API" payload (all 25 seed opportunities).
+    Served by Cloudflare Pages at `/api/opportunities.json`. When Phase 10 adds a real
+    backend, only `SYNC_URL` in `opportunitySync.ts` changes.
+  - `src/sync/opportunitySync.ts` — `fetchRemoteOpportunities()` fetches the JSON with
+    a 10s timeout, returns null on any network failure (never throws)
+  - `src/sync/syncManager.ts` — `checkAndSync()` (24h gate, fires on app open) and
+    `performSync()` (force, called on manual refresh). Merges remote data into IndexedDB.
+    Server is authoritative for opportunity records; local is authoritative for applications.
+    Updates SyncRecord (idle / syncing / error). Detects new opportunities since last sync.
+  - `src/engines/notificationEngine.ts` — `getActiveNotifications()` generates in-app
+    deadline alerts from local data only. Critical (<48h), urgent (<N days from prefs, default 7).
+    Filters by notification type preferences. No PII leaves the device. Push notifications
+    deferred to Phase 10 (requires backend auth).
+  - `src/components/SyncStatus.tsx` — replaces old static SyncBanner. Shows relative
+    "last updated" time ("just now", "3h ago", "yesterday"), spinning ⟳ while syncing,
+    manual 🔄 refresh button, "+N new" badge when new opportunities arrive
+  - `src/components/NotificationBanner.tsx` — dismissible deadline alert stack
+    (critical = red left-border, urgent = amber). Only shown on list/discover screens,
+    hidden inside detail/workspace views.
+  - `src/App.tsx` — wired: seed → stamp SyncRecord → load notifications →
+    background checkAndSync on mount; manual refresh via handleRefresh(); urgent
+    notification badge (red dot) on My Applications nav tab
+  - `src/pages/ProfilePage.tsx` — new "🔔 Alert Preferences" section: toggle for
+    new-opportunity alerts, range slider for closing-soon window (1–30 days),
+    per-type chip filter
+  - `src/storage/db.ts` — added `getNotificationPrefs()` and `saveNotificationPrefs()`
+    (uses existing `notificationPrefs` store; no DB version bump needed)
+  - `src/index.css` — Phase 8 styles: `.sync-banner-left`, `.sync-spinner`,
+    `.sync-new-badge`, `.sync-refresh-btn`, `.notification-panel`, `.notification-item`
+    (critical/urgent/info variants), `.notification-dismiss`, `.nav-badge`,
+    `.notif-pref-section`, `.notif-toggle-row`
+  - Build: 40 modules, 307 kB JS, 16.8 kB CSS. 0 TypeScript errors.
+
+**State of ongoing work:**
+- Phase 8 complete and deployed to ikhaya.pages.dev (commit `1ec4edb` → Cloudflare Pages).
+- Sync works offline (falls back to local data; shows error state in status bar).
+- Notifications are in-app only (no push); alerts reset on new session (dismissed via sessionStorage).
+
+**Next steps (in order):**
+1. **Phase 9 — Opportunity Intelligence Engine** (AI matching, Capability Profile integration)
+   Requires: TPH Core SDK extraction from ReadAfrica → `@tph/core`; Claude API access from client
+2. **Phase 10 — Production hardening** (POPIA review, security audit, auth if needed)
+3. **Real backend** — Railway or Cloudflare Workers endpoint to replace static JSON "API".
+   When built, only `SYNC_URL` in `src/sync/opportunitySync.ts` needs to change.
+4. **Keystore backup (URGENT 🔴)** — `upload-new.jks` is local-only. Unrecoverable if lost.
+
+**Files changed:**
+- `ikhaya/public/api/opportunities.json` — new static API payload
+- `ikhaya/src/sync/opportunitySync.ts` — new
+- `ikhaya/src/sync/syncManager.ts` — new
+- `ikhaya/src/engines/notificationEngine.ts` — new
+- `ikhaya/src/components/SyncStatus.tsx` — new (replaces inline SyncBanner)
+- `ikhaya/src/components/NotificationBanner.tsx` — new
+- `ikhaya/src/App.tsx` — wired sync + notifications; new imports
+- `ikhaya/src/pages/ProfilePage.tsx` — added Alert Preferences section
+- `ikhaya/src/storage/db.ts` — getNotificationPrefs / saveNotificationPrefs added
+- `ikhaya/src/index.css` — Phase 8 styles (~100 lines added)
+
+---
+
 ## ✅ 2026-06-28 (session 6) — iKhaya Phase 7 (Application Workspace) + deploy fix
 
 **Done this session:**
