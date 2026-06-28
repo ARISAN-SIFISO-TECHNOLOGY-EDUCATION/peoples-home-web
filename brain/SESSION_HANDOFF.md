@@ -12,6 +12,68 @@
 
 ---
 
+## ✅ 2026-06-28 (session 6) — iKhaya Phase 7 (Application Workspace) + deploy fix
+
+**Done this session:**
+- **Blank page fix (deploy):** Cloudflare Pages was serving the raw source `index.html`
+  (with `<script src="/src/main.tsx">`) because `NODE_ENV=production` caused npm to skip
+  devDependencies — so `vite`, `typescript`, `@vitejs/plugin-react` were never installed
+  and the build silently failed. Fix: moved all build tools to `dependencies`; simplified
+  build script to `vite build`; added `wrangler.toml` locking `pages_build_output_dir = dist`.
+  Commit `024a2f6`.
+
+- **Phase 7 — Application Workspace (commit `1fffea9`):**
+  - `src/engines/applicationEngine.ts` — creates/updates ApplicationRecord locally;
+    `startApplication`, `updateStage`, `saveNotes`, `saveCVData`, `saveMotivation`,
+    `toggleDocument`, `addDocument`; text-export formatters for CV and motivation letter
+  - `src/pages/ApplicationWorkspacePage.tsx` — 4-tab workspace: Overview (notes, status
+    summary, history, apply button), CV, Letter, Documents; stage progress bar
+    (Interested → Preparing → Applied → In Progress → Accepted) + outcome buttons
+    (Declined / Withdrawn); debounced 600ms saves; clipboard copy for CV and letter
+  - `src/components/CVBuilder.tsx` — SA CV form: Personal info, Education, Experience
+    (incl. volunteer flag), Skills (chip input), Languages (chip input), References
+  - `src/components/MotivationHelper.tsx` — 4-section guided letter with prompts and
+    word count; auto-saves on change
+  - `src/components/DocumentChecklist.tsx` — tick-off checklist with required/optional
+    badges, progress counter, custom document add
+  - `src/components/DeadlineTracker.tsx` — days-remaining badge (green/amber/red/rolling)
+  - `src/types/opportunity.ts` — CVData, CVEducation, CVExperience, CVReference,
+    MotivationDraft interfaces added
+  - `src/pages/OpportunityDetailPage.tsx` — "Start / Continue Application Workspace"
+    primary button; loads existing application state on mount
+  - `src/pages/ApplicationsPage.tsx` — tapping card navigates to workspace
+  - `src/App.tsx` — `/application/:opportunityId` route; workspace hides bottom nav
+  - `src/index.css` — full Phase 7 styles (~200 lines)
+  - Build: 35 modules, 300 kB JS, 14 kB CSS. 0 TypeScript errors.
+
+**State of ongoing work:**
+- Cloudflare Pages should now be deploying the correct built version. Verify at ikhaya.pages.dev.
+- Phase 7 complete and deployed.
+
+**Next steps (in order):**
+1. Phase 8 — Synchronisation layer (live opportunity data, notification engine)
+   Requires: server-side opportunity API endpoint (no backend exists yet)
+2. Phase 9 — Opportunity Intelligence Engine (AI matching with Capability Profile)
+3. Phase 10 — Production hardening (POPIA, security review, auth)
+4. Keystore backup (URGENT 🔴) — `upload-new.jks` local-only. Unrecoverable if lost.
+
+**Files changed:**
+- `ikhaya/src/engines/applicationEngine.ts` — new
+- `ikhaya/src/pages/ApplicationWorkspacePage.tsx` — new
+- `ikhaya/src/components/CVBuilder.tsx` — new
+- `ikhaya/src/components/MotivationHelper.tsx` — new
+- `ikhaya/src/components/DocumentChecklist.tsx` — new
+- `ikhaya/src/components/DeadlineTracker.tsx` — new
+- `ikhaya/src/types/opportunity.ts` — CVData + MotivationDraft interfaces added
+- `ikhaya/src/App.tsx` — new route + nav hide
+- `ikhaya/src/pages/OpportunityDetailPage.tsx` — workspace entry button
+- `ikhaya/src/pages/ApplicationsPage.tsx` — navigate to workspace
+- `ikhaya/src/index.css` — Phase 7 styles
+- `ikhaya/package.json` — build tools moved to dependencies
+- `ikhaya/wrangler.toml` — new, locks Cloudflare output dir
+
+---
+
 ## ✅ 2026-06-28 (session 5) — iKhaya wired into The People's Home website + Kilimanjaro bot
 
 **Done this session:**
