@@ -6,6 +6,36 @@
 
 ---
 
+## Origins — how The People's Home came to exist
+
+**The first app:** Sifiso built **Math Adventure RPG** and published it to Google Play Store.
+That was the beginning — a learning app, built and shipped.
+
+**The moment:** While building the second app — **Science Sprouts** — two things became clear:
+
+1. **Google Play has laws I don't like.** The Play Store is not a neutral delivery channel.
+   It has policies, approval power, distribution control, and the ability to delist at any time.
+   The apps were inside someone else's walls, subject to someone else's rules. That contradicts the
+   whole point: *technology should empower society, not gatekeep it.* Google was gatekeeping.
+
+2. **The vision was bigger than "my apps."** It wasn't enough to build individual apps and publish
+   them. There needed to be **a home** — for the apps, and for the people. A place where people
+   could learn, build, and achieve. Not inside an app store. Inside something built for them.
+
+**The decision:** Science Sprouts became the last app published to Google Play, ever.
+The People's Home was born — not as a technical platform decision, but as a values decision.
+The builder chose to build *outside* someone else's walls.
+
+**The founding purpose (verbatim):**
+> *"I wanted to build a home for my apps and the people — where they'll learn, build, and achieve."*
+
+**Why this matters to record:** Every architectural decision downstream — PWA-first, #FreeForever,
+offline-first, no accounts, no tracking, private by default — flows from this founding moment.
+The People's Home is not a collection of apps that happened to share a website. It is a home
+that was deliberately built because the alternatives were controlled by someone else.
+
+---
+
 ## Incidents (hard-won lessons)
 
 ### Keystore rotation (~2026-06-09) — *done, but it left a standing debt*

@@ -91,6 +91,48 @@
 - **Realisation:** the root doc set (BLUEPRINT/ECOSYSTEM/ROADMAP/DECISIONS) began it; this
   `docs/memory/` system completes it as the canonical, evolution-aware institutional memory.
 
+## D-11 · The People's Home founding decision — leave Google Play, build a home (during Science Sprouts build, 2025/2026)
+
+- **Before:** Google Play was the delivery channel. Math Adventure RPG was published there.
+  Science Sprouts was next in the pipeline.
+- **The moment:** while building Science Sprouts, two things crystallised:
+  1. Google Play has policies the founder disagrees with — distribution control, approval power,
+     the ability to delist, the implied ownership of the relationship between builder and learner.
+  2. The vision was larger than "publishing my apps" — it needed to be a *home* for the people:
+     a place to learn, build, and achieve, built for them, not inside someone else's store.
+- **The decision:** Science Sprouts becomes the last Play Store app, ever. The People's Home is
+  founded — not as a technical framework, but as a values statement.
+- **The founding purpose (verbatim from founder, 2026-06-28):**
+  > *"I wanted to build a home for my apps and the people — where they'll learn, build, and achieve."*
+- **Consequence:** every structural decision downstream flows from this moment:
+  PWA-first (no store gatekeeping), #FreeForever (no paywall gatekeeping), offline-first
+  (no connectivity gatekeeping), no accounts (no data gatekeeping), South Africa first
+  (no geography gatekeeping). The "one belief" — *technology should empower society, not gatekeep it* —
+  is this decision, made into a principle.
+- See [`history/HISTORY.md`](./history/HISTORY.md) → "Origins" section.
+
+## D-12 · Wire AI, don't activate it — AI must not create per-learner runtime cost (2026-06-28)
+
+- **Context:** iKhaya Phase 9 wired in Claude-powered AI matching (consent page, proxy endpoint,
+  two-tier intelligence engine). Phase 10 shipped without setting `ANTHROPIC_API_KEY` — the
+  feature exists architecturally but is dormant.
+- **The principle:** AI is used to **build** The People's Home (Claude Code, ChatGPT planning).
+  That cost falls on the builder, once, per feature. That is acceptable.
+  AI must **not run as a per-learner feature** in production, because that cost scales with every
+  user — and #FreeForever means learners never pay, which means the builder absorbs it all.
+  At scale that is unsustainable.
+- **The rule:** wire AI capabilities into the architecture. Build the infrastructure. Build the
+  consent flows. Build the proxy. But do not activate the API key until a sustainable model exists
+  that does not violate #FreeForever. Local/offline alternatives (tag-based matching, on-device
+  inference) are the real #FreeForever product. AI is the upgrade path for when the economics allow.
+- **What "sustainable" means:** a grant, NGO funding, an organisational payment model
+  (organisations pay to *post* opportunities; learners never pay), or on-device models that
+  have zero API cost. Any of these unlocks the AI tier without taxing learners.
+- **The exception that is not an exception:** using AI to *build* the product is fine.
+  Claude Code, ChatGPT planning, AI-assisted scaffolding — these are build-time costs,
+  not runtime costs. They do not violate #FreeForever.
+- See [`PROJECT_DNA.md`](./PROJECT_DNA.md) → Principle 17.
+
 ---
 
 > **Open decisions (not yet resolved):**

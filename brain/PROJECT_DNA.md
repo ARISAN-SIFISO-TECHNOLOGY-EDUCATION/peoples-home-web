@@ -277,6 +277,41 @@ What data crosses it? What happens if the input is malicious? What happens if th
 
 ---
 
+### 17. Wire AI, Don't Activate It
+
+AI is used to **build** The People's Home. It must never **run** it at the learner's expense.
+
+**The distinction:**
+- **AI as a build tool** (Claude Code, ChatGPT planning, AI-assisted scaffolding) → ✅ acceptable.
+  This is the builder's cost, paid once per feature, not per learner.
+- **AI as a runtime feature** (per-learner API calls in production) → ❌ wired, not activated.
+  This cost scales with every user. At 10,000 learners it becomes a bill no one is paying.
+  #FreeForever means learners never pay — which means the builder absorbs it all. That is not sustainable.
+
+**What this means in practice:**
+- Build the AI infrastructure: consent flows, proxy endpoints, intelligence engines, local fallbacks.
+  All of it. Wire it properly. Make it ready.
+- Do not set production API keys. Do not activate the AI tier. Leave it dormant until a
+  sustainable model exists that does not require learners to pay.
+- The **local/offline tier** (tag matching, on-device inference, deterministic algorithms) is
+  the real #FreeForever product. AI is the upgrade path for when the economics allow.
+- "Sustainable" means: a grant, NGO funding, organisational payments (organisations pay to *post*
+  opportunities; learners never pay), or on-device models with zero API cost. Any of these unlocks
+  the AI tier without taxing the people the platform serves.
+
+**What triggers activation:**
+An AI feature may be activated in production only when all three are true:
+1. A funding model covers the per-call cost without charging learners
+2. The feature gracefully degrades to the free local alternative if the funding ends
+3. The decision is logged in `DECISIONS.md` with the funding model documented
+
+**Why this is DNA:**
+#FreeForever (Principle 1) is the founding promise. AI is the fastest way to accidentally break it —
+not through malice, but through cost that accumulates invisibly. This principle is the safeguard.
+The People's Home was built because the alternatives were gatekept. AI must never become our own gate.
+
+---
+
 ## How to use this file
 
 ### If you are an AI
@@ -328,3 +363,9 @@ questions, adversarial review approach, and the Security Review Report template.
 - Secure by Design — from the Universal Security Engineering Constitution
 - Security is a permanent architectural constraint, not a feature or a gate
 - Source: `brain/SECURITY_CONSTITUTION.md` (founder-authored security charter)
+
+**2026-06-28 — v1.3:** One new principle added (17):
+- Wire AI, Don't Activate It — from a founding clarification session (2026-06-28)
+- AI builds The People's Home; AI does not run it at the learner's expense
+- Protects #FreeForever (Principle 1) from per-learner API cost at scale
+- Companion decision: `DECISIONS.md` → D-12
