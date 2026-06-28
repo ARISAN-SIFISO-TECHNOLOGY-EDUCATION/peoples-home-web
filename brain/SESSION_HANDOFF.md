@@ -12,6 +12,107 @@
 
 ---
 
+## ✅ 2026-06-28 (session 9) — iKhaya Phase 10 (Production Hardening)
+
+**Done this session:**
+
+- **Phase 10 — Production Hardening (commit `22f0da9`):**
+
+  **Security headers (`public/_headers`):**
+  - `X-Frame-Options: DENY` — clickjacking protection
+  - `X-Content-Type-Options: nosniff` — MIME sniffing protection
+  - `Referrer-Policy: strict-origin-when-cross-origin`
+  - `Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()`
+  - CSP: `default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'`
+    (unsafe-inline in style-src is an accepted trade-off for React inline styles)
+  - `/api/*` gets `Cache-Control: no-store` to prevent caching of sync/AI endpoints
+
+  **Error handling:**
+  - `src/components/ErrorBoundary.tsx` — class component wrapping the whole app AND the
+    inner route tree. Shows a safe fallback UI; error detail only in DEV mode.
+  - `src/pages/NotFoundPage.tsx` — 404 page for the wildcard `*` route.
+
+  **Performance — lazy loading:**
+  - All 7 pages (`DiscoverPage`, `OpportunityDetailPage`, `ApplicationWorkspacePage`,
+    `ApplicationsPage`, `ProfilePage`, `ConsentPage`, `NotFoundPage`) wrapped in
+    `React.lazy()` + `<Suspense fallback={<PageLoader />}>`.
+  - Initial JS bundle: 318 kB → 265 kB (−16.7%). Pages load on demand.
+
+  **Connectivity (`src/hooks/useOnlineStatus.ts`):**
+  - `useOnlineStatus()` tracks `navigator.onLine` reactively via window events.
+  - SyncStatus updated: shows 📴 offline state; refresh button disabled when offline.
+  - App skips auto-sync when offline.
+
+  **Service worker (`vite.config.ts`):**
+  - `navigateFallback: '/index.html'` — SPA routing works offline.
+  - `navigateFallbackDenylist: [/^\/api\//]` — API routes never served from SW cache.
+
+  **POPIA rights (`src/pages/ProfilePage.tsx` + `src/storage/db.ts`):**
+  - `exportAllData()` — collects profile, applications, saved opportunities, notification
+    prefs, AI consent → JSON download as `ikhaya-my-data-YYYY-MM-DD.json`.
+    Excludes opportunity records (public server data) and sync record (app metadata).
+  - `clearAllData()` — clears all 5 user-specific IndexedDB stores. App still works after
+    (opportunity records remain). Implements POPIA Section 24 right to erasure.
+  - "📥 Download my data" + "🗑 Delete all my data" buttons added to Profile.
+
+  **POPIA documentation:**
+  - `docs/popia-privacy-notice.md` — plain-language notice covering what data, where stored,
+    third parties (Anthropic, Cloudflare), children, all 5 POPIA rights.
+  - `docs/dpia.md` — full Data Protection Impact Assessment. Data flow diagrams, 7 risks
+    assessed. 2 residual risks accepted (shared device, under-18 consent gap).
+  - `docs/security-review-report.md` — 22-domain security review. 0 Critical, 0 High,
+    5 Medium risks (all accepted for MVP, documented with resolution targets).
+
+  **Build result:** 49 modules, 265 kB initial JS (−16.7%), 16 precached assets, 0 TS errors.
+
+**iKhaya Opportunity Hub — ALL 10 PHASES COMPLETE. 🎉**
+
+```
+Phase 1  ✅  Vision & Brain (locked in peoples-home brain)
+Phase 2  ✅  Domain model (Opportunity, UserProfile, Application types)
+Phase 3  ✅  UX & navigation (bottom nav, PWA shell, 4 pages)
+Phase 4  ✅  Offline-first foundation (service worker, IndexedDB, seed data)
+Phase 5  ✅  Opportunity discovery engine (search, filter, browse)
+Phase 6  ✅  Eligibility engine (profile matching)
+Phase 7  ✅  Application workspace (CV builder, motivation letter, document checklist)
+Phase 8  ✅  Synchronisation layer + Notification Engine
+Phase 9  ✅  Opportunity Intelligence Engine (local tag scoring + Claude AI ranking)
+Phase 10 ✅  Production Hardening (security headers, error boundary, lazy loading, POPIA)
+```
+
+**Pre-public-launch items (from security-review-report.md):**
+1. Set `ANTHROPIC_API_KEY` in Cloudflare Pages → activate AI ranking
+2. Add Cloudflare rate limiting to `/api/ai-match` (max 10 req/IP/hour)
+3. Run `npm audit` and fix any High/Critical findings
+4. Encrypt IndexedDB using Web Crypto API
+5. Write formal incident response plan (72h POPIA breach notification)
+6. Implement parental consent flow for under-18 learners (if school-facing)
+
+**🔴 URGENT — Keystore backup:** `upload-new.jks` is local-only. Unrecoverable if lost.
+
+**Files changed (Phase 10):**
+- `ikhaya/public/_headers` — security headers (new)
+- `ikhaya/src/components/ErrorBoundary.tsx` — new
+- `ikhaya/src/components/SyncStatus.tsx` — `isOnline` prop + offline state
+- `ikhaya/src/hooks/useOnlineStatus.ts` — new
+- `ikhaya/src/pages/NotFoundPage.tsx` — new
+- `ikhaya/src/pages/ProfilePage.tsx` — data export + delete rights
+- `ikhaya/src/storage/db.ts` — `exportAllData()` + `clearAllData()`
+- `ikhaya/src/App.tsx` — full rewrite: lazy pages, double ErrorBoundary, useOnlineStatus
+- `ikhaya/src/index.css` — focus rings, error boundary page styles
+- `ikhaya/vite.config.ts` — navigateFallback + denylist
+- `ikhaya/docs/popia-privacy-notice.md` — new
+- `ikhaya/docs/dpia.md` — new
+- `ikhaya/docs/security-review-report.md` — new
+
+**Next steps:**
+1. Set `ANTHROPIC_API_KEY` in Cloudflare → ikhaya → Settings → Environment variables
+2. Wait for ChatGPT brief on next wave (Wave 12 planning)
+3. Keystore backup 🔴
+4. TPH Core SDK extraction from ReadAfrica → `@tph/core` (when directed)
+
+---
+
 ## ✅ 2026-06-28 (session 8) — iKhaya Phase 9 (Opportunity Intelligence Engine)
 
 **Done this session:**
