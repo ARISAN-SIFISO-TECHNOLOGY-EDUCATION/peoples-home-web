@@ -12,6 +12,88 @@
 
 ---
 
+## ✅ 2026-06-28 (session 8) — iKhaya Phase 9 (Opportunity Intelligence Engine)
+
+**Done this session:**
+
+- **Phase 9 — Opportunity Intelligence Engine (commit `79e4efa`):**
+
+  **Two-tier matching architecture:**
+
+  *Tier 1 — Local (offline, instant, no consent needed):*
+  - `src/engines/localMatcher.ts` — pure scoring (0–100): interest type match (30 pts),
+    capability tag overlap (40 pts), province availability (15 pts), basic eligibility (15 pts).
+    Min score 20 to appear. Zero network calls. Works offline.
+  - `src/engines/intelligenceEngine.ts` — orchestrator. `getLocalRecommendations()` = offline,
+    instant. `getAIRecommendations()` = async, consent-gated, returns null on any failure
+    (graceful fallback to local).
+
+  *Tier 2 — AI-enhanced (Claude, opt-in, requires connectivity):*
+  - `functions/api/ai-match.ts` — Cloudflare Pages Function at `POST /api/ai-match`.
+    Server-side proxy to Claude Haiku (fast, cheap, structured JSON). Receives anonymised
+    profile + ≤10 candidates; returns ranked JSON with match explanations and strengthen tips.
+    Returns 503 if `ANTHROPIC_API_KEY` not configured. API key NEVER reaches the client.
+  - `src/services/aiMatchingService.ts` — client calls `/api/ai-match`; returns null on any
+    error (offline, 503, timeout, JSON parse).
+
+  *POPIA-compliant consent:*
+  - `src/pages/ConsentPage.tsx` — `/consent` route. Full disclosure of what data is sent
+    (interests, capability tags, age, province, qualification — NO name/ID/contact).
+    Explicit two-button opt-in. Consent stored in IndexedDB.
+  - DB version 1→2: `aiConsent` store added with upgrade path for existing users.
+  - `getAIConsent()` / `setAIConsent()` in `db.ts`.
+  - AI is NEVER called without explicit consent. Revocable at any time in Profile.
+
+  *UI:*
+  - `src/components/RecommendationsPanel.tsx` — "✨ For You" section above search bar
+    on DiscoverPage. Shows top 5 local recommendations. "🤖 AI rank" button triggers AI
+    (navigates to /consent first if needed). Collapsible. AI results show AI badge. "↩ Local"
+    to revert.
+  - `src/components/MatchExplanation.tsx` — match badge (Strong/Good/Some + score), local
+    reasons as chips, AI explanation text, strengthen tip.
+  - `src/pages/DiscoverPage.tsx` — RecommendationsPanel injected above search when
+    profile has interests/capability tags.
+  - `src/pages/ProfilePage.tsx` — "AI Matching" toggle section to enable/revoke consent.
+  - `src/App.tsx` — `/consent` route added; consent page hides bottom nav.
+  - `src/index.css` — Phase 9 styles (~200 lines added).
+  - `src/types/opportunity.ts` — MatchScore, AIMatchResult, AIConsentRecord interfaces.
+  - Build: 46 modules, 318 kB JS, 20.6 kB CSS. 0 TypeScript errors.
+
+**To activate AI ranking on Cloudflare Pages:**
+Go to Pages → ikhaya → Settings → Environment variables → Production
+Add: `ANTHROPIC_API_KEY = sk-ant-...`
+Local matching works immediately with no configuration.
+
+**State of ongoing work:**
+- Phase 9 complete and deployed (commit `79e4efa` → Cloudflare Pages).
+- Local matching works for anyone with interests set in Profile.
+- AI ranking ready but dormant until `ANTHROPIC_API_KEY` is set in Cloudflare.
+
+**Next steps (in order):**
+1. **Set `ANTHROPIC_API_KEY` in Cloudflare Pages** to activate AI ranking
+2. **Phase 10 — Production hardening** (POPIA review, security review, auth if needed)
+   - Replace static `/api/opportunities.json` with a real backend endpoint
+   - Service worker caching review (ensure API routes not inadvertently cached)
+   - Full security review per `brain/SECURITY_CONSTITUTION.md`
+3. **Keystore backup (URGENT 🔴)** — `upload-new.jks` is local-only. Unrecoverable if lost.
+
+**Files changed:**
+- `ikhaya/functions/api/ai-match.ts` — new Cloudflare Pages Function
+- `ikhaya/src/engines/localMatcher.ts` — new
+- `ikhaya/src/engines/intelligenceEngine.ts` — new
+- `ikhaya/src/services/aiMatchingService.ts` — new
+- `ikhaya/src/components/RecommendationsPanel.tsx` — new
+- `ikhaya/src/components/MatchExplanation.tsx` — new
+- `ikhaya/src/pages/ConsentPage.tsx` — new
+- `ikhaya/src/types/opportunity.ts` — MatchScore, AIMatchResult, AIConsentRecord added
+- `ikhaya/src/storage/db.ts` — DB v2, aiConsent store, getAIConsent/setAIConsent
+- `ikhaya/src/pages/DiscoverPage.tsx` — RecommendationsPanel injected
+- `ikhaya/src/pages/ProfilePage.tsx` — AI Matching consent toggle added
+- `ikhaya/src/App.tsx` — /consent route + isDetail update
+- `ikhaya/src/index.css` — Phase 9 styles
+
+---
+
 ## ✅ 2026-06-28 (session 7) — iKhaya Phase 8 (Synchronisation Layer + Notification Engine)
 
 **Done this session:**
