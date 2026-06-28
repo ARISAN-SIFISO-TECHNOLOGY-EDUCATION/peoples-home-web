@@ -531,12 +531,27 @@ The ultimate metric is **learner transitions**. Every other metric is a leading 
 
 ## Current Status
 
-**In Planning — 2026-06-27**
+**Phase 4–6 Live — 2026-06-28**
 
-- Phase 1 (Vision & Brain) is complete as of this document.
-- Phase 2 (Domain model) has not started. Begin only when directed.
-- The Lovable prototype of iKhaya (~4/10) exists but predates this definition.
-  It should be rebuilt to this architecture, not extended.
+| Phase | Status | Date |
+|---|---|---|
+| 1 — Vision & Brain | ✅ Complete | 2026-06-27 |
+| 2 — Domain model | ✅ Complete (as TypeScript types) | 2026-06-28 |
+| 3 — UX & navigation | ✅ Complete (built alongside Phase 4) | 2026-06-28 |
+| 4 — Offline-first foundation | ✅ Complete | 2026-06-28 |
+| 5 — Discovery engine | ✅ Complete | 2026-06-28 |
+| 6 — Eligibility engine (MVP) | ✅ Complete | 2026-06-28 |
+| 7 — Application workspace | ⏳ Not started | — |
+| 8 — Synchronisation layer | ⏳ Not started | — |
+| 9 — Opportunity Intelligence Engine | ⏳ Not started | — |
+| 10 — Production hardening | ⏳ Not started | — |
+
+**Live URL:** https://ikhaya.pages.dev/
+**Repo:** `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/ikhaya` (private)
+**Stack:** Vite + React 19 + TypeScript + vite-plugin-pwa + idb + react-router-dom
+**Deploy:** Cloudflare Pages, autodeploy from main
+**Seed data:** 25 real SA opportunities across all 6 types
+**Offline:** ✅ Service worker + workbox precaching active
 
 ---
 

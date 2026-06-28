@@ -34,11 +34,9 @@
 - PWA: service worker, workbox precache, manifest, `_redirects` for SPA routing
 - Build: ✓ 275 kB JS, 6 kB CSS, no errors
 
-**Cloudflare Pages deploy — PENDING manual setup:**
-- Wrangler CLI failed (TLS cert issue in this environment)
-- **Action required:** Cloudflare Dashboard → Workers & Pages → Create → Pages → Connect to Git
-  - Repo: `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/ikhaya`
-  - Branch: `main` · Build: `npm run build` · Output: `dist` · NODE_VERSION: `20`
+**Cloudflare Pages deploy — ✅ LIVE:**
+- URL: **https://ikhaya.pages.dev/**
+- Auto-deploys from `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/ikhaya` main branch
 
 **Next steps (in order):**
 1. ⏳ **Connect Cloudflare Pages** (manual — see above)
