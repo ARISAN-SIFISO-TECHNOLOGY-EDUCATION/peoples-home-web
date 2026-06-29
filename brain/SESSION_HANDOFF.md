@@ -12,6 +12,95 @@
 
 ---
 
+## ✅ 2026-06-29 (session 12) — iKhaya landing page, hub pages, full retheme, responsive nav
+
+**Repo:** `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/ikhaya` — all changes on `main`, deployed to ikhaya.pages.dev via Cloudflare Pages.
+
+**Commits this session (in order):**
+`9c20c39` → `ae48a24` → `af627ad` → `225e4b5` → `b13a7f2` → `3afb719` → `aa535ed` → `581adff` → `67d0d80`
+
+---
+
+### 1. Marketing landing page (`9c20c39`)
+
+`/` now shows a full marketing front door; the app moved to `/discover` and below.
+
+- `src/pages/LandingPage.tsx` — dark hero, search bar (hands off `?q=` and `?type=` to DiscoverPage), 6 hub cards, stats band, values section, footer. All SVGs inline.
+- `src/styles/landing.css` — fully scoped under `.landing`, cream/green theme, responsive at 960px and 600px.
+- `App.tsx` — `isLanding` guard; `app-content-full` for landing; DiscoverPage moved to `/discover`.
+- `DiscoverPage.tsx` — reads `?q=` and `?type=` URL params to seed initial filters.
+
+**Stats note:** `100K+` / `25K+` / `2K+` are aspirational placeholders — replace with real numbers before public beta.
+
+---
+
+### 2. Navigation fixes (`ae48a24`, `af627ad`, `225e4b5`)
+
+- Added **app header** (iKhaya logo → `/`) on all app pages; hidden on desktop where sidebar takes over.
+- Removed explicit `← Back` buttons from detail pages — back handled by browser gesture, bottom nav, and app header.
+- **Bug fixed:** `ApplicationWorkspacePage` error state was calling `navigate('/')` (landing) — fixed to `navigate('/discover')`.
+- **Fixed stuck pages:** `isDetail` was hiding the bottom nav on opportunity/workspace pages. Changed bottom nav gate from `!isDetail` → `!isLanding` so nav is always visible inside the app.
+
+---
+
+### 3. Hub pages (6 routes) + pathway section removed (`b13a7f2`)
+
+- Removed "Discover opportunities across 6 pathways" section and all chip/icon code.
+- Hub cards now navigate to their own routes (was all going to `/discover`).
+- Created 5 new hub pages using shared `HubPlaceholderPage` component:
+  - `/learning` → Learning Hub (courses, learnerships, TVET, skills dev)
+  - `/skills` → Skills Passport (digital record, certs, portfolio, sharing)
+  - `/funding` → Funding Hub (bursaries, NYDA/DTI grants, SETA, guides)
+  - `/career` → Career Hub (paths, CV builder, interview prep, mentorship)
+  - `/entrepreneurship` → Entrepreneurship Hub (CIPC, incubators, NYDA, coaching)
+- All pages show "Coming Soon" badge, 4 feature items, link to Opportunity Hub.
+
+---
+
+### 4. Full app retheme — dark → warm cream/green (`3afb719`, `aa535ed`)
+
+Entire app palette replaced to match the landing page. No more developer dark theme.
+
+| Token | Before | After |
+|---|---|---|
+| `--bg` | `#0f0f1a` dark | `#f2efe6` cream |
+| `--surface` | `#1a1a2e` navy | `#ffffff` white |
+| `--accent` | `#7c5cbf` purple | `#5ba12f` People's Home green |
+| `--text` | `#e8e8f0` near-white | `#15211c` dark ink |
+
+App header and bottom nav background changed from `--surface` (white) to `--surface-2` (`#ebe7da`) to match the sync bar — unified warm band at top and bottom.
+
+All 8 hardcoded dark hex values (badge backgrounds, checklist gathered, etc.) updated to light equivalents.
+
+---
+
+### 5. Load-more pagination on Discover page (`581adff`)
+
+`PAGE_SIZE = 20`. Shows first 20 results; "Load more — N remaining" button appends next 20. Filters reset to page 1 automatically. "You've seen all N results" end message. Full filtered count always shown in results-count.
+
+---
+
+### 6. Sidebar (desktop) + bottom bar (mobile) responsive nav (`67d0d80`)
+
+- `src/components/AppSidebar.tsx` — sticky 220px left column on desktop (≥768px), hidden on mobile.
+  - **Hubs:** 🔍 Opportunity Hub (Live badge) · 📚 Learning · 🛡️ Skills · 💰 Funding · 💼 Career · 🚀 Entrepreneurship
+  - **My iKhaya:** 📋 My Applications (urgent red badge) · 👤 My Profile
+  - iKhaya brand at top links to landing page `/`.
+- **Mobile (< 768px):** bottom bar with Discover · My Applications · My Profile. App header shows iKhaya logo.
+- **Desktop (≥ 768px):** sidebar visible; app-header and bottom-nav hidden via CSS.
+- `App.tsx` restructured: sidebar outside, everything else in `.app-main-area`.
+
+---
+
+**What is next for iKhaya:**
+- Real opportunity data (replace seed data with live sources)
+- Replace aspirational stats (100K+, 25K+, 2K+) with real numbers before beta
+- Notifications page (`/notifications`) — currently a banner only, not a page
+- `ADMIN_PHONE_NUMBER` still needs to be set in Railway (Kilimanjaro — from session 11)
+- Keystore backup still needs to be copied to Google Drive (from session 11)
+
+---
+
 ## ✅ 2026-06-28 (session 11) — Keystore backup + Science Sprouts signing config
 
 **Done this session:**
