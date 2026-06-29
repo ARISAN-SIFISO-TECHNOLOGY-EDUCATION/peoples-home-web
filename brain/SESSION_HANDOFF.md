@@ -12,6 +12,80 @@
 
 ---
 
+## ✅ 2026-06-29 (session 13) — iKhaya scroll clipping fix + end-of-list indicator
+
+**Repo:** `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/ikhaya` — `main`, deployed to ikhaya.pages.dev.
+
+**Commits this session:** `200bf48` → `160f83e`
+
+---
+
+### 1. Scroll clipping — last card half-visible (`200bf48`)
+
+**Bug:** When a short list of cards (e.g. 4 results) was shown, the bottom half of the last card was cut off by the fixed bottom nav.
+
+**Root cause:** After the sidebar refactor (`67d0d80`) `.app-main-area` was a plain `div` with no CSS on mobile. This meant `main.app-content { flex: 1 }` (which used to expand the content area to fill the full viewport) was silently ignored — its parent was no longer a flex container. The content area shrank to its natural height and the fixed bottom nav overlapped the tail of the list.
+
+**Fix — two changes in `src/index.css`:**
+
+1. Added `.app-main-area` base rule (applied on all screen sizes):
+   ```css
+   .app-main-area {
+     flex: 1;
+     display: flex;
+     flex-direction: column;
+     min-width: 0;
+   }
+   ```
+   This restores the mobile behaviour that existed before the sidebar wrapper was introduced.
+
+2. Replaced the desktop block with the **two-panel independent-scroll pattern**:
+   ```css
+   @media (min-width: 768px) {
+     .app-shell   { flex-direction: row; height: 100dvh; overflow: hidden; }
+     .app-sidebar { height: 100%; overflow-y: auto; /* no more position:sticky */ }
+     .app-main-area { overflow-y: auto; }
+   }
+   ```
+   Shell is now a fixed viewport box; sidebar and main area each own their own scroll. Sidebar never needs `position: sticky` — it simply fills the fixed parent.
+
+3. Mobile bottom padding raised to `calc(5rem + env(safe-area-inset-bottom, 0px))` — covers iPhone home indicator (34px safe-area was eating into the 5rem = 80px gutter).
+
+---
+
+### 2. End-of-list indicator — never showed with small result sets (`160f83e`)
+
+**Bug:** "You've seen all N results" only appeared when `visible.length > PAGE_SIZE (20)`. With 24 seed items and no filters, the first 20 show and the "Load more" button appears — but once the user clicked it and saw all 24, the end message showed (correct). With **any filter** that reduced results below 20, neither the Load-more button nor the end message appeared — the list ended in silence.
+
+**Fix in `src/pages/DiscoverPage.tsx`:**
+```tsx
+// Before — only fires when visible > 20:
+{remaining <= 0 && visible.length > PAGE_SIZE && (
+  <p className="results-end">You've seen all {results.length} results</p>
+)}
+
+// After — fires whenever there is nothing left to load:
+{remaining <= 0 && (
+  <p className="results-end">
+    {results.length === 1
+      ? 'Showing the only result'
+      : `You've seen all ${results.length} results`}
+  </p>
+)}
+```
+Users now always see a clear "done" signal at the bottom of the list, regardless of how many results the filter returned.
+
+---
+
+**What is next for iKhaya:**
+- Real opportunity data (replace seed data with live sources)
+- Replace aspirational stats (100K+, 25K+, 2K+) with real numbers before beta
+- Notifications page (`/notifications`) — currently a banner only, not a page
+- `ADMIN_PHONE_NUMBER` still needs to be set in Railway (Kilimanjaro — from session 11)
+- Keystore backup still needs to be copied to Google Drive (from session 11)
+
+---
+
 ## ✅ 2026-06-29 (session 12) — iKhaya landing page, hub pages, full retheme, responsive nav
 
 **Repo:** `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/ikhaya` — all changes on `main`, deployed to ikhaya.pages.dev via Cloudflare Pages.
