@@ -12,6 +12,50 @@
 
 ---
 
+## ✅ 2026-06-30 (session 14) — Capability Pillars redesign — working JS-rendered cards
+
+**Repo:** `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/peoples-home-web` — `main`
+
+**Commit:** `8affbba`
+
+---
+
+### What was done
+
+Redesigned the Capability Pillars section of `index.html` to match the TanStack Start app reference screenshots:
+- **Compact 3-column card grid** — each card has a circular coloured icon, pastel blob top-right, capability chips, and a live-experience count
+- **Click-to-detail panel** — clicking a card hides the grid and shows a full detail view: pillar hero with icon and chips, app list with Live/Coming soon badges, "Other capability pillars" navigation buttons
+- **All 6 pillars live** with correct app links per the BLUEPRINT
+
+### Technical approach (what works)
+
+The grid is **empty in HTML** (`<div class="pillar-grid" id="pillar-grid"></div>`) and populated entirely by JS:
+
+- `renderGrid()` — builds all card HTML via string concatenation, injects into `#pillar-grid`, sets `display:grid`. Called once on page load, and again when the user clicks "← All capabilities".
+- `showPillar(id)` — hides the grid, populates `#pillar-detail` with the full detail panel, scrolls to the section.
+- `mkChips(chips, cls)`, `mkApps(apps)`, `mkOthers(others)` — string concat helpers.
+- `PILLARS` array: `status:'live'|'future'` (not `live:true/false`), `icon` as HTML entity strings, `color` and `blob` as inline style values.
+
+**Key lesson — what killed earlier attempts:**
+- Nested template literals inside `<script>` tags cause silent parse failures in some browsers — use `var`/`for`/string concatenation throughout.
+- `color-mix()` was removed from the pillars section entirely — replaced with direct `rgba()` and named hex values. The blueprint section still uses `color-mix()` with `--accent` safely.
+- Static HTML cards (ecc7c58 attempt) introduced a different problem — the working version keeps cards JS-rendered.
+
+### CSS classes added (in `<style>` block)
+
+`.pillar-grid`, `.pc`, `.pc-blob`, `.pc-arrow`, `.pc-head`, `.pc-ico`, `.pc-text`, `.pc-chips`, `.pc-chip`, `.pc-count`
+`.pd`, `.pd-back`, `.pd-hero`, `.pd-hero-blob`, `.pd-kicker`, `.pd-hero-row`, `.pd-hero-ico`, `.pd-hero-title`, `.pd-hero-chips`, `.pd-hero-chip`, `.pd-apps-hd`, `.pd-apps`, `.pd-app`, `.pd-status`, `.pd-others`, `.pd-others-list`, `.pd-other`, `.pd-other-dot`
+
+---
+
+**What is next for peoples-home-web:**
+- Real `index.html` URL to verify Cloudflare Pages deployment renders cards correctly
+- Save "Landing Page Architecture" document to `brain/platform/peoples-home-web.md`
+- Three unreconciled v2 apps still need architecture decision (Everyday Foundations, Our World, The Golden Hand)
+- Opportunity Hub definition — plan file exists at `C:\Users\sifis\.claude\plans\as-i-am-building-unified-dove.md`
+
+---
+
 ## ✅ 2026-06-29 (session 13) — iKhaya scroll clipping fix + end-of-list indicator
 
 **Repo:** `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/ikhaya` — `main`, deployed to ikhaya.pages.dev.
