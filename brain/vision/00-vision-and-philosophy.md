@@ -42,19 +42,6 @@ learner connects to the real economy.
 
 ---
 
-## The institutional frame
-
-- **ARISAN SIFISO Holdings** — the umbrella, with divisions including **Media Group**, **iKhaya AI**,
-  **The People's Home**, and **The Foundation NPC**.
-- **iKhaya AI** — builds the platform and the apps. (*iKhaya* = "home".)
-- **The People's Home Foundation (NPC)** — the non-profit that supports the mission.
-- **The People's Home** — the learning system itself: the family of apps + the platform.
-
-> Company names appear only in the footer / blueprint of the public site. The mission leads;
-> the corporate structure supports it, quietly.
-
----
-
 ## The philosophy in practice (what makes this different)
 
 1. **Capability, not content.** The unit of value is what a person can *do* afterwards
