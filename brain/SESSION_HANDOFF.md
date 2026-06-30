@@ -12,6 +12,48 @@
 
 ---
 
+## ✅ 2026-06-30 (session 14b) — Early Numeracy blueprint v2 — 7 gaps + constitutional rule
+
+**Repo:** `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/peoples-home-web` — `main`
+
+**File:** `brain/apps/early-numeracy.md` (Blueprint v2)
+
+---
+
+### What was done
+
+Designed and finalized the full Early Numeracy blueprint. The founder reviewed Blueprint v1
+and identified 7 gaps and 1 constitutional rule. All were incorporated into the file with
+two founder refinements:
+
+1. Audio: architectural (lazy-loading + caching + language packs) — no hard file-size budgets
+2. Child-lock: specified as goals, not guarantees — PWA fullscreen varies across devices
+
+**7 gaps added as new sections:**
+
+| # | Section | Core principle |
+|---|---|---|
+| 1 | First-time instruction protocol | ≤8s animated demo, question-mark replay, 8s idle prompt, full audio script spec |
+| 2 | Correction patterns | Per-module: warm/calm, never "Wrong", child stays in control |
+| 3 | Motor accessibility | Tap-to-select-then-tap-to-place alternative for every drag, 1.5× drop tolerance |
+| 4 | Audio architecture | Lazy-load by module, service worker cache, modular language packs, Opus+MP3 |
+| 5 | Visual-instruction mode | Parent toggle (ear icon), audio/visual logic separated in code from Phase 1 |
+| 6 | Keeping children in the experience | Long-press child-lock, visibilitychange state restore, test on 3 SA devices |
+| 7 | Play-testing protocol | Play-test gate required before any phase is marked complete |
+
+**Constitutional rule added:** "Real-world transfer" — every session ends with a spoken
+"Try this at home" prompt over an illustration. 20+ prompt pool. Technology starts the
+learning; reality completes it.
+
+---
+
+**What is next for Early Numeracy:**
+- Begin Phase 1 (shell) only when founder directs
+- Write full audio script before any voice recording
+- Play-test Phase 1 with 2 children aged 3–4 before marking it done
+
+---
+
 ## ✅ 2026-06-30 (session 14) — Capability Pillars redesign — working JS-rendered cards
 
 **Repo:** `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/peoples-home-web` — `main`

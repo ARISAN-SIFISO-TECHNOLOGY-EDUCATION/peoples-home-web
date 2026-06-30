@@ -18,6 +18,12 @@
 | 1 | **Math Adventure RPG** | Foundations | [`math-adventure-rpg.md`](./math-adventure-rpg.md) |
 | 2 | **ReadAfrica** | Foundations | [`read-africa.md`](./read-africa.md) |
 | — | **Everyday Foundations** *(v2 — maps to #3/#4/#30)* | Foundations / Empowerment | [`everyday-foundations.md`](./everyday-foundations.md) |
+
+## Memory files (planned apps — blueprint exists)
+
+| # | App | Category | Memory |
+|---|---|---|---|
+| 3 | **Early Numeracy** | Foundations | [`early-numeracy.md`](./early-numeracy.md) |
 | 6 | **Science Sprouts** | Curiosity | [`science-sprouts.md`](./science-sprouts.md) |
 | — | **Our World** *(v2 — maps to #10)* | Curiosity | [`our-world.md`](./our-world.md) |
 | 11 | **Tech Makers** | Creation | [`tech-makers.md`](./tech-makers.md) |
