@@ -12,6 +12,63 @@
 
 ---
 
+## ✅ 2026-06-30 (session 14c) — Early Numeracy Phase 1 BUILT
+
+**Repo:** `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-numeracy` (private) — `master`
+
+**Commit:** `554654f` | **GitHub:** github.com/ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-numeracy
+
+**Cloudflare Pages:** Connect repo manually → Build command: `npm run build` → Output: `dist/`
+
+---
+
+### What was built
+
+Complete Phase 1 shell. All criteria met:
+- ✅ Vite + React + TypeScript + Tailwind v4 scaffold
+- ✅ VitePWA: offline-first, service worker, 225KB precached shell
+- ✅ Home screen with 5 colourful module cards (64×64px min touch targets, no reading required)
+- ✅ useNarration hook (Web Speech API, voice-quality guard, ported + adapted from Math Adventure RPG)
+- ✅ useInstruction: **architecturally separated audio/visual paths** — visual channel is stubs but exists in code from Phase 1 so Phase 5+ can fill it without refactoring
+- ✅ useSessionState: persists to localStorage, restores on `visibilitychange` (child returns from background)
+- ✅ useChildLock: long-press 3s corner → fullscreen; long-press lock icon → unlock
+- ✅ ModulePlaceholder: warm coming-soon screen per module, speaks on mount
+- ✅ All 5 modules lazy-loaded (0.24KB per chunk)
+- ✅ No backend · No accounts · No tracking · No ads
+
+### File structure
+
+```
+early-numeracy/
+├── src/
+│   ├── types/index.ts              — ModuleId, SessionState, InstructionMode, Screen
+│   ├── constants/modules.ts        — MODULES array with colors, icons, names
+│   ├── constants/narration.ts      — Full audio script (24 transfer prompts, all module lines)
+│   ├── hooks/useNarration.ts       — Web Speech API wrapper
+│   ├── hooks/useInstruction.ts     — Audio/visual separated instruction system
+│   ├── hooks/useSessionState.ts    — Persist + restore on visibilitychange
+│   ├── hooks/useChildLock.ts       — Long-press lock/unlock
+│   ├── components/HomeScreen.tsx   — 5 card grid + top bar
+│   ├── components/ModuleCard.tsx   — Individual card (press feedback, visited dot)
+│   ├── components/ModulePlaceholder.tsx — Coming-soon screen
+│   └── modules/*/                  — 5 module stubs (all lazy-loaded)
+```
+
+### Phase 1 done-when verified
+- App builds cleanly: `npm run build` → 225KB precache
+- TypeScript: `npx tsc --noEmit` → zero errors
+- 5 module cards render on home screen
+- Module placeholder screens show per-module colour + icon + coming-soon message
+- State persists to localStorage; restores on visibilitychange
+- Service worker generated; app shell is offline-capable
+
+### What is next
+- **Deploy to Cloudflare Pages:** go to pages.cloudflare.com → Connect to Git → select `early-numeracy` → Build: `npm run build` → Output: `dist`
+- **Play-test Phase 1** with 2 children aged 3–4 before marking done (blueprint requirement)
+- **Phase 2** (when directed): Counting Garden + Which is More? — real gameplay
+
+---
+
 ## ✅ 2026-06-30 (session 14b) — Early Numeracy blueprint v2 — 7 gaps + constitutional rule
 
 **Repo:** `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/peoples-home-web` — `main`
