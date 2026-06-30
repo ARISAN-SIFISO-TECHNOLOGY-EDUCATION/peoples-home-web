@@ -687,175 +687,175 @@
 </footer>
 
 <script>
-  const nav=document.getElementById('nav');
-  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+  var nav=document.getElementById('nav');
+  addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>40);});
   document.getElementById('yr').textContent=new Date().getFullYear();
 
   /* ---- CAPABILITY PILLARS ---- */
-  const PILLARS=[
-    {
-      id:'foundations',name:'Foundations',
-      purpose:'Teach people how to learn.',
-      chips:['Numeracy','Literacy','Learning confidence'],
-      color:'#c75a36',blob:'rgba(199,90,54,.1)',icon:'🌱',
-      apps:[
-        {name:'Math Adventure RPG',blurb:'Build numeracy through story.',status:'live',url:'https://math-adventure-rpg.pages.dev/'},
-        {name:'ReadAfrica',blurb:'Grow reading fluency in your language.',status:'live',url:'https://read-africa.pages.dev/'},
-        {name:'Everyday Foundations',blurb:'Literacy, numeracy and life skills for adults.',status:'live',url:'https://everyday-foundations.pages.dev/'},
-        {name:'Early Numeracy',blurb:'Number sense for young children.',status:'future',url:null},
-        {name:'Early Literacy Games',blurb:'Reading readiness through play.',status:'future',url:null},
-      ]
-    },
-    {
-      id:'curiosity',name:'Curiosity & Knowledge',
-      purpose:'Help learners understand the world.',
-      chips:['Observation','Scientific thinking','Exploration'],
-      color:'#3f6b4a',blob:'rgba(63,107,74,.1)',icon:'🔭',
-      apps:[
-        {name:'Science Sprouts',blurb:'Discover science through hands-on experiments.',status:'live',url:'https://science-sprouts-65b.pages.dev/'},
-        {name:'Our World',blurb:'SA geography, African history and world cultures.',status:'live',url:'https://our-world-b0t.pages.dev/'},
-        {name:'Space Explorer',blurb:'Journey through the solar system.',status:'future',url:null},
-        {name:'Human Body Explorer',blurb:'Understand how the body works.',status:'future',url:null},
-        {name:'African Discoveries',blurb:'Celebrate African innovations and history.',status:'future',url:null},
-      ]
-    },
-    {
-      id:'creation',name:'Creation & Technology',
-      purpose:'Turn consumers into creators.',
-      chips:['Technology','Coding','Design','Building'],
-      color:'#2a6bb5',blob:'rgba(42,107,181,.1)',icon:'⚙️',
-      apps:[
-        {name:'Tech Makers',blurb:'Learn to code and build digital things.',status:'live',url:'https://tech-makers.pages.dev/'},
-        {name:'The Golden Hand',blurb:'Python, AI literacy and startup skills.',status:'live',url:'https://sifiso-learn-python.pages.dev/'},
-        {name:'Design Studio',blurb:'Visual thinking and digital design.',status:'future',url:null},
-        {name:'Robotics Lab',blurb:'Build and program simple machines.',status:'future',url:null},
-        {name:'Digital Creator',blurb:'Make videos, podcasts and content.',status:'future',url:null},
-      ]
-    },
-    {
-      id:'thinking',name:'Thinking & Reasoning',
-      purpose:'Strengthen judgement.',
-      chips:['Logic','Evidence','Critical thinking','Decisions'],
-      color:'#7a4a63',blob:'rgba(122,74,99,.1)',icon:'⚖️',
-      apps:[
-        {name:'Truth Seekers',blurb:'Spot misinformation and reason clearly.',status:'live',url:'https://truth-seekers.pages.dev/'},
-        {name:'Logic Lab',blurb:'Puzzle-based logical thinking.',status:'future',url:null},
-        {name:'Debate Academy',blurb:'Make and defend arguments well.',status:'future',url:null},
-        {name:'Problem Solver',blurb:'Structured thinking for hard problems.',status:'future',url:null},
-        {name:'Research Skills',blurb:'Find, evaluate and use information.',status:'future',url:null},
-      ]
-    },
-    {
-      id:'money',name:'Money & Financial Capability',
-      purpose:'Understand money before adulthood.',
-      chips:['Earning','Budgeting','Saving','Borrowing wisely'],
-      color:'#2f7e7e',blob:'rgba(47,126,126,.1)',icon:'💰',
-      apps:[
-        {name:'Mzansi Money',blurb:'Personal finance built for South Africans.',status:'live',url:'https://mzansi-money.pages.dev/'},
-        {name:'Side Hustle Lab',blurb:'Turn a skill into income.',status:'future',url:null},
-        {name:'Personal Budget Coach',blurb:'Build a budget that actually works.',status:'future',url:null},
-        {name:'Smart Shopper',blurb:'Make smarter money decisions every day.',status:'future',url:null},
-        {name:'Financial Wellness',blurb:'Long-term money habits that last.',status:'future',url:null},
-      ]
-    },
-    {
-      id:'entrepreneurship',name:'Entrepreneurship',
-      purpose:'Turn ideas into opportunities.',
-      chips:['Opportunity','Value creation','Business thinking'],
-      color:'#c87533',blob:'rgba(200,117,51,.1)',icon:'🚀',
-      apps:[
-        {name:'Micro Founders',blurb:'Start and run a micro-enterprise.',status:'live',url:'https://micro-founders.pages.dev/'},
-        {name:'Opportunity Hub',blurb:'Connect your capability to real opportunity.',status:'live',url:'https://ikhaya.pages.dev/'},
-        {name:'Career Explorer',blurb:'Discover pathways that match your strengths.',status:'future',url:null},
-        {name:'Leadership Academy',blurb:'Lead teams and communities.',status:'future',url:null},
-        {name:'Community Builder',blurb:'Create change in your neighbourhood.',status:'future',url:null},
-      ]
-    },
+  var PILLARS=[
+    {id:'foundations',name:'Foundations',purpose:'Teach people how to learn.',
+     chips:['Numeracy','Literacy','Learning confidence'],
+     color:'#c75a36',blob:'rgba(199,90,54,.1)',icon:'&#127807;',
+     apps:[
+       {name:'Math Adventure RPG',blurb:'Build numeracy through story.',status:'live',url:'https://math-adventure-rpg.pages.dev/'},
+       {name:'ReadAfrica',blurb:'Grow reading fluency in your language.',status:'live',url:'https://read-africa.pages.dev/'},
+       {name:'Everyday Foundations',blurb:'Literacy, numeracy and life skills for adults.',status:'live',url:'https://everyday-foundations.pages.dev/'},
+       {name:'Early Numeracy',blurb:'Number sense for young children.',status:'future',url:''},
+       {name:'Early Literacy Games',blurb:'Reading readiness through play.',status:'future',url:''}
+     ]},
+    {id:'curiosity',name:'Curiosity &amp; Knowledge',purpose:'Help learners understand the world.',
+     chips:['Observation','Scientific thinking','Exploration'],
+     color:'#3f6b4a',blob:'rgba(63,107,74,.1)',icon:'&#128301;',
+     apps:[
+       {name:'Science Sprouts',blurb:'Discover science through hands-on experiments.',status:'live',url:'https://science-sprouts-65b.pages.dev/'},
+       {name:'Our World',blurb:'SA geography, African history and world cultures.',status:'live',url:'https://our-world-b0t.pages.dev/'},
+       {name:'Space Explorer',blurb:'Journey through the solar system.',status:'future',url:''},
+       {name:'Human Body Explorer',blurb:'Understand how the body works.',status:'future',url:''},
+       {name:'African Discoveries',blurb:'Celebrate African innovations and history.',status:'future',url:''}
+     ]},
+    {id:'creation',name:'Creation &amp; Technology',purpose:'Turn consumers into creators.',
+     chips:['Technology','Coding','Design','Building'],
+     color:'#2a6bb5',blob:'rgba(42,107,181,.1)',icon:'&#9881;&#65039;',
+     apps:[
+       {name:'Tech Makers',blurb:'Learn to code and build digital things.',status:'live',url:'https://tech-makers.pages.dev/'},
+       {name:'The Golden Hand',blurb:'Python, AI literacy and startup skills.',status:'live',url:'https://sifiso-learn-python.pages.dev/'},
+       {name:'Design Studio',blurb:'Visual thinking and digital design.',status:'future',url:''},
+       {name:'Robotics Lab',blurb:'Build and program simple machines.',status:'future',url:''},
+       {name:'Digital Creator',blurb:'Make videos, podcasts and content.',status:'future',url:''}
+     ]},
+    {id:'thinking',name:'Thinking &amp; Reasoning',purpose:'Strengthen judgement.',
+     chips:['Logic','Evidence','Critical thinking','Decisions'],
+     color:'#7a4a63',blob:'rgba(122,74,99,.1)',icon:'&#9878;&#65039;',
+     apps:[
+       {name:'Truth Seekers',blurb:'Spot misinformation and reason clearly.',status:'live',url:'https://truth-seekers.pages.dev/'},
+       {name:'Logic Lab',blurb:'Puzzle-based logical thinking.',status:'future',url:''},
+       {name:'Debate Academy',blurb:'Make and defend arguments well.',status:'future',url:''},
+       {name:'Problem Solver',blurb:'Structured thinking for hard problems.',status:'future',url:''},
+       {name:'Research Skills',blurb:'Find, evaluate and use information.',status:'future',url:''}
+     ]},
+    {id:'money',name:'Money &amp; Financial Capability',purpose:'Understand money before adulthood.',
+     chips:['Earning','Budgeting','Saving','Borrowing wisely'],
+     color:'#2f7e7e',blob:'rgba(47,126,126,.1)',icon:'&#128176;',
+     apps:[
+       {name:'Mzansi Money',blurb:'Personal finance built for South Africans.',status:'live',url:'https://mzansi-money.pages.dev/'},
+       {name:'Side Hustle Lab',blurb:'Turn a skill into income.',status:'future',url:''},
+       {name:'Personal Budget Coach',blurb:'Build a budget that actually works.',status:'future',url:''},
+       {name:'Smart Shopper',blurb:'Make smarter money decisions every day.',status:'future',url:''},
+       {name:'Financial Wellness',blurb:'Long-term money habits that last.',status:'future',url:''}
+     ]},
+    {id:'entrepreneurship',name:'Entrepreneurship',purpose:'Turn ideas into opportunities.',
+     chips:['Opportunity','Value creation','Business thinking'],
+     color:'#c87533',blob:'rgba(200,117,51,.1)',icon:'&#128640;',
+     apps:[
+       {name:'Micro Founders',blurb:'Start and run a micro-enterprise.',status:'live',url:'https://micro-founders.pages.dev/'},
+       {name:'Opportunity Hub',blurb:'Connect your capability to real opportunity.',status:'live',url:'https://ikhaya.pages.dev/'},
+       {name:'Career Explorer',blurb:'Discover pathways that match your strengths.',status:'future',url:''},
+       {name:'Leadership Academy',blurb:'Lead teams and communities.',status:'future',url:''},
+       {name:'Community Builder',blurb:'Create change in your neighbourhood.',status:'future',url:''}
+     ]}
   ];
 
-  function liveCount(p){return p.apps.filter(a=>a.status==='live').length;}
+  function liveCount(p){
+    var n=0;
+    for(var i=0;i<p.apps.length;i++){if(p.apps[i].status==='live')n++;}
+    return n;
+  }
+
+  function mkChips(chips,cls){
+    var s='';
+    for(var i=0;i<chips.length;i++){s+='<span class="'+cls+'">'+chips[i]+'</span>';}
+    return s;
+  }
+
+  function mkApps(apps){
+    var s='';
+    for(var i=0;i<apps.length;i++){
+      var a=apps[i];
+      if(a.status==='live'&&a.url){
+        s+='<a class="pd-app" href="'+a.url+'" target="_blank" rel="noopener">'
+          +'<span class="pd-status live">Live</span>'
+          +'<h4>'+a.name+'</h4><p>'+a.blurb+'</p>'
+          +'</a>';
+      } else {
+        s+='<div class="pd-app">'
+          +'<span class="pd-status soon">Coming soon</span>'
+          +'<h4>'+a.name+'</h4><p>'+a.blurb+'</p>'
+          +'</div>';
+      }
+    }
+    return s;
+  }
+
+  function mkOthers(others){
+    var s='';
+    for(var i=0;i<others.length;i++){
+      var o=others[i];
+      s+='<button class="pd-other" onclick="showPillar(\''+o.id+'\')">'
+        +'<span class="pd-other-dot" style="background:'+o.color+'"></span>'
+        +o.name+'</button>';
+    }
+    return s;
+  }
 
   function renderGrid(){
-    const grid=document.getElementById('pillar-grid');
-    const detail=document.getElementById('pillar-detail');
+    var grid=document.getElementById('pillar-grid');
+    var detail=document.getElementById('pillar-detail');
     detail.style.display='none';
     grid.style.display='grid';
-    grid.innerHTML=PILLARS.map(p=>`
-      <div class="pc" onclick="showPillar('${p.id}')" role="button" tabindex="0" aria-label="Open ${p.name}">
-        <div class="pc-blob" style="background:${p.blob}"></div>
-        <span class="pc-arrow">↗</span>
-        <div class="pc-head">
-          <div class="pc-ico" style="background:${p.color}">${p.icon}</div>
-          <div class="pc-text">
-            <h3>${p.name}</h3>
-            <p>${p.purpose}</p>
-          </div>
-        </div>
-        <div class="pc-chips">${p.chips.map(c=>`<span class="pc-chip">${c}</span>`).join('')}</div>
-        <div class="pc-count">${liveCount(p)} ${liveCount(p)===1?'experience':'experiences'}</div>
-      </div>
-    `).join('');
-    grid.querySelectorAll('.pc').forEach(card=>{
-      card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();card.click();}});
-    });
+    var html='';
+    for(var i=0;i<PILLARS.length;i++){
+      var p=PILLARS[i];
+      var n=liveCount(p);
+      html+='<div class="pc" onclick="showPillar(\''+p.id+'\')" role="button" tabindex="0">'
+        +'<div class="pc-blob" style="background:'+p.blob+'"></div>'
+        +'<span class="pc-arrow">&#8599;</span>'
+        +'<div class="pc-head">'
+          +'<div class="pc-ico" style="background:'+p.color+'">'+p.icon+'</div>'
+          +'<div class="pc-text"><h3>'+p.name+'</h3><p>'+p.purpose+'</p></div>'
+        +'</div>'
+        +'<div class="pc-chips">'+mkChips(p.chips,'pc-chip')+'</div>'
+        +'<div class="pc-count">'+n+' '+(n===1?'experience':'experiences')+'</div>'
+        +'</div>';
+    }
+    grid.innerHTML=html;
+    var cards=grid.querySelectorAll('.pc');
+    for(var j=0;j<cards.length;j++){
+      cards[j].addEventListener('keydown',function(e){
+        if(e.key==='Enter'||e.key===' '){e.preventDefault();this.click();}
+      });
+    }
   }
 
   function showPillar(id){
-    const p=PILLARS.find(x=>x.id===id);
+    var p=null;
+    for(var i=0;i<PILLARS.length;i++){if(PILLARS[i].id===id){p=PILLARS[i];break;}}
     if(!p)return;
-    const grid=document.getElementById('pillar-grid');
-    const detail=document.getElementById('pillar-detail');
-    const others=PILLARS.filter(x=>x.id!==id);
-
+    var others=[];
+    for(var i=0;i<PILLARS.length;i++){if(PILLARS[i].id!==id)others.push(PILLARS[i]);}
+    var grid=document.getElementById('pillar-grid');
+    var detail=document.getElementById('pillar-detail');
     grid.style.display='none';
     detail.style.display='block';
-
-    detail.innerHTML=`
-      <button class="pd-back" onclick="renderGrid()">← All capabilities</button>
-
-      <div class="pd-hero">
-        <div class="pd-hero-blob" style="background:${p.blob}"></div>
-        <div class="pd-kicker">Capability Pillar</div>
-        <div class="pd-hero-row">
-          <div class="pd-hero-ico" style="background:${p.color}">${p.icon}</div>
-          <div class="pd-hero-title">
-            <h2>${p.name}</h2>
-            <p>${p.purpose}</p>
-          </div>
-        </div>
-        <div class="pd-hero-chips">${p.chips.map(c=>`<span class="pd-hero-chip">${c}</span>`).join('')}</div>
-      </div>
-
-      <div class="pd-apps-hd">
-        <h3>Experiences in this pillar</h3>
-        <p>Each one is part of The People's Home, not a separate app.</p>
-      </div>
-
-      <div class="pd-apps">
-        ${p.apps.map(a=>a.status==='live'&&a.url
-          ?`<a class="pd-app" href="${a.url}" target="_blank" rel="noopener">
-              <span class="pd-status live">Live ↗</span>
-              <h4>${a.name}</h4><p>${a.blurb}</p>
-            </a>`
-          :`<div class="pd-app">
-              <span class="pd-status soon">Coming soon</span>
-              <h4>${a.name}</h4><p>${a.blurb}</p>
-            </div>`
-        ).join('')}
-      </div>
-
-      <div class="pd-others">
-        <h4>Other capability pillars</h4>
-        <div class="pd-others-list">
-          ${others.map(o=>`
-            <button class="pd-other" onclick="showPillar('${o.id}')">
-              <span class="pd-other-dot" style="background:${o.color}"></span>${o.name}
-            </button>
-          `).join('')}
-        </div>
-      </div>
-    `;
-
+    detail.innerHTML=
+      '<button class="pd-back" onclick="renderGrid()">&#8592; All capabilities</button>'
+      +'<div class="pd-hero">'
+        +'<div class="pd-hero-blob" style="background:'+p.blob+'"></div>'
+        +'<div class="pd-kicker">Capability Pillar</div>'
+        +'<div class="pd-hero-row">'
+          +'<div class="pd-hero-ico" style="background:'+p.color+'">'+p.icon+'</div>'
+          +'<div class="pd-hero-title"><h2>'+p.name+'</h2><p>'+p.purpose+'</p></div>'
+        +'</div>'
+        +'<div class="pd-hero-chips">'+mkChips(p.chips,'pd-hero-chip')+'</div>'
+      +'</div>'
+      +'<div class="pd-apps-hd">'
+        +'<h3>Experiences in this pillar</h3>'
+        +'<p>Each one is part of The People\'s Home, not a separate app.</p>'
+      +'</div>'
+      +'<div class="pd-apps">'+mkApps(p.apps)+'</div>'
+      +'<div class="pd-others">'
+        +'<h4>Other capability pillars</h4>'
+        +'<div class="pd-others-list">'+mkOthers(others)+'</div>'
+      +'</div>';
     document.getElementById('pillars').scrollIntoView({behavior:'smooth',block:'start'});
   }
 
