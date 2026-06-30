@@ -22,6 +22,7 @@
     --green-deep:#2c4d36;
     --teal:#2f7e7e;
     --plum:#7a4a63;
+    --cobalt:#1d4ed8;
     --maxw:1180px;
     --display:"Fraunces", Georgia, serif;
     --body:"Hanken Grotesk", system-ui, sans-serif;
@@ -152,49 +153,151 @@
   .sec-head h2{font-family:var(--display);font-weight:600;font-size:clamp(2.1rem,4.5vw,3.4rem);line-height:1.04;letter-spacing:-.02em;}
   .sec-head p{margin-top:18px;font-size:1.12rem;color:var(--ink-soft);}
 
-  /* ---------- PILLARS ---------- */
-  .pillars{background:linear-gradient(180deg,var(--cream),var(--cream-deep));}
-  .pillar-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:22px;}
-  .card{
-    grid-column:span 2;
-    background:#fffaf0;border-radius:22px;padding:32px 30px;
-    border:1px solid rgba(42,28,18,.07);
-    box-shadow:0 1px 0 rgba(255,255,255,.7) inset, 0 18px 40px -28px rgba(42,28,18,.35);
+  /* ---------- CAPABILITY PILLARS ---------- */
+  .pillars{background:var(--cream-deep);}
+
+  /* 3-column card grid */
+  .pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  @media(max-width:860px){.pillar-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:520px){.pillar-grid{grid-template-columns:1fr;}}
+
+  /* Individual card */
+  .pc{
+    background:#fff;border-radius:18px;
+    border:1px solid rgba(42,28,18,.09);
+    box-shadow:0 2px 14px rgba(42,28,18,.05);
+    padding:20px;cursor:pointer;
     position:relative;overflow:hidden;
-    transition:transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s;
+    transition:transform .22s,box-shadow .22s;
+    user-select:none;
   }
-  .card::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:var(--accent);}
-  .card:hover{transform:translateY(-6px);box-shadow:0 30px 56px -30px rgba(42,28,18,.45);}
-  .card.feature{grid-column:span 3;}
-  .ico{
-    width:58px;height:58px;border-radius:16px;display:grid;place-items:center;font-size:1.7rem;
-    background:color-mix(in srgb, var(--accent) 16%, #fff);margin-bottom:20px;
+  .pc:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(42,28,18,.1);}
+
+  /* Decorative pastel blob — top right, no color-mix needed */
+  .pc-blob{
+    position:absolute;top:-24px;right:-24px;
+    width:110px;height:110px;border-radius:50%;
+    pointer-events:none;
   }
-  .step-no{position:absolute;top:24px;right:28px;font-family:var(--display);font-weight:600;font-size:1.1rem;color:color-mix(in srgb, var(--accent) 55%, #cdbfa8);}
-  .card h3{font-family:var(--display);font-weight:600;font-size:1.42rem;letter-spacing:-.01em;}
-  .card .lead{color:var(--ink-soft);font-size:.97rem;margin:8px 0 18px;}
-  .apps{display:flex;flex-wrap:wrap;gap:8px;}
-  .app{
-    font-size:.84rem;font-weight:600;padding:6px 13px;border-radius:999px;
-    background:color-mix(in srgb, var(--accent) 12%, #fff);
-    color:color-mix(in srgb, var(--accent) 78%, #2a1c12);
-    border:1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+
+  /* Arrow ↗ */
+  .pc-arrow{position:absolute;top:18px;right:18px;font-size:.85rem;color:rgba(42,28,18,.3);font-weight:600;}
+
+  /* Card header: icon + title row */
+  .pc-head{display:flex;align-items:flex-start;gap:13px;margin-bottom:14px;padding-right:28px;}
+
+  /* Circular icon — solid color set via inline style, no inheritance */
+  .pc-ico{
+    width:50px;height:50px;border-radius:50%;
+    display:grid;place-items:center;
+    font-size:1.15rem;flex-shrink:0;
   }
-  .app.soon{opacity:.62;}
-  .app.soon::after{content:" · soon";font-weight:500;opacity:.7;}
-  a.app{text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:transform .2s, box-shadow .2s, background .2s;}
-  a.app:hover{transform:translateY(-2px);box-shadow:0 8px 18px -8px rgba(42,28,18,.55);background:color-mix(in srgb, var(--accent) 22%, #fff);}
-  a.app.live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px color-mix(in srgb, var(--green) 22%, transparent);}
-  .sublist{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px;}
-  .sublist .chip{font-size:.78rem;padding:4px 11px;border-radius:8px;background:rgba(42,28,18,.05);color:var(--ink-soft);}
-  @media(max-width:860px){
-    .pillar-grid{grid-template-columns:1fr 1fr;}
-    .card,.card.feature{grid-column:span 1;}
+
+  .pc-text h3{font-family:var(--display);font-weight:600;font-size:1.05rem;line-height:1.2;color:var(--ink);}
+  .pc-text p{font-size:.8rem;color:var(--ink-soft);margin-top:3px;line-height:1.4;}
+
+  /* Capability chips — neutral, no per-card color */
+  .pc-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
+  .pc-chip{
+    font-size:.74rem;font-weight:500;
+    padding:4px 10px;border-radius:999px;
+    background:rgba(42,28,18,.05);
+    border:1px solid rgba(42,28,18,.1);
+    color:var(--ink-soft);
   }
-  @media(max-width:560px){
-    .pillar-grid{grid-template-columns:1fr;}
-    .card,.card.feature{grid-column:span 1;}
+
+  .pc-count{font-size:.78rem;color:rgba(42,28,18,.4);}
+
+  /* ---------- PILLAR DETAIL PANEL ---------- */
+  .pd{display:none;}
+
+  .pd-back{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:.875rem;font-weight:500;color:var(--ink-soft);
+    background:none;border:none;cursor:pointer;padding:0;
+    margin-bottom:28px;font-family:var(--body);
+    transition:color .18s;
   }
+  .pd-back:hover{color:var(--ink);}
+
+  /* Hero card */
+  .pd-hero{
+    background:#fff;border-radius:20px;
+    border:1px solid rgba(42,28,18,.09);
+    padding:32px 36px;
+    position:relative;overflow:hidden;
+    margin-bottom:44px;
+  }
+  .pd-hero-blob{
+    position:absolute;top:-40px;right:-40px;
+    width:220px;height:220px;border-radius:50%;
+    pointer-events:none;
+  }
+  .pd-kicker{
+    font-size:.68rem;font-weight:700;
+    letter-spacing:.22em;text-transform:uppercase;
+    color:rgba(42,28,18,.4);margin-bottom:18px;
+  }
+  .pd-hero-row{display:flex;align-items:center;gap:18px;margin-bottom:20px;}
+  .pd-hero-ico{
+    width:64px;height:64px;border-radius:50%;
+    display:grid;place-items:center;
+    font-size:1.6rem;flex-shrink:0;
+  }
+  .pd-hero-title h2{font-family:var(--display);font-weight:600;font-size:2.1rem;letter-spacing:-.02em;}
+  .pd-hero-title p{font-size:.95rem;color:var(--ink-soft);margin-top:5px;}
+  .pd-hero-chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .pd-hero-chip{
+    font-size:.8rem;font-weight:500;
+    padding:5px 14px;border-radius:999px;
+    background:rgba(42,28,18,.05);
+    border:1px solid rgba(42,28,18,.12);
+    color:var(--ink-soft);
+  }
+
+  .pd-apps-hd{margin-bottom:18px;}
+  .pd-apps-hd h3{font-family:var(--display);font-weight:600;font-size:1.5rem;}
+  .pd-apps-hd p{font-size:.875rem;color:var(--ink-soft);margin-top:5px;}
+
+  .pd-apps{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px;}
+  @media(max-width:580px){.pd-apps{grid-template-columns:1fr;}}
+
+  .pd-app{
+    background:#fff;border-radius:14px;
+    border:1px solid rgba(42,28,18,.09);
+    padding:18px 20px;position:relative;
+    text-decoration:none;display:block;
+    transition:border-color .18s,box-shadow .18s;
+  }
+  .pd-app:hover{border-color:rgba(42,28,18,.18);box-shadow:0 4px 16px rgba(42,28,18,.06);}
+  .pd-app h4{font-family:var(--display);font-weight:600;font-size:1rem;color:var(--ink);}
+  .pd-app p{font-size:.835rem;color:var(--ink-soft);margin-top:4px;line-height:1.45;}
+
+  .pd-status{
+    position:absolute;top:14px;right:16px;
+    font-size:.7rem;font-weight:600;padding:3px 9px;border-radius:999px;
+    border:1px solid rgba(42,28,18,.14);
+    color:rgba(42,28,18,.5);
+    background:rgba(42,28,18,.04);
+  }
+  .pd-status.live{color:var(--green);background:rgba(63,107,74,.08);border-color:rgba(63,107,74,.2);}
+  .pd-status.soon{color:var(--cobalt);background:rgba(29,78,216,.06);border-color:rgba(29,78,216,.18);}
+
+  .pd-others{
+    background:#fff;border-radius:16px;
+    border:1px solid rgba(42,28,18,.09);
+    padding:20px 24px;
+  }
+  .pd-others h4{font-family:var(--display);font-weight:600;font-size:.95rem;color:var(--ink);margin-bottom:14px;}
+  .pd-others-list{display:flex;flex-wrap:wrap;gap:12px;}
+  .pd-other{
+    display:inline-flex;align-items:center;gap:7px;
+    font-size:.85rem;font-weight:500;color:var(--ink-soft);
+    background:none;border:none;cursor:pointer;padding:0;
+    font-family:var(--body);transition:color .18s;
+  }
+  .pd-other:hover{color:var(--ink);}
+  .pd-other-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
 
   /* ---------- THE MISSING PIECE ---------- */
   .missing{background:var(--cream-deep);}
@@ -454,80 +557,18 @@
 </div>
 
 <!-- PILLARS -->
-<section class="pillars" id="pillars">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="sec-tag">Six Capabilities · One Home</div>
-      <h2>Not a collection of apps.<br>A way to grow.</h2>
-      <p>Each pillar carries a learner one step further — from their first numbers and words to building real opportunity in the world.</p>
+<section class=”pillars” id=”pillars”>
+  <div class=”wrap”>
+    <div class=”sec-head” style=”margin-bottom:36px;”>
+      <h2 style=”font-family:var(--display);font-weight:600;font-size:clamp(1.9rem,4vw,2.8rem);letter-spacing:-.02em;line-height:1.1;”>Capability pillars</h2>
+      <p style=”font-size:1rem;color:var(--ink-soft);margin-top:8px;”>One home. Many capabilities. One journey.</p>
     </div>
 
-    <div class="pillar-grid">
-      <!-- 1 · Foundations -->
-      <div class="card feature" style="--accent:var(--terracotta);">
-        <span class="step-no">01</span>
-        <div class="ico">🧮</div>
-        <h3>Foundations</h3>
-        <p class="lead">Where every journey starts — the numbers, letters and stories that hold everything else up.</p>
-        <div class="apps"><a class="app live" href="https://math-adventure-rpg.pages.dev/" target="_blank" rel="noopener">Math Adventure RPG ↗</a><a class="app live" href="https://read-africa.pages.dev/" target="_blank" rel="noopener">ReadAfrica ↗</a><a class="app live" href="https://everyday-foundations.pages.dev/" target="_blank" rel="noopener">Everyday Foundations ↗</a></div>
-      </div>
+    <!-- Card grid — rendered by JS -->
+    <div class=”pillar-grid” id=”pillar-grid”></div>
 
-      <!-- 2 · Curiosity -->
-      <div class="card feature" style="--accent:var(--green);">
-        <span class="step-no">02</span>
-        <div class="ico">🌱</div>
-        <h3>Curiosity &amp; Knowledge</h3>
-        <p class="lead">Wonder, turned into understanding — science that grows from a child's own questions.</p>
-        <div class="apps"><a class="app live" href="https://science-sprouts-65b.pages.dev/" target="_blank" rel="noopener">Science Sprouts ↗</a><a class="app live" href="https://our-world-b0t.pages.dev/" target="_blank" rel="noopener">Our World ↗</a></div>
-      </div>
-
-      <!-- 3 · Creation -->
-      <div class="card" style="--accent:var(--teal);">
-        <span class="step-no">03</span>
-        <div class="ico">🔧</div>
-        <h3>Creation &amp; Technology</h3>
-        <p class="lead">From user to maker.</p>
-        <div class="apps"><a class="app live" href="https://tech-makers.pages.dev/" target="_blank" rel="noopener">Tech Makers ↗</a><a class="app live" href="https://sifiso-learn-python.pages.dev/" target="_blank" rel="noopener">SIFISO — The Golden Hand ↗</a></div>
-      </div>
-
-      <!-- 4 · Reasoning -->
-      <div class="card" style="--accent:var(--plum);">
-        <span class="step-no">04</span>
-        <div class="ico">🧠</div>
-        <h3>Thinking &amp; Reasoning</h3>
-        <p class="lead">Learning to tell true from false.</p>
-        <div class="apps"><a class="app live" href="https://truth-seekers.pages.dev/" target="_blank" rel="noopener">Truth Seekers ↗</a></div>
-      </div>
-
-      <!-- 5 · Empowerment -->
-      <div class="card" style="--accent:var(--gold);">
-        <span class="step-no">05</span>
-        <div class="ico">🚀</div>
-        <h3>Real-World Empowerment</h3>
-        <p class="lead">Turning skill into a living.</p>
-        <div class="apps"><a class="app live" href="https://micro-founders.pages.dev/" target="_blank" rel="noopener">Micro Founders ↗</a></div>
-      </div>
-
-      <!-- 6 · Money & Opportunity (full width — the bridge) -->
-      <div class="card" style="--accent:var(--terracotta-deep);grid-column:1 / -1;">
-        <span class="step-no">06</span>
-        <div class="ico">💰</div>
-        <h3>Money &amp; Opportunity</h3>
-        <p class="lead">The answer to <em>“What now?”</em> — the bridge from learning to a real future. Education alone is not enough; this is where it becomes a pathway.</p>
-        <div class="apps">
-          <a class="app live" href="https://mzansi-money.pages.dev/" target="_blank" rel="noopener">Mzansi Money ↗</a>
-          <a class="app live" href="https://ikhaya.pages.dev/" target="_blank" rel="noopener">Opportunity Hub ↗</a>
-        </div>
-        <div class="sublist">
-          <span class="chip">University Navigator</span>
-          <span class="chip">TVET Navigator</span>
-          <span class="chip">Bursary Finder</span>
-          <span class="chip">Career Explorer</span>
-          <span class="chip">Learnership Hub</span>
-          <span class="chip">Internship Hub</span>
-        </div>
-      </div>
-    </div>
+    <!-- Detail panel — shown by JS on card click -->
+    <div class=”pd” id=”pillar-detail”></div>
   </div>
 </section>
 
@@ -649,6 +690,176 @@
   const nav=document.getElementById('nav');
   addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
   document.getElementById('yr').textContent=new Date().getFullYear();
+
+  /* ---- CAPABILITY PILLARS ---- */
+  const PILLARS=[
+    {
+      id:'foundations',name:'Foundations',
+      purpose:'Teach people how to learn.',
+      chips:['Numeracy','Literacy','Learning confidence'],
+      color:'#c75a36',blob:'rgba(199,90,54,.1)',icon:'🌱',
+      apps:[
+        {name:'Math Adventure RPG',blurb:'Build numeracy through story.',status:'live',url:'https://math-adventure-rpg.pages.dev/'},
+        {name:'ReadAfrica',blurb:'Grow reading fluency in your language.',status:'live',url:'https://read-africa.pages.dev/'},
+        {name:'Everyday Foundations',blurb:'Literacy, numeracy and life skills for adults.',status:'live',url:'https://everyday-foundations.pages.dev/'},
+        {name:'Early Numeracy',blurb:'Number sense for young children.',status:'future',url:null},
+        {name:'Early Literacy Games',blurb:'Reading readiness through play.',status:'future',url:null},
+      ]
+    },
+    {
+      id:'curiosity',name:'Curiosity & Knowledge',
+      purpose:'Help learners understand the world.',
+      chips:['Observation','Scientific thinking','Exploration'],
+      color:'#3f6b4a',blob:'rgba(63,107,74,.1)',icon:'🔭',
+      apps:[
+        {name:'Science Sprouts',blurb:'Discover science through hands-on experiments.',status:'live',url:'https://science-sprouts-65b.pages.dev/'},
+        {name:'Our World',blurb:'SA geography, African history and world cultures.',status:'live',url:'https://our-world-b0t.pages.dev/'},
+        {name:'Space Explorer',blurb:'Journey through the solar system.',status:'future',url:null},
+        {name:'Human Body Explorer',blurb:'Understand how the body works.',status:'future',url:null},
+        {name:'African Discoveries',blurb:'Celebrate African innovations and history.',status:'future',url:null},
+      ]
+    },
+    {
+      id:'creation',name:'Creation & Technology',
+      purpose:'Turn consumers into creators.',
+      chips:['Technology','Coding','Design','Building'],
+      color:'#2a6bb5',blob:'rgba(42,107,181,.1)',icon:'⚙️',
+      apps:[
+        {name:'Tech Makers',blurb:'Learn to code and build digital things.',status:'live',url:'https://tech-makers.pages.dev/'},
+        {name:'The Golden Hand',blurb:'Python, AI literacy and startup skills.',status:'live',url:'https://sifiso-learn-python.pages.dev/'},
+        {name:'Design Studio',blurb:'Visual thinking and digital design.',status:'future',url:null},
+        {name:'Robotics Lab',blurb:'Build and program simple machines.',status:'future',url:null},
+        {name:'Digital Creator',blurb:'Make videos, podcasts and content.',status:'future',url:null},
+      ]
+    },
+    {
+      id:'thinking',name:'Thinking & Reasoning',
+      purpose:'Strengthen judgement.',
+      chips:['Logic','Evidence','Critical thinking','Decisions'],
+      color:'#7a4a63',blob:'rgba(122,74,99,.1)',icon:'⚖️',
+      apps:[
+        {name:'Truth Seekers',blurb:'Spot misinformation and reason clearly.',status:'live',url:'https://truth-seekers.pages.dev/'},
+        {name:'Logic Lab',blurb:'Puzzle-based logical thinking.',status:'future',url:null},
+        {name:'Debate Academy',blurb:'Make and defend arguments well.',status:'future',url:null},
+        {name:'Problem Solver',blurb:'Structured thinking for hard problems.',status:'future',url:null},
+        {name:'Research Skills',blurb:'Find, evaluate and use information.',status:'future',url:null},
+      ]
+    },
+    {
+      id:'money',name:'Money & Financial Capability',
+      purpose:'Understand money before adulthood.',
+      chips:['Earning','Budgeting','Saving','Borrowing wisely'],
+      color:'#2f7e7e',blob:'rgba(47,126,126,.1)',icon:'💰',
+      apps:[
+        {name:'Mzansi Money',blurb:'Personal finance built for South Africans.',status:'live',url:'https://mzansi-money.pages.dev/'},
+        {name:'Side Hustle Lab',blurb:'Turn a skill into income.',status:'future',url:null},
+        {name:'Personal Budget Coach',blurb:'Build a budget that actually works.',status:'future',url:null},
+        {name:'Smart Shopper',blurb:'Make smarter money decisions every day.',status:'future',url:null},
+        {name:'Financial Wellness',blurb:'Long-term money habits that last.',status:'future',url:null},
+      ]
+    },
+    {
+      id:'entrepreneurship',name:'Entrepreneurship',
+      purpose:'Turn ideas into opportunities.',
+      chips:['Opportunity','Value creation','Business thinking'],
+      color:'#c87533',blob:'rgba(200,117,51,.1)',icon:'🚀',
+      apps:[
+        {name:'Micro Founders',blurb:'Start and run a micro-enterprise.',status:'live',url:'https://micro-founders.pages.dev/'},
+        {name:'Opportunity Hub',blurb:'Connect your capability to real opportunity.',status:'live',url:'https://ikhaya.pages.dev/'},
+        {name:'Career Explorer',blurb:'Discover pathways that match your strengths.',status:'future',url:null},
+        {name:'Leadership Academy',blurb:'Lead teams and communities.',status:'future',url:null},
+        {name:'Community Builder',blurb:'Create change in your neighbourhood.',status:'future',url:null},
+      ]
+    },
+  ];
+
+  function liveCount(p){return p.apps.filter(a=>a.status==='live').length;}
+
+  function renderGrid(){
+    const grid=document.getElementById('pillar-grid');
+    const detail=document.getElementById('pillar-detail');
+    detail.style.display='none';
+    grid.style.display='grid';
+    grid.innerHTML=PILLARS.map(p=>`
+      <div class="pc" onclick="showPillar('${p.id}')" role="button" tabindex="0" aria-label="Open ${p.name}">
+        <div class="pc-blob" style="background:${p.blob}"></div>
+        <span class="pc-arrow">↗</span>
+        <div class="pc-head">
+          <div class="pc-ico" style="background:${p.color}">${p.icon}</div>
+          <div class="pc-text">
+            <h3>${p.name}</h3>
+            <p>${p.purpose}</p>
+          </div>
+        </div>
+        <div class="pc-chips">${p.chips.map(c=>`<span class="pc-chip">${c}</span>`).join('')}</div>
+        <div class="pc-count">${liveCount(p)} ${liveCount(p)===1?'experience':'experiences'}</div>
+      </div>
+    `).join('');
+    grid.querySelectorAll('.pc').forEach(card=>{
+      card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();card.click();}});
+    });
+  }
+
+  function showPillar(id){
+    const p=PILLARS.find(x=>x.id===id);
+    if(!p)return;
+    const grid=document.getElementById('pillar-grid');
+    const detail=document.getElementById('pillar-detail');
+    const others=PILLARS.filter(x=>x.id!==id);
+
+    grid.style.display='none';
+    detail.style.display='block';
+
+    detail.innerHTML=`
+      <button class="pd-back" onclick="renderGrid()">← All capabilities</button>
+
+      <div class="pd-hero">
+        <div class="pd-hero-blob" style="background:${p.blob}"></div>
+        <div class="pd-kicker">Capability Pillar</div>
+        <div class="pd-hero-row">
+          <div class="pd-hero-ico" style="background:${p.color}">${p.icon}</div>
+          <div class="pd-hero-title">
+            <h2>${p.name}</h2>
+            <p>${p.purpose}</p>
+          </div>
+        </div>
+        <div class="pd-hero-chips">${p.chips.map(c=>`<span class="pd-hero-chip">${c}</span>`).join('')}</div>
+      </div>
+
+      <div class="pd-apps-hd">
+        <h3>Experiences in this pillar</h3>
+        <p>Each one is part of The People's Home, not a separate app.</p>
+      </div>
+
+      <div class="pd-apps">
+        ${p.apps.map(a=>a.status==='live'&&a.url
+          ?`<a class="pd-app" href="${a.url}" target="_blank" rel="noopener">
+              <span class="pd-status live">Live ↗</span>
+              <h4>${a.name}</h4><p>${a.blurb}</p>
+            </a>`
+          :`<div class="pd-app">
+              <span class="pd-status soon">Coming soon</span>
+              <h4>${a.name}</h4><p>${a.blurb}</p>
+            </div>`
+        ).join('')}
+      </div>
+
+      <div class="pd-others">
+        <h4>Other capability pillars</h4>
+        <div class="pd-others-list">
+          ${others.map(o=>`
+            <button class="pd-other" onclick="showPillar('${o.id}')">
+              <span class="pd-other-dot" style="background:${o.color}"></span>${o.name}
+            </button>
+          `).join('')}
+        </div>
+      </div>
+    `;
+
+    document.getElementById('pillars').scrollIntoView({behavior:'smooth',block:'start'});
+  }
+
+  renderGrid();
 </script>
 </body>
 </html>
