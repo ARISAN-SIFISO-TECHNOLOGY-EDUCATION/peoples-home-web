@@ -12,6 +12,41 @@
 
 ---
 
+## ✅ 2026-07-02 (session 17) — Early Literacy: offline PWA + audit + Phase-1 fixes + repo → org
+
+**Live:** https://early-literacy.pages.dev/ — now an **installable offline PWA**.
+**Repo:** **transferred `SifisoScS/early-literacy` → `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-literacy`**
+(PRIVATE) `main` — commit `b22bc6b`.
+
+### What was done
+- **Offline PWA:** `vite-plugin-pwa` (Workbox precache of the full shell + SPA navigateFallback),
+  unique manifest `id: /early-literacy/`, real branded icons via a **dependency-free** zlib PNG
+  generator (`generate-icons.mjs`). Closes the World-A offline definition-of-done gap.
+- **Senior architecture audit** (first-principles) run on the real code. **Phase 1 (critical) applied:**
+  - **C1:** removed narration fetches to `actions.google.com` (Google-AI-Studio remnant) — the app
+    now makes **zero network calls** (was silently breaking offline-first + no-tracking).
+  - **C2:** single shared `AudioContext` (was creating one per SFX → audio died mid-session at the
+    browser context cap).
+  - **M5:** ErrorBoundary (child-safe fallback vs white screen). **M6:** guarded localStorage writes.
+  - Fixed a latent `playCat` Web-Audio bug.
+- **Brain updated:** `apps/early-literacy.md` now carries the full audit + remaster backlog (Phases 2–5).
+
+### Remaster backlog (Phases 2–5) — see `apps/early-literacy.md` §12
+M3 (single tree-stage owner) · M4 (engine contract↔code truth + **add `@types/react`** — type-checking
+is currently hollow) · M8 (code-split the 156 KB monolith) · M7 (adult gate on Grown-Up Corner) ·
+M10 (only 9 letters have tracing/discovery) · M9 (tap-to-begin) · M12 (per-session transfer prompt).
+
+### Next steps (in order)
+1. **Phase 2** — M3, M4 (incl. `@types/react`), M8. *(Recommended next.)*
+2. **Founder decision:** "TPH Core" naming reconciliation (rename app engine set or fold into `@tph/core`).
+3. **Add a live card** for Early Literacy on peoples-home-web.
+4. **Phase 4.5** — build when directed.
+5. 🔴 Keystore backup still outstanding (carried from session 11).
+
+**Verified:** `tsc --noEmit` 0 errors; `vite build` clean; no `actions.google.com` in `dist/`.
+
+---
+
 ## ✅ 2026-07-02 (session 16) — Early Literacy: AI dropped + DEPLOYED (✅ LIVE)
 
 **Live:** **https://early-literacy.pages.dev/** (Cloudflare Pages). **Repo:** `SifisoScS/early-literacy`

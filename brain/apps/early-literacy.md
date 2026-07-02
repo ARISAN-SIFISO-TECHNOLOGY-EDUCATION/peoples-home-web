@@ -1,9 +1,9 @@
 # Early Literacy
 
-> 🧮 **Foundations** · ages **3–7** · **✅ LIVE (web)** (World A) ·
-> repo `SifisoScS/early-literacy` (private) · **https://early-literacy.pages.dev/** ·
+> 🧮 **Foundations** · ages **3–7** · **✅ LIVE — installable offline PWA** (World A) ·
+> repo `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-literacy` (private) · **https://early-literacy.pages.dev/** ·
 > Product name: **Early Literacy Village** ("Magical Literacy Village") ·
-> Integrated into the Brain 2026-07-02 · **AI dropped + deployed 2026-07-02.**
+> Integrated into the Brain 2026-07-02 · **AI dropped + deployed + offline-PWA + Phase-1 audit fixes 2026-07-02.**
 >
 > This is v3 Foundations slot **#4 "Early Literacy Games"** — now actually built.
 > Built externally (Google AI Studio / Gemini). This memory integrates it as a
@@ -168,9 +168,12 @@ This app introduced the **World-A navigation standard** — documented as a reus
 - **State preservation** — progress is already in `localStorage`; returning resumes in place.
 
 ### Offline model
-100% offline for the core loop: no network calls, all assets bundled, all state local. Speech
-uses on-device TTS; if synthesis fails it falls back to timed visual captions (never silence
-where a voice is expected). Satisfies [Principle 2 (Offline First)](../PROJECT_DNA.md).
+100% offline: **installable PWA** (service worker precaches the full shell; SPA navigateFallback),
+zero network calls, all assets bundled, all state local. Speech uses on-device TTS; if synthesis
+fails it falls back to timed visual captions (never silence where a voice is expected). Satisfies
+[Principle 2 (Offline First)](../PROJECT_DNA.md).
+> **Fixed 2026-07-02:** narration previously fetched some clips from `actions.google.com` (a
+> Google-AI-Studio remnant) — removed, so the app now truly makes zero network calls. See §12.
 
 ### Accessibility model
 `AccessibilitySettings` exposes `narrationSpeed`, `visualMode`, `reducedMotion`, `highContrast`.
@@ -182,24 +185,25 @@ whole document. Aligns with [Principle 13 (Accessibility by Default)](../PROJECT
 
 ## 8. Current state
 
-**✅ LIVE (web) at https://early-literacy.pages.dev/** (Cloudflare Pages, deployed 2026-07-02).
-Built externally (Google AI Studio / Gemini); the auto-added AI was **dropped** on deploy so it
-ships as a true `#FreeForever` app. Repo `SifisoScS/early-literacy` (PRIVATE), local checkout
-`C:\Users\sifis\Next-Level-Projects\early-literacy`. Phases 1–4 + navigation framework complete.
-**Offline-PWA hardening (service worker + manifest `id`) is still pending** — the app makes no
-network calls but is not yet installable / cold-load-offline. For live facts see
+**✅ LIVE at https://early-literacy.pages.dev/** as an **installable offline PWA** (Cloudflare
+Pages, deployed 2026-07-02). Built externally (Google AI Studio / Gemini); the auto-added AI was
+**dropped** so it ships as a true `#FreeForever` app. Repo
+`ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-literacy` (PRIVATE, transferred from `SifisoScS` on
+2026-07-02), local checkout `C:\Users\sifis\Next-Level-Projects\early-literacy`. Phases 1–4 +
+navigation framework complete; **Phase-1 audit fixes applied** (see §12). For live facts see
 [`../../ECOSYSTEM.md`](../../ECOSYSTEM.md); for status see [`../../ROADMAP.md`](../../ROADMAP.md).
 
 ---
 
 ## 9. Future direction / roadmap
 
-- **Offline-PWA hardening** — add `vite-plugin-pwa` (service worker + unique manifest `id`), verify
-  cold-load offline. Required for the full World-A "definition of done". *(Immediate next step.)*
-- **Add to the site** — surface a live card on peoples-home-web once PWA-verified.
+- **Remaster backlog (Phases 2–5)** — see §12. Next up: M3 (single tree-stage owner), M4
+  (engine contract↔code truth + `@types/react`), M8 (code-split).
+- **Add to the site** — surface a live card on peoples-home-web.
 - **Phase 4.5** — the next authored step (planned; scope TBD by founder).
 - **isiZulu** — English-first today; isiZulu narration is part of the ~December 2026 batch.
-- ~~Deploy~~ ✅ done (2026-07-02). ~~Drop AI~~ ✅ done. ~~Fix `react-example` name~~ ✅ done.
+- ~~Deploy~~ ✅ · ~~Drop AI~~ ✅ · ~~Fix `react-example` name~~ ✅ · ~~Offline PWA~~ ✅ ·
+  ~~Migrate repo to org~~ ✅ · ~~Phase-1 audit fixes~~ ✅ (all 2026-07-02).
 - **TPH Core reconciliation** — resolve the naming collision (§12); the app's behaviour engines
   are candidate contributions to (or a renamed sibling of) the canonical TPH Core SDK.
 
@@ -207,10 +211,12 @@ network calls but is not yet installable / cold-load-offline. For live facts see
 
 ## 10. Known constraints
 
-- **No service worker / PWA manifest yet** — live and offline *in use* (no network calls), but not
-  installable and won't cold-load with no connection. The one real gap vs. World-A DoD.
+- **Content depth:** letter tracing + the Discovery catalogue cover only **9 letters**
+  (A,B,C,D,E,F,G,M,S); other letters fall back to a generic triangle. 10 first words authored
+  (CAT, DOG, SUN, FROG, BIRD, RAIN, TRAIN, BEE, TREE, BELL). Seed content, not full.
+- **`@types/react` not installed** → `tsc` type-checking is hollow for React APIs (false
+  confidence). See §12 remaster backlog.
 - English-only content (isiZulu deferred to the December review, consistent with all apps).
-- 10 first words authored (CAT, DOG, SUN, FROG, BIRD, RAIN, TRAIN, BEE, TREE, BELL) — a seed set.
 
 ---
 
@@ -244,9 +250,8 @@ network calls but is not yet installable / cold-load-offline. For live facts see
    Engines") or formally fold it into the canonical core; do not leave two frozen/unfrozen "TPH
    Core" definitions in the ecosystem. *(Founder decision pending.)*
 
-3. ℹ️ **Repo under personal account** `SifisoScS` — **acceptable.** Per [`ECOSYSTEM.md`](../../ECOSYSTEM.md),
-   some repos legitimately sit under the personal account; "ARISAN SIFISO Holdings" is the company,
-   not an app-layer concern. No action required.
+3. ✅ **RESOLVED — repo moved to the org.** Transferred `SifisoScS/early-literacy` →
+   `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-literacy` (2026-07-02), consistent with the other 10 apps.
 
 4. ✅ **RESOLVED — `package.json` name** fixed `"react-example"` → `"early-literacy"` (commit `2c2f211`).
 
@@ -263,13 +268,41 @@ None are security or child-safety violations.
 | **Modularity** | ✅ App engines (Word, Reading Journey) sit cleanly above platform engines |
 | **Platform alignment** | ⚠️ Consumes an app-local engine set named "TPH Core" that isn't the canonical SDK — reconcile |
 | **Accessibility** | ✅ Settings + audio-first + large targets; visual-mode fallback exists |
-| **Offline readiness** | ⚠️ Core loop makes no network calls, but **no service worker / manifest yet** — add `vite-plugin-pwa` for installable, cold-load-offline PWA |
+| **Offline readiness** | ✅ Installable PWA (Workbox precache + navigateFallback); zero network calls after C1 fix |
 | **Educational integrity** | ✅ Confidence-before-correction enforced; no fail states |
 | **Navigation consistency** | ✅ Establishes the World-A nav standard (now documented) |
-| **Security alignment** | ✅ No secrets in source; no tracking; unused `@google/genai` **removed** (2026-07-02) — supply-chain surface reduced |
+| **Security alignment** | ✅ No secrets; no tracking; `@google/genai` **and** remote Google audio removed — zero third-party surface |
 
-**Audit findings recorded. Config/dependency cleanup + deploy applied 2026-07-02 (no app logic/UI
-changed); PWA hardening + the "TPH Core" naming reconciliation remain open.**
+### Full remaster audit (2026-07-02)
+
+A senior-level, first-principles audit was run against the real code. **Phase 1 (critical) was
+applied; Phases 2–5 are the tracked backlog.** No UI redesign was done.
+
+**✅ Phase 1 — DONE (commit `b22bc6b`):**
+- **C1 (critical):** `speech.ts` fetched narration from `actions.google.com` (a Google-AI-Studio
+  remnant) — a network call in the learning path that broke offline-first, leaked to a third party,
+  and defeated the PWA precache. **Removed** — all narration is now on-device TTS + local WebAudio.
+- **C2 (high):** every sound effect created a **new `AudioContext`** (never closed) → hit the
+  browser's ~6-context cap and killed audio mid-session. **Now one shared context**, resumed on gesture.
+- **M5:** added an **ErrorBoundary** (gentle "village is resting" fallback vs. white screen).
+- **M6:** **guarded `localStorage` writes** (Safari Private Mode / quota no longer crash saves).
+- Also fixed a latent bug: `playCat` used a non-existent Web Audio method.
+
+**⏳ Phases 2–5 — BACKLOG:**
+| ID | Sev | Finding | Fix |
+|---|---|---|---|
+| M3 | Med | **Two conflicting tree-stage formulas** — `App.tsx` persists `treeStage` (4/12/25/45) while `EnvironmentEngine` computes (4/10/20/30). Split source of truth (SRP break). | One owner: App delegates to EnvironmentEngine. |
+| M4 | Med | **Engine contracts ≠ code.** The app's `04-tph-core.md` claims Vocabulary has `attemptsCount` + "3 correct → mastered"; real code is a flat status map, mastered on first spell. Also **`@types/react` missing** → hollow type-checking. | Align docs to code (or implement); add `@types/react` + fix surfaced errors. |
+| M8 | Med | **No code-splitting** — 548 KB (156 KB gzip) monolith; all 8 modules eager-loaded on a 3G target. | `React.lazy` per module + `manualChunks`. |
+| M7 | Med | **Grown-Up Corner has no adult gate** — Reset Everything is reachable by a child (2-tap confirm only). | Add an adult gate on entry. |
+| M9 | Low | Welcome `speak()` fires without a gesture (autoplay-blocked); no "tap to begin". | Add tap-to-begin gate. |
+| M10 | Med | **Tracing/Discovery cover only 9 letters** (A–G,M,S); rest fall back to a triangle. | Author all 26. |
+| M12 | Low | No child-facing per-session "Try this at home" transfer prompt (constitutional in Early Numeracy). | Add end-of-session transfer card. |
+| — | Low | No `public/_headers` (CSP/clickjacking); typo "Suggeted". | Hygiene pass. |
+
+**Verdict (2026-07-02):** production-readiness ~7.5/10 after Phase 1 (was ~6). Bones are right
+(event-bus + app/platform engine layering). Remaining work is content depth (M10), type-safety
+(M4), and consistency (M3) — not architecture.
 
 ---
 

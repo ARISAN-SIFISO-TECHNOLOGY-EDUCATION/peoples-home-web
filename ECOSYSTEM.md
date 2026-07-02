@@ -39,7 +39,7 @@ ReadAfrica has no permanent local checkout (was a temp audit clone).
 | App | Pillar | GitHub repo | Live URL | Stack | Notes |
 |---|---|---|---|---|---|
 | **Early Numeracy** | Foundations | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-numeracy` (private) | — (not deployed; PWA-ready) | Vite · React 19 · TS · Tailwind v4 · VitePWA | Number-sense 3–7. Phase 1 shell (2026-06-30). |
-| **Early Literacy** | Foundations | `SifisoScS/early-literacy` (private) | **https://early-literacy.pages.dev/** ✅ | Vite 6 · React 19 · TS · Tailwind v4 · motion | Emergent literacy 3–7 ("Village"). Built externally (Gemini); **AI dropped, deployed 2026-07-02**. Static SPA (no env vars). ⚠️ offline-PWA hardening pending; "TPH Core" naming collision — see `brain/apps/early-literacy.md`. |
+| **Early Literacy** | Foundations | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-literacy` (private) | **https://early-literacy.pages.dev/** ✅ | Vite 6 · React 19 · TS · Tailwind v4 · motion · vite-plugin-pwa | Emergent literacy 3–7 ("Village"). Built externally (Gemini); **AI dropped, deployed, offline PWA, Phase-1 audit fixes — 2026-07-02**. Static SPA, no env vars. Build: `npm run build` · `dist`. ⚠️ "TPH Core" naming collision + remaster backlog Phases 2–5 — see `brain/apps/early-literacy.md`. |
 
 ### Per-app deploy gotchas (hard-won)
 - **Tech Makers & SIFISO:** `package-lock.json` is **gitignored** so Cloudflare uses lenient

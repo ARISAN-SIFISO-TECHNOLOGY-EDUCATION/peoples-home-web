@@ -89,7 +89,13 @@
   AI in our apps as they are free"), the Google-AI-Studio-added `@google/genai` capability (unused) was
   removed, along with server cruft. Deployed to Cloudflare Pages — **✅ LIVE at
   https://early-literacy.pages.dev/**. First World-A app built externally and brought fully in-house
-  to the #FreeForever standard. *(Offline-PWA hardening still pending.)*
+  to the #FreeForever standard.
+- **2026-07-02 — Early Literacy: offline PWA + senior audit + Phase-1 fixes.** Added an installable
+  offline PWA. A first-principles architecture audit found (and Phase 1 fixed) a **hidden offline/privacy
+  breach**: narration was fetching audio from `actions.google.com`. Removed → the app now makes **zero
+  network calls**. Also fixed an AudioContext leak (audio died mid-session), added an error boundary, and
+  guarded storage writes. Repo **transferred to the `ARISAN-SIFISO-TECHNOLOGY-EDUCATION` org**. Remaster
+  backlog (Phases 2–5) recorded in `apps/early-literacy.md`.
 
 ---
 

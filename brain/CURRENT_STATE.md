@@ -37,7 +37,7 @@ Pages PWAs, each surfaced as a card on the People's Home site. The project has m
 | App | Pillar | One-line state | Memory |
 |---|---|---|---|
 | Early Numeracy | Foundations | Number-sense 3–7. Phase 1 shell built (2026-06-30); **not yet deployed** (PWA-ready). | [apps/early-numeracy](./apps/early-numeracy.md) |
-| Early Literacy | Foundations | Emergent literacy 3–7 ("Village"). Built externally (Gemini); Phases 1–4 + nav framework. **✅ LIVE (web) — https://early-literacy.pages.dev/ (deployed 2026-07-02); AI dropped for #FreeForever.** Consumes engines via an Event Bus; adds WordEngine + ReadingJourneyEngine. ⚠️ offline-PWA hardening pending; ⚠️ "TPH Core" naming collision — see memory. | [apps/early-literacy](./apps/early-literacy.md) |
+| Early Literacy | Foundations | Emergent literacy 3–7 ("Village"). Built externally (Gemini); Phases 1–4 + nav. **✅ LIVE as installable offline PWA — https://early-literacy.pages.dev/ (2026-07-02).** AI dropped for #FreeForever; repo moved to the org; senior audit run + **Phase-1 critical fixes applied** (removed hidden Google audio calls, audio-context leak, error boundary). Remaster backlog Phases 2–5 in memory. ⚠️ "TPH Core" naming collision open. | [apps/early-literacy](./apps/early-literacy.md) |
 
 ## World B — opportunity infrastructure (iKhaya)
 
