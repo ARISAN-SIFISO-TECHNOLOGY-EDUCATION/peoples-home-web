@@ -1,9 +1,9 @@
 # Early Literacy
 
-> 🧮 **Foundations** · ages **3–7** · **BUILT — integrating** (World A — offline PWA) ·
-> repo `SifisoScS/early-literacy` (private) · **not yet deployed** ·
+> 🧮 **Foundations** · ages **3–7** · **✅ LIVE (web)** (World A) ·
+> repo `SifisoScS/early-literacy` (private) · **https://early-literacy.pages.dev/** ·
 > Product name: **Early Literacy Village** ("Magical Literacy Village") ·
-> Integrated into the Brain 2026-07-02.
+> Integrated into the Brain 2026-07-02 · **AI dropped + deployed 2026-07-02.**
 >
 > This is v3 Foundations slot **#4 "Early Literacy Games"** — now actually built.
 > Built externally (Google AI Studio / Gemini). This memory integrates it as a
@@ -182,21 +182,24 @@ whole document. Aligns with [Principle 13 (Accessibility by Default)](../PROJECT
 
 ## 8. Current state
 
-**Built externally (Google AI Studio / Gemini), integrated into the Brain 2026-07-02, NOT yet
-deployed.** Repo `SifisoScS/early-literacy` (PRIVATE), local checkout
+**✅ LIVE (web) at https://early-literacy.pages.dev/** (Cloudflare Pages, deployed 2026-07-02).
+Built externally (Google AI Studio / Gemini); the auto-added AI was **dropped** on deploy so it
+ships as a true `#FreeForever` app. Repo `SifisoScS/early-literacy` (PRIVATE), local checkout
 `C:\Users\sifis\Next-Level-Projects\early-literacy`. Phases 1–4 + navigation framework complete.
-For live facts (repo, URL, build) see [`../../ECOSYSTEM.md`](../../ECOSYSTEM.md); for status see
-[`../../ROADMAP.md`](../../ROADMAP.md).
+**Offline-PWA hardening (service worker + manifest `id`) is still pending** — the app makes no
+network calls but is not yet installable / cold-load-offline. For live facts see
+[`../../ECOSYSTEM.md`](../../ECOSYSTEM.md); for status see [`../../ROADMAP.md`](../../ROADMAP.md).
 
 ---
 
 ## 9. Future direction / roadmap
 
+- **Offline-PWA hardening** — add `vite-plugin-pwa` (service worker + unique manifest `id`), verify
+  cold-load offline. Required for the full World-A "definition of done". *(Immediate next step.)*
+- **Add to the site** — surface a live card on peoples-home-web once PWA-verified.
 - **Phase 4.5** — the next authored step (planned; scope TBD by founder).
-- **Deploy** — Cloudflare Pages PWA (unique manifest `id`), verify offline, add to the site.
-- **Repo home** — migrate `SifisoScS/early-literacy` → the `ARISAN-SIFISO-TECHNOLOGY-EDUCATION`
-  org for consistency with the other 10 apps (deviation, §12).
 - **isiZulu** — English-first today; isiZulu narration is part of the ~December 2026 batch.
+- ~~Deploy~~ ✅ done (2026-07-02). ~~Drop AI~~ ✅ done. ~~Fix `react-example` name~~ ✅ done.
 - **TPH Core reconciliation** — resolve the naming collision (§12); the app's behaviour engines
   are candidate contributions to (or a renamed sibling of) the canonical TPH Core SDK.
 
@@ -204,9 +207,9 @@ For live facts (repo, URL, build) see [`../../ECOSYSTEM.md`](../../ECOSYSTEM.md)
 
 ## 10. Known constraints
 
-- Not deployed; no public URL yet.
+- **No service worker / PWA manifest yet** — live and offline *in use* (no network calls), but not
+  installable and won't cold-load with no connection. The one real gap vs. World-A DoD.
 - English-only content (isiZulu deferred to the December review, consistent with all apps).
-- `package.json` `name` is the placeholder `"react-example"` (cosmetic; fix before publish).
 - 10 first words authored (CAT, DOG, SUN, FROG, BIRD, RAIN, TRAIN, BEE, TREE, BELL) — a seed set.
 
 ---
@@ -225,29 +228,29 @@ For live facts (repo, URL, build) see [`../../ECOSYSTEM.md`](../../ECOSYSTEM.md)
 | 12 · Private by Default | ✅ | Repo confirmed PRIVATE |
 | 13 · Accessibility by Default | ✅ | Settings for speed/visual/motion/contrast; large targets |
 | 14 · Modular Architecture | ✅ | Event-bus decoupling; app engines layered over platform engines |
-| 17 · Wire AI, Don't Activate It | ⚠️ | See below |
+| 17 · Wire AI, Don't Activate It | ✅ | **AI dropped 2026-07-02** — see below |
 
-### ⚠️ Deviations (documented, not silently changed — per the integration mandate)
+### Deviations — status
 
-1. **Declared cloud AI capability, unused.** `metadata.json` declares
-   `MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API` and `package.json` depends on `@google/genai`, but
-   **there are zero AI/Gemini calls in `src/`**. In practice this *honours*
-   [Principle 17 (Wire AI, Don't Activate It)](../PROJECT_DNA.md) — wired, not activated. But a
-   *declared* server-side cloud capability sits in tension with strict offline autonomy and should
-   be removed (or the dependency dropped) before publish, since nothing uses it. Aligns with the
-   AI principle established 2026-06-28. **Recommendation:** drop the unused capability + dependency.
+1. ✅ **RESOLVED — cloud AI removed.** `metadata.json` had declared
+   `MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API` and `package.json` depended on `@google/genai` (both
+   auto-added by Google AI Studio, **never used in `src/`**). Because this is a `#FreeForever` app
+   — "we don't use AI in our apps as they are free" — the capability, the `@google/genai` dependency,
+   and unused server cruft (`express`, `dotenv`) were removed on deploy (commit `2c2f211`). Now fully
+   aligned with [Principle 17](../PROJECT_DNA.md). Verified build clean afterward.
 
-2. **"TPH Core" naming collision** with the canonical [TPH Core SDK](../platform/tph-core.md)
+2. ⚠️ **OPEN — "TPH Core" naming collision** with the canonical [TPH Core SDK](../platform/tph-core.md)
    (see §5, §12). **Recommendation:** rename the app's engine runtime (e.g. "TPH Learning
    Engines") or formally fold it into the canonical core; do not leave two frozen/unfrozen "TPH
-   Core" definitions in the ecosystem.
+   Core" definitions in the ecosystem. *(Founder decision pending.)*
 
-3. **Repo under personal account** `SifisoScS`, not the org. Consistency gap; migrate on publish.
+3. ℹ️ **Repo under personal account** `SifisoScS` — **acceptable.** Per [`ECOSYSTEM.md`](../../ECOSYSTEM.md),
+   some repos legitimately sit under the personal account; "ARISAN SIFISO Holdings" is the company,
+   not an app-layer concern. No action required.
 
-4. **`package.json` name placeholder** `"react-example"`. Cosmetic; fix before publish.
+4. ✅ **RESOLVED — `package.json` name** fixed `"react-example"` → `"early-literacy"` (commit `2c2f211`).
 
-None of these are security or child-safety violations. All are logged here rather than changed,
-per the integration brief.
+None are security or child-safety violations.
 
 ---
 
@@ -260,12 +263,13 @@ per the integration brief.
 | **Modularity** | ✅ App engines (Word, Reading Journey) sit cleanly above platform engines |
 | **Platform alignment** | ⚠️ Consumes an app-local engine set named "TPH Core" that isn't the canonical SDK — reconcile |
 | **Accessibility** | ✅ Settings + audio-first + large targets; visual-mode fallback exists |
-| **Offline readiness** | ✅ Core loop offline; ⚠️ verify PWA service worker + manifest `id` before deploy |
+| **Offline readiness** | ⚠️ Core loop makes no network calls, but **no service worker / manifest yet** — add `vite-plugin-pwa` for installable, cold-load-offline PWA |
 | **Educational integrity** | ✅ Confidence-before-correction enforced; no fail states |
 | **Navigation consistency** | ✅ Establishes the World-A nav standard (now documented) |
-| **Security alignment** | ✅ No secrets in source; no tracking; ⚠️ drop unused `@google/genai` to shrink supply-chain surface |
+| **Security alignment** | ✅ No secrets in source; no tracking; unused `@google/genai` **removed** (2026-07-02) — supply-chain surface reduced |
 
-**No code changes were made. Findings are recorded for founder decision.**
+**Audit findings recorded. Config/dependency cleanup + deploy applied 2026-07-02 (no app logic/UI
+changed); PWA hardening + the "TPH Core" naming reconciliation remain open.**
 
 ---
 

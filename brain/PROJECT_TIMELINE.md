@@ -83,9 +83,13 @@
   swipe-to-back, resume, `localStorage` state preservation, companion farewell) and promoted to a
   reusable pattern ([`patterns/world-a-navigation.md`](./patterns/world-a-navigation.md)).
 - **2026-07-02 — Early Literacy integrated into the Brain.** Ecosystem integration (memory, registries,
-  architecture, governance review) — no app code changed. Recorded as built · integrating · not yet
-  deployed. Governance flags logged, not silently fixed (unused Gemini capability; "TPH Core" naming
-  collision; personal-account repo). See [`SESSION_HANDOFF.md`](./SESSION_HANDOFF.md).
+  architecture, governance review) — no app code changed. Governance flags logged, not silently fixed
+  (unused Gemini capability; "TPH Core" naming collision). See [`SESSION_HANDOFF.md`](./SESSION_HANDOFF.md).
+- **2026-07-02 — Early Literacy: AI dropped + DEPLOYED.** Because it is `#FreeForever` ("we don't use
+  AI in our apps as they are free"), the Google-AI-Studio-added `@google/genai` capability (unused) was
+  removed, along with server cruft. Deployed to Cloudflare Pages — **✅ LIVE at
+  https://early-literacy.pages.dev/**. First World-A app built externally and brought fully in-house
+  to the #FreeForever standard. *(Offline-PWA hardening still pending.)*
 
 ---
 

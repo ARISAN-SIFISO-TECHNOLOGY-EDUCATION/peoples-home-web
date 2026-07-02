@@ -32,12 +32,12 @@ Pages PWAs, each surfaced as a card on the People's Home site. The project has m
 | Everyday Foundations | Foundations | Adult "second front door." 4 of 5 areas deep. | [apps/everyday-foundations](./apps/everyday-foundations.md) |
 | Our World | Curiosity | Belonging journey (Place·People·Planet). Shipped 2026-06-27. | [apps/our-world](./apps/our-world.md) |
 
-## Foundations — youngest-learner on-ramps (built, not yet deployed)
+## Foundations — youngest-learner on-ramps
 
 | App | Pillar | One-line state | Memory |
 |---|---|---|---|
-| Early Numeracy | Foundations | Number-sense 3–7. Phase 1 shell built (2026-06-30); not yet deployed. | [apps/early-numeracy](./apps/early-numeracy.md) |
-| Early Literacy | Foundations | Emergent literacy 3–7 ("Village"). Built externally (Gemini); Phases 1–4 + nav framework done. **Integrated into the Brain 2026-07-02; not yet deployed.** Consumes app-local engines via an Event Bus; adds WordEngine + ReadingJourneyEngine. ⚠️ "TPH Core" naming collision — see memory. | [apps/early-literacy](./apps/early-literacy.md) |
+| Early Numeracy | Foundations | Number-sense 3–7. Phase 1 shell built (2026-06-30); **not yet deployed** (PWA-ready). | [apps/early-numeracy](./apps/early-numeracy.md) |
+| Early Literacy | Foundations | Emergent literacy 3–7 ("Village"). Built externally (Gemini); Phases 1–4 + nav framework. **✅ LIVE (web) — https://early-literacy.pages.dev/ (deployed 2026-07-02); AI dropped for #FreeForever.** Consumes engines via an Event Bus; adds WordEngine + ReadingJourneyEngine. ⚠️ offline-PWA hardening pending; ⚠️ "TPH Core" naming collision — see memory. | [apps/early-literacy](./apps/early-literacy.md) |
 
 ## World B — opportunity infrastructure (iKhaya)
 

@@ -12,6 +12,42 @@
 
 ---
 
+## ✅ 2026-07-02 (session 16) — Early Literacy: AI dropped + DEPLOYED (✅ LIVE)
+
+**Live:** **https://early-literacy.pages.dev/** (Cloudflare Pages). **Repo:** `SifisoScS/early-literacy`
+`main` — commit `2c2f211`.
+
+**Why:** Early Literacy is a `#FreeForever` World-A app — founder: *"the app was developed using
+Google AI Studio, so they added the AI as per their rules, but we don't use AI in our apps as they
+are free."* So the AI was removed and the app deployed.
+
+### What was done (no app logic / UI changed)
+- **Dropped AI:** removed `@google/genai` dependency + `MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API`
+  from `metadata.json` (both AI-Studio auto-added, **verified zero usage in `src/`**). Also removed
+  unused server cruft (`express`, `dotenv`) and the Gemini boilerplate in `.env.example`.
+- **Deploy prep:** `package.json` name `react-example` → `early-literacy`; moved build tools
+  (`tailwindcss`, `typescript`) into `dependencies` (Cloudflare `NODE_ENV=production` gotcha, learned
+  on iKhaya); added `public/_redirects` (SPA) + `wrangler.toml` (output `dist`); committed lockfile.
+- **New complete README** written to speak to the app (village, journey, companions, principles).
+- **Verified:** `npm install` (0 vuln), `tsc --noEmit` (0 errors), `vite build` → `dist/`. Live URL
+  serves title "The People's Home • Early Literacy Village"; no Gemini/genai/API refs in served HTML.
+- **Brain updated:** `apps/early-literacy.md` (LIVE + governance deviation #1/#4 resolved),
+  `CURRENT_STATE.md`, `PROJECT_TIMELINE.md`, `ECOSYSTEM.md`, `ROADMAP.md`, engine cross-ref.
+
+### Cloudflare settings used
+Framework: None/Vite · Build: `npm run build` · Output: `dist` · **no env vars**. URL kept the bare
+name (`early-literacy.pages.dev` — not suffixed).
+
+### Next steps (in order)
+1. **Offline-PWA hardening** — add `vite-plugin-pwa` (service worker + unique manifest `id`), verify
+   cold-load offline. This is the one real gap vs. the World-A definition of done. *(Recommended next.)*
+2. **Add a live card** for Early Literacy on peoples-home-web once PWA-verified.
+3. **Founder decision:** "TPH Core" naming reconciliation (rename app engine set, or fold into `@tph/core`).
+4. **Phase 4.5** — build when directed.
+5. 🔴 Keystore backup still outstanding (carried from session 11).
+
+---
+
 ## ✅ 2026-07-02 (session 15) — Early Literacy integrated into The People's Home (no app code changed)
 
 **Nature:** Ecosystem **integration**, not app development. The Early Literacy app was built
