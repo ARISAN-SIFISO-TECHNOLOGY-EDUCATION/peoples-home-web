@@ -12,6 +12,30 @@
 
 ---
 
+## ✅ 2026-07-02 (session 18) — Early Literacy: remaster Phase 2 (M3, M4, M8)
+
+**Repo:** `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-literacy` `main` — commit `7077f99`.
+
+- **M3 — single tree-stage owner:** `App.tsx` no longer computes its own stage thresholds; it
+  delegates to `EnvironmentEngine`, now a pure function of stars/completions (not seeded by the
+  persisted value). The two-formula inconsistency is gone.
+- **M4 — real type-checking + doc truth:** added `@types/react` + `@types/react-dom` (were missing,
+  so `tsc` was hollow) — **0 errors surfaced**. Corrected the app's `04-tph-core.md` with an
+  "implementation reality" banner (Vocabulary "3-attempts → mastered" is aspirational; code masters
+  on first spell). Tracing + Environment contracts do match the code.
+- **M8 — code-split:** modules + modals are `React.lazy`/`Suspense`; `manualChunks`
+  (react/motion/icons/vendor). **Initial `index` chunk 548 KB → 28 KB**; modules load on demand; all
+  29 chunks precached so offline is intact.
+
+**Verified:** `tsc --noEmit` 0 errors; `vite build` clean. Production-readiness now ~8/10.
+
+### Remaining (Phases 3–5, in `apps/early-literacy.md` §12)
+M7 (adult gate on Grown-Up Corner / reset) · M10 (only 9 of 26 letters have tracing/discovery) ·
+M9 (tap-to-begin) · M12 (per-session "Try this at home") · hygiene (`_headers`, "Suggeted" typo).
+Plus the open founder decision: the **"TPH Core" naming reconciliation**.
+
+---
+
 ## ✅ 2026-07-02 (session 17) — Early Literacy: offline PWA + audit + Phase-1 fixes + repo → org
 
 **Live:** https://early-literacy.pages.dev/ — now an **installable offline PWA**.

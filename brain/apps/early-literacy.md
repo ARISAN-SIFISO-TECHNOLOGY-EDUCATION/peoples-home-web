@@ -197,13 +197,13 @@ navigation framework complete; **Phase-1 audit fixes applied** (see §12). For l
 
 ## 9. Future direction / roadmap
 
-- **Remaster backlog (Phases 2–5)** — see §12. Next up: M3 (single tree-stage owner), M4
-  (engine contract↔code truth + `@types/react`), M8 (code-split).
+- **Remaster backlog (Phases 3–5)** — see §12. Next up: M7 (adult gate on the reset screen),
+  M10 (author all 26 letters), M9/M12 (tap-to-begin, per-session transfer prompt).
 - **Add to the site** — surface a live card on peoples-home-web.
 - **Phase 4.5** — the next authored step (planned; scope TBD by founder).
 - **isiZulu** — English-first today; isiZulu narration is part of the ~December 2026 batch.
-- ~~Deploy~~ ✅ · ~~Drop AI~~ ✅ · ~~Fix `react-example` name~~ ✅ · ~~Offline PWA~~ ✅ ·
-  ~~Migrate repo to org~~ ✅ · ~~Phase-1 audit fixes~~ ✅ (all 2026-07-02).
+- ~~Deploy~~ ✅ · ~~Drop AI~~ ✅ · ~~Fix name~~ ✅ · ~~Offline PWA~~ ✅ · ~~Migrate repo to org~~ ✅ ·
+  ~~Phase-1 audit fixes~~ ✅ · ~~Phase-2 (M3/M4/M8)~~ ✅ (all 2026-07-02).
 - **TPH Core reconciliation** — resolve the naming collision (§12); the app's behaviour engines
   are candidate contributions to (or a renamed sibling of) the canonical TPH Core SDK.
 
@@ -214,8 +214,6 @@ navigation framework complete; **Phase-1 audit fixes applied** (see §12). For l
 - **Content depth:** letter tracing + the Discovery catalogue cover only **9 letters**
   (A,B,C,D,E,F,G,M,S); other letters fall back to a generic triangle. 10 first words authored
   (CAT, DOG, SUN, FROG, BIRD, RAIN, TRAIN, BEE, TREE, BELL). Seed content, not full.
-- **`@types/react` not installed** → `tsc` type-checking is hollow for React APIs (false
-  confidence). See §12 remaster backlog.
 - English-only content (isiZulu deferred to the December review, consistent with all apps).
 
 ---
@@ -288,21 +286,30 @@ applied; Phases 2–5 are the tracked backlog.** No UI redesign was done.
 - **M6:** **guarded `localStorage` writes** (Safari Private Mode / quota no longer crash saves).
 - Also fixed a latent bug: `playCat` used a non-existent Web Audio method.
 
-**⏳ Phases 2–5 — BACKLOG:**
+**✅ Phase 2 — DONE (commit `7077f99`):**
+- **M3:** tree stage now has a single owner — `App.tsx` delegates to `EnvironmentEngine`, which is a
+  pure function of stars/completions (no longer seeded by the persisted value). Two-formula
+  inconsistency gone.
+- **M4:** added `@types/react` + `@types/react-dom` (were missing → `tsc` was hollow) — surfaced
+  **0 errors**, so type-checking is now real. Corrected `04-tph-core.md` with an "implementation
+  reality" banner (the Vocabulary "3-attempts → mastered" spec is aspirational; code masters on first spell).
+- **M8:** learning modules + modals are `React.lazy` under `Suspense` + `manualChunks`
+  (react/motion/icons/vendor). **Initial `index` chunk 548 KB → 28 KB**; modules load on demand; all
+  29 chunks still precached (offline intact).
+
+**⏳ Phases 3–5 — BACKLOG:**
 | ID | Sev | Finding | Fix |
 |---|---|---|---|
-| M3 | Med | **Two conflicting tree-stage formulas** — `App.tsx` persists `treeStage` (4/12/25/45) while `EnvironmentEngine` computes (4/10/20/30). Split source of truth (SRP break). | One owner: App delegates to EnvironmentEngine. |
-| M4 | Med | **Engine contracts ≠ code.** The app's `04-tph-core.md` claims Vocabulary has `attemptsCount` + "3 correct → mastered"; real code is a flat status map, mastered on first spell. Also **`@types/react` missing** → hollow type-checking. | Align docs to code (or implement); add `@types/react` + fix surfaced errors. |
-| M8 | Med | **No code-splitting** — 548 KB (156 KB gzip) monolith; all 8 modules eager-loaded on a 3G target. | `React.lazy` per module + `manualChunks`. |
 | M7 | Med | **Grown-Up Corner has no adult gate** — Reset Everything is reachable by a child (2-tap confirm only). | Add an adult gate on entry. |
 | M9 | Low | Welcome `speak()` fires without a gesture (autoplay-blocked); no "tap to begin". | Add tap-to-begin gate. |
 | M10 | Med | **Tracing/Discovery cover only 9 letters** (A–G,M,S); rest fall back to a triangle. | Author all 26. |
 | M12 | Low | No child-facing per-session "Try this at home" transfer prompt (constitutional in Early Numeracy). | Add end-of-session transfer card. |
 | — | Low | No `public/_headers` (CSP/clickjacking); typo "Suggeted". | Hygiene pass. |
 
-**Verdict (2026-07-02):** production-readiness ~7.5/10 after Phase 1 (was ~6). Bones are right
-(event-bus + app/platform engine layering). Remaining work is content depth (M10), type-safety
-(M4), and consistency (M3) — not architecture.
+**Verdict (2026-07-02):** production-readiness ~**8/10** after Phases 1–2 (was ~6). Architecture is
+sound (event-bus + app/platform engine layering), type-checking is now real, offline is genuine, and
+the initial bundle is lean. Remaining work is UX safety (M7), content depth (M10), and polish — not
+architecture.
 
 ---
 
