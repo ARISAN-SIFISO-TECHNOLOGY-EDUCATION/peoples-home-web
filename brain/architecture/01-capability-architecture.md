@@ -39,7 +39,7 @@ Every item is classified three ways:
 
 | # | Category | Capability gained | Lead app(s) |
 |---|---|---|---|
-| 1 | 🧮 **Foundations** | Basic participation in society | Math Adventure · ReadAfrica · (Early Numeracy · Early Literacy · Parent Companion) |
+| 1 | 🧮 **Foundations** | Basic participation in society | Math Adventure · ReadAfrica · Early Literacy 🔧 · (Early Numeracy 🔧 · Parent Companion) |
 | 2 | 🌱 **Curiosity & Knowledge** | Understanding the world | Science Sprouts · (Nature · Space · Body · African Discoveries) |
 | 3 | 🔧 **Creation & Technology** | Turn consumers into creators | Tech Makers · (Design Studio · Robotics · AI Explorer · Digital Creator) |
 | 4 | 🧠 **Thinking & Reasoning** | Judgment — telling true from false | Truth Seekers · (Logic Lab · Debate Academy · Problem Solver · Research Skills) |
@@ -81,8 +81,8 @@ THE PEOPLE'S HOME
 |---|---|---|---|
 | 1 | Math Adventure RPG | Foundations | ✅ LIVE |
 | 2 | ReadAfrica | Foundations | ✅ LIVE |
-| 3 | Early Numeracy | Foundations | 🔮 Future |
-| 4 | Early Literacy Games | Foundations | 🔮 Future |
+| 3 | Early Numeracy | Foundations | 🔧 Built (Phase 1) |
+| 4 | Early Literacy | Foundations | 🔧 Built — integrating (not deployed) |
 | 5 | Parent Companion | Foundations | 🔮 Future |
 | 6 | Science Sprouts | Curiosity | ✅ LIVE |
 | 7 | Nature Explorer | Curiosity | 🔮 Future |

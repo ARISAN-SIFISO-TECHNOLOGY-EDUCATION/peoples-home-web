@@ -2,7 +2,7 @@
 
 > The map of everything: every app, its repo, live URL, stack, and deploy config.
 > **Source of truth.** When something changes (new app, new URL, build tweak), update it *here*.
-> Last updated: 2026-06-21.
+> Last updated: 2026-07-02.
 
 See also: [`BLUEPRINT.md`](./BLUEPRINT.md) (the capability architecture) ·
 [`ROADMAP.md`](./ROADMAP.md) (what ships next) · [`DECISIONS.md`](./DECISIONS.md) (the *why*).
@@ -31,8 +31,15 @@ See also: [`BLUEPRINT.md`](./BLUEPRINT.md) (the capability architecture) ·
 | **Micro Founders** | Empowerment | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/micro-founders` (private) | https://micro-founders.pages.dev/ | Vite 6 · React 19 · TS · Tailwind v4 · vite-plugin-pwa (built on the Truth Seekers "Atelier" chassis) | `npm run build` · `dist` · 20 · **lockfile gitignored** |
 
 **Local checkouts:** `C:\Users\sifis\Next-Level-Projects\{math-adventure-rpg, tech-makers,
-sifiso-learn-python, peoples-home}` · `C:\Users\sifis\mobile-projects\science-sprouts`.
+sifiso-learn-python, peoples-home, early-numeracy, early-literacy}` ·
+`C:\Users\sifis\mobile-projects\science-sprouts`.
 ReadAfrica has no permanent local checkout (was a temp audit clone).
+
+### Foundations on-ramps — built, NOT yet deployed
+| App | Pillar | GitHub repo | Live URL | Stack | Notes |
+|---|---|---|---|---|---|
+| **Early Numeracy** | Foundations | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-numeracy` (private) | — (not deployed) | Vite · React 19 · TS · Tailwind v4 · VitePWA | Number-sense 3–7. Phase 1 shell (2026-06-30). |
+| **Early Literacy** | Foundations | `SifisoScS/early-literacy` (private — **personal account**, migrate to org) | — (not deployed) | Vite 6 · React 19 · TS · Tailwind v4 · motion | Emergent literacy 3–7 ("Village"). Built externally (Gemini). Phases 1–4 + nav. ⚠️ drop unused `@google/genai`; `package.json` name is `react-example`; "TPH Core" naming collision — see `brain/apps/early-literacy.md`. |
 
 ### Per-app deploy gotchas (hard-won)
 - **Tech Makers & SIFISO:** `package-lock.json` is **gitignored** so Cloudflare uses lenient

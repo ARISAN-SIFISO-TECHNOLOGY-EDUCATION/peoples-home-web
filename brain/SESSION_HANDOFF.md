@@ -12,6 +12,62 @@
 
 ---
 
+## ✅ 2026-07-02 (session 15) — Early Literacy integrated into The People's Home (no app code changed)
+
+**Nature:** Ecosystem **integration**, not app development. The Early Literacy app was built
+externally (Google AI Studio / Gemini); this session integrated it into the single Brain,
+registries, architecture, and governance. **No application code was modified.**
+
+**App repo:** `SifisoScS/early-literacy` (PRIVATE, personal account) —
+local checkout `C:\Users\sifis\Next-Level-Projects\early-literacy` (cloned this session).
+**Brain repo:** `peoples-home` (this repo). **Not committed/pushed** — left staged for review.
+
+### What the app is (verified from source)
+- "Early Literacy Village", ages 3–7, Foundations slot **#4** (was "Early Literacy Games" 🔮 Future).
+- React 19 · Vite 6 · Tailwind v4 · `motion` · `lucide-react`. Offline; `localStorage` only.
+- Curriculum **Phases 1–4 complete** (Listening → Sound Discovery → Letter Garden → First Words)
+  across 8 module screens; **navigation framework complete**; **Phase 4.5 planned**.
+- Consumes 6 platform engines via a type-safe **Event Bus** — **none modified**. Adds 2 app-layer
+  engines: **WordEngine** + **ReadingJourneyEngine** (correctly *not* platform).
+
+### Integration Report — files created / updated (all in `peoples-home/brain` unless noted)
+**Created:**
+- `apps/early-literacy.md` — full app memory (mission, journey, engines, nav/offline/accessibility
+  models, governance review, architecture audit, roadmap).
+- `patterns/world-a-navigation.md` — the navigation standard (reusable by Early Numeracy, Science
+  Sprouts, Our World, ReadAfrica).
+- `architecture/04-early-literacy-integration.md` — how it consumes the platform without modifying
+  it; the app-engine pattern; the "TPH Core" naming-collision writeup.
+
+**Updated:**
+- `CURRENT_STATE.md` (as-of → 2026-07-02; new Foundations on-ramp table with Early Literacy + Early Numeracy)
+- `PROJECT_TIMELINE.md` (Early July 2026 section)
+- `apps/README.md` + `architecture/01-capability-architecture.md` (slot #4 status → 🔧 Built)
+- `patterns/README.md` (index row)
+- Operational: `../ECOSYSTEM.md`, `../ROADMAP.md` (registry rows)
+- Engine cross-ref (other repo): `repository-engine-1000/docs/peoples-home/TPH_REGISTRY.md` + `PEOPLE'S_HOME.md`
+
+### Governance findings (documented, NOT silently changed — per the integration mandate)
+1. ⚠️ **Unused cloud AI capability.** `metadata.json` declares `MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API`
+   and `package.json` depends on `@google/genai`, but **zero AI calls exist in `src/`**. Honours
+   Principle 17 (wired, not activated) in practice; recommend dropping the unused capability + dep.
+2. ⚠️ **"TPH Core" naming collision.** The app's frozen "TPH Core v1.0" engine runtime is a *different*
+   thing from the canonical (unfrozen, mid-extraction) TPH Core SDK. Reconcile: rename the app runtime
+   or fold it into `@tph/core`. Founder decision required.
+3. ⚠️ **Repo under personal `SifisoScS`**, not the org — migrate on publish.
+4. **`package.json` name** is placeholder `"react-example"` — cosmetic; fix before publish.
+   (Repo confirmed PRIVATE — Principle 12 satisfied.)
+
+### Next steps (in order)
+1. **Founder decision** on the "TPH Core" naming reconciliation (blocks a clean platform story).
+2. **Deploy** Early Literacy to Cloudflare Pages (unique manifest `id`, offline-verify), then flip a card on the site.
+3. Drop the unused `@google/genai` dependency + Gemini capability; fix `package.json` name; migrate repo to the org.
+4. **Phase 4.5** — build when the founder directs.
+5. Commit the Brain changes to `peoples-home` when approved (this session left them uncommitted).
+6. 🔴 Keystore backup still outstanding (carried from session 11).
+
+---
+
 ## ✅ 2026-06-30 (session 14c) — Early Numeracy Phase 1 BUILT
 
 **Repo:** `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-numeracy` (private) — `master`

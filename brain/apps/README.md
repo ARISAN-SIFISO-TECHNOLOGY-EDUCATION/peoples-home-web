@@ -18,6 +18,7 @@
 | 1 | **Math Adventure RPG** | Foundations | [`math-adventure-rpg.md`](./math-adventure-rpg.md) |
 | 2 | **ReadAfrica** | Foundations | [`read-africa.md`](./read-africa.md) |
 | — | **Everyday Foundations** *(v2 — maps to #3/#4/#30)* | Foundations / Empowerment | [`everyday-foundations.md`](./everyday-foundations.md) |
+| 4 | **Early Literacy** *(built externally — integrating; not yet deployed)* | Foundations | [`early-literacy.md`](./early-literacy.md) |
 
 ## Memory files (planned apps — blueprint exists)
 
@@ -38,7 +39,7 @@ World B / platform pieces live in [`../platform/`](../platform/).
 
 ## All 40 apps (v3 canonical map)
 
-✅ LIVE · 📋 Planned · 🔮 Future
+✅ LIVE · 🔧 Built (not yet deployed) · 📋 Planned · 🔮 Future
 
 ### 1 · Foundations — Build the ability to learn
 
@@ -46,8 +47,8 @@ World B / platform pieces live in [`../platform/`](../platform/).
 |---|---|---|
 | 1 | Math Adventure RPG | ✅ LIVE |
 | 2 | ReadAfrica | ✅ LIVE |
-| 3 | Early Numeracy | 🔮 Future |
-| 4 | Early Literacy Games | 🔮 Future |
+| 3 | Early Numeracy | 🔧 Built (Phase 1) |
+| 4 | Early Literacy *(→ [early-literacy.md](./early-literacy.md))* | 🔧 Built — integrating (not deployed) |
 | 5 | Parent Companion | 🔮 Future |
 
 ### 2 · Curiosity & Knowledge — Build curiosity

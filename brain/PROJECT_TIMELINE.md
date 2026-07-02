@@ -68,6 +68,25 @@
 - **06-27 — THIS MEMORY SYSTEM authored** — the full institutional memory, completing the
   strategy-brain migration started 06-21.
 
+### Early July 2026 — the youngest-learner on-ramps + first external build
+- **~07 — Early Literacy "TPH Core v1.0" frozen** (in the Early Literacy repo). An app-local
+  educational-engine runtime — EventBus, Companion, Tracing, Vocabulary, Discovery, Environment —
+  declared frozen at v1.0.0. ⚠️ Note: this is a *different* engine set from the canonical
+  [TPH Core SDK](./platform/tph-core.md) and shares its name; reconciliation is pending
+  (see [`architecture/04`](./architecture/04-early-literacy-integration.md)).
+- **07 — Early Literacy built externally (Google AI Studio / Gemini).** The first World-A app
+  *not* hand-built in-house: "Early Literacy Village", ages 3–7, Foundations slot #4 (was 🔮 Future).
+  Curriculum Phases 1–4 (Listening → Sound Discovery → Letter Garden → First Words) + a navigation
+  framework complete. Consumes the platform engines via an Event Bus **without modifying them** and
+  adds two app-layer engines (WordEngine, ReadingJourneyEngine).
+- **07 — World-A Navigation standard established** by Early Literacy (hierarchical back, mobile
+  swipe-to-back, resume, `localStorage` state preservation, companion farewell) and promoted to a
+  reusable pattern ([`patterns/world-a-navigation.md`](./patterns/world-a-navigation.md)).
+- **2026-07-02 — Early Literacy integrated into the Brain.** Ecosystem integration (memory, registries,
+  architecture, governance review) — no app code changed. Recorded as built · integrating · not yet
+  deployed. Governance flags logged, not silently fixed (unused Gemini capability; "TPH Core" naming
+  collision; personal-account repo). See [`SESSION_HANDOFF.md`](./SESSION_HANDOFF.md).
+
 ---
 
 ## What the timeline shows

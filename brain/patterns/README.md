@@ -14,6 +14,7 @@
 | Journey Progression | [`journey-progression.md`](./journey-progression.md) | Micro Founders, Mzansi Money, Our World, The Golden Hand |
 | Atelier Chassis | [`atelier-chassis.md`](./atelier-chassis.md) | Truth Seekers (native), Micro Founders (originated) |
 | Voice-First Narration | [`voice-first.md`](./voice-first.md) | Everyday Foundations, Our World |
+| World-A Navigation | [`world-a-navigation.md`](./world-a-navigation.md) | Early Literacy (established); reusable by Early Numeracy, Science Sprouts, Our World, ReadAfrica |
 
 ---
 
