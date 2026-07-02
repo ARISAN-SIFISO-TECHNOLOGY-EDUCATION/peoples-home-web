@@ -12,6 +12,27 @@
 
 ---
 
+## ✅ 2026-07-02 (session 19) — Early Literacy: remaster Phase 3 (M7, M9, M12 — UX/safety)
+
+**Repo:** `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-literacy` `main` — commit `47df259`.
+
+- **M7 — adult gate:** the Grown-up Corner (can reset all progress) now sits behind a two-digit-sum
+  gate (`AdultGate.tsx`). Village → gate → corner on success. Stops a child wiping progress.
+- **M9 — no autoplay:** removed the blocked timer greeting. New users unlock audio via the
+  age-selection tap; returning users get a "tap to begin" screen; the welcome is spoken in that gesture.
+- **M12 — real-world transfer:** closing a module shows a spoken "Try this at home" card
+  (`TransferPrompt.tsx`, 16 SA-first literacy prompts), once per browser session.
+
+**Verified:** `tsc --noEmit` 0 errors; `vite build` clean; 29 chunks precached (offline intact).
+Production-readiness now ~8.5/10. *(Build-verified, not yet browser-tested on a device.)*
+
+### Remaining (Phases 4–5) — now mostly content/authoring
+M10 (only 9 of 26 letters have tracing/discovery) · M11 (isiZulu / SA-language packs — Dec 2026) ·
+hygiene (`public/_headers`, "Suggeted" typo). Plus the open founder decision: **"TPH Core" naming
+reconciliation**.
+
+---
+
 ## ✅ 2026-07-02 (session 18) — Early Literacy: remaster Phase 2 (M3, M4, M8)
 
 **Repo:** `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-literacy` `main` — commit `7077f99`.

@@ -197,13 +197,13 @@ navigation framework complete; **Phase-1 audit fixes applied** (see §12). For l
 
 ## 9. Future direction / roadmap
 
-- **Remaster backlog (Phases 3–5)** — see §12. Next up: M7 (adult gate on the reset screen),
-  M10 (author all 26 letters), M9/M12 (tap-to-begin, per-session transfer prompt).
+- **Remaster backlog (Phases 4–5)** — see §12. Now mostly **content/authoring**: M10 (all 26 letters),
+  M11 (isiZulu / SA-language packs), hygiene (`_headers`, typo).
 - **Add to the site** — surface a live card on peoples-home-web.
 - **Phase 4.5** — the next authored step (planned; scope TBD by founder).
 - **isiZulu** — English-first today; isiZulu narration is part of the ~December 2026 batch.
 - ~~Deploy~~ ✅ · ~~Drop AI~~ ✅ · ~~Fix name~~ ✅ · ~~Offline PWA~~ ✅ · ~~Migrate repo to org~~ ✅ ·
-  ~~Phase-1 audit fixes~~ ✅ · ~~Phase-2 (M3/M4/M8)~~ ✅ (all 2026-07-02).
+  ~~Phase-1 fixes~~ ✅ · ~~Phase-2 (M3/M4/M8)~~ ✅ · ~~Phase-3 (M7/M9/M12)~~ ✅ (all 2026-07-02).
 - **TPH Core reconciliation** — resolve the naming collision (§12); the app's behaviour engines
   are candidate contributions to (or a renamed sibling of) the canonical TPH Core SDK.
 
@@ -297,19 +297,25 @@ applied; Phases 2–5 are the tracked backlog.** No UI redesign was done.
   (react/motion/icons/vendor). **Initial `index` chunk 548 KB → 28 KB**; modules load on demand; all
   29 chunks still precached (offline intact).
 
-**⏳ Phases 3–5 — BACKLOG:**
+**✅ Phase 3 — DONE (commit `47df259`):**
+- **M7:** the Grown-up Corner (which can reset all progress) is now behind an **adult gate** — a
+  two-digit sum a 3–7-year-old can't solve. Village → gate → corner on success (`AdultGate.tsx`).
+- **M9:** audio no longer autoplays on a blocked timer. New users unlock audio via the age-selection
+  tap; returning users get a **"tap to begin"** screen, and the welcome is spoken inside that gesture.
+- **M12:** closing a module surfaces a **"Try this at home"** full-screen spoken card (16 SA-first
+  literacy prompts), at most once per browser session so it never nags (`TransferPrompt.tsx`).
+
+**⏳ Phases 4–5 — BACKLOG:**
 | ID | Sev | Finding | Fix |
 |---|---|---|---|
-| M7 | Med | **Grown-Up Corner has no adult gate** — Reset Everything is reachable by a child (2-tap confirm only). | Add an adult gate on entry. |
-| M9 | Low | Welcome `speak()` fires without a gesture (autoplay-blocked); no "tap to begin". | Add tap-to-begin gate. |
 | M10 | Med | **Tracing/Discovery cover only 9 letters** (A–G,M,S); rest fall back to a triangle. | Author all 26. |
-| M12 | Low | No child-facing per-session "Try this at home" transfer prompt (constitutional in Early Numeracy). | Add end-of-session transfer card. |
+| M11 | Med (mission) | English-only; no isiZulu / SA-language narration. | Swappable language packs (Dec 2026 batch). |
 | — | Low | No `public/_headers` (CSP/clickjacking); typo "Suggeted". | Hygiene pass. |
 
-**Verdict (2026-07-02):** production-readiness ~**8/10** after Phases 1–2 (was ~6). Architecture is
-sound (event-bus + app/platform engine layering), type-checking is now real, offline is genuine, and
-the initial bundle is lean. Remaining work is UX safety (M7), content depth (M10), and polish — not
-architecture.
+**Verdict (2026-07-02):** production-readiness ~**8.5/10** after Phases 1–3 (was ~6). Architecture is
+sound, type-checking is real, offline is genuine, the bundle is lean, and the child-safety + real-world
+-transfer gaps are closed. Remaining work is **content depth** (M10) and **localisation** (M11) — a
+content/authoring effort, not engineering.
 
 ---
 
