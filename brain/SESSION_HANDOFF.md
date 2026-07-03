@@ -12,6 +12,51 @@
 
 ---
 
+## ✅ 2026-07-03 (session 20) — Early Literacy: M10 (all 26 letters) + security pass + CSP verified LIVE
+
+**Repo:** `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-literacy` `main` — commits `611a9cd`, `28b1fbe`.
+**Brain:** `peoples-home` `main` — commit `c4b3e40`.
+
+Closed out the last two engineering items on the remaster backlog. Only content/localisation (M11)
+and a real-child play-test remain.
+
+- **M10 — full alphabet authored (`611a9cd`).** Extended the letter content from 9 letters to all
+  26 across four data sets: `LETTER_DB` (`LetterGarden.tsx`), `TRACE_PATHS_DB` (`tracing.ts`),
+  `DISCOVERY_CATALOG_DB` (`discovery.ts`, SA-first facts — African penguins, savanna lions,
+  African-plains zebras), and `VOCABULARY_DB` (`vocabulary.ts`, +15 words). `ACTIVE_LETTERS` now
+  derives from the DB keys (sorted) — no letter falls back to the triangle placeholder any more.
+
+- **Security pass (`28b1fbe`).** Added `public/_headers` (Cloudflare Pages) + fixed the "Suggeted"
+  → "Suggested" typo in the Grown-up Corner. Attack surface is deliberately tiny (offline, no
+  backend/accounts/PII/AI, `npm audit` = 0 vulns, no secrets). The built HTML ships **no inline
+  scripts/handlers**, so `script-src 'self'` holds with **no `'unsafe-inline'`** — strongest
+  practical script policy. `style-src` keeps `'unsafe-inline'` (Tailwind v4 + `motion` runtime
+  styles); `worker-src 'self' blob:` for Workbox. Also X-Frame-Options DENY + `frame-ancestors
+  'none'`, nosniff, `Referrer-Policy: no-referrer`, and a Permissions-Policy denying
+  camera/mic/geo/payment/usb/FLoC. Mirrors iKhaya's proven policy, minus the `/api` rules (no backend).
+  Full Security Report written into `apps/early-literacy.md` §12.
+
+- **CSP verified LIVE on early-literacy.pages.dev (2026-07-03).** `curl -I` confirms all 5 headers
+  serving byte-identical; Cloudflare rebuilt on the push (entry chunk now `index-Ber5XZxi.js`).
+  Every referenced resource is same-origin and returns `200` with correct MIME (JS/CSS/manifest/SW),
+  so `'self'` covers everything and `nosniff` is safe. **Not yet checked:** zero *runtime* CSP
+  violations from motion/Tailwind — needs a real browser console (folds into the device play-test).
+
+**Verified:** `tsc --noEmit` 0 errors; `vite build` clean; 29 chunks precached (offline intact).
+Production-readiness now ~9/10. *(Build- + header-verified; not yet browser-tested on a device.)*
+
+### Remaining — human-gated, not engineering
+- **M11** — isiZulu / SA-language packs. Deferred to the **~Dec 2026** cross-app localisation batch;
+  needs a **native-speaker** review (do NOT machine-translate a children's literacy app).
+- **Device play-test** — observe a real 3–7-year-old; confirm no runtime CSP violations in-browser.
+- **Founder decision — "TPH Core" naming reconciliation** (still open): the app ships its own frozen
+  "TPH Core v1.0" runtime (EventBus · Companion · Tracing · Vocabulary · Discovery · Environment),
+  a *different* thing from the canonical TPH Core SDK (mid-extraction to `@tph/core`). Decide: rename
+  the app's engine set (e.g. "TPH Learning Engines") **or** fold it into `@tph/core`. Detail in
+  `architecture/04-early-literacy-integration.md`.
+
+---
+
 ## ✅ 2026-07-02 (session 19) — Early Literacy: remaster Phase 3 (M7, M9, M12 — UX/safety)
 
 **Repo:** `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-literacy` `main` — commit `47df259`.
