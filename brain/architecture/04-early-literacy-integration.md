@@ -2,7 +2,7 @@
 
 > How **[Early Literacy](../apps/early-literacy.md)** consumes shared educational engines
 > **without modifying them**, how it layers its own application engines on top, and the one
-> **unresolved naming deviation** this integration surfaced. Companion to
+> naming deviation this integration surfaced (**resolved 2026-07-03** — see §4). Companion to
 > [`03-tph-core-and-passport.md`](./03-tph-core-and-passport.md).
 >
 > **Added:** 2026-07-02 (integration, no app code changed).
@@ -69,31 +69,29 @@ signal to promote it to the platform ([Principle 11](../PROJECT_DNA.md)).
 
 ---
 
-## 4. ⚠️ Unresolved deviation — the "TPH Core" naming collision
+## 4. ✅ Resolved deviation — the "TPH Core" naming collision
 
-This integration surfaced a genuine conflict that is **documented, not silently reconciled**
-(per [PROJECT_DNA](../PROJECT_DNA.md): *if a decision contradicts the canon, name it and ask the
-human to resolve*).
+This integration surfaced a genuine conflict — two different engine sets sharing the name
+"TPH Core" — that was **documented, not silently reconciled**, and then put to the founder.
 
-| | Canonical **TPH Core SDK** | Early Literacy's **"TPH Core v1.0"** |
+| | Canonical **TPH Core SDK** | Early Literacy's app runtime |
 |---|---|---|
+| Now called | **TPH Core** / `@tph/core` | **TPH Learning Engines** *(renamed 2026-07-03)* |
 | Defined in | [`../platform/tph-core.md`](../platform/tph-core.md) | `early-literacy/brain/architecture/04-tph-core.md` |
 | Nature | Shared **product services** | Educational **behaviour engines** |
 | Contents | Identity · Progress · Rewards · Lore · Offline Engine · Dashboards | EventBus · Companion · Tracing · Vocabulary · Discovery · Environment |
 | Status | **Mid-extraction** from ReadAfrica → `@tph/core` (not frozen) | Declared **frozen, v1.0.0, released 2026-07** |
 | Origin | Grown inside ReadAfrica | Built independently inside Early Literacy (Gemini) |
 
-**Two different engine sets currently share the name "TPH Core."** Leaving both in the ecosystem
-violates the "one canonical source of truth" discipline and will confuse any future agent.
+**Decision (2026-07-03 — founder chose Option 1):** the app-local runtime is **renamed to the
+"TPH Learning Engines."** The name "TPH Core" is now reserved exclusively for the canonical shared
+SDK. Option 2 (fold the app engines into `@tph/core`) was deferred — `@tph/core` is still
+mid-extraction, and folding a frozen app runtime into it is a larger, multi-app effort for later.
 
-**Recommendation (founder decision required — no change made):**
-1. **Rename** the app-local runtime (e.g. *"TPH Learning Engines"* / *"Literacy Engines"*), keeping
-   "TPH Core" reserved for the canonical shared SDK; **or**
-2. **Adopt** these engines as a proposed contribution to the canonical TPH Core, folding them into
-   the `@tph/core` extraction plan with a single shared version line.
-
-Until resolved, `apps/early-literacy.md` and this file treat the app's engines as an
-**app-local engine set** that happens to be labelled "TPH Core" in its own repo.
+**Applied in the app repo (commit `49edf66`):** TypeScript symbols `TPHCore*` → `TPHLearning*`
+(EventBus, EventMap, EventName, Callback), the Word Builder UI badge "TPH CORE V1.0" → "TPH LEARNING
+ENGINES", and the app-local architecture doc rebranded (its `04-tph-core.md` filename kept for link
+stability). Pure rename — no logic changed; `tsc` clean, build clean. **No collision remains.**
 
 ---
 

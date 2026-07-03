@@ -45,15 +45,18 @@ and a real-child play-test remain.
 **Verified:** `tsc --noEmit` 0 errors; `vite build` clean; 29 chunks precached (offline intact).
 Production-readiness now ~9/10. *(Build- + header-verified; not yet browser-tested on a device.)*
 
+### ✅ "TPH Core" naming decision — RESOLVED this session (`49edf66`, `D-13`)
+Founder chose to **rename the app's runtime to the "TPH Learning Engines"**, reserving "TPH Core" for
+the canonical SDK. Applied in the app (TS symbols `TPHCore*` → `TPHLearning*`, UI badge, app-local
+doc) — pure rename, `tsc`/build clean. Brain updated: integration doc §4, `apps/early-literacy.md`
+(§5/§9/§11/§12), and decision log **D-13**. No collision remains.
+
 ### Remaining — human-gated, not engineering
 - **M11** — isiZulu / SA-language packs. Deferred to the **~Dec 2026** cross-app localisation batch;
   needs a **native-speaker** review (do NOT machine-translate a children's literacy app).
 - **Device play-test** — observe a real 3–7-year-old; confirm no runtime CSP violations in-browser.
-- **Founder decision — "TPH Core" naming reconciliation** (still open): the app ships its own frozen
-  "TPH Core v1.0" runtime (EventBus · Companion · Tracing · Vocabulary · Discovery · Environment),
-  a *different* thing from the canonical TPH Core SDK (mid-extraction to `@tph/core`). Decide: rename
-  the app's engine set (e.g. "TPH Learning Engines") **or** fold it into `@tph/core`. Detail in
-  `architecture/04-early-literacy-integration.md`.
+- **Fold into `@tph/core` (Option 2), later** — the TPH Learning Engines remain a candidate
+  contribution to the canonical SDK once `@tph/core` extraction is actually underway. Not now.
 
 ---
 

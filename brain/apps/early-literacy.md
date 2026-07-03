@@ -112,17 +112,17 @@ events. **No consumed engine was modified by this app.**
 | **Environment Engine** | `environment.ts` | Tree/ecosystem maturation, weather-time, reward fauna |
 | *(Speech Manager)* | `speech.ts` | Web Speech API TTS + phonic SFX + visual-caption fallback |
 
-> ⚠️ **Naming note (unresolved deviation — see §12).** The app documents these engines as
-> **"TPH Core v1.0" (frozen, released 2026-07)** in its own repo
-> (`early-literacy/brain/architecture/04-tph-core.md`). That is a **different** engine set from
-> the Brain's canonical **[TPH Core SDK](../platform/tph-core.md)** (Identity · Progress ·
-> Rewards · Offline Engine · Dashboards), which is *not* frozen — it is mid-extraction from
-> ReadAfrica into `@tph/core`. Two things currently share the name "TPH Core." This is flagged,
-> not silently reconciled. See [`../architecture/04-early-literacy-integration.md`](../architecture/04-early-literacy-integration.md).
+> ✅ **Naming note (resolved 2026-07-03).** This engine set — frozen, released 2026-07 — is now
+> called the **"TPH Learning Engines"** (app repo commit `49edf66`). The founder chose to rename it
+> so the name **"TPH Core"** is reserved exclusively for the Brain's canonical
+> **[TPH Core SDK](../platform/tph-core.md)** (Identity · Progress · Rewards · Offline Engine ·
+> Dashboards), which is *not* frozen — it is mid-extraction from ReadAfrica into `@tph/core`. The
+> app-local doc keeps its `04-tph-core.md` filename for link stability. No collision remains. See
+> [`../architecture/04-early-literacy-integration.md`](../architecture/04-early-literacy-integration.md) §4.
 
 ---
 
-## 6. Application engines (NOT part of TPH Core)
+## 6. Application engines (NOT part of the TPH Learning Engines)
 
 Two engines are **application-layer**, specific to Early Literacy, and correctly excluded from
 the frozen core version list:
@@ -149,7 +149,7 @@ touching the platform. See [Principle 11 (Platform Before Duplication)](../PROJE
 | Icons | `lucide-react` |
 | Speech | Web Speech API via `SpeechManager` (`speech.ts`) |
 | Storage | `localStorage` only — keys `peoples_home_literacy_{progress,settings,age}_v1` |
-| Coordination | In-app **TPH Core Event Bus** (singleton, type-safe) |
+| Coordination | In-app **TPH Learning Engines Event Bus** (singleton, type-safe) |
 | Hosting (planned) | Cloudflare Pages PWA (not yet deployed) |
 
 **Shape:** `App.tsx` holds `progress` / `settings` / `ageGroup` state, persists to `localStorage`
@@ -206,8 +206,8 @@ remain. For live facts see
 - **isiZulu** — English-first today; isiZulu narration is part of the ~December 2026 batch.
 - ~~Deploy~~ ✅ · ~~Drop AI~~ ✅ · ~~Fix name~~ ✅ · ~~Offline PWA~~ ✅ · ~~Migrate repo to org~~ ✅ ·
   ~~Phase-1 fixes~~ ✅ · ~~Phase-2 (M3/M4/M8)~~ ✅ · ~~Phase-3 (M7/M9/M12)~~ ✅ (all 2026-07-02).
-- **TPH Core reconciliation** — resolve the naming collision (§12); the app's behaviour engines
-  are candidate contributions to (or a renamed sibling of) the canonical TPH Core SDK.
+- ~~**TPH Core reconciliation**~~ ✅ **DONE (2026-07-03):** the app's runtime was renamed to the
+  **TPH Learning Engines** (commit `49edf66`), reserving "TPH Core" for the canonical SDK (§11 #2).
 
 ---
 
@@ -245,10 +245,10 @@ remain. For live facts see
    and unused server cruft (`express`, `dotenv`) were removed on deploy (commit `2c2f211`). Now fully
    aligned with [Principle 17](../PROJECT_DNA.md). Verified build clean afterward.
 
-2. ⚠️ **OPEN — "TPH Core" naming collision** with the canonical [TPH Core SDK](../platform/tph-core.md)
-   (see §5, §12). **Recommendation:** rename the app's engine runtime (e.g. "TPH Learning
-   Engines") or formally fold it into the canonical core; do not leave two frozen/unfrozen "TPH
-   Core" definitions in the ecosystem. *(Founder decision pending.)*
+2. ✅ **RESOLVED — "TPH Core" naming collision.** The founder chose (2026-07-03) to **rename** the
+   app's engine runtime to the **"TPH Learning Engines"** (app repo commit `49edf66`), reserving
+   "TPH Core" for the canonical [TPH Core SDK](../platform/tph-core.md). Pure rename, no logic
+   changed; `tsc`/build clean. Folding into `@tph/core` (Option 2) was deferred. See §12 + integration doc §4.
 
 3. ✅ **RESOLVED — repo moved to the org.** Transferred `SifisoScS/early-literacy` →
    `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-literacy` (2026-07-02), consistent with the other 10 apps.
@@ -264,9 +264,9 @@ None are security or child-safety violations.
 | Dimension | Assessment |
 |---|---|
 | **Scalability** | ✅ Event-bus + singleton engines scale cleanly; adding a place = add a module + events |
-| **Maintainability** | ✅ Small, single-responsibility engines; ⚠️ two "TPH Core" definitions risk drift |
+| **Maintainability** | ✅ Small, single-responsibility engines; the naming-drift risk is resolved (runtime renamed **TPH Learning Engines**, 2026-07-03) |
 | **Modularity** | ✅ App engines (Word, Reading Journey) sit cleanly above platform engines |
-| **Platform alignment** | ⚠️ Consumes an app-local engine set named "TPH Core" that isn't the canonical SDK — reconcile |
+| **Platform alignment** | ✅ Consumes an app-local engine set (**TPH Learning Engines**), clearly distinct from the canonical TPH Core SDK |
 | **Accessibility** | ✅ Settings + audio-first + large targets; visual-mode fallback exists |
 | **Offline readiness** | ✅ Installable PWA (Workbox precache + navigateFallback); zero network calls after C1 fix |
 | **Educational integrity** | ✅ Confidence-before-correction enforced; no fail states |
@@ -373,7 +373,7 @@ the outstanding device play-test.
 - [`early-numeracy.md`](./early-numeracy.md) — sibling Foundations on-ramp (number sense) ·
   [`read-africa.md`](./read-africa.md) — the literacy app it hands children up to ·
   [`math-adventure-rpg.md`](./math-adventure-rpg.md) — the numeracy elder sibling
-- [`../platform/tph-core.md`](../platform/tph-core.md) — the canonical shared SDK (naming reconciliation)
+- [`../platform/tph-core.md`](../platform/tph-core.md) — the canonical shared SDK (naming reconciled 2026-07-03: app runtime → "TPH Learning Engines")
 - [`../architecture/04-early-literacy-integration.md`](../architecture/04-early-literacy-integration.md) — how it consumes core + the app-engine pattern
 - [`../patterns/world-a-navigation.md`](../patterns/world-a-navigation.md) — the navigation standard it established
 - [`../architecture/01-capability-architecture.md`](../architecture/01-capability-architecture.md) — Foundations slot #4

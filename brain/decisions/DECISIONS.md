@@ -133,6 +133,25 @@
   not runtime costs. They do not violate #FreeForever.
 - See [`PROJECT_DNA.md`](./PROJECT_DNA.md) → Principle 17.
 
+## D-13 · App runtimes must not borrow the name "TPH Core" — Early Literacy's engine set renamed to "TPH Learning Engines" (2026-07-03)
+
+- **Context:** integrating Early Literacy surfaced a name collision. The app (built externally in
+  Gemini) shipped a **frozen "TPH Core v1.0"** runtime — EventBus · Companion · Tracing · Vocabulary ·
+  Discovery · Environment — which is a *different* thing from the canonical **TPH Core SDK**
+  (Identity · Progress · Passport · …), itself still mid-extraction from ReadAfrica into `@tph/core`.
+  Two engine sets, one name.
+- **Options weighed:** (1) **rename** the app-local runtime, reserving "TPH Core" for the canonical
+  SDK; (2) **fold** the app engines into `@tph/core`; (3) defer.
+- **Decision:** **Option 1.** The app's runtime is renamed the **"TPH Learning Engines."** "TPH Core"
+  now names exactly one thing — the canonical shared SDK. Option 2 was deferred: `@tph/core` is still
+  mid-extraction, and folding a *frozen* app runtime into it is a larger, multi-app effort for later.
+- **Why:** "one canonical source of truth" (the whole reason the Brain exists). Two "TPH Core"
+  definitions would silently confuse every future agent. A rename is low-risk, reversible, and
+  doesn't disturb the frozen app logic.
+- **Applied:** early-literacy commit `49edf66` — TS symbols `TPHCore*` → `TPHLearning*`, UI badge,
+  and the app-local architecture doc rebranded (filename kept for link stability); `tsc`/build clean.
+- See [`architecture/04-early-literacy-integration.md`](./architecture/04-early-literacy-integration.md) §4.
+
 ---
 
 > **Open decisions (not yet resolved):**
