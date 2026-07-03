@@ -694,6 +694,7 @@
   /* ---- CAPABILITY PILLARS ---- */
   var PILLARS=[
     {id:'foundations',name:'Foundations',purpose:'Teach people how to learn.',
+     incomplete:true, /* Early Numeracy is live but still a Phase-1 shell (modules "Coming soon") */
      chips:['Numeracy','Literacy','Learning confidence'],
      color:'#c75a36',blob:'rgba(199,90,54,.1)',icon:'&#127807;',
      apps:[
@@ -814,7 +815,7 @@
           +'<div class="pc-text"><h3>'+p.name+'</h3><p>'+p.purpose+'</p></div>'
         +'</div>'
         +'<div class="pc-chips">'+mkChips(p.chips,'pc-chip')+'</div>'
-        +'<div class="pc-count">'+n+' '+(n===1?'experience':'experiences')+'</div>'
+        +'<div class="pc-count">'+n+' '+(n===1?'experience':'experiences')+(p.incomplete?' <span style="color:#b45309;font-weight:700;">&middot; in progress</span>':'')+'</div>'
         +'</div>';
     }
     grid.innerHTML=html;
