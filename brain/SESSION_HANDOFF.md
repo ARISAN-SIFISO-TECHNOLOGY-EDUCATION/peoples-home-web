@@ -12,6 +12,40 @@
 
 ---
 
+## ✅ 2026-07-03 (session 22) — Bug skills connected + swept Early Numeracy & Early Literacy
+
+Connected the founder's **skills library** (`SifisoScS/skills`, 232 playbooks) to the engine repo
+and used two of them — **`bug-identifier`** then **`bug-fixer`** — on both Foundations on-ramps, the
+same way audit + security were applied.
+
+**Skills setup:** cloned to `repository-engine-1000/.claude/skills` (own git repo, `origin` intact,
+gitignored in the engine). **Strengthened** both bug skills for universality (pushed to `SifisoScS/skills`
+`6f9998f`): bug-identifier gained a **PWA / offline-first / static-client-app** stack hotspot (third-party
+font/CDN calls that break offline + leak, precache gaps, unguarded storage, media-before-gesture,
+lazy/Suspense without an error boundary, broken PWA icons, missing CSP); bug-fixer gained a
+**no-test-harness** verification path (reproduce-in-app + type-check/build + live check; a green build
+is the floor, not the ceiling).
+
+**Early Numeracy (`early-numeracy` `master` `de7e06f`)** — sweep was mostly clean (the session-21 audit
+had already hardened it; the type system guards the narration contract). One **[Medium]** confirmed:
+`goToModule`/`goHome` scheduled post-navigation narration via `setTimeout` but never cleared it, so a
+fast-tapping child (module → back within 350ms) heard the module-entry line speak on the home screen.
+Root-cause fix: hold the nav-narration timer in a ref, clear before re-scheduling + on unmount. Sibling
+sweep: HomeScreen/ModulePlaceholder already clear on unmount. Reported-not-fixed: welcome autoplay
+before a gesture (needs device repro), idle-timer resets every render (latent, Phase-2).
+
+**Early Literacy (`early-literacy` `main` `2ba6bf3`)** — one **[High]** confirmed and fixed:
+the loader did `setProgress(JSON.parse(saved))` with **no default merge**, so a returning user whose
+saved progress predates a newer field (`storybooks`, `wordsSpelled`, `vocabulary`, `birds`, `trees`)
+got `undefined` there; 8+ components read those unguarded (`progress.storybooks.includes`,
+`wordsSpelled.length`, `completedActivities['key']`) → `TypeError` on load → ErrorBoundary → but the
+malformed value persists → reload → **crash loop, user bricked**. Fix: `{...defaultProgress, ...parsed}`
++ `{...defaultSettings, ...parsed}` (the pattern early-numeracy's `useSessionState` already uses).
+**Reproduced before/after in node** (old-schema blob threw 3 TypeErrors before; after, fields default
+and saved values are preserved). `tsc`/build clean on both apps.
+
+---
+
 ## ✅ 2026-07-03 (session 21) — Early Numeracy: senior audit + security pass + linked LIVE on the site
 
 **Repo:** `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-numeracy` `master` — commit `8a03f92`.
