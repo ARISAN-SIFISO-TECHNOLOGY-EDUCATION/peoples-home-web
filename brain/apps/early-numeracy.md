@@ -1,7 +1,13 @@
 # Early Numeracy
 
-> 🧮 **Foundations** · ages **3–7** · **✅ LIVE (Phase 1 shell)** — installable offline PWA ·
+> 🧮 **Foundations** · ages **3–5** · **✅ LIVE (Phase 1 shell)** — installable offline PWA ·
 > Blueprint version 1 (2026-06-30)
+
+> ## 🔒 The authoritative plan is [`early-numeracy-roadmap.md`](./early-numeracy-roadmap.md)
+> The founder **locked a complete product roadmap** (2026-07-03): *finish the product, not the app* —
+> Phases 1–10 (Number Discovery → Data & Sorting) + Companion/Environment/Discovery-Book/Vocabulary/
+> Parent-Corner integration + Expert-Approved bar + Definition of Done. **The next AI executes THAT
+> file** and starts at **Phase 2**. It supersedes the "Implementation phases" section further down.
 
 ---
 
@@ -234,6 +240,10 @@ Follows the **World A proven pattern** exactly:
 ---
 
 ## Implementation phases
+
+> ⚠️ **SUPERSEDED (2026-07-03)** by the locked [`early-numeracy-roadmap.md`](./early-numeracy-roadmap.md).
+> The phases below are the original Blueprint-v1 plan, kept for history. Execute the **locked roadmap**
+> (Phases 1–10) instead; Phase 1 (Shell) here still matches reality and is done.
 
 ### Phase 1 — Shell & foundation
 - Vite + React + TS scaffold

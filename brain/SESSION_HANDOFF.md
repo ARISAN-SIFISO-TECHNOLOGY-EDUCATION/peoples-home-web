@@ -12,6 +12,34 @@
 
 ---
 
+## ✅ 2026-07-03 (session 24) — Early Numeracy product roadmap LOCKED + Space Explorer deployed/linked
+
+**Space Explorer:** deployed by the founder at **https://ikhaya-space-explorer.pages.dev/** (the bare
+`space-explorer.pages.dev` was taken) and **linked live** on The People's Home Curiosity pillar
+(`peoples-home-web` `06c9e05`; Brain `dd384b3`). Verified our hardened build is serving.
+
+**Confirmed complete across all three on-ramps** — audit + security + bug-identifier/fix:
+- Early Numeracy: `8a03f92` (audit/security) + `de7e06f` (bug).
+- Early Literacy: `28b1fbe` (security) + remaster + `2ba6bf3` (bug).
+- Space Explorer: `cd8e9ce` (in-house/security) + `2dad860` (bug). Memory accurate — no correction needed.
+
+**🔒 Early Numeracy — complete product roadmap LOCKED.** The founder handed over a comprehensive
+Phase 1–10 plan ("finish the **product**, not the app" — the same treatment Early Literacy and Space
+Explorer received). Saved verbatim-in-spirit as **`brain/apps/early-numeracy-roadmap.md`** (authoritative;
+supersedes the old Blueprint-v1 "Implementation phases"). Pointers added at the top of
+`apps/early-numeracy.md` and in `ROADMAP.md`.
+- **Scope:** Phase 2 Number Discovery (6 modules) → 2.5 Confidence → 3 Numbers Everywhere → 4 Addition
+  → 5 Subtraction → 6 Shapes → 7 Measurement → 8 Time → 9 Money (SA) → 10 Data & Sorting. Each phase
+  ends with a **Freeze** through the quality gates. Cross-cutting: Companion, Math Village environment,
+  "My Number Book", Vocabulary Engine, Parent Corner, accessibility. Bar = Google Play "Expert Approved".
+- **Naming (D-13):** the roadmap's "TPH Core v1.0 (Frozen)" = the **TPH Learning Engines** set; build
+  Early Numeracy on those public contracts (it currently uses its own hooks — adopting them is part of
+  the work). Do not confuse with `@tph/core`.
+- **NEXT AI STARTS HERE:** execute **Phase 2** (turn the 5 "Coming soon" module stubs into real
+  gameplay; split Make 5 / Make 10), one phase at a time, freeze between. Founder is taking a break.
+
+---
+
 ## ✅ 2026-07-03 (session 23) — Space Explorer brought in-house (Curiosity #3) + Foundations marked in-progress
 
 **Repo:** `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/Space-Explorer` `main` — `cd8e9ce` (conversion),
