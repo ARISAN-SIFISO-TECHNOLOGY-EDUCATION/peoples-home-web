@@ -190,7 +190,9 @@ Pages, deployed 2026-07-02). Built externally (Google AI Studio / Gemini); the a
 **dropped** so it ships as a true `#FreeForever` app. Repo
 `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-literacy` (PRIVATE, transferred from `SifisoScS` on
 2026-07-02), local checkout `C:\Users\sifis\Next-Level-Projects\early-literacy`. Phases 1–4 +
-navigation framework complete; **Phase-1 audit fixes applied** (see §12). For live facts see
+navigation framework complete; **remaster Phases 1–3 + M10 (all 26 letters) + the security pass are
+applied and pushed** (latest `28b1fbe`, see §12). Only M11 localisation + a real-child play-test
+remain. For live facts see
 [`../../ECOSYSTEM.md`](../../ECOSYSTEM.md); for status see [`../../ROADMAP.md`](../../ROADMAP.md).
 
 ---
@@ -305,17 +307,64 @@ applied; Phases 2–5 are the tracked backlog.** No UI redesign was done.
 - **M12:** closing a module surfaces a **"Try this at home"** full-screen spoken card (16 SA-first
   literacy prompts), at most once per browser session so it never nags (`TransferPrompt.tsx`).
 
-**⏳ Phases 4–5 — BACKLOG:**
+**✅ M10 — DONE (commit `611a9cd`):** the full alphabet is authored — all 26 letters across
+`LETTER_DB` (Letter Garden), `TRACE_PATHS_DB` (tracing), `DISCOVERY_CATALOG_DB` (discovery book,
+SA-first facts), and `VOCABULARY_DB`. `ACTIVE_LETTERS` now derives from the DB keys, sorted; no
+letter falls back to the triangle placeholder any more.
+
+**✅ Hygiene / security headers — DONE (commit `28b1fbe`):** added `public/_headers` (see Security
+Report below); fixed the "Suggeted" → "Suggested" typo in the Grown-up Corner.
+
+**⏳ Remaining backlog:**
 | ID | Sev | Finding | Fix |
 |---|---|---|---|
-| M10 | Med | **Tracing/Discovery cover only 9 letters** (A–G,M,S); rest fall back to a triangle. | Author all 26. |
 | M11 | Med (mission) | English-only; no isiZulu / SA-language narration. | Swappable language packs (Dec 2026 batch). |
-| — | Low | No `public/_headers` (CSP/clickjacking); typo "Suggeted". | Hygiene pass. |
 
-**Verdict (2026-07-02):** production-readiness ~**8.5/10** after Phases 1–3 (was ~6). Architecture is
-sound, type-checking is real, offline is genuine, the bundle is lean, and the child-safety + real-world
--transfer gaps are closed. Remaining work is **content depth** (M10) and **localisation** (M11) — a
-content/authoring effort, not engineering.
+**Verdict (2026-07-03):** production-readiness ~**9/10** after Phases 1–3 + M10 + the security pass
+(was ~6). Architecture is sound, type-checking is real, offline is genuine, the bundle is lean, the
+child-safety + real-world-transfer gaps are closed, all 26 letters are authored, and the app is
+locked to its own origin by CSP. The one remaining item is **localisation** (M11) — a content effort,
+not engineering. The only true "done" gate left is a play-test with a real 3–7-year-old (see §12
+verification caveat).
+
+---
+
+### Security review (2026-07-03)
+
+A Universal Security Engineering pass was run against the shipped code and build.
+
+**Attack surface — deliberately tiny.** Offline-first PWA · no accounts · no backend/API · no
+network calls in any code path (the `actions.google.com` remnant was removed in Phase 1) · no PII
+collected · no third-party scripts · no AI runtime · `npm audit` = **0 vulnerabilities** · no secrets
+in `src/` or `.env.example`. All state is local `localStorage` under `peoples_home_literacy_*`.
+
+**Findings & disposition:**
+- The built `index.html` ships **no inline `<script>`, no `on*` handlers, no `javascript:` URLs** —
+  every script is self-hosted (`/assets/*.js`, `/registerSW.js`). ⇒ `script-src 'self'` holds with
+  **no `'unsafe-inline'`**, the strongest practical script policy.
+- `style-src` retains `'unsafe-inline'` (Tailwind v4 + `motion` inject runtime styles); acceptable —
+  style injection is low-risk next to script injection, and a broken animation would break a kids' UX.
+- `worker-src 'self' blob:` is required for the Workbox service worker.
+- No clickjacking defence and no CSP were present. **Fixed** via `public/_headers`:
+
+  ```
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';
+    img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; media-src 'self';
+    worker-src 'self' blob:; manifest-src 'self'; base-uri 'self'; form-action 'self';
+    frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests
+  ```
+
+  Mirrors iKhaya's proven policy, minus the `/api/*` rules (this app has no backend). `connect-src
+  'self'` is a belt-and-braces guard: even if a future change tried to phone home, CSP would block it —
+  enforcing offline-first at the browser level.
+
+**Residual risk:** negligible. The only sensitive action (progress reset) is behind the M7 adult
+gate. No data leaves the device. Verify the CSP doesn't break the live app in a browser as part of
+the outstanding device play-test.
 
 ---
 
