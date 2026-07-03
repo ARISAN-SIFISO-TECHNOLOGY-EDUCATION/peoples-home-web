@@ -12,6 +12,40 @@
 
 ---
 
+## ✅ 2026-07-03 (session 21) — Early Numeracy: senior audit + security pass + linked LIVE on the site
+
+**Repo:** `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-numeracy` `master` — commit `8a03f92`.
+**Site:** `peoples-home-web` `main` — commit `125331c`. **Live:** https://early-numeracy.pages.dev/
+
+Gave Early Numeracy the same treatment as Early Literacy — audit against the real code, security
+hardening, then linked it into The People's Home. **No gameplay changed; it remains a Phase 1 shell**
+(all 5 modules still "Coming soon"). It was already deployed at early-numeracy.pages.dev but not linked.
+
+- **C1 — real PWA icons.** `generate-icons.mjs` imported `canvas` (uninstalled) → the catch wrote 1×1
+  70-byte placeholders; the PWA had no real install icon. Ported the dependency-free zlib generator
+  (green brand) → proper 192/512/maskable icons.
+- **C2 — zero external.** Removed a dead Google-Fonts `runtimeCaching` block from `vite.config.ts`
+  (no fonts are actually loaded) → the app now makes zero external requests.
+- **M1 — ErrorBoundary** wrapping `<App>` (child-safe "garden is resting" fallback).
+- **Security `public/_headers`** (CSP `script-src 'self'` with NO unsafe-inline — build has no inline
+  scripts; style-src keeps unsafe-inline for Tailwind; worker-src blob: for Workbox — plus
+  X-Frame-Options DENY, nosniff, no-referrer, Permissions-Policy). `wrangler.toml` pins `dist`;
+  moved `vite-plugin-pwa` to `dependencies` (prod-install safety). `npm audit` = 0 vulns.
+- **Verified LIVE:** all 5 security headers serving on early-numeracy.pages.dev; assets 200 w/ correct MIME.
+- **Linked on The People's Home:** converted the Foundations `future` placeholder → live entry
+  (`status:'live'` + url) in `index.html` PILLARS. Verified present on peoples-home-web.pages.dev.
+  **Foundations is now fully live** (Math Adventure · ReadAfrica · Everyday Foundations · Early
+  Literacy · Early Numeracy). Brain synced: `apps/early-numeracy.md`, `ECOSYSTEM.md`, `ROADMAP.md`.
+
+**Verified:** `tsc --noEmit` 0 errors; `vite build` clean; `_headers` in `dist/`; 19 chunks precached.
+
+### Remaining for Early Numeracy — content/UX, not hardening
+Phase 2 real gameplay (all modules are placeholders) · welcome-audio autoplay-without-gesture (defer
+to a UX pass, EL's M9 class) · `build` script uses bash env `WEB_BUILD=1` (Linux/Cloudflare only) ·
+device play-test with a real 3–7-year-old.
+
+---
+
 ## ✅ 2026-07-03 (session 20) — Early Literacy: M10 (all 26 letters) + security pass + CSP verified LIVE
 
 **Repo:** `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-literacy` `main` — commits `611a9cd`, `28b1fbe`.

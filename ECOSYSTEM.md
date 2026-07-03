@@ -38,7 +38,7 @@ ReadAfrica has no permanent local checkout (was a temp audit clone).
 ### Foundations on-ramps (ages 3–7)
 | App | Pillar | GitHub repo | Live URL | Stack | Notes |
 |---|---|---|---|---|---|
-| **Early Numeracy** | Foundations | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-numeracy` (private) | — (not deployed; PWA-ready) | Vite · React 19 · TS · Tailwind v4 · VitePWA | Number-sense 3–7. Phase 1 shell (2026-06-30). |
+| **Early Numeracy** | Foundations | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-numeracy` (private) | **https://early-numeracy.pages.dev/** ✅ | Vite · React 19 · TS · Tailwind v4 · vite-plugin-pwa | Number-sense 3–7. Phase 1 shell (2026-06-30); **audit + security hardening — 2026-07-03** (real PWA icons, ErrorBoundary, CSP `_headers`, zero-external). Linked live on the site. All 5 modules still "Coming soon" (Phase 2 = real gameplay). Build: `npm run build` · `dist`. |
 | **Early Literacy** | Foundations | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-literacy` (private) | **https://early-literacy.pages.dev/** ✅ | Vite 6 · React 19 · TS · Tailwind v4 · motion · vite-plugin-pwa | Emergent literacy 3–7 ("Village"). Built externally (Gemini); **AI dropped, deployed, offline PWA, Phase-1 audit fixes — 2026-07-02**. Static SPA, no env vars. Build: `npm run build` · `dist`. ⚠️ "TPH Core" naming collision + remaster backlog Phases 2–5 — see `brain/apps/early-literacy.md`. |
 
 ### Per-app deploy gotchas (hard-won)

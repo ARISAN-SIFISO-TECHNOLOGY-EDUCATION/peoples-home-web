@@ -1,7 +1,40 @@
 # Early Numeracy
 
-> 🧮 **Foundations** · ages **3–7** · **PLANNED** (World A — offline PWA) ·
+> 🧮 **Foundations** · ages **3–7** · **✅ LIVE (Phase 1 shell)** — installable offline PWA ·
 > Blueprint version 1 (2026-06-30)
+
+---
+
+## Status (2026-07-03)
+
+**✅ LIVE at https://early-numeracy.pages.dev/** and **linked on The People's Home** (Foundations
+pillar). Repo `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-numeracy` (PRIVATE, branch `master`), local
+`C:\Users\sifis\Next-Level-Projects\early-numeracy`. Vite · React 19 · TS · Tailwind v4 · vite-plugin-pwa.
+
+**It is still a Phase 1 shell:** the home screen, 5 module cards, narration/instruction system,
+child-lock, and session state all work — but **all 5 modules are "Coming soon" placeholders**. Phase 2
+(real gameplay: Counting Garden + Which is More?) is the next authored step.
+
+### Senior audit + security pass — 2026-07-03 (commit `8a03f92`)
+Parity with the Early Literacy remaster; **no gameplay changed**.
+- **C1 — real PWA icons.** `generate-icons.mjs` imported `canvas` (uninstalled) → the catch wrote
+  1×1 transparent 70-byte placeholders, so the PWA had **no real install icon**. Ported the
+  dependency-free zlib PNG generator ([[tph-early-literacy-status]] shares it) in the green brand →
+  proper 192/512/maskable icons.
+- **C2 — zero external.** Removed a **dead Google-Fonts `runtimeCaching`** block from `vite.config.ts`
+  (no web fonts are actually loaded). The app now makes **zero external requests** — true offline / no-tracking.
+- **M1 — ErrorBoundary** added and wrapping `<App>` (gentle "garden is resting" screen vs. white screen).
+- **Security `public/_headers`** (CSP + X-Frame-Options DENY + nosniff + no-referrer + Permissions-Policy).
+  Build has **no inline scripts**, so `script-src 'self'` holds with no `'unsafe-inline'`; `style-src`
+  keeps `'unsafe-inline'` (Tailwind); `worker-src 'self' blob:` (Workbox). Mirrors iKhaya/Early Literacy.
+  **Verified LIVE:** all 5 headers serving on the deployed site; assets 200 with correct MIME.
+- **Deploy hardening:** `wrangler.toml` pins `dist`; moved `vite-plugin-pwa` to `dependencies` so a
+  production install can't skip it. `npm audit` = **0 vulnerabilities**.
+
+**Backlog (flagged, not fixed):** welcome-audio autoplays on mount without a user gesture (browsers
+block it — same class as Early Literacy's M9; defer to a UX pass); `user-scalable=no` (intentional for
+young children); the whole point — **Phase 2 real gameplay**. Also: the `build` script uses bash env
+syntax (`WEB_BUILD=1 vite build`) which only runs on Linux/Cloudflare, not a Windows dev shell.
 
 ---
 
