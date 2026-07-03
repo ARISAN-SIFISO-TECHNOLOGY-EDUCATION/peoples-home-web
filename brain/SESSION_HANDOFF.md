@@ -12,6 +12,36 @@
 
 ---
 
+## ✅ 2026-07-03 (session 23) — Space Explorer brought in-house (Curiosity #3) + Foundations marked in-progress
+
+**Repo:** `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/Space-Explorer` `main` — `cd8e9ce` (conversion),
+`2dad860` (bug fixes), `be663c0` (README). **Site:** `peoples-home-web` `main` `57fba54`.
+
+**1. Foundations marked in-progress** on the site: Early Numeracy is linked live but is a Phase-1
+shell, so the Foundations pillar card now shows "· in progress" (`incomplete` flag in PILLARS).
+
+**2. Space Explorer** — cloned and given the full Early Literacy in-house treatment (it's another
+Google AI Studio / Gemini export). A polished, **complete** Curiosity & Knowledge app (ages 3–17):
+solar-system discovery, 5 tabs, curiosity-points → ranks, local profile. **No app logic/UI changed.**
+- **AI dropped** (unused): removed `@google/genai` + `express` + `dotenv` + `motion`, cleared the
+  Gemini capability, deleted `.env.example`.
+- **True offline:** removed a **live Google Fonts `@import`** (the app claims "fully operational
+  offline" — now real). Zero external requests. Offline PWA added (vite-plugin-pwa + zlib icons).
+- **Deploy prep:** name → `space-explorer`; tailwind + pwa → deps; **`@types/react` added** (tsc was
+  hollow → real, 0 errors); `_headers` CSP + `_redirects` + `wrangler.toml`; **new README**.
+- **Bug sweep (bug-identifier/bug-fixer):** fixed the same High class as Early Literacy — unguarded
+  `localStorage.setItem` (now try/catch) + no default-merge on profile load (now
+  `{...DEFAULT_PROFILE, ...parsed}`). `tsc`/build clean, `npm audit` 0.
+
+**⚠️ Deploy blocker (pick up here):** Space Explorer is **not deployed**. The bare subdomain
+`space-explorer.pages.dev` is **taken by an unrelated app ("GravityDemo")**, so a Cloudflare Pages
+project for this repo needs a **different** project name/subdomain. Steps: connect the repo (preset
+None/Vite, build `npm run build`, output `dist`, no env). **Then** flip its Curiosity PILLARS entry in
+`index.html` from `future` → `live` with the real URL (left as `future` so the site never links the
+wrong app). Full detail: `brain/apps/space-explorer.md`.
+
+---
+
 ## ✅ 2026-07-03 (session 22) — Bug skills connected + swept Early Numeracy & Early Literacy
 
 Connected the founder's **skills library** (`SifisoScS/skills`, 232 playbooks) to the engine repo
