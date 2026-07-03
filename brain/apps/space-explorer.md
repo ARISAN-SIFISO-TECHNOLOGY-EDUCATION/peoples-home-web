@@ -1,7 +1,8 @@
 # Space Explorer
 
-> 🔭 **Curiosity & Knowledge** · ages **3–17** · **✅ In-house & deploy-ready — NOT yet deployed**
-> (World A — offline PWA) · brought in-house 2026-07-03
+> 🔭 **Curiosity & Knowledge** · ages **3–17** · **✅ LIVE** at
+> **https://ikhaya-space-explorer.pages.dev/** — installable offline PWA · linked on The People's Home ·
+> brought in-house 2026-07-03
 
 The **third Curiosity & Knowledge app** (after Science Sprouts and Our World). Built externally in
 **Google AI Studio (Gemini)**, then brought fully in-house this session — the same path as
@@ -51,15 +52,13 @@ Same High-severity class as the Early Literacy fix:
 
 Verified: `tsc --noEmit` 0 errors; `vite build` clean; `_headers` in `dist/`.
 
-## ⚠️ Deploy blocker — pick up here
+## ✅ Deployed & linked (2026-07-03)
 
-- **Not deployed.** The bare subdomain **`space-explorer.pages.dev` is already taken by an unrelated
-  app ("GravityDemo")** — so a Cloudflare Pages project for this repo will need a **different**
-  project name / subdomain (e.g. `tph-space-explorer` or a custom domain).
-- **Steps:** Cloudflare Pages → connect `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/Space-Explorer` → preset
-  None/Vite → build `npm run build` → output `dist` → no env vars.
-- **Then:** flip the Curiosity pillar entry in `peoples-home/index.html` PILLARS from `status:'future'`
-  to `status:'live'` with the real URL (currently left as "future" so the site never links a wrong app).
+- **LIVE at https://ikhaya-space-explorer.pages.dev/** (the bare `space-explorer.pages.dev` was taken
+  by an unrelated "GravityDemo", so the Cloudflare project uses the `ikhaya-space-explorer` subdomain).
+  Verified our hardened build is serving (matching bundle hash + CSP headers).
+- **Linked on The People's Home** (`peoples-home-web` `06c9e05`): Curiosity pillar entry flipped
+  `future` → `live`. Verified present on the site.
 - **Play-test:** build/type-verified only; observe a real child before calling it done.
 
 ## Related
