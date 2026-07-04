@@ -1,8 +1,9 @@
 # Early Numeracy
 
-> 🧮 **Foundations** · ages **3–5** · **✅ LIVE — Phase 2 FROZEN + Phases 2.5–7 shipped** —
+> 🧮 **Foundations** · ages **3–5** · **✅ LIVE — Phase 2 FROZEN + Phases 2.5–8 shipped** —
 > installable offline PWA · six discovery modules + Addition + Taking Away + Shapes World (5 activities)
-> + Measuring World (3 activities) + Numbers Everywhere + two practice games + Today surface (2026-07-04)
+> + Measuring World (3 activities) + Time & Day (3 activities) + Numbers Everywhere + two practice games
+> + Today surface (2026-07-04)
 
 > ## 🔒 The authoritative plan is [`early-numeracy-roadmap.md`](./early-numeracy-roadmap.md)
 > The founder **locked a complete product roadmap** (2026-07-03): *finish the product, not the app* —
@@ -127,8 +128,25 @@ module cycles **three no-fail activities** across 10 levels:
 
 Quality gate: tsc 0 · clean build (Measurement lazy chunk, PWA precache 28, zero external) · all three
 generators proven over 400k randomized rounds · **deploy verified** (entry `index-DeWBCSvT.js`, chunk 200).
-⛔ **Phases 2.5–7 not yet Frozen** — remaining gate is the **real-child play-test**. After it passes →
-Freeze 2.5–7 → **Phase 8 (Time & Daily Life)**.
+
+### Phase 8 — Time & Day: BUILT & LIVE — 2026-07-04 (commit `99afc3f`)
+The 🕐 **Time & Day** module (`modules/time-and-day/`) — time & daily life, pre-reader friendly (no
+numerals to read). One module cycles **three no-fail activities** across 10 levels:
+- **TIME OF DAY** — tap the named sky (morning 🌅 / afternoon ☀️ / night 🌙); themed gradient scenes.
+- **SEQUENCE** — tap daily-life pictures first → last (six sets: wake/brush/eat · morning/afternoon/
+  night · dinner/bath/sleep · bag/school/home · egg/chick/hen · seed/sprout/tree); order badges appear
+  as taps land. Covers routines + sequences (≈ measurement arrange, keyed by canonical chronology).
+- **CLOCK** — match the clock showing the same time (inline `ClockSVG`; hour hand ≥3h apart so the
+  difference stays visually obvious; simple o'clock, visual only).
+- New **"🕐 Time & Day"** home section (`ModuleGroup` gained `'daily'`); home = Play & Learn · Adding &
+  Taking Away · Shapes · Measuring · Time & Day · Practice · Explore.
+- Scope note: days-of-week *naming* is deliberately light (touched via morning→afternoon→night
+  vocabulary) — spelling day names is reading-heavy for ages 3–5; can deepen later.
+
+Quality gate: tsc 0 · clean build (TimeAndDay lazy chunk, PWA precache 29, zero external) · all three
+generators proven over 600k rounds · **deploy verified** (entry `index-CrjdKx1A.js`, chunk 200).
+⛔ **Phases 2.5–8 not yet Frozen** — remaining gate is the **real-child play-test**. After it passes →
+Freeze 2.5–8 → **Phase 9 (Money — South African context)**.
 
 > ⚠️ Still uses Early Numeracy's **own** hooks (`useNarration`/`useInstruction`/`useSessionState`/
 > `useChildLock`), not the shared **TPH Learning Engines** (D-13). Adopting those engines remains part

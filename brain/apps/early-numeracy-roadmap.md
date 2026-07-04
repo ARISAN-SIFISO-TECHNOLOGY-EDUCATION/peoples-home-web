@@ -22,7 +22,7 @@
 | **Core platform** | TPH Core v1.0 (Frozen) — see the **naming note** below |
 | **Repo** | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-numeracy` (PRIVATE, branch `master`) |
 | **Live** | https://early-numeracy.pages.dev/ — linked on The People's Home (Foundations) |
-| **Status** | In Development — **Phase 2 FROZEN ✅. Phases 2.5–7 BUILT & LIVE (2026-07-04); play-test pending → Freeze. Phase 8 is next.** |
+| **Status** | In Development — **Phase 2 FROZEN ✅. Phases 2.5–8 BUILT & LIVE (2026-07-04); play-test pending → Freeze. Phase 9 is next.** |
 
 ### Where the code actually is right now (start here)
 **Phase 2 is FROZEN** (founder-authorized 2026-07-04, `fa777a6`): six real no-fail modules —
@@ -67,8 +67,17 @@ tap three things smallest → biggest), MEASURE (count non-standard unit blocks 
 **"📏 Measuring"** home section (`ModuleGroup` gained `'measure'`). tsc 0 / clean build (Measurement lazy
 chunk) / generators verified over 400k randomized rounds / deploy verified.
 
-**The gate left before freezing 2.5–7: a real-child play-test** (human step). Once confirmed, Freeze
-those phases and start **Phase 8 (Time & Daily Life)**.
+**Phase 8 (Time & Day) is built and deployed** (`99afc3f`): a 🕐 **Time & Day** module cycling three
+no-fail activities across 10 levels — TIME OF DAY (tap the morning/afternoon/night sky, spoken cue +
+themed gradient scene), SEQUENCE (tap daily-life pictures first → last: wake/brush/eat, dinner/bath/
+sleep, seed/sprout/tree… covering routines & sequences), CLOCK (match the clock showing the same time —
+SVG clock faces, hour hand ≥3h apart so it stays visually obvious; simple o'clock, no numerals to read).
+New **"🕐 Time & Day"** home section (`ModuleGroup` gained `'daily'`). Days-of-week *naming* is left
+light (touched via the morning→afternoon→night vocabulary) — spelling day names is reading-heavy for
+ages 3–5. tsc 0 / clean build / generators verified over 600k rounds / deploy verified.
+
+**The gate left before freezing 2.5–8: a real-child play-test** (human step). Once confirmed, Freeze
+those phases and start **Phase 9 (Money — South African context)**.
 
 Phase 1 (still true underneath): home screen, narration + instruction system (audio/visual paths
 separated), child-lock, session state, offline PWA. Audit + security + bug fixes done (`8a03f92`,
@@ -180,8 +189,18 @@ module cycling three no-fail activities over 10 levels:
 All no-fail; visual estimation, no numerals required to play. New "📏 Measuring" home section.
 - **→ Freeze Phase 7** — *blocked only on the real-child play-test.*
 
-### Phase 8 — Time & Daily Life
-Morning/afternoon/night · days · simple clocks · daily routines · sequences. **Freeze.**
+### Phase 8 — Time & Daily Life — ✅ BUILT & LIVE (2026-07-04, `99afc3f`); play-test pending → Freeze
+Morning/afternoon/night · days · simple clocks · daily routines · sequences. Delivered as the 🕐
+**Time & Day** module cycling three no-fail activities over 10 levels:
+- **TIME OF DAY** — tap the named sky (morning 🌅 / afternoon ☀️ / night 🌙); themed gradient scenes.
+- **SEQUENCE** — tap daily-life pictures first → last (six sets: wake/brush/eat · morning/afternoon/
+  night · dinner/bath/sleep · bag/school/home · egg/chick/hen · seed/sprout/tree). Covers routines +
+  sequences; order badges appear as taps land.
+- **CLOCK** — match the clock showing the same time (SVG clock faces, hour hand ≥3h apart; pure visual,
+  no numerals to read).
+All no-fail. Days-of-week *naming* is intentionally light (touched via morning→afternoon→night
+vocabulary) since spelling day names is reading-heavy for pre-readers ages 3–5 — can deepen later.
+- **→ Freeze Phase 8** — *blocked only on the real-child play-test.*
 
 ### Phase 9 — Money (South African context)
 Coins · notes · buying · selling · simple change · pretend shop. **Freeze.**

@@ -12,6 +12,30 @@
 
 ---
 
+## ✅ 2026-07-04 (session 32) — Early Numeracy: Phase 8 (Time & Day) shipped
+
+**Phase 8 — Time & Day — BUILT & LIVE** (`early-numeracy` `99afc3f`; deployed + verified):
+- 🕐 **Time & Day** module — time & daily life; pre-reader friendly (no numerals to read).
+- One module cycles **three no-fail activities** across 10 levels: **TIME OF DAY** (tap the named sky —
+  morning 🌅 / afternoon ☀️ / night 🌙, themed gradient scenes), **SEQUENCE** (tap daily-life pictures
+  first → last — six sets covering routines + time sequences), **CLOCK** (match the clock showing the
+  same time — SVG clock faces, hour hand ≥3h apart so the difference stays visually obvious; simple
+  o'clock, visual only).
+- New **"🕐 Time & Day"** home section (`ModuleGroup` gained `'daily'`). Home = Play & Learn · Adding &
+  Taking Away · Shapes · Measuring · Time & Day · Practice · Explore.
+- **Honest scope note:** days-of-week *naming* is deliberately light (touched via morning→afternoon→
+  night vocabulary) — spelling day names is reading-heavy for ages 3–5; can deepen later.
+- Verified: tsc 0 · clean build (TimeAndDay lazy chunk, precache 29, zero external) · all three
+  generators proven over 600k rounds (clock reshuffle terminates ≤15) · deploy verified (entry
+  `index-CrjdKx1A.js`, chunk 200).
+
+**⛔ Phases 2.5–8 not yet Frozen** — only gate left is the **real-child play-test** (human). Phase 2 is
+the sole Frozen phase. **NEXT AI:** on play-test confirmation → Freeze 2.5–8 → start **Phase 9 (Money —
+South African context)** — coins · notes · buying · selling · simple change · pretend shop. D-13
+reminder stands (own hooks, not the shared TPH Learning Engines).
+
+---
+
 ## ✅ 2026-07-04 (session 31) — Early Numeracy: Phase 7 (Measuring World) shipped
 
 **Phase 7 — Measuring World — BUILT & LIVE** (`early-numeracy` `76c1118`; deployed + verified):
