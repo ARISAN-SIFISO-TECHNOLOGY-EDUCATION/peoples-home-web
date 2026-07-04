@@ -1,9 +1,9 @@
 # Early Numeracy
 
-> 🧮 **Foundations** · ages **3–5** · **✅ LIVE — Phases 2–9 shipped (no phase Frozen; Phase 2 unfrozen 2026-07-04)** —
+> 🧮 **Foundations** · ages **3–5** · **✅ LIVE — ALL roadmap phases 2–10 shipped (no phase Frozen; Phase 2 unfrozen 2026-07-04)** —
 > installable offline PWA · six discovery modules + Addition + Taking Away + Shapes World (5 activities)
 > + Measuring World (3 activities) + Time & Day (3 activities) + Money Shop (3 activities)
-> + Numbers Everywhere + two practice games + Today surface (2026-07-04)
+> + Sort & Graph (3 activities) + Numbers Everywhere + two practice games + Today surface (2026-07-04)
 
 > ## 🔒 The authoritative plan is [`early-numeracy-roadmap.md`](./early-numeracy-roadmap.md)
 > The founder **locked a complete product roadmap** (2026-07-03): *finish the product, not the app* —
@@ -163,8 +163,24 @@ levels:
 
 Quality gate: tsc 0 · clean build (MoneyShop lazy chunk, PWA precache 30, zero external) · all three
 generators proven over 700k rounds · **deploy verified** (entry `index-LoNJjLIL.js`, chunk 200).
-⛔ **No phase Frozen** (Phase 2 unfrozen 2026-07-04) — remaining gate is the **real-child play-test**.
-After it passes → Freeze 2–9 → **Phase 10 (Data & Sorting)**, the final planned phase.
+
+### Phase 10 — Sort & Graph: BUILT & LIVE — 2026-07-04 (commit `99066d8`) · FINAL PLANNED PHASE
+The 📊 **Sort & Graph** module (`modules/data-sorting/`) — data & sorting; pre-reader friendly (category
+names spoken, decide by picture). One module cycles **three no-fail activities** across 10 levels:
+- **SORT** — tap all of one category among a mix (classify/group; ≈ counting-garden FIND, counts taps).
+- **GRAPH** — read a simple pictograph: tap the row with the most (or fewest). Four themes: favourite
+  fruit · animal chart · weather chart · favourite colour (colour = coloured-dot 🔴🔵🟢 rows). Counts
+  are three distinct values so the max/min is always unique.
+- **GROUP** — where does this belong? tap the group (bin) it goes with. True classification: the item is
+  a *different* member than the two bin sample icons, so it can't be solved by visual matching.
+- New **"📊 Sort & Graph"** home section (`ModuleGroup` gained `'data'`); home = Play & Learn · Adding &
+  Taking Away · Shapes · Measuring · Time & Day · Money & Shop · Sort & Graph · Practice · Explore.
+
+Quality gate: tsc 0 · clean build (SortAndGraph lazy chunk, PWA precache 31, zero external) · all three
+generators proven over 700k rounds · **deploy verified** (entry `index-fqAuOh_O.js`, chunk 200).
+🎉 **All roadmap build phases (2–10) are done & live.** ⛔ No phase Frozen (Phase 2 unfrozen 2026-07-04)
+— remaining gate is the **real-child play-test**; after it the whole roadmap can be Frozen. What's left
+is **polish + adopting the shared TPH Learning Engines (D-13)** — not new phases.
 
 > ⚠️ Still uses Early Numeracy's **own** hooks (`useNarration`/`useInstruction`/`useSessionState`/
 > `useChildLock`), not the shared **TPH Learning Engines** (D-13). Adopting those engines remains part

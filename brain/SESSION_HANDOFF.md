@@ -12,6 +12,30 @@
 
 ---
 
+## 🎉 2026-07-04 (session 34) — Early Numeracy: Phase 10 (Sort & Graph) shipped — ROADMAP BUILD COMPLETE
+
+**Phase 10 — Sort & Graph — BUILT & LIVE** (`early-numeracy` `99066d8`; deployed + verified). **This was
+the final planned phase of the locked roadmap.**
+- 📊 **Sort & Graph** module — data & sorting; pre-reader friendly (category names spoken, decide by
+  picture).
+- One module cycles **three no-fail activities** across 10 levels: **SORT** (tap all of one category
+  among a mix — classify/group + count), **GRAPH** (read a simple pictograph — tap the row with the
+  most/fewest; four themes: favourite fruit · animal chart · weather chart · favourite colour), **GROUP**
+  (where does this belong? tap the group it goes with — true classification: the item is a *different*
+  member than the bin sample icons, so it can't be solved by visual matching).
+- New **"📊 Sort & Graph"** home section (`ModuleGroup` gained `'data'`). Home = Play & Learn · Adding &
+  Taking Away · Shapes · Measuring · Time & Day · Money & Shop · Sort & Graph · Practice · Explore.
+- Verified: tsc 0 · clean build (SortAndGraph lazy chunk, precache 31, zero external) · all three
+  generators proven over 700k rounds · deploy verified (entry `index-fqAuOh_O.js`, chunk 200).
+
+**🎉 ALL roadmap build phases (2–10) are now done & live.** ⛔ No phase Frozen (Phase 2 was unfrozen
+2026-07-04). **NEXT AI:** there are **no more build phases** — on the real-child play-test, Freeze the
+whole roadmap. Remaining work is **polish + adopting the shared TPH Learning Engines (D-13)** (Early
+Numeracy still uses its own `useNarration`/`useInstruction`/`useSessionState`/`useChildLock`), plus the
+Google-Play "Expert Approved" bar and Definition of Done in the roadmap. Do **not** invent new phases.
+
+---
+
 ## ✅ 2026-07-04 (session 33) — Early Numeracy: Phase 2 UNFROZEN + Phase 9 (Money Shop) shipped
 
 **Founder decision — Phase 2 UNFROZEN.** Phase 2 had been the sole Frozen phase (`fa777a6`,

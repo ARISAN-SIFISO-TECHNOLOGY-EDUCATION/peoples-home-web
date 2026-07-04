@@ -22,7 +22,7 @@
 | **Core platform** | TPH Core v1.0 (Frozen) — see the **naming note** below |
 | **Repo** | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-numeracy` (PRIVATE, branch `master`) |
 | **Live** | https://early-numeracy.pages.dev/ — linked on The People's Home (Foundations) |
-| **Status** | In Development — **Phases 2–9 BUILT & LIVE (2026-07-04). Phase 2 UNFROZEN by founder 2026-07-04 — NO phase is Frozen now; all await one real-child play-test → Freeze. Phase 10 is next.** |
+| **Status** | **ALL BUILD PHASES DONE — Phases 2–10 BUILT & LIVE (2026-07-04).** Phase 10 was the final planned phase. Phase 2 UNFROZEN by founder 2026-07-04 — **NO phase is Frozen now; all await one real-child play-test → Freeze.** After the play-test the whole roadmap can be Frozen; remaining work is polish + engine adoption (D-13), not new phases. |
 
 ### Where the code actually is right now (start here)
 **⚠️ Phase 2 was UNFROZEN by the founder on 2026-07-04.** It had been Frozen (`fa777a6`) but the founder
@@ -90,8 +90,18 @@ pre-readers get a colour cue. No value must be read to play. New **"💰 Money &
 ages 3–5); buying/paying is delivered. tsc 0 / clean build / generators verified over 700k rounds /
 deploy verified.
 
-**The one gate left before freezing ANY phase: a real-child play-test** (human step). Once confirmed,
-Freeze the phases and start **Phase 10 (Data & Sorting)** — the final planned phase.
+**Phase 10 (Sort & Graph) is built and deployed** (`99066d8`) — **the final planned phase**: a 📊 **Sort
+& Graph** module cycling three no-fail activities across 10 levels — SORT (tap all of one category among
+a mix — classify/group + count), GRAPH (read a simple pictograph: tap the row with the most/fewest;
+themes = favourite fruit · animal chart · weather chart · favourite colour), GROUP (where does this
+belong? tap the group it goes with — true classification: the item is a *different* member than the bin
+samples, so it can't be solved by visual matching). Category names are spoken; pre-readers decide by
+picture. New **"📊 Sort & Graph"** home section (`ModuleGroup` gained `'data'`). tsc 0 / clean build /
+generators verified over 700k rounds / deploy verified.
+
+**🎉 With Phase 10, every planned build phase (2–10) is done & live.** The one gate left before Freezing
+ANY phase is a **real-child play-test** (human step). After it, the whole roadmap can be Frozen; what
+remains is polish + adopting the shared TPH Learning Engines (D-13) — **not new phases.**
 
 Phase 1 (still true underneath): home screen, narration + instruction system (audio/visual paths
 separated), child-lock, session state, offline PWA. Audit + security + bug fixes done (`8a03f92`,
@@ -229,8 +239,16 @@ colour-coded like real SA notes (green/brown/red/blue/orange). No numeral must b
 "💰 Money & Shop" home section. Simple *change* deferred (value subtraction is beyond ages 3–5).
 - **→ Freeze Phase 9** — *blocked only on the real-child play-test.*
 
-### Phase 10 — Data & Sorting
-Sort · group · count · graphs (favourite fruit, favourite colour, animal chart, weather chart). **Freeze.**
+### Phase 10 — Data & Sorting — ✅ BUILT & LIVE (2026-07-04, `99066d8`); play-test pending → Freeze · FINAL PHASE
+Sort · group · count · graphs (favourite fruit, favourite colour, animal chart, weather chart).
+Delivered as the 📊 **Sort & Graph** module cycling three no-fail activities over 10 levels:
+- **SORT** — tap all of one category among a mix (classify/group; counts the taps).
+- **GRAPH** — read a simple pictograph: tap the row with the most (or fewest). Four chart themes:
+  favourite fruit · animal chart · weather chart · favourite colour (colour = coloured-dot rows).
+- **GROUP** — where does this belong? tap the group (bin) it goes with. True classification — the item
+  is a *different* member than the two bin sample icons, so it cannot be solved by visual matching.
+All no-fail; category names are spoken, pre-readers decide by picture.
+- **→ Freeze Phase 10** — *blocked only on the real-child play-test.* **This is the last planned phase.**
 
 ---
 
