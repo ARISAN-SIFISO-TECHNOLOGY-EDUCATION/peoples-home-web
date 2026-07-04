@@ -12,6 +12,41 @@
 
 ---
 
+## 🌈 2026-07-04 (session 36) — Early Numeracy: Number Kingdom experience roadmap DRAFTED (awaiting Freeze)
+
+**Founder pivot:** Early Numeracy still felt like a *list of activities*, not a *world* like Early
+Literacy / Space Explorer / Our World. Decision: elevate it into a **living world — 🌈 Number Kingdom.**
+- **Naming (LOCKED by founder):** product stays **Early Numeracy** (repo, URL, Play, People's Home,
+  docs — no churn); the child-facing **experience/world** is **Number Kingdom**. "Don't rename the app,
+  rename the world." Parents see Early Numeracy; children enter Number Kingdom.
+- **Core principle:** the 16 educational modules (Phases 2–10) are the hard part and are **done** — Number
+  Kingdom is a **shell/world layer built OVER them**, not a rewrite. Educational logic stays frozen.
+- **Governance (founder):** **Blueprint → Freeze → Build.** Milestones **NK-0 … NK-6**, each frozen before
+  the next. **Freeze is a founder act** — the AI never self-declares it.
+- **Milestones:** NK-0 Kingdom Constitution (lock principles, no UI) · NK-1 World Map (one screen, one tap,
+  7 regions) · NK-2 Living Kingdom (world grows with play + **Daily Life Layer**: morning/evening/rain/
+  wind ambience) · NK-3 Math Adventure Journal (rename "My Number Book") · NK-4 Companion (keep Ollie/
+  Fifi/Lulu, add 🐿 **Pip** the Kingdom Guide — scripted, invite-led, never "let's do maths") · NK-5
+  Regional Identity (thematic **skins only** per module — Shape Lake fish, Railway carriages…) · NK-6
+  Castle Celebration (festival, not a boss).
+- **Regions & module map** (all 16 placed, nothing orphaned): 🏡 Village (numbers-everywhere · time-and-
+  day) · 🌳 Counting Forest (counting-garden · which-is-more · number-hunt · number-match) · 🌊 Shape Lake
+  (shapes-world) · 🏔 Pattern Mountain (pattern-maker · number-shapes) · 🚂 Number Railway (make-five ·
+  make-ten · addition · taking-away) · 🎪 Puzzle Carnival (measurement · money · data-sorting) · 🏰 Castle.
+- **Hard constraints reaffirmed:** offline · zero external · CSP-locked · **no runtime AI** (Pip scripted)
+  · no-fail · **one-screen/one-tap nav for ages 3–5** (no free-roam RPG) · **art ceiling = animated
+  storybook SVG** (code-built, no illustrator) · preserve the PWA update-hygiene fix (`7634696`) · don't
+  touch TPH Core.
+
+**Deliverable this session:** [`brain/apps/number-kingdom-roadmap.md`](./apps/number-kingdom-roadmap.md) —
+the full blueprint (naming, principle, region map, NK-0…NK-6, constraints, DoD, execution protocol).
+Cross-linked from `early-numeracy.md` and `ROADMAP.md`. **No app code changed.** **NEXT AI / NEXT
+SESSION:** do **not** build UI yet — await the founder's word to **Freeze NK-0 (the Constitution)**, then
+build NK-1. This blueprint is the scope; don't invent beyond it. D-13 (adopt TPH Learning Engines later)
+still stands.
+
+---
+
 ## 🐛 2026-07-04 (session 35) — Early Numeracy: PWA stale-cache bug FIXED (all cards showed "coming soon")
 
 **Symptom (founder report):** every module card, when tapped, showed/spoke "coming soon" on the live site.

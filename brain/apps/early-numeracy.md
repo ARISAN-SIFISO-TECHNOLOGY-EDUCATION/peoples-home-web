@@ -10,6 +10,15 @@
 > Phases 1–10 (Number Discovery → Data & Sorting) + Companion/Environment/Discovery-Book/Vocabulary/
 > Parent-Corner integration + Expert-Approved bar + Definition of Done. **The next AI executes THAT
 > file** and starts at **Phase 2**. It supersedes the "Implementation phases" section further down.
+> **Educational phases 2–10 are now build-complete (2026-07-04).**
+
+> ## 🌈 NEXT: the experience layer — [`number-kingdom-roadmap.md`](./number-kingdom-roadmap.md)
+> The founder chose (2026-07-04) to elevate Early Numeracy from a collection of activities into a
+> **living world: 🌈 Number Kingdom** — product stays **Early Numeracy**, the child enters **Number
+> Kingdom**. The 16 educational modules stay **intact**; a world-map shell (regions · living kingdom ·
+> Pip the guide · Adventure Journal · regional skins · castle festival) is built **over** them.
+> Governance: **Blueprint → Freeze → Build**, milestones **NK-0 … NK-6**, each frozen before the next.
+> **Status: blueprint drafted, awaiting founder Freeze; no NK UI built yet.**
 
 ---
 
