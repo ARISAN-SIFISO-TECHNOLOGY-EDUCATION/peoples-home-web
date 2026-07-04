@@ -22,13 +22,16 @@
 | **Core platform** | TPH Core v1.0 (Frozen) — see the **naming note** below |
 | **Repo** | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-numeracy` (PRIVATE, branch `master`) |
 | **Live** | https://early-numeracy.pages.dev/ — linked on The People's Home (Foundations) |
-| **Status** | In Development — **Phase 2 FROZEN ✅. Phases 2.5–8 BUILT & LIVE (2026-07-04); play-test pending → Freeze. Phase 9 is next.** |
+| **Status** | In Development — **Phases 2–9 BUILT & LIVE (2026-07-04). Phase 2 UNFROZEN by founder 2026-07-04 — NO phase is Frozen now; all await one real-child play-test → Freeze. Phase 10 is next.** |
 
 ### Where the code actually is right now (start here)
-**Phase 2 is FROZEN** (founder-authorized 2026-07-04, `fa777a6`): six real no-fail modules —
-`counting-garden`, `which-is-more`, `number-shapes`, `pattern-maker`, `make-five` + `make-ten` (old
-`make-five-ten` split). Shared kit (`components/module-kit.tsx`), progress store (`lib/progress.ts`,
-schema-drift-safe), environment-as-reward **Math Village**.
+**⚠️ Phase 2 was UNFROZEN by the founder on 2026-07-04.** It had been Frozen (`fa777a6`) but the founder
+lifted the freeze so it can be revised alongside the rest. **No phase is Frozen right now** — Phases
+2–9 are all *built & live* and share one remaining gate: a real-child play-test. Phase 2 content is
+unchanged: six real no-fail modules — `counting-garden`, `which-is-more`, `number-shapes`,
+`pattern-maker`, `make-five` + `make-ten` (old `make-five-ten` split). Shared kit
+(`components/module-kit.tsx`), progress store (`lib/progress.ts`, schema-drift-safe),
+environment-as-reward **Math Village**.
 
 **Phase 2.5 (Numeracy Confidence) is built and deployed** (`22b5a0b`): a 🌞 **Today** home surface
 (daily suggested activity + favourite replay + spoken real-world-counting nudge) and two **practice**
@@ -76,8 +79,19 @@ New **"🕐 Time & Day"** home section (`ModuleGroup` gained `'daily'`). Days-of
 light (touched via the morning→afternoon→night vocabulary) — spelling day names is reading-heavy for
 ages 3–5. tsc 0 / clean build / generators verified over 600k rounds / deploy verified.
 
-**The gate left before freezing 2.5–8: a real-child play-test** (human step). Once confirmed, Freeze
-those phases and start **Phase 9 (Money — South African context)**.
+**Phase 9 (Money Shop) is built and deployed** (`c6f4c6e`): a 💰 **Money Shop** module — money & pretend
+shopping, South African context — cycling three no-fail activities across 10 levels: MATCH (find the
+money that looks the same — recognise coins & notes), SHOP (an item costs N coins; tap N coins to pay —
+buying/selling), SORT (tap all the coins, or all the notes, among a mix). SA denominations (coins
+10c–R5, notes R10–R200); money is **drawn as styled divs, not photographed** — self-contained/offline
+and avoids reproducing real banknote artwork; notes are colour-coded like the real SA notes so
+pre-readers get a colour cue. No value must be read to play. New **"💰 Money & Shop"** home section
+(`ModuleGroup` gained `'money'`). Simple *change* is left for later (subtraction-of-values is beyond
+ages 3–5); buying/paying is delivered. tsc 0 / clean build / generators verified over 700k rounds /
+deploy verified.
+
+**The one gate left before freezing ANY phase: a real-child play-test** (human step). Once confirmed,
+Freeze the phases and start **Phase 10 (Data & Sorting)** — the final planned phase.
 
 Phase 1 (still true underneath): home screen, narration + instruction system (audio/visual paths
 separated), child-lock, session state, offline PWA. Audit + security + bug fixes done (`8a03f92`,
@@ -119,7 +133,7 @@ one passes every gate.
 ### Phase 1 — Foundation ✅ DONE
 Platform shell · navigation · Home · Village · Parent Corner · offline storage · TPH (Learning Engines) integration.
 
-### Phase 2 — Number Discovery — ✅ FROZEN (2026-07-04, `fa777a6`; founder-authorized)
+### Phase 2 — Number Discovery — ✅ BUILT & LIVE (`fa777a6`) · ⚠️ UNFROZEN 2026-07-04 (was Frozen; founder lifted it)
 The six core modules, all real no-fail gameplay (Make Five / Make Ten split out from `make-five-ten`).
 - **🌼 Counting Garden** ✅ — tap-to-count, one-to-one correspondence, spoken counting, number recognition; wrong tap = gentle wobble.
 - **🍎 Which Is More?** ✅ — compare quantities: more / fewer / equal (equal via the centre button); wrong tap re-asks.
@@ -127,7 +141,8 @@ The six core modules, all real no-fail gameplay (Make Five / Make Ten split out 
 - **🎨 Pattern Maker** ✅ — AB / ABC / AABB / ABB; gap at end then middle; tap-to-fill.
 - **⭐ Make Five** ✅ — number composition on a five-frame; part–whole fact spoken.
 - **🌟 Make Ten** ✅ — ten frame; part–whole thinking (shared engine with Make Five).
-- **→ Freeze Phase 2** — *blocked only on the real-child play-test.*
+- **→ Freeze Phase 2** — *was Frozen `fa777a6`; **founder unfroze it 2026-07-04.** Re-freeze with the
+  rest on the real-child play-test.*
 
 ### Phase 2.5 — Numeracy Confidence — ✅ BUILT & LIVE (2026-07-04, `22b5a0b`); play-test pending → Freeze
 Before larger concepts. Delivered:
@@ -202,8 +217,17 @@ All no-fail. Days-of-week *naming* is intentionally light (touched via morning�
 vocabulary) since spelling day names is reading-heavy for pre-readers ages 3–5 — can deepen later.
 - **→ Freeze Phase 8** — *blocked only on the real-child play-test.*
 
-### Phase 9 — Money (South African context)
-Coins · notes · buying · selling · simple change · pretend shop. **Freeze.**
+### Phase 9 — Money (South African context) — ✅ BUILT & LIVE (2026-07-04, `c6f4c6e`); play-test pending → Freeze
+Coins · notes · buying · selling · simple change · pretend shop. Delivered as the 💰 **Money Shop**
+module cycling three no-fail activities over 10 levels:
+- **MATCH** — find the money that looks the same (recognise coins & notes; spoken value + visual match).
+- **SHOP** — an item costs N coins (1–5); tap N coins to pay, counting up ("you paid!"). Buying/selling.
+- **SORT** — tap all the coins (or all the notes) among a mix; coin-vs-note discrimination.
+SA denominations: coins 10c/20c/50c/R1/R2/R5, notes R10/R20/R50/R100/R200. Money is **drawn** (styled
+divs), not photographed — self-contained/offline and avoids reproducing real banknote artwork; notes
+colour-coded like real SA notes (green/brown/red/blue/orange). No numeral must be read to play. New
+"💰 Money & Shop" home section. Simple *change* deferred (value subtraction is beyond ages 3–5).
+- **→ Freeze Phase 9** — *blocked only on the real-child play-test.*
 
 ### Phase 10 — Data & Sorting
 Sort · group · count · graphs (favourite fruit, favourite colour, animal chart, weather chart). **Freeze.**

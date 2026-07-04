@@ -12,6 +12,35 @@
 
 ---
 
+## ✅ 2026-07-04 (session 33) — Early Numeracy: Phase 2 UNFROZEN + Phase 9 (Money Shop) shipped
+
+**Founder decision — Phase 2 UNFROZEN.** Phase 2 had been the sole Frozen phase (`fa777a6`,
+founder-authorized earlier the same day). The founder lifted the freeze. **No phase is Frozen now** —
+Phases 2–9 are all built & live and share one remaining gate: a single real-child play-test. Phase 2
+code is unchanged; only its status moved Frozen → unfrozen.
+
+**Phase 9 — Money Shop — BUILT & LIVE** (`early-numeracy` `c6f4c6e`; deployed + verified):
+- 💰 **Money Shop** module — money & pretend shopping, **South African context**; pre-reader friendly
+  (no value has to be read).
+- One module cycles **three no-fail activities** across 10 levels: **MATCH** (find the money that looks
+  the same — recognise coins & notes), **SHOP** (an item costs N coins 1–5; tap N coins to pay, counting
+  up — buying/selling), **SORT** (tap all the coins, or all the notes, among a mix — coin-vs-note).
+- SA denominations: coins 10c/20c/50c/R1/R2/R5, notes R10/R20/R50/R100/R200. Money is **drawn** (styled
+  `Coin`/`Note` divs), not photographed — self-contained/offline and avoids reproducing real banknote
+  artwork; notes colour-coded like real SA notes (green/brown/red/blue/orange).
+- New **"💰 Money & Shop"** home section (`ModuleGroup` gained `'money'`). Home = Play & Learn · Adding &
+  Taking Away · Shapes · Measuring · Time & Day · Money & Shop · Practice · Explore.
+- Scope note: simple *change* deferred (value subtraction is beyond ages 3–5); buying/paying delivered.
+- Verified: tsc 0 · clean build (MoneyShop lazy chunk, precache 30, zero external) · all three
+  generators proven over 700k rounds · deploy verified (entry `index-LoNJjLIL.js`, chunk 200).
+
+**⛔ No phase Frozen** — the one gate left is the **real-child play-test** (human). **NEXT AI:** on
+play-test confirmation → Freeze 2–9 → build **Phase 10 (Data & Sorting)** — sort · group · count ·
+simple graphs (favourite fruit/colour, animal chart, weather chart). **Phase 10 is the final planned
+phase of the locked roadmap.** D-13 reminder stands (own hooks, not the shared TPH Learning Engines).
+
+---
+
 ## ✅ 2026-07-04 (session 32) — Early Numeracy: Phase 8 (Time & Day) shipped
 
 **Phase 8 — Time & Day — BUILT & LIVE** (`early-numeracy` `99afc3f`; deployed + verified):

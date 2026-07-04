@@ -1,9 +1,9 @@
 # Early Numeracy
 
-> 🧮 **Foundations** · ages **3–5** · **✅ LIVE — Phase 2 FROZEN + Phases 2.5–8 shipped** —
+> 🧮 **Foundations** · ages **3–5** · **✅ LIVE — Phases 2–9 shipped (no phase Frozen; Phase 2 unfrozen 2026-07-04)** —
 > installable offline PWA · six discovery modules + Addition + Taking Away + Shapes World (5 activities)
-> + Measuring World (3 activities) + Time & Day (3 activities) + Numbers Everywhere + two practice games
-> + Today surface (2026-07-04)
+> + Measuring World (3 activities) + Time & Day (3 activities) + Money Shop (3 activities)
+> + Numbers Everywhere + two practice games + Today surface (2026-07-04)
 
 > ## 🔒 The authoritative plan is [`early-numeracy-roadmap.md`](./early-numeracy-roadmap.md)
 > The founder **locked a complete product roadmap** (2026-07-03): *finish the product, not the app* —
@@ -37,7 +37,8 @@ and an **environment-as-reward Math Village** that grows on the home screen (+ p
 no stars, no scores. `ModulePlaceholder` removed.
 
 **Quality gate status:** tsc 0 errors · clean production build · pure game-logic invariants checked ·
-**deploy verified**. ✅ **Phase 2 FROZEN — founder-authorized 2026-07-04.**
+**deploy verified**. ⚠️ **Phase 2 was Frozen (founder-authorized 2026-07-04) then UNFROZEN by the
+founder later the same day** — no phase is Frozen now; all await the single real-child play-test.
 
 ### Phase 2.5 — Numeracy Confidence: BUILT & LIVE — 2026-07-04 (commit `22b5a0b`)
 The confidence bridge before bigger concepts:
@@ -145,8 +146,25 @@ numerals to read). One module cycles **three no-fail activities** across 10 leve
 
 Quality gate: tsc 0 · clean build (TimeAndDay lazy chunk, PWA precache 29, zero external) · all three
 generators proven over 600k rounds · **deploy verified** (entry `index-CrjdKx1A.js`, chunk 200).
-⛔ **Phases 2.5–8 not yet Frozen** — remaining gate is the **real-child play-test**. After it passes →
-Freeze 2.5–8 → **Phase 9 (Money — South African context)**.
+
+### Phase 9 — Money Shop: BUILT & LIVE — 2026-07-04 (commit `c6f4c6e`)
+The 💰 **Money Shop** module (`modules/money/`) — money & pretend shopping, **South African context**;
+pre-reader friendly (no value has to be read). One module cycles **three no-fail activities** across 10
+levels:
+- **MATCH** — find the money that looks the same (recognise coins & notes; spoken value + visual match).
+- **SHOP** — an item costs N coins (1–5); tap N coins to pay, counting up ("you paid!"). Buying/selling.
+- **SORT** — tap all the coins (or all the notes) among a mix (≈ counting-garden FIND; coin-vs-note).
+- SA denominations: coins 10c/20c/50c/R1/R2/R5, notes R10/R20/R50/R100/R200. Money is **drawn** (styled
+  divs — `Coin`/`Note`), not photographed: self-contained/offline and avoids reproducing real banknote
+  artwork; notes colour-coded like the real SA notes (green/brown/red/blue/orange).
+- New **"💰 Money & Shop"** home section (`ModuleGroup` gained `'money'`); home = Play & Learn · Adding &
+  Taking Away · Shapes · Measuring · Time & Day · Money & Shop · Practice · Explore.
+- Scope note: simple *change* is deferred — value subtraction is beyond ages 3–5; buying/paying delivered.
+
+Quality gate: tsc 0 · clean build (MoneyShop lazy chunk, PWA precache 30, zero external) · all three
+generators proven over 700k rounds · **deploy verified** (entry `index-LoNJjLIL.js`, chunk 200).
+⛔ **No phase Frozen** (Phase 2 unfrozen 2026-07-04) — remaining gate is the **real-child play-test**.
+After it passes → Freeze 2–9 → **Phase 10 (Data & Sorting)**, the final planned phase.
 
 > ⚠️ Still uses Early Numeracy's **own** hooks (`useNarration`/`useInstruction`/`useSessionState`/
 > `useChildLock`), not the shared **TPH Learning Engines** (D-13). Adopting those engines remains part
