@@ -22,7 +22,7 @@
 | **Core platform** | TPH Core v1.0 (Frozen) — see the **naming note** below |
 | **Repo** | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-numeracy` (PRIVATE, branch `master`) |
 | **Live** | https://early-numeracy.pages.dev/ — linked on The People's Home (Foundations) |
-| **Status** | In Development — **Phase 2 FROZEN ✅. Phases 2.5–6 BUILT & LIVE (2026-07-04); play-test pending → Freeze. Phase 7 is next.** |
+| **Status** | In Development — **Phase 2 FROZEN ✅. Phases 2.5–7 BUILT & LIVE (2026-07-04); play-test pending → Freeze. Phase 8 is next.** |
 
 ### Where the code actually is right now (start here)
 **Phase 2 is FROZEN** (founder-authorized 2026-07-04, `fa777a6`): six real no-fail modules —
@@ -60,8 +60,15 @@ activities — FIND (tap all of a shape), MATCH (tap the named shape), TRACE (fi
 BUILD (make a picture from shapes), REAL-WORLD (find things of a shape). Shapes drawn via a new SVG
 primitive (`Shape.tsx`). New **"🔷 Shapes"** home section (`ModuleGroup` gained `'shapes'`).
 
-**The gate left before freezing 2.5–6: a real-child play-test** (human step). Once confirmed, Freeze
-those phases and start **Phase 7 (Measurement)**.
+**Phase 7 (Measuring World) is built and deployed** (`76c1118`): a 📏 **Measuring World** module cycling
+three no-fail activities across 10 levels — COMPARE (tap the bigger/taller/longer/heavier/fuller, or the
+opposite, across all five attributes; a `FillGlass` component handles full/empty), ARRANGE (seriation —
+tap three things smallest → biggest), MEASURE (count non-standard unit blocks along an object). New
+**"📏 Measuring"** home section (`ModuleGroup` gained `'measure'`). tsc 0 / clean build (Measurement lazy
+chunk) / generators verified over 400k randomized rounds / deploy verified.
+
+**The gate left before freezing 2.5–7: a real-child play-test** (human step). Once confirmed, Freeze
+those phases and start **Phase 8 (Time & Daily Life)**.
 
 Phase 1 (still true underneath): home screen, narration + instruction system (audio/visual paths
 separated), child-lock, session state, offline PWA. Audit + security + bug fixes done (`8a03f92`,
@@ -163,9 +170,15 @@ Delivered as the 🔷 **Shapes World** module — one module cycling all five li
 - **Real-world objects** — find real things of a shape ("find the round things").
 All no-fail. **→ Freeze Phase 6** — *blocked only on the real-child play-test.*
 
-### Phase 7 — Measurement
-Big/small · tall/short · heavy/light · long/short · full/empty.
-Activities: compare · arrange · measure · estimate. **Freeze.**
+### Phase 7 — Measurement — ✅ BUILT & LIVE (2026-07-04, `76c1118`); play-test pending → Freeze
+Big/small · tall/short · heavy/light · long/short · full/empty. Delivered as the 📏 **Measuring World**
+module cycling three no-fail activities over 10 levels:
+- **COMPARE** — tap the bigger/taller/longer/heavier/fuller (or the opposite); all five attributes.
+  Size attrs scale the same emoji; heavy uses intuitive pairs (🐘/🐁); full/empty uses a fill-glass.
+- **ARRANGE** — seriation: tap three same-emoji things from smallest to biggest.
+- **MEASURE** — non-standard units: count how many unit blocks long a thing is; "it is n blocks long!".
+All no-fail; visual estimation, no numerals required to play. New "📏 Measuring" home section.
+- **→ Freeze Phase 7** — *blocked only on the real-child play-test.*
 
 ### Phase 8 — Time & Daily Life
 Morning/afternoon/night · days · simple clocks · daily routines · sequences. **Freeze.**

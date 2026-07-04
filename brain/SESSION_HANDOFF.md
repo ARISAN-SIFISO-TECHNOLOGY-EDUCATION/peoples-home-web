@@ -12,6 +12,28 @@
 
 ---
 
+## ✅ 2026-07-04 (session 31) — Early Numeracy: Phase 7 (Measuring World) shipped
+
+**Phase 7 — Measuring World — BUILT & LIVE** (`early-numeracy` `76c1118`; deployed + verified):
+- 📏 **Measuring World** module — measurement & comparison (big/small · tall/short · heavy/light ·
+  long/short · full/empty), all visual estimation, no numerals required to play.
+- One module cycles **three no-fail activities** across 10 levels: **COMPARE** (tap the
+  bigger/taller/longer/heavier/fuller — or the opposite — across all five attributes; size attrs scale
+  the same emoji, heavy uses intuitive pairs like 🐘/🐁, full/empty uses a `FillGlass` fill bar),
+  **ARRANGE** (seriation — tap three same-emoji things smallest → biggest), **MEASURE** (non-standard
+  units — count how many unit blocks long a thing is, "it is n blocks long!").
+- New **"📏 Measuring"** home section (`ModuleGroup` gained `'measure'`). Home = Play & Learn · Adding &
+  Taking Away · Shapes · Measuring · Practice · Explore.
+- Verified: tsc 0 · clean build (Measurement lazy chunk, precache 28, zero external) · all three
+  generators proven over 400k randomized rounds · deploy verified (entry `index-DeWBCSvT.js`, chunk 200).
+
+**⛔ Phases 2.5–7 not yet Frozen** — only gate left is the **real-child play-test** (human). Phase 2 is
+the sole Frozen phase. **NEXT AI:** on play-test confirmation → Freeze 2.5–7 → start **Phase 8 (Time &
+Daily Life)** — morning/afternoon/night · days · simple clocks · daily routines · sequences. D-13
+reminder stands (own hooks, not the shared TPH Learning Engines).
+
+---
+
 ## ✅ 2026-07-04 (session 30) — Early Numeracy: Phase 6 (Shapes World) shipped
 
 **Phase 6 — Shapes World — BUILT & LIVE** (`early-numeracy` `ac1634d`; deployed + verified):

@@ -1,8 +1,8 @@
 # Early Numeracy
 
-> 🧮 **Foundations** · ages **3–5** · **✅ LIVE — Phase 2 FROZEN + Phases 2.5–6 shipped** —
+> 🧮 **Foundations** · ages **3–5** · **✅ LIVE — Phase 2 FROZEN + Phases 2.5–7 shipped** —
 > installable offline PWA · six discovery modules + Addition + Taking Away + Shapes World (5 activities)
-> + Numbers Everywhere + two practice games + Today surface (2026-07-04)
+> + Measuring World (3 activities) + Numbers Everywhere + two practice games + Today surface (2026-07-04)
 
 > ## 🔒 The authoritative plan is [`early-numeracy-roadmap.md`](./early-numeracy-roadmap.md)
 > The founder **locked a complete product roadmap** (2026-07-03): *finish the product, not the app* —
@@ -112,8 +112,23 @@ each mirroring a proven mechanic:
 
 Quality gate: tsc 0 · clean build (12 lazy chunks, PWA precache 27, zero external) · all five activity
 generators proven valid · **deploy verified**.
-⛔ **Phases 2.5–6 not yet Frozen** — remaining gate is the **real-child play-test**. After it passes →
-Freeze 2.5–6 → **Phase 7 (Measurement)**.
+
+### Phase 7 — Measuring World: BUILT & LIVE — 2026-07-04 (commit `76c1118`)
+The 📏 **Measuring World** module (`modules/measurement/`) — measurement & comparison (big/small ·
+tall/short · heavy/light · long/short · full/empty), all visual estimation, no numerals required. One
+module cycles **three no-fail activities** across 10 levels:
+- **COMPARE** — tap the bigger/taller/longer/heavier/fuller (or the opposite) across all five
+  attributes; size attrs scale the same emoji, heavy uses intuitive pairs (🐘/🐁), full/empty uses a
+  `FillGlass` fill bar.
+- **ARRANGE** — seriation: tap three same-emoji things smallest → biggest.
+- **MEASURE** — non-standard units: count how many unit blocks long a thing is ("it is n blocks long!").
+- New **"📏 Measuring"** home section (`ModuleGroup` gained `'measure'`); home = Play & Learn · Adding &
+  Taking Away · Shapes · Measuring · Practice · Explore.
+
+Quality gate: tsc 0 · clean build (Measurement lazy chunk, PWA precache 28, zero external) · all three
+generators proven over 400k randomized rounds · **deploy verified** (entry `index-DeWBCSvT.js`, chunk 200).
+⛔ **Phases 2.5–7 not yet Frozen** — remaining gate is the **real-child play-test**. After it passes →
+Freeze 2.5–7 → **Phase 8 (Time & Daily Life)**.
 
 > ⚠️ Still uses Early Numeracy's **own** hooks (`useNarration`/`useInstruction`/`useSessionState`/
 > `useChildLock`), not the shared **TPH Learning Engines** (D-13). Adopting those engines remains part
