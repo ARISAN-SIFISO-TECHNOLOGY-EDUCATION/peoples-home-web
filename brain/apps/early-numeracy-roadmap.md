@@ -22,7 +22,7 @@
 | **Core platform** | TPH Core v1.0 (Frozen) — see the **naming note** below |
 | **Repo** | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-numeracy` (PRIVATE, branch `master`) |
 | **Live** | https://early-numeracy.pages.dev/ — linked on The People's Home (Foundations) |
-| **Status** | In Development — **Phase 2 FROZEN ✅. Phases 2.5, 3, 4 & 5 BUILT & LIVE (2026-07-04); play-test pending → Freeze. Phase 6 is next.** |
+| **Status** | In Development — **Phase 2 FROZEN ✅. Phases 2.5–6 BUILT & LIVE (2026-07-04); play-test pending → Freeze. Phase 7 is next.** |
 
 ### Where the code actually is right now (start here)
 **Phase 2 is FROZEN** (founder-authorized 2026-07-04, `fa777a6`): six real no-fail modules —
@@ -55,8 +55,13 @@ cookies eaten, fish swim off…), the "how many left" count ticks down, then the
 leaves left". One take-away engine cycles five themes (Birds Fly Away · Cookie Time · Fish Swim Away ·
 Blocks Away · Balloons Float Away). Lives in the now "➕➖ Adding & Taking Away" home section.
 
-**The gate left before freezing 2.5–5: a real-child play-test** (human step). Once confirmed, Freeze
-those phases and start **Phase 6 (Shapes World)**.
+**Phase 6 (Shapes World) is built and deployed** (`ac1634d`): a 🔷 **Shapes World** module cycling five
+activities — FIND (tap all of a shape), MATCH (tap the named shape), TRACE (finger-trace the outline),
+BUILD (make a picture from shapes), REAL-WORLD (find things of a shape). Shapes drawn via a new SVG
+primitive (`Shape.tsx`). New **"🔷 Shapes"** home section (`ModuleGroup` gained `'shapes'`).
+
+**The gate left before freezing 2.5–6: a real-child play-test** (human step). Once confirmed, Freeze
+those phases and start **Phase 7 (Measurement)**.
 
 Phase 1 (still true underneath): home screen, narration + instruction system (audio/visual paths
 separated), child-lock, session state, offline PWA. Audit + security + bug fixes done (`8a03f92`,
@@ -148,9 +153,15 @@ blocks removed · balloons float away), the "how many left" count ticks down, an
 the story amount is gone the rest lock — no over-removing, no fail state.
 - **→ Freeze Phase 5** — *blocked only on the real-child play-test.*
 
-### Phase 6 — Shapes World
-2D shapes: circle · square · triangle · rectangle · oval · heart · star.
-Activities: find shapes · build pictures · shape sorting · tracing · real-world objects. **Freeze.**
+### Phase 6 — Shapes World — ✅ BUILT & LIVE (2026-07-04, `ac1634d`); play-test pending → Freeze
+2D shapes: circle · square · triangle · rectangle · oval · heart · star (SVG primitive `Shape.tsx`).
+Delivered as the 🔷 **Shapes World** module — one module cycling all five listed activities as levels:
+- **Find shapes** — tap all of a target shape among a mix.
+- **Shape sorting** — tap the named shape (MATCH).
+- **Tracing** — finger-trace the shape outline (connect-the-dots; ref-based, StrictMode-safe).
+- **Build pictures** — make a house / party hat / snowman / badge by tapping the right shape into each slot.
+- **Real-world objects** — find real things of a shape ("find the round things").
+All no-fail. **→ Freeze Phase 6** — *blocked only on the real-child play-test.*
 
 ### Phase 7 — Measurement
 Big/small · tall/short · heavy/light · long/short · full/empty.

@@ -12,6 +12,27 @@
 
 ---
 
+## ✅ 2026-07-04 (session 30) — Early Numeracy: Phase 6 (Shapes World) shipped
+
+**Phase 6 — Shapes World — BUILT & LIVE** (`early-numeracy` `ac1634d`; deployed + verified):
+- 🔷 **Shapes World** module — 2D shapes (circle · square · triangle · rectangle · oval · heart · star)
+  via a new SVG primitive `Shape.tsx` (one 100×100 space, reused for fills, outlines and trace dots).
+- One module cycles **five activities** as levels, each mirroring a proven mechanic: **FIND** (tap all of
+  a shape), **MATCH** (tap the named shape), **TRACE** (connect-the-dots outline, ref-based), **BUILD**
+  (fill a picture's slots — house/party hat/snowman/badge), **REAL-WORLD** (find real things of a shape).
+  All no-fail.
+- New **"🔷 Shapes"** home section (`ModuleGroup` gained `'shapes'`). Home = Play & Learn · Adding &
+  Taking Away · Shapes · Practice · Explore.
+- Verified: tsc 0 · clean build (12 lazy chunks, precache 27, zero external) · all five activity
+  generators proven valid · deploy verified.
+
+**⛔ Phases 2.5–6 not yet Frozen** — only gate left is the **real-child play-test** (human). Phase 2 is
+the sole Frozen phase. **NEXT AI:** on play-test confirmation → Freeze 2.5–6 → start **Phase 7
+(Measurement)** — big/small · tall/short · heavy/light · long/short · full/empty (compare · arrange ·
+measure · estimate). D-13 reminder stands (own hooks, not the shared TPH Learning Engines).
+
+---
+
 ## ✅ 2026-07-04 (session 29) — Early Numeracy: Phase 5 (Taking Away) shipped
 
 **Phase 5 — Taking Away — BUILT & LIVE** (`early-numeracy` `420280d`; deployed + verified):

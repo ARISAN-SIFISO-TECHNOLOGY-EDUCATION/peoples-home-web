@@ -1,8 +1,8 @@
 # Early Numeracy
 
-> 🧮 **Foundations** · ages **3–5** · **✅ LIVE — Phase 2 FROZEN + Phases 2.5–5 shipped** —
-> installable offline PWA · six discovery modules + two practice games + Numbers Everywhere (7 scenes)
-> + Addition Adventure + Taking Away (5 themes each) + Today surface (2026-07-04)
+> 🧮 **Foundations** · ages **3–5** · **✅ LIVE — Phase 2 FROZEN + Phases 2.5–6 shipped** —
+> installable offline PWA · six discovery modules + Addition + Taking Away + Shapes World (5 activities)
+> + Numbers Everywhere + two practice games + Today surface (2026-07-04)
 
 > ## 🔒 The authoritative plan is [`early-numeracy-roadmap.md`](./early-numeracy-roadmap.md)
 > The founder **locked a complete product roadmap** (2026-07-03): *finish the product, not the app* —
@@ -97,8 +97,23 @@ The ➖ **Taking Away** module (`modules/taking-away/`) — subtraction as concr
 
 Quality gate: tsc 0 · clean build (11 lazy chunks, PWA precache 26, zero external) · subtraction bounds
 proven (3≤n≤maxN, 1≤m≤n−1, 1≤left) · **deploy verified**.
-⛔ **Phases 2.5–5 not yet Frozen** — remaining gate is the **real-child play-test**. After it passes →
-Freeze 2.5–5 → **Phase 6 (Shapes World)**.
+
+### Phase 6 — Shapes World: BUILT & LIVE — 2026-07-04 (commit `ac1634d`)
+The 🔷 **Shapes World** module (`modules/shapes-world/`) — 2D shapes via a new SVG primitive
+(`Shape.tsx`: circle · square · triangle · rectangle · oval · heart · star in one 100×100 space, reused
+for fills, outlines and trace dots). One module cycles **five activities** (one per level, repeating),
+each mirroring a proven mechanic:
+- **FIND** — tap all of a target shape (≈ counting-garden). **MATCH** — tap the named shape (≈
+  number-match). **TRACE** — connect-the-dots outline (≈ number-shapes, ref-based). **BUILD** — fill a
+  picture's shape slots (house/party hat/snowman/badge; ≈ pattern-maker). **REAL-WORLD** — find real
+  things of a shape ("round things"; ≈ numbers-everywhere).
+- All no-fail. New **"🔷 Shapes"** home section (`ModuleGroup` gained `'shapes'`); home = Play & Learn ·
+  Adding & Taking Away · Shapes · Practice · Explore.
+
+Quality gate: tsc 0 · clean build (12 lazy chunks, PWA precache 27, zero external) · all five activity
+generators proven valid · **deploy verified**.
+⛔ **Phases 2.5–6 not yet Frozen** — remaining gate is the **real-child play-test**. After it passes →
+Freeze 2.5–6 → **Phase 7 (Measurement)**.
 
 > ⚠️ Still uses Early Numeracy's **own** hooks (`useNarration`/`useInstruction`/`useSessionState`/
 > `useChildLock`), not the shared **TPH Learning Engines** (D-13). Adopting those engines remains part
