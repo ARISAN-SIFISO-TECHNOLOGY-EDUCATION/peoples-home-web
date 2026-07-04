@@ -12,6 +12,73 @@
 
 ---
 
+## ✅ 2026-07-04 (session 28) — Early Numeracy: Phase 4 (Addition Adventure) shipped
+
+**Phase 4 — Addition Adventure — BUILT & LIVE** (`early-numeracy` `7da1f98`; deployed + verified):
+- ➕ **Addition Adventure** module — concrete visual addition, **no equations**. Two groups are shown;
+  the child taps each item into a container while the voice counts up, then hears "a and b make total".
+- One join-and-count engine cycles the **five roadmap themes** as levels: Add Together · Magic Basket ·
+  Feed the Animals · Treasure Chest · Bridge Builder. Sums grow to 5, then to 10.
+- Kept as **one** card (same mechanic, calmer home) rather than five; new **"➕ Adding"** home section
+  (`ModuleGroup` gained `'operations'`). Home = Play & Learn · Adding · Practice · Explore.
+- Verified: tsc 0 · clean build (10 lazy chunks, precache 25, zero external) · addition round bounds
+  proven · deploy verified.
+
+**⛔ Phases 2.5, 3 & 4 not yet Frozen** — the only gate left is the **real-child play-test** (human).
+Phase 2 is the sole Frozen phase. **NEXT AI:** on play-test confirmation → Freeze 2.5 + 3 + 4 → start
+**Phase 5 (Taking Away)** — subtraction through stories (birds fly away, cookies eaten…), still visual.
+D-13 reminder stands (own hooks, not the shared TPH Learning Engines).
+
+---
+
+## ✅ 2026-07-04 (session 27) — Early Numeracy: Phase 3 (Numbers Everywhere) shipped
+
+**Phase 3 — Numbers Everywhere — BUILT & LIVE** (`early-numeracy` `dacd6a6`; evergreen description
+`680afbc`; deployed + verified, live entry `index-DRC0W2up.js`):
+- 🌍 **Numbers Everywhere** module — seven real-world scenes (Kitchen · Garden · Bedroom · Playground ·
+  Shops · Road · Home). Each poses a data-driven, no-fail **COUNT** ("count the apples") or **FIND**
+  ("find 3 windows") task over tagged scene objects; right taps count up aloud, others wobble.
+- New **"🌍 Explore"** home section (`ModuleGroup` gained `'explore'`); home = Play & Learn · Practice ·
+  Explore.
+- Verified: tsc 0 · clean build (9 lazy chunks, precache 24, zero external) · scene-logic invariants
+  proven solvable for all 7 scenes across randomized rounds · deploy verified.
+
+**⛔ Phases 2.5 & 3 not yet Frozen** — only gate left is the **real-child play-test** (human). **NEXT
+AI:** on play-test confirmation → Freeze 2.5 + 3 → start **Phase 4 (Addition Adventure)** — joining
+groups, visual addition, story problems (no equations first). D-13 reminder still stands (own hooks, not
+the shared TPH Learning Engines). Docs updated: `apps/early-numeracy.md`, `apps/early-numeracy-roadmap.md`,
+`ROADMAP.md`.
+
+---
+
+## ✅ 2026-07-04 (session 26) — Early Numeracy: Phase 2 FROZEN + Phase 2.5 (Numeracy Confidence) shipped
+
+Founder authorized freezing Phase 2 and starting 2.5. Both done.
+
+**Phase 2 — FROZEN** ✅ (`fa777a6`, founder-authorized). The six Number Discovery modules are the
+locked baseline.
+
+**Phase 2.5 — Numeracy Confidence — BUILT & LIVE** (`early-numeracy` `22b5a0b`, deployed + verified):
+- **🌞 Today** home surface (`components/TodayStrip.tsx`) — daily-rotating suggested activity, the
+  child's **favourite** to replay (most-played), and a spoken **real-world counting** nudge from the
+  transfer-prompt pool. Suggestions only; no scores.
+- **🔢 Number Match** — numeral↔quantity recognition/matching (both directions, alternating by level).
+- **🔍 Number Hunt** — find the called-out numeral among decoys (3 finds/round), spoken target cue.
+- Home now grouped into **"Play & Learn"** (the six) + **"🎯 Practice"** (the two games);
+  `ModuleDef.group` added.
+
+**Verified:** tsc 0 · clean build (8 lazy chunks, PWA precache 23, zero external requests) · Phase-2.5
+logic invariants checked across randomized rounds · **deploy verified live** (entry-chunk hash match;
+NumberMatch/NumberHunt chunks 200).
+
+**⛔ Phase 2.5 not yet Frozen** — only gate left is a **real-child play-test** (human). **NEXT AI:** on
+play-test confirmation → Freeze 2.5 → start **Phase 3 (Numbers Everywhere)** — scenes (Kitchen · Garden
+· Bedroom · Playground · Shops · Road · Home) where maths is discovered in the world. Reminder (D-13):
+the app still uses its own hooks, not the shared TPH Learning Engines — adopting them stays part of the
+work. Docs updated: `apps/early-numeracy.md`, `apps/early-numeracy-roadmap.md`, `ROADMAP.md`.
+
+---
+
 ## ✅ 2026-07-04 (session 25) — Early Numeracy Phase 2 (Number Discovery) BUILT, LIVE & verified
 
 Executed the locked roadmap's **Phase 2**. The five "Coming soon" stubs are now **six real, no-fail,

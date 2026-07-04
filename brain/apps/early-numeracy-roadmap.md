@@ -22,18 +22,35 @@
 | **Core platform** | TPH Core v1.0 (Frozen) — see the **naming note** below |
 | **Repo** | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-numeracy` (PRIVATE, branch `master`) |
 | **Live** | https://early-numeracy.pages.dev/ — linked on The People's Home (Foundations) |
-| **Status** | In Development — **Phase 2 BUILT & LIVE (2026-07-04); awaiting real-child play-test to Freeze. Phase 2.5 is next.** |
+| **Status** | In Development — **Phase 2 FROZEN ✅. Phases 2.5, 3 & 4 BUILT & LIVE (2026-07-04); play-test pending → Freeze. Phase 5 is next.** |
 
 ### Where the code actually is right now (start here)
-**Phase 2 is built and deployed** (`fa777a6`, live at early-numeracy.pages.dev). The five stubs are now
-six real, no-fail, audio-guided modules: `counting-garden`, `which-is-more`, `number-shapes`,
-`pattern-maker`, and `make-five` + `make-ten` (the old `make-five-ten` was split). Shared kit added
-(`components/module-kit.tsx`), a progress store (`lib/progress.ts`, schema-drift-safe), and an
-environment-as-reward **Math Village** that grows on the home screen. tsc 0 / clean build / logic
-invariants checked / deploy verified (live manifest + chunk hashes match).
+**Phase 2 is FROZEN** (founder-authorized 2026-07-04, `fa777a6`): six real no-fail modules —
+`counting-garden`, `which-is-more`, `number-shapes`, `pattern-maker`, `make-five` + `make-ten` (old
+`make-five-ten` split). Shared kit (`components/module-kit.tsx`), progress store (`lib/progress.ts`,
+schema-drift-safe), environment-as-reward **Math Village**.
 
-**The one gate left before Freeze: a real-child play-test** (a human step — not yet done). Once that
-passes, Freeze Phase 2 and start **Phase 2.5 (Numeracy Confidence)**.
+**Phase 2.5 (Numeracy Confidence) is built and deployed** (`22b5a0b`): a 🌞 **Today** home surface
+(daily suggested activity + favourite replay + spoken real-world-counting nudge) and two **practice**
+games — 🔢 **Number Match** (numeral↔quantity recognition) and 🔍 **Number Hunt** (find-the-called-
+numeral). Home screen now groups modules into "Play & Learn" (the six) and "🎯 Practice"
+(`ModuleDef.group`). tsc 0 / clean build (8 lazy chunks, precache 23, zero external) / logic invariants
+checked / deploy verified.
+
+**Phase 3 (Numbers Everywhere) is built and deployed** (`dacd6a6`): a 🌍 **Numbers Everywhere** module
+with seven real-world scenes (Kitchen · Garden · Bedroom · Playground · Shops · Road · Home), each a
+no-fail COUNT ("count the apples") or FIND ("find 3 windows") task over tagged scene objects. Added a
+third home section **"🌍 Explore"** (`ModuleGroup` gained `'explore'`). App description made evergreen
+(`680afbc`).
+
+**Phase 4 (Addition Adventure) is built and deployed** (`7da1f98`): a ➕ **Addition Adventure** module —
+concrete visual addition (no equations). Two groups are shown; the child taps each item into a
+container while the voice counts up, then hears "a and b make total". One join-and-count engine cycles
+the five roadmap themes (Add Together · Magic Basket · Feed the Animals · Treasure Chest · Bridge
+Builder). New **"➕ Adding"** home section (`ModuleGroup` gained `'operations'`).
+
+**The gate left before freezing 2.5, 3 & 4: a real-child play-test** (human step). Once confirmed,
+Freeze those phases and start **Phase 5 (Taking Away)**.
 
 Phase 1 (still true underneath): home screen, narration + instruction system (audio/visual paths
 separated), child-lock, session state, offline PWA. Audit + security + bug fixes done (`8a03f92`,
@@ -75,7 +92,7 @@ one passes every gate.
 ### Phase 1 — Foundation ✅ DONE
 Platform shell · navigation · Home · Village · Parent Corner · offline storage · TPH (Learning Engines) integration.
 
-### Phase 2 — Number Discovery — ✅ BUILT & LIVE (2026-07-04, `fa777a6`); play-test pending → Freeze
+### Phase 2 — Number Discovery — ✅ FROZEN (2026-07-04, `fa777a6`; founder-authorized)
 The six core modules, all real no-fail gameplay (Make Five / Make Ten split out from `make-five-ten`).
 - **🌼 Counting Garden** ✅ — tap-to-count, one-to-one correspondence, spoken counting, number recognition; wrong tap = gentle wobble.
 - **🍎 Which Is More?** ✅ — compare quantities: more / fewer / equal (equal via the centre button); wrong tap re-asks.
@@ -85,19 +102,37 @@ The six core modules, all real no-fail gameplay (Make Five / Make Ten split out 
 - **🌟 Make Ten** ✅ — ten frame; part–whole thinking (shared engine with Make Five).
 - **→ Freeze Phase 2** — *blocked only on the real-child play-test.*
 
-### Phase 2.5 — Numeracy Confidence
-Before larger concepts. Daily challenges · favourite activities · replay · independent practice ·
-recognition games · number hunts · matching games · hidden objects · real-world counting. Play-test. **Freeze.**
+### Phase 2.5 — Numeracy Confidence — ✅ BUILT & LIVE (2026-07-04, `22b5a0b`); play-test pending → Freeze
+Before larger concepts. Delivered:
+- **🌞 Today** home surface — daily suggested activity · favourite replay (most-played) · spoken
+  real-world-counting nudge (from the transfer-prompt pool). Suggestions, never tasks or scores.
+- **🔢 Number Match** — numeral↔quantity recognition/matching, both directions alternating by level.
+- **🔍 Number Hunt** — find-the-called-numeral among decoys (three finds per round), spoken target cue.
+- Home grouped into "Play & Learn" (the six) + "🎯 Practice" (the two confidence games).
+- **→ Freeze Phase 2.5** — *blocked only on the real-child play-test.*
 
-### Phase 3 — Numbers Everywhere
+### Phase 3 — Numbers Everywhere — ✅ BUILT & LIVE (2026-07-04, `dacd6a6`); play-test pending → Freeze
 *Mission: children discover mathematics exists everywhere.*
-Scenes: Kitchen · Garden · Bedroom · Playground · Shops · Road · Home.
-Activities: count apples · count birds · find 3 windows · find circles · count chairs · measure objects ·
-compare sizes · sort colours. **Freeze.**
+Delivered as the 🌍 **Numbers Everywhere** module — seven scenes (Kitchen · Garden · Bedroom ·
+Playground · Shops · Road · Home). Each scene renders tagged objects and poses a no-fail task:
+- **COUNT** a kind of thing — "count the apples", "count the birds", "count the chairs".
+- **FIND** some of them — "find 3 windows", "find the round things" (shape find via a `round` tag).
+Right taps count up aloud; other taps wobble gently. Object tags (apple/fruit/round/window/car/…) make
+the tasks contextual without new mechanics.
+*(Deferred to their own phases to avoid duplication: "measure/compare sizes" → Phase 7 Measurement;
+"sort colours" → Phase 10 Data & Sorting.)*
+- **→ Freeze Phase 3** — *blocked only on the real-child play-test.*
 
-### Phase 4 — Addition Adventure
-Joining groups · visual addition · story problems (animals, fruit, blocks, objects). **No equations first — concrete experiences.**
-Modules: Add Together · Magic Basket · Feed the Animals · Treasure Chest · Bridge Builder. **Freeze.**
+### Phase 4 — Addition Adventure — ✅ BUILT & LIVE (2026-07-04, `7da1f98`); play-test pending → Freeze
+Joining groups · visual addition · **no equations — concrete experiences.**
+Delivered as the ➕ **Addition Adventure** module: two groups of things are shown; the child taps each
+one to move it into a container while the voice counts up, then hears the part-whole fact
+("three and two make five"). The five listed modules — **Add Together · Magic Basket · Feed the Animals ·
+Treasure Chest · Bridge Builder** — are the five **themes** this one adventure cycles through (each a
+different item + container). Sums grow to 5, then to 10. No timers, no fail state.
+*(Design note: kept as one "Addition Adventure" card rather than five separate cards — same mechanic,
+calmer home screen for ages 3–5 — while still delivering all five themed experiences.)*
+- **→ Freeze Phase 4** — *blocked only on the real-child play-test.*
 
 ### Phase 5 — Taking Away
 Subtraction through stories: birds fly away · cookies eaten · fish swim away · blocks removed. **Still visual.** **Freeze.**

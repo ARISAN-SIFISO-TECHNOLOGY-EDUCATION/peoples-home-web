@@ -1,7 +1,8 @@
 # Early Numeracy
 
-> 🧮 **Foundations** · ages **3–5** · **✅ LIVE — Phase 2 (Number Discovery) shipped** — installable
-> offline PWA · six real modules (2026-07-04, `fa777a6`)
+> 🧮 **Foundations** · ages **3–5** · **✅ LIVE — Phase 2 FROZEN + Phases 2.5, 3 & 4 shipped** —
+> installable offline PWA · six discovery modules + two practice games + Numbers Everywhere (7 scenes)
+> + Addition Adventure (5 themes) + Today surface (2026-07-04)
 
 > ## 🔒 The authoritative plan is [`early-numeracy-roadmap.md`](./early-numeracy-roadmap.md)
 > The founder **locked a complete product roadmap** (2026-07-03): *finish the product, not the app* —
@@ -34,11 +35,57 @@ split out of `make-five-ten`):
 and an **environment-as-reward Math Village** that grows on the home screen (+ per-card growth leaves) —
 no stars, no scores. `ModulePlaceholder` removed.
 
-**Quality gate status:** tsc 0 errors · clean production build (6 lazy chunks, PWA precache 21, zero
-external asset requests) · pure game-logic invariants checked across randomized rounds · **deploy
-verified** (live manifest + entry-chunk hash match). ⛔ **Not yet Frozen** — the remaining gate is a
-**real-child play-test** (human step). After it passes → Freeze Phase 2 → **Phase 2.5 (Numeracy
-Confidence)** per the roadmap.
+**Quality gate status:** tsc 0 errors · clean production build · pure game-logic invariants checked ·
+**deploy verified**. ✅ **Phase 2 FROZEN — founder-authorized 2026-07-04.**
+
+### Phase 2.5 — Numeracy Confidence: BUILT & LIVE — 2026-07-04 (commit `22b5a0b`)
+The confidence bridge before bigger concepts:
+- **🌞 Today** (home surface, `components/TodayStrip.tsx`) — a daily-rotating suggested activity, the
+  child's **favourite** to replay (most-played module), and a spoken **real-world counting** nudge from
+  the transfer-prompt pool. Suggestions, never tasks; no scores.
+- **🔢 Number Match** — numeral↔quantity recognition/matching, both directions alternating by level;
+  wrong tap wobbles and re-asks. Consolidates Counting Garden / Number Shapes recognition.
+- **🔍 Number Hunt** — find the called-out numeral among decoys, three finds per round, spoken target
+  cue; no fail state.
+- Home screen now groups modules into **"Play & Learn"** (the core six) and a **"🎯 Practice"** section
+  (`ModuleDef` gained a `group: 'discover' | 'practice'` field).
+
+Quality gate: tsc 0 · clean build (8 lazy chunks, PWA precache 23, zero external requests) · logic
+invariants checked (Match options, Hunt board/targets, Today daily-pick bounds) · **deploy verified**
+(entry-chunk hash match; new chunks 200).
+
+### Phase 3 — Numbers Everywhere: BUILT & LIVE — 2026-07-04 (commit `dacd6a6`)
+The 🌍 **Numbers Everywhere** module (`modules/numbers-everywhere/`) — *maths lives in real places*:
+- **Seven scenes** (Kitchen · Garden · Bedroom · Playground · Shops · Road · Home), each rendering
+  tagged objects scattered in the scene.
+- Each round poses a data-driven, no-fail task: **COUNT** a kind of thing ("Count the apples") or
+  **FIND** some of them ("Find 3 windows"). Right taps count up aloud; other taps wobble gently.
+- Object tags (`apple`/`fruit`/`round`/`window`/`car`/…) make tasks contextual and include shape finds
+  ("round things") without a new mechanic. Generator proven solvable for all 7 scenes.
+- New **"🌍 Explore"** home section (`ModuleGroup` gained `'explore'`); home reads Play & Learn ·
+  Practice · Explore. App meta/manifest description made evergreen (`680afbc`).
+
+Quality gate: tsc 0 · clean build (9 lazy chunks, PWA precache 24, zero external) · scene-logic
+invariants checked · **deploy verified** (live entry hash `index-DRC0W2up.js`; chunk 200).
+*(Roadmap note: "compare sizes" defers to Phase 7 Measurement, "sort colours" to Phase 10 Data & Sorting.)*
+
+### Phase 4 — Addition Adventure: BUILT & LIVE — 2026-07-04 (commit `7da1f98`)
+The ➕ **Addition Adventure** module (`modules/addition-adventure/`) — concrete visual addition, **no
+equations**:
+- Two groups of things are shown; the child taps each to move it into a container while the voice
+  counts up, then hears the part-whole fact ("three and two make five").
+- One join-and-count engine cycles the **five roadmap themes** as levels — **Add Together · Magic Basket
+  · Feed the Animals · Treasure Chest · Bridge Builder** (different item + container each). Sums grow to
+  5, then to 10. No timers, no fail state.
+- Kept as **one** "Addition Adventure" card (same mechanic, calmer home for ages 3–5) rather than five
+  cards, while still delivering all five experiences.
+- New **"➕ Adding"** home section (`ModuleGroup` gained `'operations'`); home = Play & Learn · Adding ·
+  Practice · Explore.
+
+Quality gate: tsc 0 · clean build (10 lazy chunks, PWA precache 25, zero external) · addition round
+bounds proven (a≥1, b≥1, 2≤total≤maxSum) · **deploy verified**.
+⛔ **Phases 2.5, 3 & 4 not yet Frozen** — remaining gate is the **real-child play-test**. After it
+passes → Freeze 2.5 + 3 + 4 → **Phase 5 (Taking Away)**.
 
 > ⚠️ Still uses Early Numeracy's **own** hooks (`useNarration`/`useInstruction`/`useSessionState`/
 > `useChildLock`), not the shared **TPH Learning Engines** (D-13). Adopting those engines remains part
