@@ -22,7 +22,7 @@
 | **Core platform** | TPH Core v1.0 (Frozen) — see the **naming note** below |
 | **Repo** | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-numeracy` (PRIVATE, branch `master`) |
 | **Live** | https://early-numeracy.pages.dev/ — linked on The People's Home (Foundations) |
-| **Status** | In Development — **Phase 2 FROZEN ✅. Phases 2.5, 3 & 4 BUILT & LIVE (2026-07-04); play-test pending → Freeze. Phase 5 is next.** |
+| **Status** | In Development — **Phase 2 FROZEN ✅. Phases 2.5, 3, 4 & 5 BUILT & LIVE (2026-07-04); play-test pending → Freeze. Phase 6 is next.** |
 
 ### Where the code actually is right now (start here)
 **Phase 2 is FROZEN** (founder-authorized 2026-07-04, `fa777a6`): six real no-fail modules —
@@ -49,8 +49,14 @@ container while the voice counts up, then hears "a and b make total". One join-a
 the five roadmap themes (Add Together · Magic Basket · Feed the Animals · Treasure Chest · Bridge
 Builder). New **"➕ Adding"** home section (`ModuleGroup` gained `'operations'`).
 
-**The gate left before freezing 2.5, 3 & 4: a real-child play-test** (human step). Once confirmed,
-Freeze those phases and start **Phase 5 (Taking Away)**.
+**Phase 5 (Taking Away) is built and deployed** (`420280d`): a ➖ **Taking Away** module — subtraction
+as concrete take-away stories (no equations). A group is shown; the child sends some away (birds fly,
+cookies eaten, fish swim off…), the "how many left" count ticks down, then they hear "n take away m
+leaves left". One take-away engine cycles five themes (Birds Fly Away · Cookie Time · Fish Swim Away ·
+Blocks Away · Balloons Float Away). Lives in the now "➕➖ Adding & Taking Away" home section.
+
+**The gate left before freezing 2.5–5: a real-child play-test** (human step). Once confirmed, Freeze
+those phases and start **Phase 6 (Shapes World)**.
 
 Phase 1 (still true underneath): home screen, narration + instruction system (audio/visual paths
 separated), child-lock, session state, offline PWA. Audit + security + bug fixes done (`8a03f92`,
@@ -134,8 +140,13 @@ different item + container). Sums grow to 5, then to 10. No timers, no fail stat
 calmer home screen for ages 3–5 — while still delivering all five themed experiences.)*
 - **→ Freeze Phase 4** — *blocked only on the real-child play-test.*
 
-### Phase 5 — Taking Away
-Subtraction through stories: birds fly away · cookies eaten · fish swim away · blocks removed. **Still visual.** **Freeze.**
+### Phase 5 — Taking Away — ✅ BUILT & LIVE (2026-07-04, `420280d`); play-test pending → Freeze
+Subtraction through stories — **still visual, no equations.** Delivered as the ➖ **Taking Away** module:
+a group is shown; the child taps items to send them away (birds fly · cookies eaten · fish swim away ·
+blocks removed · balloons float away), the "how many left" count ticks down, and they hear
+"n take away m leaves left". One take-away engine cycles the five themes; N grows to 5, then to 9. Once
+the story amount is gone the rest lock — no over-removing, no fail state.
+- **→ Freeze Phase 5** — *blocked only on the real-child play-test.*
 
 ### Phase 6 — Shapes World
 2D shapes: circle · square · triangle · rectangle · oval · heart · star.

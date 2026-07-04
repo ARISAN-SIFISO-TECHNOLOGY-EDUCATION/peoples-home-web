@@ -1,8 +1,8 @@
 # Early Numeracy
 
-> 🧮 **Foundations** · ages **3–5** · **✅ LIVE — Phase 2 FROZEN + Phases 2.5, 3 & 4 shipped** —
+> 🧮 **Foundations** · ages **3–5** · **✅ LIVE — Phase 2 FROZEN + Phases 2.5–5 shipped** —
 > installable offline PWA · six discovery modules + two practice games + Numbers Everywhere (7 scenes)
-> + Addition Adventure (5 themes) + Today surface (2026-07-04)
+> + Addition Adventure + Taking Away (5 themes each) + Today surface (2026-07-04)
 
 > ## 🔒 The authoritative plan is [`early-numeracy-roadmap.md`](./early-numeracy-roadmap.md)
 > The founder **locked a complete product roadmap** (2026-07-03): *finish the product, not the app* —
@@ -84,8 +84,21 @@ equations**:
 
 Quality gate: tsc 0 · clean build (10 lazy chunks, PWA precache 25, zero external) · addition round
 bounds proven (a≥1, b≥1, 2≤total≤maxSum) · **deploy verified**.
-⛔ **Phases 2.5, 3 & 4 not yet Frozen** — remaining gate is the **real-child play-test**. After it
-passes → Freeze 2.5 + 3 + 4 → **Phase 5 (Taking Away)**.
+
+### Phase 5 — Taking Away: BUILT & LIVE — 2026-07-04 (commit `420280d`)
+The ➖ **Taking Away** module (`modules/taking-away/`) — subtraction as concrete take-away stories,
+**still visual, no equations**:
+- A group is shown; the child taps items to send them away; the "how many left" count ticks **down**,
+  then they hear the fact ("five take away two leaves three").
+- One take-away engine cycles **five themes** as levels — **Birds Fly Away · Cookie Time · Fish Swim
+  Away · Blocks Away · Balloons Float Away**. N grows to 5, then to 9. Once the story amount is gone the
+  rest lock — no over-removing, no fail state.
+- Lives in the operations section, now **"➕➖ Adding & Taking Away"**.
+
+Quality gate: tsc 0 · clean build (11 lazy chunks, PWA precache 26, zero external) · subtraction bounds
+proven (3≤n≤maxN, 1≤m≤n−1, 1≤left) · **deploy verified**.
+⛔ **Phases 2.5–5 not yet Frozen** — remaining gate is the **real-child play-test**. After it passes →
+Freeze 2.5–5 → **Phase 6 (Shapes World)**.
 
 > ⚠️ Still uses Early Numeracy's **own** hooks (`useNarration`/`useInstruction`/`useSessionState`/
 > `useChildLock`), not the shared **TPH Learning Engines** (D-13). Adopting those engines remains part

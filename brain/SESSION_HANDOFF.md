@@ -12,6 +12,28 @@
 
 ---
 
+## ✅ 2026-07-04 (session 29) — Early Numeracy: Phase 5 (Taking Away) shipped
+
+**Phase 5 — Taking Away — BUILT & LIVE** (`early-numeracy` `420280d`; deployed + verified):
+- ➖ **Taking Away** module — subtraction as concrete take-away stories, **still visual, no equations**.
+  A group is shown; the child taps items to send them away, the "how many left" count ticks down, then
+  they hear "n take away m leaves left".
+- One take-away engine cycles **five themes** as levels: Birds Fly Away · Cookie Time · Fish Swim Away ·
+  Blocks Away · Balloons Float Away. N grows to 5, then to 9. Story amount gone → rest lock (no
+  over-removing, no fail state).
+- Operations home section renamed **"➕➖ Adding & Taking Away"**. Home = Play & Learn · Adding & Taking
+  Away · Practice · Explore.
+- Verified: tsc 0 · clean build (11 lazy chunks, precache 26, zero external) · subtraction bounds proven
+  · deploy verified.
+
+**⛔ Phases 2.5–5 not yet Frozen** — only gate left is the **real-child play-test** (human). Phase 2 is
+the sole Frozen phase. **NEXT AI:** on play-test confirmation → Freeze 2.5–5 → start **Phase 6 (Shapes
+World)** — 2D shapes (circle · square · triangle · rectangle · oval · heart · star): find shapes, build
+pictures, shape sorting, tracing, real-world objects. D-13 reminder stands (own hooks, not the shared
+TPH Learning Engines).
+
+---
+
 ## ✅ 2026-07-04 (session 28) — Early Numeracy: Phase 4 (Addition Adventure) shipped
 
 **Phase 4 — Addition Adventure — BUILT & LIVE** (`early-numeracy` `7da1f98`; deployed + verified):
