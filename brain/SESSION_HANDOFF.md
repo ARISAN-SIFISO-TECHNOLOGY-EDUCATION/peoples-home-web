@@ -12,6 +12,26 @@
 
 ---
 
+## 🐛 2026-07-04 (session 35) — Early Numeracy: PWA stale-cache bug FIXED (all cards showed "coming soon")
+
+**Symptom (founder report):** every module card, when tapped, showed/spoke "coming soon" on the live site.
+**Root cause:** NOT a code bug — a **stale service-worker cache**. `vite.config.ts` had
+`registerType: 'autoUpdate'` but `injectRegister: false` and no manual `registerSW()` call, so
+`index.html` **never registered a service worker**. Each build shipped a fresh `sw.js` that nothing told
+browsers to adopt; anyone who first visited during **Phase 1** kept being served that old precache —
+the shell where every card was a genuine "coming soon" placeholder. (Confirmed the current source has
+**no call site for `onComingSoon`** — the live code cannot show it; the user was literally running the
+Phase-1 app.)
+**Fix** (`early-numeracy` `7634696`, deployed + verified): `injectRegister: 'auto'` (registers the SW in
+index.html) + workbox `skipWaiting` + `clientsClaim` + `cleanupOutdatedCaches` (new SW replaces the
+stale one immediately, claims open pages, purges old precache). App entry chunk unchanged
+(`index-fqAuOh_O.js`) — only the update lifecycle was restored. Live now serves `registerSW.js` (200)
+and `sw.js` with all three flags. **Returning users update on their next visit** (may take one reload).
+**Lesson for all TPH PWAs:** `autoUpdate` does nothing without registration — never ship
+`injectRegister: false` unless the app calls `registerSW()` itself.
+
+---
+
 ## 🎉 2026-07-04 (session 34) — Early Numeracy: Phase 10 (Sort & Graph) shipped — ROADMAP BUILD COMPLETE
 
 **Phase 10 — Sort & Graph — BUILT & LIVE** (`early-numeracy` `99066d8`; deployed + verified). **This was
