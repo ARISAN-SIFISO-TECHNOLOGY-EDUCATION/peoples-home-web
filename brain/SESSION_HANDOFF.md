@@ -43,6 +43,18 @@ is replaced by a walkable kingdom:
 Kingdom + Daily Life Layer).** Do not start NK-2 until NK-1 is founder-frozen. Modules' educational logic
 stays frozen; NK-5 (not NK-1) is where region *skins* happen. D-13 (adopt TPH Learning Engines) stands.
 
+**Update (same session) — founder pre-freeze review + Kingdom Welcome Moment built** (`early-numeracy`
+`f75d69a`, live): founder is running a **10-point experience review** before freezing NK-1 (First
+Impression · Wonder · Parent Clarity · One-Hand Nav · Visual Balance · Region Recognition · Continue
+Journey · Pip's Welcome · Atmosphere · Memory Test) — technical completion isn't enough to earn the
+freeze. Requested addition **built**: a **one-time Kingdom Welcome Moment** (`components/WelcomeMoment.tsx`,
+localStorage `nk-welcomed-v1`) — sun · rainbow · Pip 🐿 runs in · sparkles · "Welcome to Number Kingdom!"
+· "⭐ Let's Begin" (the Begin tap is the first audio gesture → speaks welcome + unlocks speech; fades to
+map). Returning kids get the spoken welcome-back. Added ambient butterfly + lake shimmer; index.css
+keyframes nk-rainbow-in/nk-run-in/nk-twinkle (reduced-motion guarded). **Pip is a welcome cameo only here
+— full companion = NK-4.** tsc 0 · clean build (entry `index-CbsG0t4w.js`) · SW fix intact · deploy
+verified. **Still awaiting the founder's review verdict to Freeze NK-1.**
+
 ---
 
 ## 🌈 2026-07-04 (session 36) — Early Numeracy: Number Kingdom experience roadmap DRAFTED (awaiting Freeze)

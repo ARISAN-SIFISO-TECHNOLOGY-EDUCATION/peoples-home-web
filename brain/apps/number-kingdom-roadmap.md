@@ -11,8 +11,8 @@
 > **Governance (founder's model): Blueprint → Freeze → Build.** Each NK milestone is frozen before the
 > next begins. **Freeze is a founder act** — the next AI never self-declares a freeze.
 >
-> **Progress:** NK-0 ✅ FROZEN (2026-07-04) · **NK-1 World Map — ✅ BUILT & LIVE (`1dfdc79`), awaiting
-> founder Freeze** · NK-2…NK-6 not started.
+> **Progress:** NK-0 ✅ FROZEN (2026-07-04) · **NK-1 World Map — ✅ BUILT & LIVE (`f75d69a`; + Kingdom
+> Welcome Moment), in founder experience-review before Freeze** · NK-2…NK-6 not started.
 
 ---
 
@@ -136,7 +136,19 @@ worldmap → region → module (Back from a module returns to its region; Back f
 map) · `SessionState` gained `currentRegion` + `lastModuleId` (default-merge safe). Old `HomeScreen.tsx`
 is now unused (left in place; removable during NK-5 cleanup). tsc 0 · clean build (entry
 `index-CzNKB-Nx.js`) · PWA SW-registration fix (`7634696`) intact · deploy verified.
-**→ Freeze NK-1** — *founder review + real-device look, then Freeze before NK-2.*
+**Founder pre-freeze review (in progress):** founder is NOT freezing on technical completion alone — NK-1
+is the emotional front door, so it gets a dedicated 10-point experience review (First Impression · Wonder
+· Parent Clarity · One-Hand Nav · Visual Balance · Region Recognition · Continue Journey · Pip's Welcome ·
+Atmosphere · Memory Test). One requested addition, now **built** (`f75d69a`, live):
+- **Kingdom Welcome Moment** (`components/WelcomeMoment.tsx`) — shown **once ever** (localStorage
+  `nk-welcomed-v1`): sun · rainbow arcs in · Pip 🐿 runs in with sparkles · "Welcome to Number Kingdom!
+  The whole kingdom is waiting to explore with you!" · warm "⭐ Let's Begin". The Begin tap is the first
+  audio gesture → speaks the welcome + unlocks speech; overlay fades, map revealed. Returning children get
+  the spoken welcome-back instead.
+- **Atmosphere** — added a floating butterfly + gentle lake shimmer; `index.css` keyframes nk-rainbow-in /
+  nk-run-in / nk-twinkle (under the existing reduced-motion guard).
+- **Scope note:** Pip appears here as a welcome **cameo only**; the full companion system stays **NK-4**.
+**→ Freeze NK-1** — *awaiting the founder's experience-review verdict; then Freeze before NK-2.*
 
 ### NK-2 — Living Kingdom 🌱 *(includes the Daily Life Layer)*
 Progress becomes *visible world change*, absorbing the current Math Village. Built on the existing progress
