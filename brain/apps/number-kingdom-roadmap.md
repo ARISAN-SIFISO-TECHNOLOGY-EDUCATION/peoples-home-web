@@ -11,8 +11,9 @@
 > **Governance (founder's model): Blueprint → Freeze → Build.** Each NK milestone is frozen before the
 > next begins. **Freeze is a founder act** — the next AI never self-declares a freeze.
 >
-> **Progress:** NK-0 ✅ FROZEN (2026-07-04) · **NK-1 World Map — ✅ BUILT & LIVE (`f75d69a`; + Kingdom
-> Welcome Moment), in founder experience-review before Freeze** · NK-2…NK-6 not started.
+> **Progress:** NK-0 ✅ FROZEN (2026-07-04) · **NK-1 World Map ✅ FROZEN (founder-ratified 2026-07-04,
+> `f75d69a`; passed the 10-point experience review)** · **NK-2 Living Kingdom ✅ BUILT & LIVE (`5ee188b`),
+> awaiting founder Freeze** · NK-3…NK-6 not started.
 
 ---
 
@@ -122,7 +123,13 @@ educational mechanics requires a separate architectural review.**
 maths" — instead they experience returning to **Number Kingdom**, where mathematics naturally emerges
 through exploration, play, and helping the kingdom flourish.
 
-### NK-1 — World Map 🗺️ — ✅ BUILT & LIVE (2026-07-04, `1dfdc79`); awaiting founder Freeze
+### NK-1 — World Map 🗺️ — ✅ FROZEN (founder-ratified 2026-07-04, `f75d69a`)
+**Frozen after a 10-point founder experience review** (First Impression · Wonder · Parent Clarity ·
+One-Hand Nav · Visual Balance · Region Recognition · Continue Journey · Pip's Welcome · Atmosphere ·
+Memory Test — all PASS). Frozen surface: **Welcome Moment · one-screen world map · seven constitutional
+regions · one-tap navigation · Continue Journey flow · parent-control placement · child-lock preservation
+· animated storybook SVG approach · atmosphere layer · PWA compatibility · accessibility behaviour.**
+Future work **enriches** this foundation; it does not replace it.
 The home screen becomes the Kingdom. A single-screen illustrated map with the seven landmarks, a sky, a
 child character, and **"⭐ Continue Journey"** (returns to the last region). Tapping a landmark walks the
 character there and opens that **region screen** — a themed sub-screen listing its modules as illustrated
@@ -159,6 +166,22 @@ only change.**
   morning the village wakes & birds appear; evening lanterns glow; rain brings puddles and hides
   butterflies; wind moves the leaves. Purely ambient/cosmetic (real device clock, no module logic).
   Reuses the visual language of `time-and-day` without touching the module. **Freeze.**
+
+**✅ BUILT & LIVE (2026-07-04, `5ee188b`); awaiting founder Freeze.** Delivered — *visible life, not new
+gameplay* (founder brief: "the kingdom is becoming more beautiful because of your curiosity"):
+- `lib/kingdom.ts` — growth driven purely by `seeds` (one per completed round). Deterministic decor slots
+  with thresholds: flowers bloom, trees grow, butterflies/birds/bees arrive, a nest is built, and a
+  rainbow crowns the kingdom at 20 seeds. A **river** appears and flows from 6 seeds. Persisted
+  growth-stage (`nk-kingdom-stage-v1`) so growth is noticed only when real.
+- `lib/daylife.ts` — **Daily Life Layer**: time of day sets the sky + light (morning/day/evening/night),
+  the sun becomes a moon with stars + 🏮 lanterns at night; **weather is stable per calendar day** (≈68%
+  clear / 22% cloudy / 9% gentle rain → fuller river + a puddle). Deterministic, never flickers.
+- `WorldMap` renders the living decor + river + day/night sky + celestial + lanterns + weather, and a
+  gentle **"Your kingdom is growing!"** sparkle + spoken line when the child returns from play and the
+  kingdom has grown. All motion under the existing `prefers-reduced-motion` guard.
+- Modules untouched. tsc 0 · clean build (entry `index-lRggn5aE.js`) · SW fix intact · invariants checked
+  (phases cover 24h, weather stable per-day, growth monotonic 0→15) · deploy verified.
+- **→ Freeze NK-2** — *founder review, then Freeze before NK-3 (Math Adventure Journal).*
 
 ### NK-3 — Math Adventure Journal 📖
 Rename & expand "My Number Book". The child collects the memory of their journey: numbers met · shapes
@@ -219,6 +242,9 @@ through joyful mixed activities; the reward is celebration, not completion. No f
   ready for the shared Vocabulary Engine on D-13 adoption.
 - **Accessibility** — voice-first, replay, large targets, reduced motion, high contrast, visual
   instruction mode, motor alternatives — carried from the current app, not regressed.
+- **The Welcome Moment** — now an ecosystem principle (**PROJECT_DNA Principle 18**, founder-ratified
+  2026-07-04): one unforgettable, once-only, warm, narrated first entrance that also unlocks audio.
+  Reference implementation is Number Kingdom's `WelcomeMoment.tsx` (NK-1).
 
 ---
 

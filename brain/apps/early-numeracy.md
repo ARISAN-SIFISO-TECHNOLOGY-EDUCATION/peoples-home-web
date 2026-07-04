@@ -18,9 +18,10 @@
 > Kingdom**. The 16 educational modules stay **intact**; a world-map shell (regions · living kingdom ·
 > Pip the guide · Adventure Journal · regional skins · castle festival) is built **over** them.
 > Governance: **Blueprint → Freeze → Build**, milestones **NK-0 … NK-6**, each frozen before the next.
-> **Status (2026-07-04): roadmap ✅ FROZEN · NK-0 Constitution ✅ FROZEN · NK-1 World Map ✅ BUILT & LIVE
-> (`1dfdc79`), awaiting founder Freeze.** The home is now a walkable kingdom map (7 regions); modules
-> unchanged.
+> **Status (2026-07-04): roadmap ✅ FROZEN · NK-0 ✅ FROZEN · NK-1 World Map ✅ FROZEN (`f75d69a`, +
+> Welcome Moment; Welcome Moment is now DNA Principle 18) · NK-2 Living Kingdom ✅ BUILT & LIVE (`5ee188b`),
+> awaiting founder Freeze.** The home is a walkable kingdom map (7 regions) that now *grows with play* and
+> has a day/night + weather Daily Life Layer; modules unchanged. Next: NK-3 Math Adventure Journal.
 
 ---
 

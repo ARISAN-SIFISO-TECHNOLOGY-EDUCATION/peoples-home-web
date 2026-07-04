@@ -12,6 +12,36 @@
 
 ---
 
+## 🌈 2026-07-04 (session 38) — Number Kingdom: NK-1 FROZEN + Welcome Principle (DNA #18) · NK-2 Living Kingdom BUILT
+
+**Founder FROZE NK-1** after a 10-point experience review (all PASS). Frozen surface: Welcome Moment ·
+one-screen map · 7 regions · one-tap nav · Continue Journey · parent-control placement · child-lock ·
+animated storybook SVG · atmosphere layer · PWA compat · accessibility. Future work **enriches**, never
+replaces.
+
+**New ecosystem principle — PROJECT_DNA #18: The Welcome Moment.** Founder made the first-entrance
+constitutional for **all World-A apps**: one unforgettable, once-only, warm, narrated entry that also
+unlocks audio (the begin-tap is the first user gesture). Examples: Reading Village · Number Kingdom ·
+Spaceport · "Welcome Home". Added to `brain/PROJECT_DNA.md` §18; reference impl = `WelcomeMoment.tsx`.
+
+**NK-2 — Living Kingdom + Daily Life Layer — BUILT & LIVE** (`early-numeracy` `5ee188b`; deployed +
+verified). *Visible life, not new gameplay* — "the kingdom becomes more beautiful because of your
+curiosity" (Environment As Reward; never points/stars/percent):
+- `lib/kingdom.ts` — growth from `seeds` (1/round): deterministic decor thresholds (flowers→trees→
+  butterflies→birds→bee→nest→rainbow@20); river flows from 6 seeds; persisted stage (`nk-kingdom-stage-v1`).
+- `lib/daylife.ts` — Daily Life Layer: time-of-day sky/light (morning/day/evening/night), moon+stars+🏮
+  lanterns at night; weather **stable per calendar day** (~68% clear/22% cloudy/9% gentle rain → fuller
+  river + puddle). Deterministic, no flicker.
+- `WorldMap` renders living decor + river + day/night sky + celestial + lanterns + weather + a gentle
+  "Your kingdom is growing!" sparkle/spoken line on returning from play; all under reduced-motion guard.
+- Modules untouched. tsc 0 · clean build (entry `index-lRggn5aE.js`) · SW fix intact · invariants checked.
+
+**⛔ NK-2 not yet Frozen** — founder review, then **Freeze before NK-3 (Math Adventure Journal** — rename
+"My Number Book"; collect numbers/shapes/patterns/discoveries/favourites/achievements/journey map).
+Modules' educational logic stays frozen; NK-5 does region skins. D-13 stands.
+
+---
+
 ## 🌈 2026-07-04 (session 37) — Number Kingdom: roadmap + NK-0 FROZEN by founder · NK-1 World Map BUILT
 
 **Founder ratified & FROZE** the Number Kingdom roadmap and **NK-0 (Kingdom Constitution)** — both now

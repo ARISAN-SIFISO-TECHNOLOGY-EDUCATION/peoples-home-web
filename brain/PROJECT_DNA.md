@@ -312,6 +312,29 @@ The People's Home was built because the alternatives were gatekept. AI must neve
 
 ---
 
+### 18. The Welcome Moment (World-A first entrance)
+
+*(Added 2026-07-04, founder-ratified during the Number Kingdom NK-1 review. Applies to every World-A app.)*
+
+Every World-A application should give the child **one unforgettable first entrance** into its world:
+
+- **Once, ever** — shown on first entry only, never repeated (persist a flag).
+- **Emotionally warm** and **narrated** — a short spoken welcome into the named world.
+- **Unlocks audio** — the single "begin" tap doubles as the browser's first user gesture, so it also
+  unlocks speech (solves autoplay restrictions, onboarding, and emotional introduction in one interaction).
+- **Remembered forever** — it becomes the child's memory of *arriving in the world*, not "opening an app".
+
+The world is the experience; the entrance is its threshold. Examples across the ecosystem:
+Early Literacy → *"Welcome to Reading Village"* · Early Numeracy → *"Welcome to Number Kingdom"* ·
+Space Explorer → *"Welcome to Spaceport"* · Our World → *"Welcome Home"*.
+
+**Why this is DNA:** it is the emotional counterpart to Principle 10 (Journey Before Apps) — the moment a
+product stops feeling like software and becomes a *place*. Reference implementation:
+`early-numeracy` `WelcomeMoment.tsx` (Number Kingdom NK-1). See also
+[`patterns/world-a-navigation.md`](./patterns/world-a-navigation.md).
+
+---
+
 ## How to use this file
 
 ### If you are an AI
