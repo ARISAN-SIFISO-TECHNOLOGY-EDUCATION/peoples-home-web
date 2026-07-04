@@ -18,7 +18,9 @@
 > Kingdom**. The 16 educational modules stay **intact**; a world-map shell (regions · living kingdom ·
 > Pip the guide · Adventure Journal · regional skins · castle festival) is built **over** them.
 > Governance: **Blueprint → Freeze → Build**, milestones **NK-0 … NK-6**, each frozen before the next.
-> **Status: blueprint drafted, awaiting founder Freeze; no NK UI built yet.**
+> **Status (2026-07-04): roadmap ✅ FROZEN · NK-0 Constitution ✅ FROZEN · NK-1 World Map ✅ BUILT & LIVE
+> (`1dfdc79`), awaiting founder Freeze.** The home is now a walkable kingdom map (7 regions); modules
+> unchanged.
 
 ---
 

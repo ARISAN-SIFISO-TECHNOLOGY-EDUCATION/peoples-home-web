@@ -1,6 +1,8 @@
-# 🌈 Number Kingdom — Experience Roadmap (Early Numeracy · World A)
+# 🌈 Number Kingdom — Experience Roadmap (Early Numeracy · World A) — 🔒 FROZEN
 
-> **Status: BLUEPRINT — awaiting founder Freeze (drafted 2026-07-04).**
+> **Status: ✅ FROZEN — founder-ratified 2026-07-04.** Canonical roadmap for the Early Numeracy World-A
+> app. The naming architecture (§0) and NK-0 Kingdom Constitution are **constitutional and immutable** —
+> they may change only through a **formal roadmap revision**.
 > This is the experience-layer roadmap that elevates **Early Numeracy** from a collection of
 > activities into a **living world** the child inhabits. It does **not** replace the educational
 > roadmap — [`early-numeracy-roadmap.md`](./early-numeracy-roadmap.md) (Phases 1–10) is **build-complete**
@@ -8,6 +10,9 @@
 >
 > **Governance (founder's model): Blueprint → Freeze → Build.** Each NK milestone is frozen before the
 > next begins. **Freeze is a founder act** — the next AI never self-declares a freeze.
+>
+> **Progress:** NK-0 ✅ FROZEN (2026-07-04) · **NK-1 World Map — ✅ BUILT & LIVE (`1dfdc79`), awaiting
+> founder Freeze** · NK-2…NK-6 not started.
 
 ---
 
@@ -76,27 +81,62 @@ addition = passengers boarding, subtraction = passengers leaving. Metaphor only;
 
 ## 3. Milestones (build incrementally; freeze each before the next)
 
-### NK-0 — Kingdom Constitution ⚖️ *(author + freeze BEFORE any UI)*
-Lock the principles the whole world obeys. No code. Ratify → **Freeze**. Covers:
-- **Educational philosophy** — inherits World-A non-negotiables (Offline First · Audio First · Confidence
-  Before Correction · No Failure States · No Timers · Child-Led Discovery · Learning Through Play ·
-  Environment As Reward · Companion Guided · Ages Before Grades · No Ads · **#FreeForever**).
-- **Emotional design** — wonder, warmth, a place worth returning to; never a dashboard, never a test.
-- **Companion behaviour** — Pip's voice rules (invite, never instruct; never says "let's do maths").
-- **Navigation principles** — one screen, one tap deep, a child can never get lost or stuck.
-- **Environmental growth** — the world changes with play; no numbers, no stars, only visible change.
-- **Accessibility rules** — large targets, voice-first, visual instruction mode, reduced motion, high
-  contrast, motor alternatives.
-- **TPH Core integration** — advisory/consume-only; do **not** modify TPH Core (frozen SDK). Adopting the
-  shared **TPH Learning Engines** (D-13) is the long-game; Number Kingdom is built so that adoption slots
-  in later without another rebuild.
-> The draft Constitution lives in §5–§6 of this doc; NK-0 = founder ratifies and freezes it.
+### NK-0 — Kingdom Constitution ⚖️ — ✅ FROZEN (founder-ratified 2026-07-04)
+**This is the immutable foundation for every future implementation decision.** Verbatim ratification:
 
-### NK-1 — World Map 🗺️
+**Mission.** Build children's confidence in mathematical thinking through exploration, play, observation,
+and joyful discovery. Children should never feel like they are completing mathematics exercises. They
+should feel like they are **helping a magical kingdom grow.**
+
+**Educational Principles (constitutional):** Offline First · Audio First · Confidence Before Correction ·
+No Failure States · No Timers · Child-Led Exploration · Learning Through Play · Ages Before Grades ·
+Environment as Reward · Discovery Before Memorisation · Privacy by Design · **#FreeForever**.
+
+**Experience Principles:** The child never navigates a dashboard — the child explores a living world. The
+child never selects an exercise — the child visits a place. The child never earns abstract points — the
+kingdom visibly grows.
+
+**Navigation Principles:** One-screen world map · one-tap navigation · no free-roam RPG mechanics · no
+possibility of getting lost · **"Continue Journey" always returns the child to the last activity.**
+
+**Platform Principles:** TPH Core v1.0 is frozen. Number Kingdom **consumes** the platform; it does not
+modify it. All integration occurs through public contracts and the Event Bus. (D-13: adopting the shared
+TPH Learning Engines later must slot in without a rebuild.)
+
+**World Structure (constitutional regions):** 🏡 Number Village · 🌳 Counting Forest · 🌊 Shape Lake ·
+🏔 Pattern Mountain · 🚂 Number Railway · 🎪 Puzzle Carnival · 🏰 Number Castle. Future educational
+content must belong within this world unless a **formal roadmap revision** introduces a new region.
+
+**Companion — 🐿 Pip.** Pip is the Kingdom Guide, not another teacher. Pip encourages curiosity and
+confidence · never judges · never uses negative language · **never replaces Ollie, Fifi, or Lulu.**
+
+**Daily Life Layer.** The kingdom is alive; environmental changes communicate progress (flowers bloom ·
+butterflies arrive · birds sing · windmills turn · rivers flow · lanterns glow at night · gentle rain
+makes puddles). Atmospheric, not instructional — they reinforce a sense of belonging.
+
+**Wrap, Don't Rewrite.** The educational logic of the existing sixteen modules is preserved. Work focuses
+on presentation · navigation · environmental storytelling · emotional engagement. **Rewriting proven
+educational mechanics requires a separate architectural review.**
+
+**Definition of Success.** Early Numeracy is complete when children no longer perceive it as "doing
+maths" — instead they experience returning to **Number Kingdom**, where mathematics naturally emerges
+through exploration, play, and helping the kingdom flourish.
+
+### NK-1 — World Map 🗺️ — ✅ BUILT & LIVE (2026-07-04, `1dfdc79`); awaiting founder Freeze
 The home screen becomes the Kingdom. A single-screen illustrated map with the seven landmarks, a sky, a
 child character, and **"⭐ Continue Journey"** (returns to the last region). Tapping a landmark walks the
 character there and opens that **region screen** — a themed sub-screen listing its modules as illustrated
-"places" ("🌳 Counting Forest — Animals are waiting!"). Everything one tap deep. **Freeze.**
+"places" ("🌳 Counting Forest — Animals are waiting!"). Everything one tap deep.
+**Delivered:** `constants/regions.ts` (7 regions + positions + module→region map, all 16 modules placed) ·
+`components/WorldMap.tsx` (sky, winding rainbow path, 7 tappable landmarks, a wanderer 🧒 that walks to
+the tapped place, Continue Journey, parent controls + child-lock preserved, speaks a kingdom welcome) ·
+`components/RegionScreen.tsx` (themed region screen; Village hub keeps the Today nudge + growing kingdom
+scene; Castle framed as a festival being prepared, **not** a broken stub) · `App.tsx` rewired to
+worldmap → region → module (Back from a module returns to its region; Back from a region returns to the
+map) · `SessionState` gained `currentRegion` + `lastModuleId` (default-merge safe). Old `HomeScreen.tsx`
+is now unused (left in place; removable during NK-5 cleanup). tsc 0 · clean build (entry
+`index-CzNKB-Nx.js`) · PWA SW-registration fix (`7634696`) intact · deploy verified.
+**→ Freeze NK-1** — *founder review + real-device look, then Freeze before NK-2.*
 
 ### NK-2 — Living Kingdom 🌱 *(includes the Daily Life Layer)*
 Progress becomes *visible world change*, absorbing the current Math Village. Built on the existing progress

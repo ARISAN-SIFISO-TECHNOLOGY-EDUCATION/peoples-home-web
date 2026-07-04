@@ -12,6 +12,39 @@
 
 ---
 
+## 🌈 2026-07-04 (session 37) — Number Kingdom: roadmap + NK-0 FROZEN by founder · NK-1 World Map BUILT
+
+**Founder ratified & FROZE** the Number Kingdom roadmap and **NK-0 (Kingdom Constitution)** — both now
+constitutional/immutable (change only via formal roadmap revision). Naming locked: product = **Early
+Numeracy**, experience/world = **Number Kingdom**. Constitution embedded verbatim in
+[`number-kingdom-roadmap.md`](./apps/number-kingdom-roadmap.md) §NK-0 (mission, educational + experience +
+navigation + platform principles, 7 constitutional regions, Pip rules, Daily Life Layer, wrap-don't-
+rewrite, definition of success).
+
+**NK-1 — World Map — BUILT & LIVE** (`early-numeracy` `1dfdc79`; deployed + verified). The card dashboard
+is replaced by a walkable kingdom:
+- `constants/regions.ts` — 7 constitutional regions + map positions + module→region map (**all 16 modules
+  placed, none orphaned**): 🏡 Village(numbers-everywhere·time-and-day) 🌳 Forest(counting-garden·
+  which-is-more·number-hunt·number-match) 🌊 Lake(shapes-world) 🏔 Mountain(pattern-maker·number-shapes)
+  🚂 Railway(make-five·make-ten·addition·taking-away) 🎪 Carnival(measurement·money·data-sorting) 🏰 Castle().
+- `components/WorldMap.tsx` — single-screen scene (sky, sun, floating clouds/dove, winding rainbow path),
+  7 tappable landmarks, a wanderer 🧒 that walks to the tapped place, ⭐ Continue Journey (jumps to the
+  last module), parent controls + child-lock preserved, speaks a kingdom welcome.
+- `components/RegionScreen.tsx` — themed region screen listing that region's modules as places; Village
+  hub keeps the Today nudge + growing kingdom scene; **Castle framed as a festival being prepared (NK-6),
+  not a broken "coming soon" stub.**
+- `App.tsx` — worldmap → region → module nav (Back from module → its region; Back from region → map).
+  `SessionState` gained `currentRegion` + `lastModuleId` (default-merge safe). **16 educational modules
+  untouched** (wrap-don't-rewrite). Old `HomeScreen.tsx` now unused (left in place; NK-5 cleanup).
+- Verified: tsc 0 · clean build (entry `index-CzNKB-Nx.js`) · **PWA SW-registration fix `7634696`
+  intact** · deploy verified live.
+
+**⛔ NK-1 not yet Frozen** — needs founder review + a real-device look, then **Freeze before NK-2 (Living
+Kingdom + Daily Life Layer).** Do not start NK-2 until NK-1 is founder-frozen. Modules' educational logic
+stays frozen; NK-5 (not NK-1) is where region *skins* happen. D-13 (adopt TPH Learning Engines) stands.
+
+---
+
 ## 🌈 2026-07-04 (session 36) — Early Numeracy: Number Kingdom experience roadmap DRAFTED (awaiting Freeze)
 
 **Founder pivot:** Early Numeracy still felt like a *list of activities*, not a *world* like Early
