@@ -12,6 +12,37 @@
 
 ---
 
+## ✅ 2026-07-04 (session 25) — Early Numeracy Phase 2 (Number Discovery) BUILT, LIVE & verified
+
+Executed the locked roadmap's **Phase 2**. The five "Coming soon" stubs are now **six real, no-fail,
+audio-guided modules** (commit `early-numeracy` `fa777a6`, deployed to early-numeracy.pages.dev):
+
+- **🌼 Counting Garden** — tap-to-count, one-to-one correspondence, spoken counting, number recognition.
+- **🍎 Which is More?** — more / fewer / equal (equal via a centre button); wrong tap re-asks, no penalty.
+- **✏️ Number Shapes** — trace the numeral by connecting ordered dots (drag or tap, any order, forgiving);
+  numeral shown with its quantity; 1–10.
+- **🎨 Pattern Maker** — AB / ABC / AABB / ABB; gap at end then middle; tap-to-fill.
+- **⭐ Make Five / 🌟 Make Ten** — `make-five-ten` **split** into two modules on a shared `MakeGame`
+  engine; part–whole fact spoken; can't overfill.
+
+**Platform:** progress store (`lib/progress.ts`, schema-drift-safe default-merge), shared
+`components/module-kit.tsx` (frame chrome, celebration, level dots, prompt, number words), `say`/`saySlow`
+on `useInstruction` (audio-only — every module fully playable silently in visual mode), and an
+**environment-as-reward Math Village** that grows on the home screen (+ per-card growth leaves; no stars).
+`ModulePlaceholder` removed. Target ages aligned to **3–5** (index.html + PWA manifest).
+
+**Verified:** tsc 0 · clean build (6 lazy chunks, PWA precache 21, zero external asset requests) · pure
+game-logic invariants checked across thousands of randomized rounds · **deploy verified live** (manifest
+now "Six game modules… ages 3–5"; entry-chunk hash matches local build; module chunks 200).
+
+**⛔ Not yet Frozen.** The only remaining Phase-2 gate is a **real-child play-test** (human step).
+**NEXT AI:** if the founder confirms the play-test passed → Freeze Phase 2 → start **Phase 2.5 (Numeracy
+Confidence)**. Reminder (D-13): the app still uses its own hooks, not the shared TPH Learning Engines —
+adopting them stays part of "finishing the product." Docs updated: `apps/early-numeracy.md`,
+`apps/early-numeracy-roadmap.md`, `ROADMAP.md`.
+
+---
+
 ## ✅ 2026-07-03 (session 24) — Early Numeracy product roadmap LOCKED + Space Explorer deployed/linked
 
 **Space Explorer:** deployed by the founder at **https://ikhaya-space-explorer.pages.dev/** (the bare

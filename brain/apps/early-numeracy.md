@@ -1,7 +1,7 @@
 # Early Numeracy
 
-> 🧮 **Foundations** · ages **3–5** · **✅ LIVE (Phase 1 shell)** — installable offline PWA ·
-> Blueprint version 1 (2026-06-30)
+> 🧮 **Foundations** · ages **3–5** · **✅ LIVE — Phase 2 (Number Discovery) shipped** — installable
+> offline PWA · six real modules (2026-07-04, `fa777a6`)
 
 > ## 🔒 The authoritative plan is [`early-numeracy-roadmap.md`](./early-numeracy-roadmap.md)
 > The founder **locked a complete product roadmap** (2026-07-03): *finish the product, not the app* —
@@ -11,15 +11,38 @@
 
 ---
 
-## Status (2026-07-03)
+## Status (2026-07-04)
 
 **✅ LIVE at https://early-numeracy.pages.dev/** and **linked on The People's Home** (Foundations
 pillar). Repo `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-numeracy` (PRIVATE, branch `master`), local
 `C:\Users\sifis\Next-Level-Projects\early-numeracy`. Vite · React 19 · TS · Tailwind v4 · vite-plugin-pwa.
 
-**It is still a Phase 1 shell:** the home screen, 5 module cards, narration/instruction system,
-child-lock, and session state all work — but **all 5 modules are "Coming soon" placeholders**. Phase 2
-(real gameplay: Counting Garden + Which is More?) is the next authored step.
+### Phase 2 — Number Discovery: BUILT & LIVE — 2026-07-04 (commit `fa777a6`)
+The five "Coming soon" stubs are now **six real, no-fail, audio-guided modules** (Make Five / Make Ten
+split out of `make-five-ten`):
+- **🌼 Counting Garden** — tap-to-count, one-to-one correspondence, spoken counting, number recognition.
+- **🍎 Which is More?** — more / fewer / equal (equal via a centre button); wrong tap re-asks, no penalty.
+- **✏️ Number Shapes** — trace the numeral by connecting ordered dots (drag or tap, any order, forgiving);
+  numeral always shown with its quantity; 1–10.
+- **🎨 Pattern Maker** — AB / ABC / AABB / ABB; gap at end then middle; tap-to-fill.
+- **⭐ Make Five / 🌟 Make Ten** — compose on a five-/ten-frame (shared `MakeGame` engine); part–whole
+  fact spoken on completion; can't overfill.
+
+**Platform additions:** `lib/progress.ts` (schema-drift-safe default-merge loader), a shared
+`components/module-kit.tsx` (frame chrome, celebration burst, level dots, prompt, number words),
+`say`/`saySlow` on `useInstruction` (audio-only; every module fully playable silently in visual mode),
+and an **environment-as-reward Math Village** that grows on the home screen (+ per-card growth leaves) —
+no stars, no scores. `ModulePlaceholder` removed.
+
+**Quality gate status:** tsc 0 errors · clean production build (6 lazy chunks, PWA precache 21, zero
+external asset requests) · pure game-logic invariants checked across randomized rounds · **deploy
+verified** (live manifest + entry-chunk hash match). ⛔ **Not yet Frozen** — the remaining gate is a
+**real-child play-test** (human step). After it passes → Freeze Phase 2 → **Phase 2.5 (Numeracy
+Confidence)** per the roadmap.
+
+> ⚠️ Still uses Early Numeracy's **own** hooks (`useNarration`/`useInstruction`/`useSessionState`/
+> `useChildLock`), not the shared **TPH Learning Engines** (D-13). Adopting those engines remains part
+> of "finishing the product" and can be folded into a later phase's platform-integration pass.
 
 ### Senior audit + security pass — 2026-07-03 (commit `8a03f92`)
 Parity with the Early Literacy remaster; **no gameplay changed**.

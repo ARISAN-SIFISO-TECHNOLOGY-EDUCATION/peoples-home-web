@@ -22,14 +22,22 @@
 | **Core platform** | TPH Core v1.0 (Frozen) — see the **naming note** below |
 | **Repo** | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/early-numeracy` (PRIVATE, branch `master`) |
 | **Live** | https://early-numeracy.pages.dev/ — linked on The People's Home (Foundations) |
-| **Status** | In Development — **Phase 1 done; Phase 2 is the next step** |
+| **Status** | In Development — **Phase 2 BUILT & LIVE (2026-07-04); awaiting real-child play-test to Freeze. Phase 2.5 is next.** |
 
 ### Where the code actually is right now (start here)
-Phase 1 shell is **live**: home screen, 5 module cards, narration + instruction system (audio/visual
-paths separated), child-lock, session state, offline PWA. Audit + security + one bug fix are done
-(`8a03f92`, `de7e06f`). **All 5 module screens are "Coming soon" placeholders.** The existing stubs are
-`counting-garden`, `which-is-more`, `number-shapes`, `pattern-maker`, `make-five-ten`. **Phase 2 turns
-these into real gameplay** (and splits Make 5 / Make 10 — see Phase 2).
+**Phase 2 is built and deployed** (`fa777a6`, live at early-numeracy.pages.dev). The five stubs are now
+six real, no-fail, audio-guided modules: `counting-garden`, `which-is-more`, `number-shapes`,
+`pattern-maker`, and `make-five` + `make-ten` (the old `make-five-ten` was split). Shared kit added
+(`components/module-kit.tsx`), a progress store (`lib/progress.ts`, schema-drift-safe), and an
+environment-as-reward **Math Village** that grows on the home screen. tsc 0 / clean build / logic
+invariants checked / deploy verified (live manifest + chunk hashes match).
+
+**The one gate left before Freeze: a real-child play-test** (a human step — not yet done). Once that
+passes, Freeze Phase 2 and start **Phase 2.5 (Numeracy Confidence)**.
+
+Phase 1 (still true underneath): home screen, narration + instruction system (audio/visual paths
+separated), child-lock, session state, offline PWA. Audit + security + bug fixes done (`8a03f92`,
+`de7e06f`, and Phase-2 progress loader default-merge).
 
 ### ⚠️ Naming note (per decision D-13)
 This roadmap says **"TPH Core v1.0 (Frozen)"** and lists Event Bus · Companion · Vocabulary ·
@@ -67,15 +75,15 @@ one passes every gate.
 ### Phase 1 — Foundation ✅ DONE
 Platform shell · navigation · Home · Village · Parent Corner · offline storage · TPH (Learning Engines) integration.
 
-### Phase 2 — Number Discovery (NEXT)
-The six core modules. (Current stubs map 1:1, except Make Five/Make Ten split out from `make-five-ten`.)
-- **🌼 Counting Garden** — counting 1–10, object counting, one-to-one correspondence, subitising, number recognition.
-- **🍎 Which Is More?** — compare quantities: more / less / equal; visual comparison.
-- **🌈 Number Shapes** — trace numbers; motor control; number formation.
-- **🎨 Pattern Maker** — simple patterns AB, ABC, AABB; predict next.
-- **⭐ Make Five** — number composition; groups; visual addition.
-- **🌟 Make Ten** — ten frame; part-whole thinking.
-- **→ Freeze Phase 2.**
+### Phase 2 — Number Discovery — ✅ BUILT & LIVE (2026-07-04, `fa777a6`); play-test pending → Freeze
+The six core modules, all real no-fail gameplay (Make Five / Make Ten split out from `make-five-ten`).
+- **🌼 Counting Garden** ✅ — tap-to-count, one-to-one correspondence, spoken counting, number recognition; wrong tap = gentle wobble.
+- **🍎 Which Is More?** ✅ — compare quantities: more / fewer / equal (equal via the centre button); wrong tap re-asks.
+- **✏️ Number Shapes** ✅ — trace the numeral by connecting ordered dots (drag or tap, any order, forgiving); numeral shown with quantity; 1–10.
+- **🎨 Pattern Maker** ✅ — AB / ABC / AABB / ABB; gap at end then middle; tap-to-fill.
+- **⭐ Make Five** ✅ — number composition on a five-frame; part–whole fact spoken.
+- **🌟 Make Ten** ✅ — ten frame; part–whole thinking (shared engine with Make Five).
+- **→ Freeze Phase 2** — *blocked only on the real-child play-test.*
 
 ### Phase 2.5 — Numeracy Confidence
 Before larger concepts. Daily challenges · favourite activities · replay · independent practice ·
