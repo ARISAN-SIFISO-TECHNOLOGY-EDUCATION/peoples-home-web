@@ -12,8 +12,8 @@
 > next begins. **Freeze is a founder act** — the next AI never self-declares a freeze.
 >
 > **Progress:** NK-0 ✅ FROZEN (2026-07-04) · **NK-1 World Map ✅ FROZEN (founder-ratified 2026-07-04,
-> `f75d69a`; passed the 10-point experience review)** · **NK-2 Living Kingdom ✅ BUILT & LIVE (`5ee188b`),
-> awaiting founder Freeze** · NK-3…NK-6 not started.
+> `f75d69a`)** · **NK-2 Living Kingdom ✅ FROZEN (founder-ratified 2026-07-05, `5ee188b`)** ·
+> **NK-3 Math Adventure Journal ✅ BUILT & LIVE (`3ada8bc`), awaiting founder Freeze** · NK-4…NK-6 not started.
 
 ---
 
@@ -157,7 +157,13 @@ Atmosphere · Memory Test). One requested addition, now **built** (`f75d69a`, li
 - **Scope note:** Pip appears here as a welcome **cameo only**; the full companion system stays **NK-4**.
 **→ Freeze NK-1** — *awaiting the founder's experience-review verdict; then Freeze before NK-2.*
 
-### NK-2 — Living Kingdom 🌱 *(includes the Daily Life Layer)*
+### NK-2 — Living Kingdom 🌱 *(includes the Daily Life Layer)* — ✅ FROZEN (founder-ratified 2026-07-05, `5ee188b`)
+**Frozen surface:** seeds-driven visible growth (flowers/trees/butterflies/birds/bees/nest/rainbow at
+thresholds) · the river appearing + flowing from 6 seeds · the Daily Life Layer (time-of-day sky + light,
+sun→moon+stars+🏮 lanterns at night, per-calendar-day stable weather ≈68/22/9 clear/cloudy/rain) · the
+"Your kingdom is growing!" acknowledgement on returning from play · the deterministic, never-flickering,
+reduced-motion-guarded animation approach. Future work enriches this; it does not replace it.
+
 Progress becomes *visible world change*, absorbing the current Math Village. Built on the existing progress
 store (`lib/progress.ts` `seeds`/rounds). As the child plays: flowers bloom → butterflies arrive → birds
 return → windmills spin → the river flows → the bridge is repaired → the castle is restored. **No numbers,
@@ -183,11 +189,33 @@ gameplay* (founder brief: "the kingdom is becoming more beautiful because of you
   (phases cover 24h, weather stable per-day, growth monotonic 0→15) · deploy verified.
 - **→ Freeze NK-2** — *founder review, then Freeze before NK-3 (Math Adventure Journal).*
 
-### NK-3 — Math Adventure Journal 📖
-Rename & expand "My Number Book". The child collects the memory of their journey: numbers met · shapes
-found · patterns solved · counting discoveries · animals counted · favourite games · achievements · a
-journey map. Needs a modest new collection store (append-only, schema-drift-safe like `progress.ts`).
-**Freeze.**
+### NK-3 — Math Adventure Journal 📖 — ✅ BUILT & LIVE (2026-07-05, `3ada8bc`); awaiting founder Freeze
+The child collects the memory of their journey: discoveries · places explored · favourite game · games
+played · achievements (stamps) · a journey map. Collection, **not** assessment (NK-0) — no scores, no
+percentages, no failure. (There was no prior "My Number Book" component to rename; built fresh.)
+
+**Wrap, don't rewrite (crucial):** the Journal is **derived entirely from the existing progress store**
+(`lib/progress.ts` — one seed per completed round). The 16 frozen educational modules are **not
+instrumented or touched**; every "discovery" is a round the child already completed. The only persisted
+Journal state is a tiny **append-only** set of achievement ids already *seen* (`en-journal-v1`,
+schema-drift-safe like `progress.ts`) so a freshly earned stamp can be gently badged **"New!"**.
+
+**Delivered:**
+- `lib/journal.ts` — pure `buildJournal(progress)`: total discoveries, games (favourite = most-played
+  first), per-region exploration facts, and **12 stamps** (region-anchored: Villager/Forest Friend/Shape
+  Fisher/Mountain Climber/Train Driver/Carnival Star; milestones: First Steps/Explorer/Ten·Fifty·Hundred
+  Discoveries/Kingdom Wanderer). Append-only seen-store (`readSeenAchievements`/`markAchievementsSeen`).
+- `components/Journal.tsx` — a **WorldMap-owned overlay** (like the Welcome Moment): no new route, so
+  App's NK-1 navigation is untouched. Summary tiles · favourite game · journey map (7 places, explored
+  glow / faint-if-not) · games played · stamps grid (earned bright + **New!**, unearned faint silhouettes
+  — a collection to look forward to, never a failure). Audio-first (Pip line on open; taps speak). Warm
+  empty state ("Your journal is waiting for your first adventure!"), never a blank.
+- `WorldMap` — an always-visible 📖 button (bottom-left, one tap from the map). `narration`:
+  `kingdom.journal` / `kingdom.journalEmpty`.
+- Modules untouched. tsc 0 · clean build (entry `index-CYE9Sc0q.js`) · SW fix intact · journal invariants
+  checked (200k randomized runs: monotonic earning, favourite = max, region-explored iff played, wanderer
+  needs all six playable regions, `discoveries === seeds`) · deploy verified live.
+- **→ Freeze NK-3** — *founder review, then Freeze before NK-4 (Companion Integration — Pip).*
 
 ### NK-4 — Companion Integration 🐿
 Keep the trio — 🦉 **Ollie** (patient teacher) · 🦊 **Fifi** (explorer) · 🐦 **Lulu** (celebration) — and

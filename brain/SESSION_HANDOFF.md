@@ -12,6 +12,32 @@
 
 ---
 
+## 🌈 2026-07-05 (session 39) — Number Kingdom: NK-2 FROZEN · NK-3 Math Adventure Journal BUILT
+
+**Founder FROZE NK-2 (Living Kingdom)** (`early-numeracy` `5ee188b`). Frozen surface: seeds-driven visible
+growth · river appearing/flowing from 6 seeds · the Daily Life Layer (time-of-day sky/light, moon+stars+🏮
+lanterns at night, per-day stable weather ≈68/22/9) · "Your kingdom is growing!" acknowledgement · the
+deterministic reduced-motion-guarded animation approach. Future work enriches, never replaces.
+
+**NK-3 — Math Adventure Journal 📖 — BUILT & LIVE** (`early-numeracy` `3ada8bc`; entry `index-CYE9Sc0q.js`;
+deployed + verified). The child's journey **memory** — collection, not assessment (no scores/percent/fail).
+There was no prior "My Number Book" to rename; built fresh.
+- **Wrap, don't rewrite:** the Journal is **derived entirely from the existing progress store** (1 seed/round).
+  The 16 frozen modules are **not instrumented or touched**. Only persisted Journal state = a tiny
+  **append-only** seen-achievements set (`en-journal-v1`, schema-drift-safe) → freshly earned stamps badged **New!**.
+- `lib/journal.ts` — pure `buildJournal(progress)`: discoveries, games (favourite = most-played first),
+  per-region facts, **12 stamps** (6 region-anchored + 6 milestones). `components/Journal.tsx` — a
+  **WorldMap-owned overlay** (no new route; App's NK-1 nav untouched): summary tiles · favourite game ·
+  journey map · games played · stamps grid (earned bright + New!, unearned faint). Audio-first; warm empty
+  state. `WorldMap`: always-visible 📖 button (bottom-left). `narration`: kingdom.journal/journalEmpty.
+- tsc 0 · clean build · SW fix intact · invariants checked (200k runs: monotonic earning, favourite=max,
+  region-explored iff played, wanderer needs all 6 playable regions, discoveries===seeds).
+
+**⛔ NK-3 not yet Frozen** — founder review, then **Freeze before NK-4 (Companion Integration — introduce
+🐿 Pip as Kingdom Guide alongside Ollie/Fifi/Lulu; scripted line pools, no runtime AI).**
+
+---
+
 ## 🌈 2026-07-04 (session 38) — Number Kingdom: NK-1 FROZEN + Welcome Principle (DNA #18) · NK-2 Living Kingdom BUILT
 
 **Founder FROZE NK-1** after a 10-point experience review (all PASS). Frozen surface: Welcome Moment ·
