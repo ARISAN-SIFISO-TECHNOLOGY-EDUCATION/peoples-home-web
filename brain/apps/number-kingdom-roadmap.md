@@ -13,7 +13,8 @@
 >
 > **Progress:** NK-0 ✅ FROZEN (2026-07-04) · **NK-1 World Map ✅ FROZEN (founder-ratified 2026-07-04,
 > `f75d69a`)** · **NK-2 Living Kingdom ✅ FROZEN (founder-ratified 2026-07-05, `5ee188b`)** ·
-> **NK-3 Math Adventure Journal ✅ BUILT & LIVE (`3ada8bc`), awaiting founder Freeze** · NK-4…NK-6 not started.
+> **NK-3 Math Adventure Journal ✅ FROZEN (founder-ratified 2026-07-05, `3ada8bc`)** ·
+> **NK-4 Companion (Pip) ✅ BUILT & LIVE (`e22602b`), awaiting founder Freeze** · NK-5…NK-6 not started.
 
 ---
 
@@ -189,7 +190,12 @@ gameplay* (founder brief: "the kingdom is becoming more beautiful because of you
   (phases cover 24h, weather stable per-day, growth monotonic 0→15) · deploy verified.
 - **→ Freeze NK-2** — *founder review, then Freeze before NK-3 (Math Adventure Journal).*
 
-### NK-3 — Math Adventure Journal 📖 — ✅ BUILT & LIVE (2026-07-05, `3ada8bc`); awaiting founder Freeze
+### NK-3 — Math Adventure Journal 📖 — ✅ FROZEN (founder-ratified 2026-07-05, `3ada8bc`)
+**Frozen surface:** the derived journey memory (discoveries · places explored · favourite game · games
+played · 12 stamps) · collection-not-assessment (no score/percent/fail) · the wrap-don't-rewrite
+derivation from the progress store (modules never instrumented) · the append-only seen-achievements store
+(`en-journal-v1`) + "New!" badging · the WorldMap-owned overlay (📖 bottom-left, no new route) · the warm
+empty state. Future work enriches; it does not replace.
 The child collects the memory of their journey: discoveries · places explored · favourite game · games
 played · achievements (stamps) · a journey map. Collection, **not** assessment (NK-0) — no scores, no
 percentages, no failure. (There was no prior "My Number Book" component to rename; built fresh.)
@@ -217,12 +223,36 @@ schema-drift-safe like `progress.ts`) so a freshly earned stamp can be gently ba
   needs all six playable regions, `discoveries === seeds`) · deploy verified live.
 - **→ Freeze NK-3** — *founder review, then Freeze before NK-4 (Companion Integration — Pip).*
 
-### NK-4 — Companion Integration 🐿
-Keep the trio — 🦉 **Ollie** (patient teacher) · 🦊 **Fifi** (explorer) · 🐦 **Lulu** (celebration) — and
-introduce 🐿 **Pip, the Kingdom Guide.** Pip is not another teacher; Pip invites discovery. Scripted line
-pool (no runtime AI — true to #FreeForever), woven into region entry / correct / level-up, extending the
-existing `useInstruction` narration. Examples: *"Let's see what's hiding in the forest!"* · *"I wonder who
-needs our help today."* Never: *"Let's do maths."* **Freeze.**
+### NK-4 — Companion Integration 🐿 — ✅ BUILT & LIVE (2026-07-05, `e22602b`); awaiting founder Freeze
+Introduce 🐿 **Pip, the Kingdom Guide.** Pip is not another teacher; Pip invites discovery — encourages
+curiosity and confidence, never judges, never uses negative language, never says *"Let's do maths."*
+Scripted line pools (no runtime AI — true to #FreeForever). Examples: *"Let's see what's hiding in the
+forest!"* · *"I wonder what is happening in the forest today."*
+
+**Important reconciliation with NK-0:** Early Numeracy has **no 🦉 Ollie / 🦊 Fifi / 🐦 Lulu** — those
+live in *other* TPH apps. This app's in-module teaching voice is **anonymous** (`useInstruction` +
+`NARRATION_EN.modules[*]`). So Pip does not "join a trio" here and there is no one to replace; instead Pip
+lives **entirely on the world / guide layer** (the shell we own): the world map, region invitations,
+kingdom-growth moments, and the journal. Pip **never enters the frozen modules** as a second teacher —
+which also honours NK-0's "Pip invites discovery; he is not another teacher." Fully wrap-don't-rewrite:
+no module or educational logic touched. (The original blueprint said "woven into region entry / correct /
+level-up"; correct/level-up happen inside frozen modules, so — per the deeper NK-0 principle — Pip stays on
+the navigation/guide layer. If the founder wants Pip flavour inside modules too, that is a deliberate,
+separately-reviewed extension.)
+
+**Delivered:**
+- `constants/pip.ts` — Pip identity (`PIP` 🐿️) + **scripted pools**: welcome · welcomeBack · mapTip · grew
+  · journal, and **per-region invitation pools for all 7 regions**. `pipLine()` picks at random, avoiding
+  immediate repeats. Constitution-guarded: no negative language / no "maths" in any spoken line.
+- `components/Pip.tsx` — a **visible companion** on the world map with a speech bubble; his words show in
+  **visual mode** too (not audio-only). Tap Pip → a fresh invitation/tip (`animate-float`, reduced-motion
+  safe).
+- `WorldMap` — Pip greets on arrival (welcome / welcome-back), speaks a **varied region invitation** when
+  the child taps a landmark (replacing the flat single tagline), celebrates kingdom growth, and offers a
+  tip on tap. `Journal` opens in Pip's voice ("our adventure journal") + a small Pip in the header. The
+  `WelcomeMoment` already carried the Pip cameo (NK-1) — now consistent end-to-end.
+- Modules untouched. tsc 0 · clean build (entry `index-DA1vsOKc.js`) · SW fix intact · deploy verified.
+- **→ Freeze NK-4** — *founder review, then Freeze before NK-5 (Regional Identity — per-module skins).*
 
 ### NK-5 — Regional Identity 🎨
 Each existing module gets a **thematic skin only** — same gameplay, different feeling. Module-by-module,

@@ -12,6 +12,32 @@
 
 ---
 
+## 🌈 2026-07-05 (session 40) — Number Kingdom: NK-3 FROZEN · NK-4 Companion (Pip) BUILT
+
+**Founder FROZE NK-3 (Math Adventure Journal)** (`early-numeracy` `3ada8bc`). Frozen surface: derived
+journey memory (discoveries · places · favourite game · games played · 12 stamps) · collection-not-
+assessment · wrap-don't-rewrite derivation from the progress store · append-only seen-store + "New!" ·
+WorldMap-owned overlay (no new route) · warm empty state.
+
+**NK-4 — Companion (🐿️ Pip, the Kingdom Guide) — BUILT & LIVE** (`early-numeracy` `e22602b`; entry
+`index-DA1vsOKc.js`; deployed + verified). Pip invites discovery — never a teacher, never judges, never
+negative language, never "let's do maths" (NK-0). **Key reconciliation:** this app has **no Ollie/Fifi/
+Lulu** (those are in other TPH apps); its in-module teaching voice is **anonymous**. So Pip lives
+**entirely on the world/guide layer we own** (map · region invitations · kingdom-growth · journal) and
+**never enters the frozen modules** — fully wrap-don't-rewrite (no module/educational logic touched).
+- `constants/pip.ts` — Pip identity + **scripted pools** (no runtime AI): welcome/welcomeBack/mapTip/grew/
+  journal + per-region invitations for all 7 regions; `pipLine()` avoids immediate repeats. Guarded: no
+  negative language / no "maths" in any spoken line.
+- `components/Pip.tsx` — visible companion + speech bubble (words show in **visual mode** too); tap → fresh
+  tip. `WorldMap` — Pip greets on arrival, speaks a varied region invitation on landmark tap (replaces the
+  flat tagline), celebrates growth, tips on tap. `Journal` opens in Pip's voice + small Pip in header.
+- tsc 0 · clean build · SW fix intact · deploy verified.
+
+**⛔ NK-4 not yet Frozen** — founder review, then **Freeze before NK-5 (Regional Identity — per-module
+thematic skins only; same gameplay, per region/batch; and remove the dead HomeScreen.tsx).**
+
+---
+
 ## 🌈 2026-07-05 (session 39) — Number Kingdom: NK-2 FROZEN · NK-3 Math Adventure Journal BUILT
 
 **Founder FROZE NK-2 (Living Kingdom)** (`early-numeracy` `5ee188b`). Frozen surface: seeds-driven visible

@@ -18,12 +18,14 @@
 > Kingdom**. The 16 educational modules stay **intact**; a world-map shell (regions · living kingdom ·
 > Pip the guide · Adventure Journal · regional skins · castle festival) is built **over** them.
 > Governance: **Blueprint → Freeze → Build**, milestones **NK-0 … NK-6**, each frozen before the next.
-> **Status (2026-07-05): roadmap ✅ FROZEN · NK-0 ✅ FROZEN · NK-1 World Map ✅ FROZEN (`f75d69a`, +
-> Welcome Moment = DNA Principle 18) · NK-2 Living Kingdom ✅ FROZEN (`5ee188b`) · NK-3 Math Adventure
-> Journal ✅ BUILT & LIVE (`3ada8bc`), awaiting founder Freeze.** The home is a walkable kingdom map (7
-> regions) that *grows with play* (day/night + weather Daily Life Layer); a 📖 Adventure Journal (bottom-left,
-> one tap) records the journey — discoveries · places explored · favourite game · 12 stamps — **derived from
-> the progress store** (wrap-don't-rewrite; modules untouched). Next: NK-4 Companion (Pip).
+> **Status (2026-07-05): roadmap ✅ FROZEN · NK-0 ✅ FROZEN · NK-1 ✅ FROZEN (`f75d69a`, + Welcome Moment =
+> DNA Principle 18) · NK-2 Living Kingdom ✅ FROZEN (`5ee188b`) · NK-3 Math Adventure Journal ✅ FROZEN
+> (`3ada8bc`) · NK-4 Companion (Pip) ✅ BUILT & LIVE (`e22602b`), awaiting founder Freeze.** The home is a
+> walkable kingdom map (7 regions) that *grows with play* (day/night + weather); a 📖 Adventure Journal
+> (bottom-left) records the journey (discoveries · places · favourite game · 12 stamps, derived from the
+> progress store); and 🐿️ **Pip the Kingdom Guide** now walks the map — scripted invitations (no runtime
+> AI), on the guide layer only (this app has no Ollie/Fifi/Lulu; Pip never enters the frozen modules).
+> All wrap-don't-rewrite; modules untouched. Next: NK-5 Regional Identity (per-module skins).
 
 ---
 
