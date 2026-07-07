@@ -59,7 +59,7 @@ World B / platform pieces live in [`../platform/`](../platform/).
 | 7 | Nature Explorer | 🔮 Future |
 | 8 | Space Explorer | 🔮 Future |
 | 9 | Human Body Explorer | 🔮 Future |
-| 10 | African Discoveries | 🔮 Future |
+| 10 | African Discoveries *(→ [african-discoveries.md](./african-discoveries.md))* | ✅ LIVE |
 
 ### 3 · Creation & Technology — Build creators
 
