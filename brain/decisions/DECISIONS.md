@@ -214,6 +214,61 @@
 - See [`../apps/math-adventure-release-policy.md`](../apps/math-adventure-release-policy.md),
   [`math-adventure-rpg.md`](../apps/math-adventure-rpg.md), and the repo's own `CLAUDE.md`.
 
+## D-16 · Math Adventure RPG's world is "Numeria"; its story system stays app-local (2026-07-20)
+
+- **Context:** the Community Edition seam (D-15) opened a chartered place for web-only innovation, and
+  the first programme into it is a layered animation + storytelling capability (Living World ·
+  micro-animations · concept animations · story episodes · Story Theatre). Two naming questions had to
+  be settled *before* any of it was designed, because both are expensive to reverse.
+- **Question 1 — the world's name.** Math Adventure RPG had **no named world**, which also left it
+  absent from Principle 18's Welcome Moment examples. "The Kingdom of Numbers" was proposed.
+- **Options weighed:** (1) a distinct name; (2) "The Kingdom of Numbers"; (3) defer naming.
+- **Decision:** **Option 1 — the world is `Numeria`.** "The Kingdom of Numbers" was **rejected**: it is
+  a near-anagram of **Number Kingdom**, which is founder-LOCKED and constitutional for
+  **early-numeracy** — a *different app in the same pillar*, with which it would co-exist in the
+  planned Foundations Collection. ~110 references across 11 files, plus two already-ratified
+  anti-conflation clauses (one in the immutable Baseline 2026.1, one in code).
+- **Why (the deeper reason — not just collision avoidance):** the two names encode a *progression*.
+  Number Kingdom says *"numbers are friendly"* to a 3–6 year old. Numeria says *"mathematics is a
+  world worth exploring"* to a learner of 3–17 who has grown. The existing regions — Academy of
+  Numbers, Merchant's Guild, Dragon's Tower, Engineers' Citadel, Star Observatory — are not nursery
+  locations; they imply a civilisation with professions, history and mastery. **The child has grown;
+  the world has grown with them.** Direct precedent for the mechanism: **D-13** (rename the newcomer;
+  reserve the name for exactly one thing).
+- **Question 2 — a shared "TPH Story Engine".** The founder raised extending storytelling across every
+  World-A app (Early Literacy, Space Explorer, Our World, Science Sprouts, African Discoveries…).
+- **Decision:** **not yet.** Numeria's story system is built **app-local** under an app-local name
+  (`src/web/numeria/`), and is extracted to `@tph/core` only when DNA Principle 11's **two-app
+  trigger** fires — i.e. when a second app genuinely needs it.
+- **Why:** `@tph/core`'s own stated rule is *"package what's proven, not what's imagined"*; the
+  Passport was extracted only after proving out across three apps, and the README explicitly defers
+  the household/progress engine until it has real consumers. Naming it "TPH Story Engine" while it
+  lives inside one app would recreate the **D-13** error exactly. Letting the second app *contribute*
+  to the contract beats letting the first app define it unilaterally.
+- **Also recorded:** the blueprint's core doctrine — ***"Story supports learning; it never competes
+  with it"*** — is a direct response to the 2026-06-17 "Expert Approved" rejection (text volume +
+  disruptive sounds), made operable by the **Four-Purpose Test**: *every story element must teach,
+  motivate, orient, or celebrate, or it does not belong.*
+- **Applied:** [`../apps/numeria-roadmap.md`](../apps/numeria-roadmap.md) (blueprint, MA-0…MA-5) and
+  [`../apps/numeria-constitution.md`](../apps/numeria-constitution.md) (MA-0). **Both DRAFT — MA-0 is
+  not frozen, and freeze is a founder act.** No animation code written.
+- **Resolved same day (2026-07-20), after review:**
+  - **🌼 Meadow Gate** is the Phase 1 (ages 3–5) threshold province — the only region created rather
+    than revealed. Chosen over *Foothills of Numeria* / *Numeria's Doorstep*: *"You don't begin by
+    entering a fortress. You begin by walking through a meadow."*
+  - **The Academy (13–17) is part of Numeria** — *"Numeria's highest institution of learning."*
+    Younger learners travel through the world; older learners don't leave it, they **graduate within
+    it**. Learning is continuous, not segmented, and the Academy of Numbers → Summit Academy pairing
+    becomes narrative structure rather than coincidence.
+  - **Companion ≠ Guide.** A player-renamed companion cannot carry canonical narration — the world
+    can't name it. Companion = renameable, emotional support, reacts to gameplay. Guide = fixed
+    identity, narrator, introduces provinces, appears in Story Theatre. Sparky 🐉 stays the learner's
+    own and is not made to do both.
+- **Open (founder's call — the last thing blocking the MA-0 freeze):** **the Guide's identity.**
+  Deliberately not invented during drafting: once named, that character is part of Numeria for years,
+  so it gets a dedicated design discussion. Constrained by ecosystem convention — each world gets its
+  own guide, personalities are never borrowed, so Numeria may not use Pip.
+
 ---
 
 > **Open decisions (not yet resolved):**

@@ -12,6 +12,130 @@
 
 ---
 
+## 🗺️ 2026-07-20 (session 43) — Numeria: the Animation & Storytelling Blueprint DRAFTED
+
+**Math Adventure RPG's web experience layer now has a name and a blueprint. No code was written.**
+
+**Founder decisions (D-16):**
+- **The world is `Numeria`.** "The Kingdom of Numbers" was rejected — a near-anagram of
+  early-numeracy's founder-LOCKED **Number Kingdom** (same pillar, ~110 refs, two ratified
+  anti-conflation clauses). The deeper reason is progression: Number Kingdom = *"numbers are
+  friendly"* (3–6) → Numeria = *"mathematics is a world worth exploring."* Mechanism precedent: D-13.
+- **No shared TPH Story Engine yet.** App-local in `src/web/numeria/`; extract to `@tph/core` only at
+  DNA 11's two-app trigger. *"Package what's proven, not what's imagined."*
+- **Brain canonical + repo pointer** — full blueprint here; a stub at
+  `math-adventure-rpg/docs/ANIMATION_BLUEPRINT.md`.
+
+**Delivered (documents only):** `apps/numeria-roadmap.md` (§0–§7, milestones **MA-0…MA-5**, modelled
+on `number-kingdom-roadmap.md`) · `apps/numeria-constitution.md` (MA-0, incl. the founder's
+**Educational Invariants**) · **D-16** · a note on `apps/math-adventure-rpg.md` · the repo stub.
+
+**Doctrine:** *"Story supports learning; it never competes with it"* — a direct response to the
+2026-06-17 "Expert Approved" rejection (text volume + disruptive sounds) — made operable by the
+**Four-Purpose Test**: every story element must **teach · motivate · orient · celebrate**, or it does
+not belong.
+
+**Discovery worth keeping:** the ten existing regions in `levelContent.ts` already **rhyme across
+phases** — Academy of Numbers → Summit Academy (the world opens and closes on the same institution),
+Merchant's Guild → Merchant Republic, Star → Storm Observatory, Engineers' Citadel → Geometry Forge.
+**Numeria does not need to be invented; it needs to be revealed.** Also: `early-numeracy`'s
+`lib/daylife.ts` proved a living world in **57 lines with zero image assets** — MA-1 extends that
+proven pattern rather than inventing one.
+
+**Founder resolved three of four blockers the same day:**
+1. **🌼 Meadow Gate** is the Phase 1 (ages 3–5) threshold province — the only region created rather
+   than revealed. *"You don't begin by entering a fortress. You begin by walking through a meadow."*
+   (Implementation note: there is no `P1_WORLDS` array yet; MA-1 adds one.)
+2. **The Academy (13–17) IS part of Numeria** — *"Numeria's highest institution of learning."* Older
+   learners don't leave the world, they **graduate within it**.
+3. **Companion ≠ Guide** — two entities, never merged. Companion = renameable, emotional, reacts to
+   gameplay. Guide = fixed identity, narrator, introduces provinces, appears in Story Theatre.
+   **Sparky 🐉 stays the learner's own.**
+
+**Guide Constitution drafted** — `apps/numeria-guide-constitution.md`. A **ten-phase / 54-section**
+version was proposed and **rejected after review**: four of the ten phases restated MA-0 (Educational
+Invariants, Four-Purpose Test, Companion≠Guide, freeze procedure), which is the D-13 failure mode —
+two documents owning one rule. Settled on **six sections + Scope + a Dependencies contract** naming
+MA-0 authoritative on conflict. **"One owner per rule."** The *Ideal Numerian Graduate* was moved
+**into MA-0**, because it describes Numeria, not the Guide; the Guide *models* it.
+
+The Guide is a **Keeper** — custodian, witness, door-opener; *"an adult who is not worried about
+you."* Not a teacher (never enters the question flow), ruler, mascot, or narrator. Warmth is a
+**floor, not a reward** — it does not escalate with performance. **Appears at four moments** (Welcome ·
+Orientation · Encouragement · Celebration) and is **silent everywhere else** — silence is its
+most-used behaviour, and the direct guard against the 2026-06-17 text-volume rejection. Graduation is
+a pending fifth moment, dependent on The Academy's integration.
+
+**⚖️ Constitutional principle — *warmth is a floor, not a reward*.** Elevated on founder review from
+implementation guidance to a named principle: the Guide's warmth is **constant**, rising with neither
+success nor failure. If warmth tracked performance, approval would become another scoring mechanic in
+a world that deliberately removed scores. **If warmth is constant, mistakes cannot threaten
+belonging.** Governs all future dialogue, revisions, and any voice work.
+
+**always/never/must audit run** (founder-recommended): 22 occurrences, **20 held as genuine
+invariants, 2 softened** — "to one side" (placement is design, not constitution) and "never more than
+two sentences" (brevity is constitutional, the *count* is a working guideline).
+
+**🚪 First Welcome Gate + two-stage ratification (⚠️ read this before planning MA-1).** *A
+constitution can be architecturally complete before it is experientially validated.* The Guide must be
+observed in a **real Welcome Moment with a real learner** before its freeze — asking *"did the learner
+experience what the document intended?"*, not *"did we implement the document?"* (NK-1 precedent: the
+founder would not freeze the emotional front door on technical completion alone.) **It is not a
+perfection bar** — it answers one question, *"did the learner leave feeling more capable than when
+they arrived?"*, and never certifies polish.
+
+**New ecosystem pattern: [`patterns/experiential-gates.md`](./patterns/experiential-gates.md)** —
+naming a second class of gate the ecosystem had used informally for months. **Structural gates** ask
+*"is it built correctly?"* (evidence: docs, code, tests) · **Experiential gates** ask *"does it produce
+the intended human experience?"* (evidence: **observation** — witnessing, not testing, and
+**deliberately not automatable**). NK-1's 10-point review and the real-child play-test were instances
+before the category had a name. Experiential gates attach to **front doors** only; they are rare by
+design, because broad application makes them a scheduling tax.
+
+⚠️ **The pattern doc is deliberately NOT frozen with the Numeria documents.** *Product constitutions
+are validated by the products they govern; **pattern documents must be validated by multiple
+independent products before becoming canonical.*** (Same discipline as `@tph/core`'s two-app trigger,
+one layer up: *package what's proven* → **canonise what's observed, not what's reasoned**.) Ratified
+by a **three-test rule**. Tests 1–2 hold. Test 3 (independent product): Early Literacy independently
+calls its real-child play-test *"the only **true** 'done' gate left"* and separates it from
+engineering — the pattern's exact claim, reached without knowledge of it — and iKhaya correctly falls
+**outside** (functional, no trust moment), so **the pattern discriminates**. But Early Literacy was
+*already known* to exhibit the behaviour, so this **corroborates rather than tests**.
+
+⏳ **The blocker is NOT founder judgment — it is that the evidence does not yet exist.** Status:
+*insufficient independent evidence for canonisation.* Asking the founder to rule on whether 2½
+examples suffice would make canonisation a matter of preference, which is the standard the document
+rejects. **Reality decides.** The doc now makes a **falsifiable prediction**: if a future
+learner-facing product, designed by someone who never read it, independently concludes *"we must
+observe a first interaction before freezing"* → canonise. If ordinary structural review keeps
+sufficing → narrow it to Numeria or discard it. Evidence standard scales with scope: product
+constitution ← its product · pattern doc ← **multiple independent products** · core governance/DNA ←
+**repeated observation**.
+
+Applied naively this **deadlocks** — can't validate without building, can't build before freezing. So
+the Guide Constitution **alone** ratifies in two stages: **① architectural ratification** (unblocks
+building the Guide + Welcome Moment) → **② experiential freeze** (after the Gate passes). Recorded in
+roadmap §7 rule 9. **MA-0 and all MA milestones freeze normally; MA-1's Living World needs no Guide,
+so nothing is blocked.**
+
+*Warmth is a floor* is checkable by eye, no telemetry: does the Guide get warmer after success? does
+the learner feel less belonging after failure? Either = constitution violated. **Pass condition:** the
+child leaves thinking *"I don't know this yet, but I think I can figure it out."*
+
+**Appendix — Constitutional Humility** (explicitly *not* constitutional): if real learners show the
+Guide undermines curiosity or safety *despite* conforming to the document, **reconsider the
+constitution before blaming the implementation.**
+
+**⛔ MA-0 is NOT frozen. The Guide's identity, role, behaviour and voice are DEFINED.** Two
+*expressions* remain open, and neither redefines the character: **🔓 visual embodiment** and **🔓 proper
+name**. Numeria may **not** use Pip (each world gets its own guide; personalities are never borrowed).
+
+**Nothing is committed** — founder's call, so that a constitutional document doesn't acquire inertia
+before it's settled.
+
+**Next:** name the Guide → final review → **Freeze MA-0** → *then* commit → only then build MA-1
+(Living World, whose prerequisite is closing the `prefers-reduced-motion` gap in `index.css`).
+
 ## 🌈 2026-07-05 (session 40) — Number Kingdom: NK-3 FROZEN · NK-4 Companion (Pip) BUILT
 
 **Founder FROZE NK-3 (Math Adventure Journal)** (`early-numeracy` `3ada8bc`). Frozen surface: derived

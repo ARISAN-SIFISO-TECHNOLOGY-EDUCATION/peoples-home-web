@@ -44,6 +44,15 @@ web-first pivot.
   web edition. See [`math-adventure-release-policy.md`](./math-adventure-release-policy.md) and D-15.
   *(Note: this app's web experience layer — Living World, Story Theatre — is its **own**; it is
   **not** early-numeracy's "Number Kingdom," which belongs to a different app.)*
+- **🗺️ The world is named Numeria (2026-07-20, D-16).** The web experience layer now has an identity
+  and a blueprint: [`numeria-roadmap.md`](./numeria-roadmap.md) (MA-0…MA-5) +
+  [`numeria-constitution.md`](./numeria-constitution.md). The ten existing regions of
+  `src/game/levelContent.ts` become the **provinces of Numeria** — nothing invented to fill the map,
+  and the geography already rhymes (Academy of Numbers → Summit Academy; Merchant's Guild → Merchant
+  Republic; Star → Storm Observatory). Doctrine: ***"Story supports learning; it never competes with
+  it"***, made operable by the **Four-Purpose Test** (teach · motivate · orient · celebrate).
+  **Both documents are DRAFT — MA-0 is not frozen, and no animation code exists.** Numeria's story
+  system stays **app-local** until the two-app trigger (D-16).
 
 ## Architectural decisions (& rejected alternatives)
 - **Ages, never grades.** CAPS/IGCSE alignment is internal; UI shows ages only. This rule was *born*
