@@ -1,7 +1,7 @@
 # THE PEOPLE'S HOME — Roadmap & Status
 
 > What's live, what's next, and the sequencing logic. **Source of truth.**
-> Last updated: 2026-06-26.
+> Last updated: 2026-07-10.
 
 See also: [`BLUEPRINT.md`](./BLUEPRINT.md) · [`ECOSYSTEM.md`](./ECOSYSTEM.md) · [`DECISIONS.md`](./DECISIONS.md).
 
@@ -12,6 +12,33 @@ See also: [`BLUEPRINT.md`](./BLUEPRINT.md) · [`ECOSYSTEM.md`](./ECOSYSTEM.md) �
 surface it on this site. (Superseded the Google-Play "release machine" — see
 [`DECISIONS.md`](./DECISIONS.md) → "Web-first pivot".) Learning apps are **offline · no-data ·
 no-account · #FreeForever · ages-not-grades · age-ceiling-17 · SA-first.**
+
+---
+
+## Community Release — site curation (2026-07-10)
+
+For the **release to the community**, the public site is curated to **six flagships — one per
+pillar** — with every other app kept **listed** in a three-tier roadmap. This is a **presentation**
+decision: *site tier ≠ deployment status* (several Future-Collection apps are fully built and LIVE at
+their own URLs — they are de-emphasised on the showcase, not un-shipped). Governance:
+`brain/community-release.md` (the Constitution) + **D-14**. Reversible — status is one field per app.
+
+| Site tier | Badge | Apps |
+|---|---|---|
+| 🌟 **Available Today** | NOW | **Math Adventure RPG** · **African Discoveries** · **Tech Makers** · **Truth Seekers** · **Mzansi Money** · **Micro Founders** |
+| 🏗 **Currently Growing** | BUILDING | Early Numeracy (→ 🌈 Number Kingdom) · Early Literacy |
+| 🌱 **Future Collection** | NEXT | ReadAfrica · Everyday Foundations · Science Sprouts · Our World · Space Explorer · The Golden Hand · Opportunity Hub · (+ the true placeholders) |
+
+**Math Adventure RPG — two editions** (D-15, `brain/apps/math-adventure-release-policy.md`): Google
+Play = **Stable/LTS** (frozen, maintenance only); Web = **Community Edition** (innovation lab).
+
+Promotion to *Available Today* requires the flagship bar (roadmap+architecture frozen · clean build ·
+offline-verified · a11y-reviewed · edu-reviewed · founder approval — see the Constitution). Planned
+next expansion: a **Foundations Collection** (Early Literacy + Number Kingdom + Math Adventure RPG)
+once those two clear the bar.
+
+> The rows below are **build/deploy state** (what has shipped), which is separate from the site tier
+> above (what is *featured*). An app can be LIVE in deploy state yet sit in Future Collection today.
 
 ---
 

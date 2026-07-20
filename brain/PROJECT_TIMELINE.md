@@ -97,6 +97,29 @@
   guarded storage writes. Repo **transferred to the `ARISAN-SIFISO-TECHNOLOGY-EDUCATION` org**. Remaster
   backlog (Phases 2–5) recorded in `apps/early-literacy.md`.
 
+### Early–Mid July 2026 — more apps, then the Community Release
+- **2026-07-03 — Space Explorer** brought in-house (Curiosity #3, another Gemini export) and shipped
+  LIVE at `ikhaya-space-explorer.pages.dev` after the full in-house treatment (AI dropped, offline PWA,
+  CSP, storage fixes). See `apps/space-explorer.md`.
+- **2026-07-04 → 07-05 — Early Numeracy → 🌈 Number Kingdom.** The app's 16 numeracy modules (Phases
+  2–10, all built) are wrapped in a *living world* experience layer under a Blueprint→Freeze→Build
+  protocol (NK-0 Constitution … NK-4 Companion "Pip"), *don't-rename-the-app-rename-the-world*
+  (product stays **Early Numeracy**; child world = **Number Kingdom**). Detail in
+  `apps/number-kingdom-roadmap.md`.
+- **2026-07-06 — Early Numeracy pulled to not-live-but-listed** on the site (founder UI rework);
+  card stays listed as "Coming soon," app/repo/deploy/Brain all intact. **African Discoveries**
+  (Curiosity, 12th app) brought in-house and shipped LIVE at `african-discoveries.pages.dev`.
+- **2026-07-10 — THE COMMUNITY RELEASE (setup phase).** The public site is curated to **six
+  flagships, one per pillar** (Math Adventure RPG · African Discoveries · Tech Makers · Truth Seekers
+  · Mzansi Money · Micro Founders), with all other apps kept **listed** in a three-tier roadmap
+  (🌟 Available Today → 🏗 Currently Growing → 🌱 Future Collection). **Math Adventure RPG** is
+  formalised into **two editions** — Google Play **Stable/LTS** (frozen) + web **Community Edition**
+  (innovation lab) — via build **profiles** and a **seam-first** `platform/` layer, governed by the
+  **Stable Build Principle**. Operating model: [`community-release.md`](./community-release.md) +
+  [`apps/math-adventure-release-policy.md`](./apps/math-adventure-release-policy.md). Decisions
+  **D-14, D-15**. *(This is the setup phase; the actual web enhancements — Living World, Story
+  Theatre — come later.)*
+
 ---
 
 ## What the timeline shows

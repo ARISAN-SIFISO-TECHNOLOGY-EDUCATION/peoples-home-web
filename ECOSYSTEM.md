@@ -2,7 +2,7 @@
 
 > The map of everything: every app, its repo, live URL, stack, and deploy config.
 > **Source of truth.** When something changes (new app, new URL, build tweak), update it *here*.
-> Last updated: 2026-07-02.
+> Last updated: 2026-07-10.
 
 See also: [`BLUEPRINT.md`](./BLUEPRINT.md) (the capability architecture) ·
 [`ROADMAP.md`](./ROADMAP.md) (what ships next) · [`DECISIONS.md`](./DECISIONS.md) (the *why*).
@@ -22,7 +22,7 @@ See also: [`BLUEPRINT.md`](./BLUEPRINT.md) (the capability architecture) ·
 
 | App | Pillar | GitHub repo | Live URL | Stack | Build (cmd · output · node) |
 |---|---|---|---|---|---|
-| **Math Adventure RPG** | Foundations | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/math-adventure-rpg` | https://math-adventure-rpg.pages.dev/ | React 19 · TS · Vite · Tailwind v4 · Capacitor 8 | `npm run build` · `dist` · 20 (web build flag) |
+| **Math Adventure RPG** | Foundations | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/math-adventure-rpg` | https://math-adventure-rpg.pages.dev/ | React 19 · TS · Vite · Tailwind v4 · Capacitor 8 | `npm run build` · `dist` · 20. **Two editions** (D-15): web = **Community Edition** (`community` profile → base `/` + PWA, set `VITE_PROFILE=community` and/or `WEB_BUILD=1` in the Pages build); Android/Play = **Stable/LTS** (`play-store` profile, default, frozen). Profiles supersede bare `WEB_BUILD` (backward-compatible). See `brain/apps/math-adventure-release-policy.md`. |
 | **ReadAfrica** | Foundations | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/read-africa` | https://read-africa.pages.dev/ | Vite 6 · React 19 · TS · Tailwind v4 | `npm run build` · `dist` · 20 |
 | **Science Sprouts** | Curiosity | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/science-sprouts` | https://science-sprouts-65b.pages.dev/ | React 19 · TS · Vite · Tailwind · Capacitor | `npm run build` · `dist` · 20 |
 | **Space Explorer** | Curiosity | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/Space-Explorer` (private, branch `main`) | **https://ikhaya-space-explorer.pages.dev/** ✅ | Vite 6 · React 19 · TS · Tailwind v4 · vite-plugin-pwa | `npm run build` · `dist`. Built in Gemini AI Studio; **brought in-house + deployed + linked 2026-07-03** (AI dropped, offline PWA, CSP, real icons, storage bug fixes, new README). Subdomain is `ikhaya-space-explorer` (bare `space-explorer.pages.dev` was taken). See `brain/apps/space-explorer.md`. |
@@ -66,6 +66,14 @@ ReadAfrica has no permanent local checkout (was a temp audit clone).
 | **Live** | https://peoples-home-web.pages.dev/ |
 | **Stack** | Static HTML + inline CSS, **no build step** (Cloudflare preset None, empty build cmd, output `/`) |
 | **Pages** | `index.html` (homepage, 6 pillars) · `partners.html` · `404.html` · this doc set |
+
+**Community Release curation (2026-07-10):** `index.html` presents a **three-tier** roadmap — 🌟
+Available Today (6 flagships: Math Adventure RPG · African Discoveries · Tech Makers · Truth Seekers
+· Mzansi Money · Micro Founders) → 🏗 Currently Growing (Early Numeracy, Early Literacy) → 🌱 Future
+Collection (all others). Controlled by each app's `status` field in the `PILLARS` array
+(`live`/`growing`/`future`); **site tier ≠ deploy state** (Future-Collection apps like ReadAfrica,
+Science Sprouts, Our World, Space Explorer are still LIVE at their URLs — just not featured).
+Governance: `brain/community-release.md` + `ROADMAP.md`; decision **D-14**.
 
 ---
 

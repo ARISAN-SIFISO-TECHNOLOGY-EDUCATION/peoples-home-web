@@ -33,6 +33,17 @@ web-first pivot.
 - **Passport adoption (2026-06-27).** Math Adventure became a real consumer of the
   [Passport](../platform/peoples-home-passport.md) pattern (PRs #1/#2), adopting the shared
   `@tph/core` envelope.
+- **Two editions + platform seam (2026-07-10).** The single codebase is formalised into two
+  **editions** — **Google Play = Stable/LTS** (maintenance only) and **Web = Community Edition**
+  (the innovation lab) — governed by the **Stable Build Principle** (Play gameplay/saves/progression/
+  content/UX never change without founder approval). Delivery is gated by explicit build **profiles**
+  (`play-store | community | development | demo`, superseding bare `WEB_BUILD`, backward-compatible),
+  adopted **seam-first**: add `src/platform/` (profiles → `PLATFORM` → feature flags → adapters) +
+  `src/web/` now; extract shared code into `src/core/` incrementally later. Math Adventure is the
+  first app to carry this model — it becomes the template for every TPH app with both a store and a
+  web edition. See [`math-adventure-release-policy.md`](./math-adventure-release-policy.md) and D-15.
+  *(Note: this app's web experience layer — Living World, Story Theatre — is its **own**; it is
+  **not** early-numeracy's "Number Kingdom," which belongs to a different app.)*
 
 ## Architectural decisions (& rejected alternatives)
 - **Ages, never grades.** CAPS/IGCSE alignment is internal; UI shows ages only. This rule was *born*
@@ -47,9 +58,14 @@ Live web PWA + on Play (maintenance-only). The **"Expert Approved" badge was rej
 text volume + disruptive sounds) — that fix carries to the PWA. See [`../HISTORY.md`](../history/HISTORY.md).
 
 ## Future direction
-Maintenance + the "Expert Approved" fixes; serve as the reference implementation for narration and
-the Passport as TPH Core is extracted. Not a candidate for big new feature work — its job is to be
-the dependable floor and the template.
+Two tracks, split by edition (2026-07-10, see the [Release Policy](./math-adventure-release-policy.md)):
+- **Google Play (Stable/LTS):** maintenance + the "Expert Approved" fixes only. Still the dependable
+  floor, the reference implementation for narration/Passport, and the ecosystem template.
+- **Web (Community Edition):** *now the first app slated for active enhancement* — the innovation lab
+  where web-only experiences (Living World, Story Theatre, advanced animation, large-screen/keyboard)
+  are developed and validated, then **graduated** to a future Play release. This reverses the earlier
+  "not a candidate for big new feature work" note **for the web edition only**; the Play edition
+  stays frozen under the Stable Build Principle.
 
 ## Related
 - [`../canon/03-product-rules.md`](../vision/01-product-rules.md) (rules born here) ·

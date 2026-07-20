@@ -4,16 +4,36 @@
 > For live build configs / URLs see [`../ECOSYSTEM.md`](../ECOSYSTEM.md);
 > for the running status board see [`../ROADMAP.md`](../ROADMAP.md).
 >
-> **As of:** 2026-07-02.
+> **As of:** 2026-07-10.
 
 ---
 
-## The headline
+## The headline — the Community Release (2026-07-10)
+
+The project has entered its **release to the community**. The People's Home site is being **curated
+to six flagships — one per pillar** (Math Adventure RPG · African Discoveries · Tech Makers · Truth
+Seekers · Mzansi Money · Micro Founders), with every other app kept **listed** in a three-tier
+roadmap (🌟 Available Today → 🏗 Currently Growing → 🌱 Future Collection) rather than as a flat
+"live" list. In parallel, **Math Adventure RPG** is formalised into **two editions** — a frozen
+**Google Play LTS** and a **web Community Edition** innovation lab — governed by the **Stable Build
+Principle**. The operating model is captured in the new [`community-release.md`](./community-release.md)
+Constitution and [`apps/math-adventure-release-policy.md`](./apps/math-adventure-release-policy.md).
+See [`decisions/DECISIONS.md`](./decisions/DECISIONS.md) → **D-14, D-15**.
+
+> The authoritative *current* live set is the operational layer — [`../ROADMAP.md`](../ROADMAP.md) /
+> [`../ECOSYSTEM.md`](../ECOSYSTEM.md). The tables below are the *build-phase* snapshot and lag the
+> newest apps (Space Explorer, African Discoveries — both LIVE) and the Early Numeracy → Number
+> Kingdom work; reconcile against the operational docs.
+
+## Prior headline (build phase, 2026-06-27)
 
 **Every World-A pillar now has at least one live app.** With **Our World** shipping on
 2026-06-27, the BLUEPRINT's "current" learning products are all live as offline Cloudflare
 Pages PWAs, each surfaced as a card on the People's Home site. The project has moved from
-*"build the apps"* into *"deepen them + build the platform + build iKhaya."*
+*"build the apps"* into *"deepen them + build the platform + build iKhaya."* Since then: **Space
+Explorer** (Curiosity) and **African Discoveries** (Curiosity) were brought in-house and shipped
+LIVE; **Early Numeracy** is mid-transformation into **🌈 Number Kingdom** and was pulled back to
+not-live-but-listed on the site (UI rework, 2026-07-06).
 
 ---
 

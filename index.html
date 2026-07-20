@@ -282,6 +282,9 @@
   }
   .pd-status.live{color:var(--green);background:rgba(63,107,74,.08);border-color:rgba(63,107,74,.2);}
   .pd-status.soon{color:var(--cobalt);background:rgba(29,78,216,.06);border-color:rgba(29,78,216,.18);}
+  /* Community Release roadmap tiers */
+  .pd-status.growing{color:#b45309;background:rgba(180,83,9,.08);border-color:rgba(180,83,9,.22);}
+  .pd-status.next{color:rgba(42,28,18,.55);background:rgba(42,28,18,.04);border-color:rgba(42,28,18,.14);}
 
   .pd-others{
     background:#fff;border-radius:16px;
@@ -694,32 +697,35 @@
   /* ---- CAPABILITY PILLARS ---- */
   var PILLARS=[
     {id:'foundations',name:'Foundations',purpose:'Teach people how to learn.',
-     incomplete:true, /* Early Numeracy pulled back to not-live (UI rework) — still listed, shown "Coming soon" */
+     /* Community Release: one flagship per pillar is Available Today (status:'live'); the rest stay
+        listed as Currently Growing ('growing') or Future Collection ('future'). status is the only
+        control and it is reversible — 'growing'/'future' → 'live' promotes an app. url kept on every
+        app; several 'future' apps are in fact live at their URL, just not featured. See ROADMAP.md. */
      chips:['Numeracy','Literacy','Learning confidence'],
      color:'#c75a36',blob:'rgba(199,90,54,.1)',icon:'&#127807;',
      apps:[
        {name:'Math Adventure RPG',blurb:'Build numeracy through story.',status:'live',url:'https://math-adventure-rpg.pages.dev/'},
-       {name:'ReadAfrica',blurb:'Grow reading fluency in your language.',status:'live',url:'https://read-africa.pages.dev/'},
-       {name:'Everyday Foundations',blurb:'Literacy, numeracy and life skills for adults.',status:'live',url:'https://everyday-foundations.pages.dev/'},
-       {name:'Early Literacy',blurb:'Sounds, letters and first words through play.',status:'live',url:'https://early-literacy.pages.dev/'},
-       {name:'Early Numeracy',blurb:'Number sense for young children through play.',status:'soon',url:'https://early-numeracy.pages.dev/'}
+       {name:'Early Numeracy',blurb:'A magical world where young children discover mathematics through adventure.',status:'growing',url:'https://early-numeracy.pages.dev/'},
+       {name:'Early Literacy',blurb:'Where sounds become words, and words become stories.',status:'growing',url:'https://early-literacy.pages.dev/'},
+       {name:'ReadAfrica',blurb:'Grow reading fluency in your own language.',status:'future',url:'https://read-africa.pages.dev/'},
+       {name:'Everyday Foundations',blurb:'Literacy, numeracy and life skills for adults.',status:'future',url:'https://everyday-foundations.pages.dev/'}
      ]},
     {id:'curiosity',name:'Curiosity &amp; Knowledge',purpose:'Help learners understand the world.',
      chips:['Observation','Scientific thinking','Exploration'],
      color:'#3f6b4a',blob:'rgba(63,107,74,.1)',icon:'&#128301;',
      apps:[
-       {name:'Science Sprouts',blurb:'Discover science through hands-on experiments.',status:'live',url:'https://science-sprouts-65b.pages.dev/'},
-       {name:'Our World',blurb:'SA geography, African history and world cultures.',status:'live',url:'https://our-world-b0t.pages.dev/'},
-       {name:'Space Explorer',blurb:'Journey through the solar system.',status:'live',url:'https://ikhaya-space-explorer.pages.dev/'},
-       {name:'Human Body Explorer',blurb:'Understand how the body works.',status:'future',url:''},
-       {name:'African Discoveries',blurb:'Celebrate African heroes, wildlife, innovations and history.',status:'live',url:'https://african-discoveries.pages.dev/'}
+       {name:'African Discoveries',blurb:'Celebrate African heroes, wildlife, innovations and history.',status:'live',url:'https://african-discoveries.pages.dev/'},
+       {name:'Science Sprouts',blurb:'Discover science through hands-on experiments.',status:'future',url:'https://science-sprouts-65b.pages.dev/'},
+       {name:'Our World',blurb:'SA geography, African history and world cultures.',status:'future',url:'https://our-world-b0t.pages.dev/'},
+       {name:'Space Explorer',blurb:'Journey through the solar system.',status:'future',url:'https://ikhaya-space-explorer.pages.dev/'},
+       {name:'Human Body Explorer',blurb:'Understand how the body works.',status:'future',url:''}
      ]},
     {id:'creation',name:'Creation &amp; Technology',purpose:'Turn consumers into creators.',
      chips:['Technology','Coding','Design','Building'],
      color:'#2a6bb5',blob:'rgba(42,107,181,.1)',icon:'&#9881;&#65039;',
      apps:[
        {name:'Tech Makers',blurb:'Learn to code and build digital things.',status:'live',url:'https://tech-makers.pages.dev/'},
-       {name:'The Golden Hand',blurb:'Python, AI literacy and startup skills.',status:'live',url:'https://sifiso-learn-python.pages.dev/'},
+       {name:'The Golden Hand',blurb:'Python, AI literacy and startup skills.',status:'future',url:'https://sifiso-learn-python.pages.dev/'},
        {name:'Design Studio',blurb:'Visual thinking and digital design.',status:'future',url:''},
        {name:'Robotics Lab',blurb:'Build and program simple machines.',status:'future',url:''},
        {name:'Digital Creator',blurb:'Make videos, podcasts and content.',status:'future',url:''}
@@ -749,7 +755,7 @@
      color:'#c87533',blob:'rgba(200,117,51,.1)',icon:'&#128640;',
      apps:[
        {name:'Micro Founders',blurb:'Start and run a micro-enterprise.',status:'live',url:'https://micro-founders.pages.dev/'},
-       {name:'Opportunity Hub',blurb:'Connect your capability to real opportunity.',status:'live',url:'https://ikhaya.pages.dev/'},
+       {name:'Opportunity Hub',blurb:'Connect your capability to real opportunity.',status:'future',url:'https://ikhaya.pages.dev/'},
        {name:'Career Explorer',blurb:'Discover pathways that match your strengths.',status:'future',url:''},
        {name:'Leadership Academy',blurb:'Lead teams and communities.',status:'future',url:''},
        {name:'Community Builder',blurb:'Create change in your neighbourhood.',status:'future',url:''}
@@ -768,18 +774,30 @@
     return s;
   }
 
+  /* Community Release: three roadmap tiers, flagship-first.
+     'live'    → Available Today  (clickable, badge NOW)
+     'growing' → Currently Growing (badge BUILDING)
+     'future'/other → Future Collection (badge NEXT) */
+  function tierRank(status){ return status==='live'?0:(status==='growing'?1:2); }
+
   function mkApps(apps){
+    var ordered=apps.slice().sort(function(a,b){return tierRank(a.status)-tierRank(b.status);});
     var s='';
-    for(var i=0;i<apps.length;i++){
-      var a=apps[i];
+    for(var i=0;i<ordered.length;i++){
+      var a=ordered[i];
       if(a.status==='live'&&a.url){
         s+='<a class="pd-app" href="'+a.url+'" target="_blank" rel="noopener">'
-          +'<span class="pd-status live">Live</span>'
+          +'<span class="pd-status live">Now</span>'
           +'<h4>'+a.name+'</h4><p>'+a.blurb+'</p>'
           +'</a>';
+      } else if(a.status==='growing'){
+        s+='<div class="pd-app">'
+          +'<span class="pd-status growing">Building</span>'
+          +'<h4>'+a.name+'</h4><p>'+a.blurb+'</p>'
+          +'</div>';
       } else {
         s+='<div class="pd-app">'
-          +'<span class="pd-status soon">Coming soon</span>'
+          +'<span class="pd-status next">Next</span>'
           +'<h4>'+a.name+'</h4><p>'+a.blurb+'</p>'
           +'</div>';
       }

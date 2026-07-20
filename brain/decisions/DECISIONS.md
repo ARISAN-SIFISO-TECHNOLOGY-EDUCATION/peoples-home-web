@@ -152,6 +152,68 @@
   and the app-local architecture doc rebranded (filename kept for link stability); `tsc`/build clean.
 - See [`architecture/04-early-literacy-integration.md`](./architecture/04-early-literacy-integration.md) §4.
 
+## D-14 · The Community Release — curate the public site to six flagships (2026-07-10)
+
+- **Before:** the People's Home site (`../index.html`) advertised **14 live app cards** across the 6
+  pillars — everything that had shipped. Breadth, but a diffuse first impression, and it surfaced
+  apps mid-transformation (Early Numeracy → Number Kingdom; Early Literacy still on its roadmap).
+- **Change:** for the **release to the community**, present **one flagship per pillar** — a curated
+  **six**: **Math Adventure RPG** (Foundations) · **African Discoveries** (Curiosity) · **Tech
+  Makers** (Creation) · **Truth Seekers** (Thinking) · **Mzansi Money** (Money) · **Micro Founders**
+  (Entrepreneurship). The other apps stay **listed, never hidden**, re-framed as a *purposeful
+  roadmap* in three tiers: **🌟 Available Today** (the six) → **🏗 Currently Growing** (Early
+  Numeracy, Early Literacy) → **🌱 Future Collection** (everything else). Each non-flagship card
+  gets inspiring copy + a roadmap badge (NOW / BUILDING / NEXT), not a bare "Coming soon."
+- **Why:** a focused, high-quality first impression beats an exhaustive list; the tiered roadmap
+  says *"an expanding educational world,"* not *"unfinished software."* It is also **fully
+  reversible** — status is one field per app; promotion is a one-field flip.
+- **Why *not* Early Numeracy / Early Literacy in the six:** they are becoming their best selves
+  (Number Kingdom; the literacy roadmap). Launching them before that polish would dilute them.
+  They sit in *Currently Growing* until they meet the promotion criteria.
+- **Governance:** this is net-new strategy (no prior "curated set" existed in the Brain). The
+  operating model — flagship philosophy, **promotion/demotion criteria**, release cadence, review
+  process — lives in the new **Community Release Constitution**
+  [`../community-release.md`](../community-release.md). Note the standing tension with **D-01**
+  (module-over-new-app / *don't proliferate*): curation is the *presentation-layer* companion to
+  that build-layer discipline — fewer things shown, not fewer things built.
+- **Long-term:** once Number Kingdom + Early Literacy reach polish, expand to a **Foundations
+  Collection** (Early Literacy + Early Numeracy/Number Kingdom + Math Adventure RPG), with Math
+  Adventure RPG as the premium maths adventure and Number Kingdom the ages-3–5 on-ramp.
+- See [`../community-release.md`](../community-release.md); operational live-set in
+  [`../../ECOSYSTEM.md`](../../ECOSYSTEM.md) / [`../../ROADMAP.md`](../../ROADMAP.md).
+
+## D-15 · Math Adventure RPG = one product, two editions; the Stable Build Principle (2026-07-10)
+
+- **Context:** `math-adventure-rpg` is a **single codebase** that already ships **both** the web PWA
+  (Cloudflare Pages) and the Google Play app (Capacitor Android). The web version is now the
+  ecosystem's first app slated for active enhancement, and those enhancements must never risk the
+  shipped Play release.
+- **Decision:** keep **one canonical codebase** (no fork). Define two **editions**:
+  - **Google Play = the Stable / LTS edition.** Maintenance only — bug fixes, compliance,
+    accessibility, security. No experimental UI, no beta systems.
+  - **Web = the Community Edition** — the innovation lab (Living World, Story Theatre, advanced
+    animation, large-screen/keyboard, community). Successful innovations **graduate** to a future
+    Play release only after validation.
+- **The Stable Build Principle:** the Play build is an LTS release; **no architectural or web work
+  may change its gameplay, saves, progression, content, or UX without explicit founder approval.**
+  Architecture evolves *behind* the release, not through it.
+- **Mechanism (rejected the fork):** one repo, gated by **build profiles** —
+  `play-store | community | development | demo` — superseding the bare `WEB_BUILD` flag (kept
+  backward-compatible). Adopted **seam-first**: introduce `platform/` (profiles → PLATFORM detection
+  → feature flags → adapters) and a `web/` feature area **now**, extract shared code into `core/`
+  **incrementally later** (one subsystem at a time, by stability, freeze between). *"No file moves
+  without a reason."* This is the same *clean-boundaries-first, then move behind them* discipline
+  that shaped TPH Core (D-09) — a big-bang refactor was rejected as needless risk to the Play build.
+- **Reusable model:** editions, **release channels** (`Development → Founder Preview → Community
+  Edition → Stable (Play) → Expert-Approved`), **version semantics** (Stable = semver+versionCode;
+  Community = `-preview`/Innovation line), and the **feature-graduation pipeline** are documented as
+  a template for every future TPH app. This is the presentation/delivery companion to **D-03**
+  (web-first) and **D-11** (Play is not our home) — Play stays, but only as a frozen LTS shell.
+- **Open (founder's call):** whether to elevate the Stable Build Principle to a **DNA Principle #19**
+  (`PROJECT_DNA.md` is append-only; adding a principle is a founder act — not done here).
+- See [`../apps/math-adventure-release-policy.md`](../apps/math-adventure-release-policy.md),
+  [`math-adventure-rpg.md`](../apps/math-adventure-rpg.md), and the repo's own `CLAUDE.md`.
+
 ---
 
 > **Open decisions (not yet resolved):**
