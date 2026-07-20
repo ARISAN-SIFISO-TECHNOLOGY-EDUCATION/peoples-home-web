@@ -91,6 +91,8 @@ this Constitution generalises. Demotion never deletes the card or the app.
 
 ## 8. Related
 
+- [`baselines/2026.1-community-release.md`](./baselines/2026.1-community-release.md) — the **reference
+  snapshot** of the state this Constitution first governed (2026-07-10). Compare against it.
 - [`decisions/DECISIONS.md`](./decisions/DECISIONS.md) → D-14 (curation), D-15 (dual-edition).
 - [`apps/math-adventure-release-policy.md`](./apps/math-adventure-release-policy.md) — the
   edition/channel/version/graduation model (the delivery companion to this presentation model).

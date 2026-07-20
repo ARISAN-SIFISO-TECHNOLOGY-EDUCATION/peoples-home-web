@@ -81,6 +81,8 @@ If you are continuing from a previous session → `brain/SESSION_HANDOFF.md`
 | [`SECURITY_CONSTITUTION.md`](./SECURITY_CONSTITUTION.md) | **Security operating charter** — 22 review domains, threat modelling, adversarial review, Security Review Report |
 | [`SESSION_HANDOFF.md`](./SESSION_HANDOFF.md) | Session continuity log — the last thing an AI wrote before context ended |
 | [`CURRENT_STATE.md`](./CURRENT_STATE.md) | Snapshot of every app, track, and platform piece right now |
+| [`baselines/`](./baselines/) | Dated reference snapshots — latest: **2026.1 · The Community Release** |
+| [`community-release.md`](./community-release.md) | **Community Release Constitution** — flagship selection, promotion/demotion, cadence |
 | [`PROJECT_TIMELINE.md`](./PROJECT_TIMELINE.md) | Chronological evolution of the whole project |
 | [`PROJECT_GLOSSARY.md`](./PROJECT_GLOSSARY.md) | Key terms, names, and concepts explained |
 | [`UPDATE_PROTOCOL.md`](./UPDATE_PROTOCOL.md) | Rules for keeping this memory system trustworthy |
@@ -140,6 +142,7 @@ See [`platform/README.md`](./platform/README.md):
 
 | Directory | Purpose |
 |---|---|
+| [`baselines/`](./baselines/) | Immutable reference snapshots of the whole system — compare against these, don't reconstruct history |
 | [`decisions/`](./decisions/) | Full decision log — the *why* behind structural calls |
 | [`history/`](./history/) | Archive of incidents, pivots, renames, and retired ideas |
 | [`patterns/`](./patterns/) | Reusable architectural and UX patterns |
