@@ -130,5 +130,13 @@ that architecture, pillar by pillar, finishing in a ~2-week sprint that put a li
 World-A pillar. The frontier now moves from *apps* to *platform (TPH Core)* and *opportunity (iKhaya)*.
 
 ## The next chapters (planned)
+- **2026-08-09 — THE PORTFOLIO LAUNCH** (decided 2026-07-21, **D-17**). The public launch of The
+  People's Home portfolio — *not* a website launch or a single-product release, but the initial
+  collection of flagship educational experiences presented together as the first public expression of
+  The People's Home. **Launch as planned, with conditions:** prioritise the real-child play-tests and
+  record the evidence · resolve the documentation inconsistencies · complete founder approvals ·
+  **defer MA-2**. Evidence: [`launch-readiness-2026-08-09.md`](./launch-readiness-2026-08-09.md) —
+  which found the portfolio **technically ready but evidentially thin**, and that the un-run
+  real-child play-test, not Numeria, is the critical path.
 - **2026 H2** — TPH Core extraction; deepen passes; isiZulu review (~December); iKhaya one-suburb beta.
 - **2027** — iKhaya / People's Home flagship launch; the #FreeForever funding fork resolved.

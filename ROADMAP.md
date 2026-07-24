@@ -7,6 +7,22 @@ See also: [`BLUEPRINT.md`](./BLUEPRINT.md) · [`ECOSYSTEM.md`](./ECOSYSTEM.md) �
 
 ---
 
+## 🚀 The Portfolio Launch — 9 August 2026
+
+**Decided 2026-07-21 (`brain/decisions/DECISIONS.md` → D-17):** the public launch of The People's Home
+**portfolio** — the initial collection of flagship educational experiences presented together, not a
+website launch or a single-product release.
+
+**Launch as planned, with conditions:** ① prioritise the real-child play-tests and record the evidence
+· ② resolve the documentation inconsistencies · ③ complete founder approvals · ④ **defer MA-2**.
+
+Readiness evidence: [`brain/launch-readiness-2026-08-09.md`](./brain/launch-readiness-2026-08-09.md)
+— portfolio is **technically ready, evidentially thin**; the un-run real-child play-test is the
+critical path, not Numeria. The **Foundations Collection cannot form by 9 August** (Early Numeracy is
+blocked on a founder UI decision). **iKhaya / World B is out of scope** (2027).
+
+---
+
 ## Strategy in one line
 **Web-first.** Ship each learning app as an offline, installable **Cloudflare Pages PWA**, then
 surface it on this site. (Superseded the Google-Play "release machine" — see
@@ -112,4 +128,6 @@ manifest `id` + **0 grade strings** + isiZulu present (DRAFT) + no runtime netwo
   deferred to the multilingual review batch.
 - **"Expert Approved" (Play)** — Math Adventure's badge was rejected (text volume for young ages +
   disruptive sounds); fix carries over to the PWA.
-- **Keystore off-machine backup** — outstanding, high priority (see `DECISIONS.md`).
+- ~~**Keystore off-machine backup**~~ — ✅ **closed 2026-07-23**; backed up off-machine and
+  integrity-verified. Closes **R1** — the launch review's only *existential* risk. (Not a D-17
+  condition; those remain open.) Evidence lives in the implementation repo, not here.

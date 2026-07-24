@@ -76,6 +76,11 @@ this Constitution generalises. Demotion never deletes the card or the app.
 
 - The **live set changes deliberately**, not continuously — promotion/demotion are events, each with
   a dated note (operational docs + the app's `apps/*.md`), not silent edits.
+- **The Portfolio Launch — 2026-08-09** (**D-17**) is the first *cadence event* under this
+  Constitution. Note what the readiness review found: §4's gates had **never been applied to the
+  founding six** — they were designated by D-14, and §4 was written in the same change to govern
+  *future* promotions. A public launch is where that distinction stops being academic. Evidence:
+  [`launch-readiness-2026-08-09.md`](./launch-readiness-2026-08-09.md).
 - The **default posture is stability**: the community should experience a steady front door. Expand
   the flagship set only when a *Currently Growing* app genuinely clears §4 (e.g. the planned
   **Foundations Collection** once Number Kingdom + Early Literacy reach polish — see D-14).

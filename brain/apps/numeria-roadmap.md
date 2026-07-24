@@ -16,7 +16,14 @@
 > **Web only.** Everything here ships behind the platform seam and is inert in the `play-store`
 > profile. See [`math-adventure-release-policy.md`](./math-adventure-release-policy.md).
 >
-> **Progress:** MA-0 📝 DRAFT — not yet frozen · MA-1…MA-5 not started.
+> **Progress:** MA-0 📝 DRAFT — not yet frozen · **MA-1 ✅ built 2026-07-21** (implemented, not frozen —
+> see §3 MA-1) · MA-2…MA-5 not started.
+>
+> ⚠️ **Recorded deviation.** MA-1 was built while MA-0 is still DRAFT, on the founder's explicit
+> instruction of 2026-07-21 (*"We are now beginning implementation… Your job is to implement MA-1
+> (Living World) only"*). The founder may set aside their own sequencing rule; **an AI may not.** The
+> deviation is recorded here rather than normalised: `Blueprint → Freeze → Build` remains the model,
+> and MA-2 must not begin without a comparable explicit instruction.
 >
 > **Resolved by the founder 2026-07-20:** the world is **Numeria** · the threshold province is
 > **🌼 Meadow Gate** · **The Academy is part of Numeria** (its highest institution of learning) ·
@@ -187,7 +194,51 @@ Navigation Principles · Platform Principles · World Structure (the provinces, 
 resolved) · The Guide · The Welcome Moment · the Four-Purpose Test · Wrap-Don't-Rewrite · Definition
 of Success.
 
-### MA-1 — Living World 🌤️
+### MA-1 — Living World 🌤️ — ✅ BUILT 2026-07-21 (not frozen)
+
+**Delivered:** `math-adventure-rpg/src/web/living-world/` — `atmosphere.ts` (deterministic sky: day
+phase, per-day weather, gradients) · `provinces.ts` (all 11 provinces; the ten existing regions read
+from `levelContent.ts`, never re-declared) · `ambientLife.ts` (seeded sprite generation) ·
+`LivingWorld.tsx` · `livingWorld.css` (CSS-only motion) · 17 tests. Prerequisite §4.5 closed in the
+same change: `src/index.css` reduced-motion guards + `src/lib/celebrate.ts` (reduced-motion-aware
+confetti, all three call sites). Implementation notes: `math-adventure-rpg/docs/LIVING_WORLD.md`.
+
+**Verified:** `tsc --noEmit` clean · 376/376 tests · Community chunk **3.3 kB gzipped**, lazy ·
+`play-store` build emits **no** Living World asset · Play bundle **+0.54 KiB / +1 chunk, entirely the
+accessibility fix and nothing from MA-1**.
+
+**Three findings worth carrying forward:**
+
+1. **A runtime flag is not enough to keep code out of the APK.** Gating only on `isEnabled()` still
+   caused Rollup to emit the Living World chunk into the `play-store` build *and* the service-worker
+   precache — unreachable, but shipped and cached. §4.11's "zero net growth" needs a **build-time**
+   condition (`import.meta.env.VITE_PROFILE`, a literal after vite's `define`) so the dead branch
+   folds away. **Both gates are kept**: build-time for size, runtime for the Stable Build Principle.
+   *This applies to every future MA milestone and to any World-A app adopting the edition seam.*
+2. **A defect in the inherited pattern.** `early-numeracy/src/lib/daylife.ts`'s per-day seed
+   `(dayOfYear * 9301 + 49297) % 233280` advances by only ~0.04/day, so with thresholds at 0.68/0.90
+   the weather is **identical for roughly seventeen consecutive days**. Numeria uses an avalanche hash
+   instead. ⚠️ **The defect is still live in Early Numeracy** — recorded, deliberately not fixed here
+   (different app, different milestone).
+3. **Night is moonlit, not dark.** The obvious deep-navy night sky was built and rejected on sight:
+   the game renders copy in `text-black`, so a dark sky put black text on a dark background and the
+   question became hard to read — *the world competing with the maths*. Night is now expressed by the
+   moon, stars, fireflies and a shadowed ground over a light sky. A test asserts **every stop of every
+   sky gradient clears 7:1 contrast against black.** §1 made operable as a test, not a wish.
+
+**Scope note — where Meadow Gate lives.** This section previously anticipated adding a `P1_WORLDS`
+array to `src/game/levelContent.ts`. It was **not** added there: game content ships inside the Play
+build and §4.3 requires that bundle unchanged. Meadow Gate is currently pure atmosphere with no
+gameplay surface, so the web layer is its correct home. If it ever gains a level-intro banner, that
+banner — and only then — belongs in game content.
+
+**Still open:** MA-1 has passed structural review only. Whether Meadow Gate *feels* alive to a real
+child is an **experiential** question ([`../patterns/experiential-gates.md`](../patterns/experiential-gates.md)),
+and no such gate is attached to MA-1 — it carries no Welcome Moment and no Guide.
+
+---
+
+*Original intent, kept for the record:*
 
 Ambient life, no gameplay change: sky and day phase · per-day-stable weather · drifting clouds ·
 birds · butterflies · province-appropriate atmosphere. Deterministic and never-flickering.

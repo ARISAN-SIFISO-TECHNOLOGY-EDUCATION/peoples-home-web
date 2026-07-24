@@ -271,6 +271,101 @@
 
 ---
 
+## D-17 · The Portfolio Launch — 9 August 2026, launch as planned with conditions (2026-07-21)
+
+- **Context:** MA-1 (Numeria Living World) shipped 2026-07-21 and was judged complete. Rather than
+  continue to MA-2, the founder asked whether Numeria was even the right next investment:
+  *"Before investing more effort in Numeria, it's worth checking whether any of the other launch
+  projects have blockers that deserve attention first."*
+- **A date existed only in conversation.** "9 August" appeared **nowhere** in the repository — not in
+  `ROADMAP.md`, `PROJECT_TIMELINE.md`, `CURRENT_STATE.md`, `community-release.md` or any `apps/*.md`.
+  It was one ended conversation away from being lost, which is the exact failure
+  [`../UPDATE_PROTOCOL.md`](../UPDATE_PROTOCOL.md) exists to prevent.
+- **Sequencing (founder's correction, and it matters):** the review was performed **first**, and this
+  decision recorded **after**. The founder's reasoning: *"A decision log should record what you
+  actually decided — not what you intended before reviewing the evidence."* Had the milestone been
+  recorded first, this entry would have committed the log to a scope the review might have
+  invalidated. **Evidence before ratification** — worth reusing.
+- **What 9 August is (founder's definition, verbatim):** *"the planned public launch of The People's
+  Home portfolio. It is not merely a website launch or a single-product release. It is a portfolio
+  launch intended to present the initial collection of flagship educational experiences together as
+  the first public expression of The People's Home."*
+- **Why that raises the bar:** the Community Release (**D-14**) was a *presentation* decision —
+  curation, explicitly reversible, *"status is one field per app."* A public portfolio launch is a
+  different act: the first time these apps are shown to strangers as finished work. That is precisely
+  what [`../community-release.md`](../community-release.md) §4's seven gates were written for.
+- **Evidence:** [`../launch-readiness-2026-08-09.md`](../launch-readiness-2026-08-09.md) — scored
+  against §4 **as it already exists** (cited, never restated — D-13, *one owner per rule*), with every
+  mark carrying its provenance (✅ Verified / 📄 Claimed / ⏳ Open / ❓ Unknown).
+- **The review's headline finding:** **the seven-gate bar had never been applied to the six apps that
+  will be the public face.** The founding six were *designated* by D-14, and §4 was written in the
+  same change to govern *future* promotions. Correct for a reversible curation; but the gates were
+  never run against the current flagship set. **The gap is evidential, not technical** — all six
+  type-check clean, all six URLs serve, nothing is broken.
+- **Options weighed:** (1) launch as planned with conditions; (2) launch with reduced scope;
+  (3) move the date.
+- **Decision: Option 1 — launch as planned on 2026-08-09, with conditions.** Reduced scope was
+  rejected on the review's reasoning: the risk is **evidential, not per-app**, so dropping a flagship
+  would remove a pillar from the narrative without making the remaining five better evidenced.
+- **The conditions (founder, 2026-07-21):**
+  1. **Prioritise the real-child play-tests and record the evidence.**
+  2. **Resolve the documentation inconsistencies** identified by the review.
+  3. **Complete the required founder approvals** before launch.
+  4. **Defer MA-2** until these portfolio-level conditions are addressed, or until new evidence
+     changes the priority.
+- **Why the play-tests come first — Numeria is not the bottleneck.** One un-run gate blocks more work
+  than anything else in the project: **all nine Early Numeracy phase freezes simultaneously**, plus
+  Early Literacy, African Discoveries and Space Explorer. Per
+  [`../patterns/experiential-gates.md`](../patterns/experiential-gates.md) it is an **experiential
+  gate** — satisfied by observation, not automatable, and closable **only by the founder**. Days of
+  effort, portfolio-wide payoff.
+- **Why MA-2 was deferred (ranked last of seven):** Math Adventure RPG is already the only flagship
+  with automated tests and the only one with accessibility tooling. Investing the remaining days there
+  would widen the gap between the best-documented app and the five that need attention. *This is a
+  deferral on current evidence, not a judgement on MA-2's value.*
+- **Also recorded — what the review verified rather than trusted:** three live apps are **missing from
+  `../ECOSYSTEM.md`** ("the map of everything") — **Everyday Foundations** entirely, and **Mzansi
+  Money (a flagship)** and **Our World** have no repo/URL/build row · **Tech Makers and Mzansi Money
+  are PRIVATE**, which the registry implies otherwise · the six pillars are **named three different
+  ways**, two of them on the same page · **five of six flagships have no automated tests at all.**
+  Remediation is deliberately *not* part of this decision — a review that silently repairs what it
+  finds stops being a review.
+- **Explicitly unchanged:** nothing frozen (MA-0, Number Kingdom NK-4 and the Early Numeracy roadmap
+  all remain unfrozen — freeze is a founder act) · [`../PROJECT_DNA.md`](../PROJECT_DNA.md) untouched ·
+  the **Foundations Collection cannot form by 9 August** (Early Numeracy is blocked on a founder UI
+  decision not yet made) · **iKhaya / World B remains out of scope** (2027).
+- **What would reopen this:** the review states its own falsifiers — if the play-tests already happened
+  informally and were merely unrecorded, R2 becomes a *recording* problem and the evidence sweep moves
+  first; if a flagship is found broken on a real low-end Android (every offline claim is 📄, never ✅);
+  or if the founder deliberately chooses momentum over proof — legitimate, but it should be recorded
+  as that.
+
+### D-17 · status updates (append-only; the decision above is unedited)
+
+- **2026-07-23 — R1 (Android keystores) is CLOSED.** ✅ The signing keystores are backed up
+  off-machine and integrity-verified. Work spanned the evening of 2026-07-22 into the early hours of
+  2026-07-23. **The risk the review rated 🔴 Existential — the only one — no longer exists.**
+  - **Recorded as portfolio state only.** The verification method, storage location and filenames are
+    **deliberately not repeated here**; they live in the implementation repository, which stays their
+    single source of truth. This layer records *that* a risk was retired, not *how*
+    ([`../UPDATE_PROTOCOL.md`](../UPDATE_PROTOCOL.md) rule 6 — operational facts to the operational
+    layer). Founder's framing: *"Institutional memory shouldn't only record risks; it should record
+    when risks are retired."*
+  - ⚠️ **Which condition this closes — two lists are easily confused.** It closes **condition 1 of the
+    *review's* list** ([`../launch-readiness-2026-08-09.md`](../launch-readiness-2026-08-09.md) §8)
+    and **priority #2 of §9**. It closes **none of D-17's four conditions above** — condition 1 there
+    is the **real-child play-tests**, still open. A planning document for a sibling repository stated
+    that R1 *was* "D-17's condition 1"; that is incorrect and is recorded here so the error is not
+    re-derived from it later.
+  - **§6's R1 row is deliberately left as written.** The review records what was found before the
+    decision; its own banner forbids editing findings to match later outcomes. Closure is recorded
+    here and in `CURRENT_STATE.md`, not by rewriting the finding.
+  - **Remaining open:** D-17 conditions 1–3 (play-tests · documentation sweep · founder approvals);
+    condition 4 (defer MA-2) holds. **R2 — no app has been observed with a real child — is now the
+    highest-severity open risk in the register.**
+
+---
+
 > **Open decisions (not yet resolved):**
 > - The **#FreeForever funding fork** for iKhaya (the one place free-forever needs an answer).
 > - Whether **Digital Creator Academy** ever becomes a real app (parked).

@@ -8,7 +8,37 @@
 
 ---
 
-## The headline — the Community Release (2026-07-10)
+## The headline — the Portfolio Launch, 9 August 2026 (decided 2026-07-21)
+
+**The date is set: `2026-08-09`.** The public launch of The People's Home **portfolio** — not a
+website launch, not a single-product release, but the initial collection of flagship educational
+experiences presented together as the first public expression of The People's Home. Decision:
+[`decisions/DECISIONS.md`](./decisions/DECISIONS.md) → **D-17**. Evidence:
+[`launch-readiness-2026-08-09.md`](./launch-readiness-2026-08-09.md).
+
+**Launch as planned, with four conditions:** prioritise the real-child play-tests and record the
+evidence · resolve the documentation inconsistencies the review found · complete founder approvals ·
+**defer MA-2**.
+
+**What the readiness review concluded.** The portfolio is **technically ready but evidentially thin.**
+All six flagships type-check clean and serve real content; nothing is broken. But the §4 seven-gate
+bar had **never been applied to the six apps that will be the public face** — they were *designated*
+by D-14, and §4 was written in the same change to govern *future* promotions. Accessibility and
+educational review are unevidenced across the launch face.
+
+**The critical path is not Numeria.** One un-run **real-child play-test** blocks all nine Early
+Numeracy phase freezes at once, plus Early Literacy, African Discoveries and Space Explorer. It is an
+*experiential* gate — observation, not automatable, closable only by the founder. MA-1 (Numeria Living
+World) shipped 2026-07-21; **MA-2 is deferred** on this evidence.
+
+> ⚠️ **Known-stale below.** The sections that follow are the 2026-07-10 snapshot and have not been
+> reconciled — the review found `ECOSYSTEM.md` missing three live apps (Everyday Foundations entirely;
+> Mzansi Money and Our World lack repo/URL rows) and repo visibility misrecorded. Remediation is
+> condition 2 of D-17 and deliberately **not** yet done: the review does not fix what it finds.
+
+---
+
+## Prior headline — the Community Release (2026-07-10)
 
 The project has entered its **release to the community**. The People's Home site is being **curated
 to six flagships — one per pillar** (Math Adventure RPG · African Discoveries · Tech Makers · Truth
@@ -94,8 +124,17 @@ not-live-but-listed on the site (UI rework, 2026-07-06).
 
 ## Known debts / risks
 
-- **Keystore off-machine backup** — outstanding, high priority. The signing `.jks` files are
-  local-only and irreplaceable. See [`HISTORY.md`](./history/HISTORY.md) and the root
+- ~~**Keystore off-machine backup** — outstanding, high priority.~~ — ✅ **CLOSED 2026-07-23**
+  (work spanning the evening of 2026-07-22 into the early hours of 2026-07-23). The signing `.jks`
+  files are backed up off-machine and integrity-verified. **This closes R1 — the only risk the
+  launch readiness review rated *existential*** — satisfying the review's own condition 1
+  ([`launch-readiness-2026-08-09.md`](./launch-readiness-2026-08-09.md) §8) and priority #2 of §9.
+  ⚠️ **It does not close any of D-17's four conditions**, whose condition 1 is the real-child
+  play-tests. Two separate numbered lists; do not conflate them.
+  The technical evidence (verification method, location, filenames) is deliberately **not** recorded
+  here: it lives in the implementation repository, which remains its single source of truth. This
+  layer records portfolio state only.
+  Standing debt for context: [`HISTORY.md`](./history/HISTORY.md) and the root
   [`DECISIONS.md`](../decisions/DECISIONS.md) → "Critical-information risk."
 - **"Expert Approved" badge** (Math Adventure) was rejected on Play; the fix (less text for young
   ages, calmer sounds) carries over to the PWA.

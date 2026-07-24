@@ -12,6 +12,167 @@
 
 ---
 
+## ✅ 2026-07-24 (session 45) — R1 CLOSED · Truth Seekers ↔ Critical Thinker verified & recorded
+
+**Mostly a session in a *different* repository** (`sifiso-s-critical-thinking`, external to TPH).
+Only the TPH-relevant parts are recorded here. **D-17 conditions 1–3 are all still open.**
+
+### 1. 🔴→✅ R1 (Android keystores) is CLOSED — the register's only *existential* risk
+
+Backed up off-machine and integrity-verified. Work spanned the evening of **2026-07-22** into the
+early hours of **2026-07-23**. Recorded in `CURRENT_STATE.md`, `../ROADMAP.md`, and as a dated
+status block under **D-17**.
+
+- **Portfolio state only.** Verification method, storage location and filenames are **deliberately
+  not** repeated in the Brain — they live in the implementation repo, which stays their single
+  source of truth (`UPDATE_PROTOCOL.md` rule 6). *"Institutional memory shouldn't only record risks;
+  it should record when risks are retired."*
+- ⚠️ **It closed the *review's* condition 1 (§8), not D-17's.** D-17's condition 1 is the
+  **real-child play-tests**, still open. **Two different numbered lists — do not conflate them.** A
+  planning document for another repo stated R1 *was* "D-17's condition 1"; that is wrong and is
+  recorded as wrong in D-17's status block.
+- **`launch-readiness-2026-08-09.md` §6's R1 row is deliberately unedited** — it records what was
+  found before the decision. Closure is recorded elsewhere, never by rewriting a finding.
+
+### 2. 🔝 R2 is now the highest-severity open risk
+
+*No app has ever been observed with a real child.* With R1 retired, **nothing outranks the
+play-tests.**
+
+### 3. Truth Seekers ← Critical Thinker: verified, and the dependency **does not exist**
+
+The founder proposed that Critical Thinker feeds Truth Seekers. **Checked before recording, and
+disproved.** All ten of Critical Thinker's taxonomy axis/topic names return **zero hits** in Truth
+Seekers; its items carry no tagging axes and are organised by *age*, not topic × stage × difficulty.
+Separate corpora, validators, stacks, lineages.
+
+Recorded in [`apps/truth-seekers.md`](./apps/truth-seekers.md) as **FOUNDER-STATED INTENT, not
+architecture** — the founder's wording verbatim, alongside the explicit statement that no dependency
+exists as of 2026-07-24. *"Founder intent is recorded as intent. Architecture is recorded as
+architecture. They are not the same thing."*
+
+**Consequence:** the two projects have **distinct evidence trails**. External review of Truth Seekers
+produces **G6** evidence for a TPH flagship but discharges nothing in Critical Thinker's audit.
+
+### 4. ⚠️ Root cause of the old "Truth Seekers has no GitHub remote" error — **two local folders**
+
+- **`the-truth-seekers/`** — *this* is the live app. Has `.git`; remote
+  `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/truth-seekers.git`, `main`, pushed 2026-06-24.
+- **`truth-seekers/`** — **no `.git`**. The *superseded* pre-Phase-2 `exam-studio` scaffold; a
+  different, older app.
+
+Someone checked the obvious folder name and got a true answer about the wrong directory. **A true
+observation about the wrong artefact became a false conclusion about the system.** Recorded for the
+D-17 condition 2 sweep — the same error is re-derivable by anyone who looks.
+
+### 5. The symmetry worth carrying
+
+| Project | Highest remaining dependency |
+|---|---|
+| **The People's Home** | **one child** using one app |
+| Critical Thinker | one independent adult reading one item |
+
+Both ~10 minutes. Both top-ranked in their register. Neither doable by an AI. **They are not equally
+easy to arrange:** the cold read needs any adult and could happen tonight; the play-test needs a
+specific child, a parent's agreement, a device and an unhurried hour — **start the arranging now,
+because it resolves slowly.**
+
+### Still true at close
+Nothing frozen · nothing remediated · **`peoples-home` and `math-adventure-rpg` remain entirely
+uncommitted** by founder instruction (2026-07-21) · MA-2 still deferred · `PROJECT_DNA.md` untouched.
+
+---
+
+## 🚀 2026-07-21 (session 44b) — PORTFOLIO LAUNCH SET: 9 August 2026 (D-17)
+
+**The launch date now exists in the repository.** Before today, "9 August" appeared **nowhere** —
+not in `ROADMAP.md`, `PROJECT_TIMELINE.md`, `CURRENT_STATE.md`, `community-release.md` or any
+`apps/*.md`. It lived only in conversation.
+
+**Sequencing — worth reusing.** The founder corrected the plan: **review first, decide second, record
+third.** *"A decision log should record what you actually decided — not what you intended before
+reviewing the evidence."* The date was written into the review immediately as *founder-stated, under
+review*; D-17 was written only after the evidence existed. **Evidence before ratification.**
+
+**The review:** [`launch-readiness-2026-08-09.md`](./launch-readiness-2026-08-09.md) — the whole
+portfolio scored against `community-release.md` §4's seven gates (cited, never restated), every mark
+carrying provenance (✅ Verified / 📄 Claimed / ⏳ Open / ❓ Unknown).
+
+**Headline finding: §4's gates had never been applied to the founding six.** They were *designated* by
+D-14, and §4 was written in the same change to govern *future* promotions — correct for a reversible
+curation, but a public launch is where that stops being academic. **The gap is evidential, not
+technical.** Nothing is broken.
+
+**Verified rather than trusted:** all six flagships `tsc` clean · all six URLs + the site serve real
+content · site deploy matches `origin/main` · only `status:'live'` cards are clickable (Early
+Numeracy's pull holds). Found wrong: **`ECOSYSTEM.md` is missing three live apps** — Everyday
+Foundations entirely, and **Mzansi Money (a flagship)** + Our World have no repo/URL row · **Tech
+Makers and Mzansi Money are PRIVATE**, registry implies otherwise · **six pillars named three
+different ways**, two on the same page · **five of six flagships have zero automated tests** (Math
+Adventure RPG's 376 are the whole safety net).
+
+**⚠️ The critical path is NOT Numeria.** One un-run **real-child play-test** blocks **all nine Early
+Numeracy phase freezes at once**, plus Early Literacy, African Discoveries and Space Explorer. It is
+an *experiential* gate (`patterns/experiential-gates.md`) — observation, not automatable, closable
+**only by the founder**. Days of effort, portfolio-wide payoff.
+
+**Founder decision (D-17): launch as planned 2026-08-09, with conditions** — ① prioritise the
+play-tests and record the evidence · ② resolve the documentation inconsistencies · ③ complete founder
+approvals · ④ **defer MA-2**. Reduced scope was rejected: the risk is evidential, not per-app.
+
+**MA-2 ranked last of seven investments** — MAR is already the only flagship with tests and a11y
+tooling; more work there widens the gap with the five that need attention. *A deferral on current
+evidence, not a judgement on MA-2's value.*
+
+**State:** nothing frozen · nothing remediated (*the review does not fix what it finds* — that is
+condition 2) · `PROJECT_DNA.md` untouched · **nothing committed** in either repo. Foundations
+Collection **cannot** form by 9 August (Early Numeracy blocked on a founder UI decision). iKhaya out
+of scope. Recorded in: D-17 · `PROJECT_TIMELINE.md` · `CURRENT_STATE.md` (new headline) ·
+`../ROADMAP.md` · `community-release.md` §6.
+
+---
+
+## 🌤️ 2026-07-21 (session 44) — Numeria MA-1 Living World BUILT
+
+**The first Numeria milestone with code.** Meadow Gate is no longer a flat colour behind the game:
+a sky that knows the hour, a horizon, and slowly drifting life. Web Community Edition only.
+
+**Founder instruction:** *"We are now beginning implementation. This is NOT an architecture session.
+This is NOT a governance session… implement MA-1 (Living World) only… Stop after MA-1 is complete."*
+Explicitly excluded: Story Theatre, Guide, Keeper, narration queue, dialogue, province introductions,
+cut-scenes, new architecture, governance documents. None were built.
+
+⚠️ **Recorded deviation:** MA-1 was built while **MA-0 is still DRAFT**. The founder set aside their
+own `Blueprint → Freeze → Build` sequencing; **an AI may not.** Recorded, not normalised — MA-2 needs
+a comparable explicit instruction. Founder's own framing: *"The fact that MA-0 remains DRAFT is
+acceptable. You consciously chose to begin implementation before constitutional freeze."*
+
+**Delivered** — `math-adventure-rpg/src/web/living-world/`: `atmosphere.ts` · `provinces.ts` ·
+`ambientLife.ts` · `LivingWorld.tsx` · `livingWorld.css` · 17 tests. Prerequisite §4.5 closed:
+`src/index.css` reduced-motion guards + `src/lib/celebrate.ts`. Notes: `docs/LIVING_WORLD.md`.
+
+**Three findings** (detail in `apps/numeria-roadmap.md` §3 MA-1):
+1. **A runtime flag is not enough to keep code out of the APK** — `isEnabled()` alone still had Rollup
+   emit *and precache* the chunk in the `play-store` build. Needs a **build-time** condition too.
+   Applies to every future milestone and every app adopting the edition seam.
+2. **`daylife.ts`'s day seed advances only ~0.04/day** → identical weather ~17 days running.
+   ⚠️ **Still live in Early Numeracy** — recorded, deliberately not fixed there.
+3. **Night is moonlit, not dark** — a navy sky put `text-black` copy on a dark background: the world
+   competing with the maths. Now pinned by a 7:1 contrast test on every sky gradient stop.
+
+**Verified:** `tsc --noEmit` clean · 376/376 tests · Community chunk 3.3 kB gzipped, lazy ·
+`play-store` build emits no Living World asset · Play bundle **+0.54 KiB, entirely the accessibility
+fix, nothing from MA-1**.
+
+**Founder verdict:** MA-1 **complete**, not partial. *"The first implementation milestone in Numeria
+that feels like it was built under the governance model you've been developing."*
+
+**State:** app changes **uncommitted** by design — the founder commits once satisfied. Next is a
+**review period, not MA-2**: does Meadow Gate feel alive, does it support learning, any defects to
+correct first. Still open: 🔓 the Guide's visual embodiment · 🔓 the Guide's proper name · MA-0 freeze.
+
+---
+
 ## 🗺️ 2026-07-20 (session 43) — Numeria: the Animation & Storytelling Blueprint DRAFTED
 
 **Math Adventure RPG's web experience layer now has a name and a blueprint. No code was written.**
