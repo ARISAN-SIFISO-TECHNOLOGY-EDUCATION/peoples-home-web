@@ -12,6 +12,35 @@
 
 ---
 
+## ⛔ 2026-07-24 — PUBLICATION HOLD: **do not `git push` until after 2026-08-09**
+
+**Founder decision, 2026-07-24.** `main` is deliberately **ahead of `origin/main`** and must stay
+that way until **after the portfolio launch (2026-08-09)**. If you find unpushed commits here, that
+is **intentional — not an oversight. Do not "tidy" it by pushing.**
+
+**Why.** `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/peoples-home-web` is **PUBLIC**, and it is the
+repository that deploys the live site. The held commits contain
+[`launch-readiness-2026-08-09.md`](./launch-readiness-2026-08-09.md) — a candid internal readiness
+review stating, among other things, that **no app has ever been observed with a real child** and
+that **five of six flagships have zero automated tests**. All true, and useful precisely because it
+is honest — but it is a public statement about product readiness, on the product's own repository,
+in the weeks before launch.
+
+**The two commits cannot be separated.** `apps/numeria-roadmap.md` is *created* by `cbc3da9` and
+*modified* by `f9334f3`, so publishing the Brain necessarily publishes the Numeria blueprint. No
+history rewrite — the hold covers both.
+
+**Nothing is lost by waiting.** The record is committed, dated and internally consistent whether or
+not it is on the remote. **Release condition:** after 2026-08-09, review and push.
+
+⚠️ **Separate, pre-existing issue for the D-17 condition 2 sweep** — *not* covered by this hold
+because it is **already public**: this file (~line 1234, session 11) discloses the keystore backup
+folder path and records that **both apps share one password**. No password is in the repo, so nothing
+is directly compromised, but it narrows an attacker's problem. Redacting a historical record is a
+founder decision, not cleanup.
+
+---
+
 ## ✅ 2026-07-24 (session 45) — R1 CLOSED · Truth Seekers ↔ Critical Thinker verified & recorded
 
 **Mostly a session in a *different* repository** (`sifiso-s-critical-thinking`, external to TPH).

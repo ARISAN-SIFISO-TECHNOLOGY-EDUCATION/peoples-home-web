@@ -8,6 +8,15 @@
 
 ---
 
+## ⛔ PUBLICATION HOLD — do not `git push` until after 2026-08-09
+
+**Founder decision, 2026-07-24.** `main` is intentionally **ahead of `origin/main`**. This repo is
+**PUBLIC** and deploys the live site; the held commits contain the candid launch readiness review.
+**Unpushed commits here are deliberate — do not push to tidy them.** Full reasoning and the release
+condition: [`SESSION_HANDOFF.md`](./SESSION_HANDOFF.md), newest entry.
+
+---
+
 ## The headline — the Portfolio Launch, 9 August 2026 (decided 2026-07-21)
 
 **The date is set: `2026-08-09`.** The public launch of The People's Home **portfolio** — not a
