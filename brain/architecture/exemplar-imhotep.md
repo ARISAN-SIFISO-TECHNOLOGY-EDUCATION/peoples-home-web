@@ -24,7 +24,7 @@ his skill. His name was **Imhotep**.
 
 What makes Imhotep remarkable is that he was **not a king**. Almost everyone whose name survives from that
 distant age was royalty. Imhotep earned his place through knowledge. He served as Djoser's most senior
-official, and tradition credits him with designing the earliest great stone monument in the world — the
+official, and tradition credits him with designing the earliest great monument built of cut stone — the
 **Step Pyramid at Saqqara**. Long after his death, Egyptians remembered him as a symbol of wisdom, and
 much later still they honoured him as a god of healing — one of only a handful of ordinary Egyptians ever
 raised to that status.
@@ -56,9 +56,9 @@ make.
 Here is what can be established with reasonable confidence. Imhotep was a **real historical person**, not a
 myth, and he held some of the highest offices in Djoser's government. We know this because his name and
 titles were carved, **during or near his own lifetime**, on the base of a statue of Djoser found at
-Saqqara — a contemporary record, not a later story. Among the titles preserved there he is named as a
-chief official of the king and a **high priest at Heliopolis**, the great centre of Egyptian learning and
-sun-worship.
+Saqqara — a contemporary record, not a later story. Among the titles preserved there, he is named among
+the highest officials of the king; Egyptian sources also record him as a **high priest at Heliopolis**,
+the great centre of learning and sun-worship.
 
 That combination matters. A senior administrator who was also a high priest sat at the meeting point of
 government, religion, and knowledge — the three things an early state most needed to organise. Imhotep's
@@ -72,7 +72,7 @@ and learning**: the rarer and, in its way, more modern kind of fame.
 ## The Step Pyramid · *Band 1 — Foundation (the account)*
 
 The **Step Pyramid of Djoser** at Saqqara is the reason Imhotep's name travelled across five thousand
-years. Built around **2670–2650 BCE**, it is widely regarded as the **earliest large-scale monument built
+years. Built around **2670–2650 BCE**, it is widely regarded as **one of the earliest large-scale buildings
 of cut stone** anywhere in the world — and the ancestor of every Egyptian pyramid that followed.
 
 Its design tells a story of an idea growing as it was built. It began as a single flat *mastaba* and was
@@ -97,11 +97,11 @@ This is the part where careful thinking matters most, because it is the part mos
 
 You will frequently read that Imhotep was a great **physician** — the "first doctor," even the author of an
 ancient medical textbook. Here is the honest position: **we cannot establish that the historical Imhotep
-practised medicine at all.** No contemporary evidence shows him as a healer. His fame as a physician grew
-**centuries after his death**, as Egyptians increasingly remembered him as a patron of scribes and wisdom,
-and then — more than two thousand years after he lived, in the era Egyptologists call the Late Period —
-**deified him as a god of healing.** When the Greeks later encountered his cult, they identified him with
-their own god of medicine, **Asclepius.**
+practised medicine at all.** No contemporary evidence shows him as a healer. His reputation for wisdom grew
+**in the centuries after his death**, as Egyptians increasingly remembered him as a patron of scribes; and
+in the later periods of Egyptian history — well over a thousand years on — he was **deified as a god of
+healing.** When the Greeks later encountered his cult, they identified him with their own god of medicine,
+**Asclepius.**
 
 So the "physician Imhotep" is real in one sense and not in another. As a *figure of tradition* — a symbol
 people prayed to for health for over a thousand years — he is enormously important. As a *claim about what
@@ -144,7 +144,7 @@ a god of medicine long after his death. Some traditions link him to ancient medi
 links are not proven. *(Wildung — Egyptian Saints.)*
 
 **Misconception:** *"Imhotep built the Great Pyramid."*
-**Clarification:** No. The Great Pyramid at Giza was built for **Khufu** in the Fourth Dynasty, more than a
+**Clarification:** No. The Great Pyramid at Giza was built for **Khufu** in the Fourth Dynasty, roughly a
 century later. Imhotep's monument is the earlier **Step Pyramid at Saqqara**, built for Djoser.
 *(Britannica — "Step Pyramid of Djoser".)*
 
@@ -172,7 +172,7 @@ Curated, named links — the network this record sits inside:
 |---|---|
 | **c. 2670–2650 BCE** (`year: -2670`) | The Step Pyramid built at Saqqara, in Djoser's reign |
 | **27th century BCE** | Imhotep serves as Djoser's senior official and high priest of Heliopolis |
-| **1st millennium BCE** (Late Period) | Long after his death, Imhotep is deified as a god of healing |
+| **later periods** (into the 1st millennium BCE) | His cult grows over the centuries; he is eventually deified as a god of healing |
 
 *(Years are stored signed — negative for BCE — per the schema; never shown to a learner as a bare number.)*
 
@@ -203,6 +203,37 @@ Curated, named links — the network this record sits inside:
   god).
 - A general history of the Old Kingdom, for the world Imhotep worked in.
 - The UNESCO listing for Saqqara, to see the Step Pyramid complex as it survives.
+
+---
+
+## Editorial verification review — ⚠️ *author self-review, not independent*
+
+A passage-by-passage review was run (2026-07-24) asking of each claim: *is it supported by the cited
+work? Is the wording stronger than the evidence? Are later traditions clearly separated from contemporary
+evidence? Would a historian object? Would a teacher trust it?* It **corrected four passages where the
+author's wording ran ahead of the evidence**:
+
+1. *"the earliest great stone monument in the world"* → *"the earliest great monument built of cut stone"*
+   — the absolute ignored older megalithic stone; the defensible claim is dressed/cut stone.
+2. The **high priest of Heliopolis** title was separated from the contemporary statue-base titles — the
+   pedestal attests his senior court office; the priesthood is recorded elsewhere and shouldn't be
+   presented as if on that same inscription.
+3. Deification reframed from a single dated moment (*"more than two thousand years after… the Late
+   Period"*) to the **gradual** growth of a cult it actually was.
+4. *"more than a century later"* (the Great Pyramid) → *"roughly a century later"* — it is ~80–110 years.
+
+**The boundary this review does NOT cross.** It was performed by the record's **author**. By the same
+logic that marks the sources `verified: false` and that FD-lineage established elsewhere — *an author
+cannot certify their own work* — this self-review catches overstatement but **does not substitute for an
+independent historian's and a teacher's review.** That independent review is a distinct, outstanding gate.
+
+**Three verification boundaries now stand, all visible, none hidden:**
+- ✅ *authored* to Canon 06 · ✅ *author self-reviewed* for overstatement (this section)
+- ⏳ **independent expert + teacher review** — not yet done
+- ⏳ **source-URL verification** (§ Sources, `verified: false`) — not yet done
+
+Only when the two ⏳ gates close may this record be shown to a child. The work is honest about exactly how
+far it has, and has not, been verified.
 
 ---
 
