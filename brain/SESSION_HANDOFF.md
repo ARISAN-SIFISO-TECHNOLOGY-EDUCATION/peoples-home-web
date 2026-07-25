@@ -41,6 +41,27 @@ founder decision, not cleanup.
 
 ---
 
+## 🧱 2026-07-24 (session 45d) — Educational Record **schema** drafted (Brain-owned DRAFT)
+
+`architecture/educational-record-schema.md` — the canonical structure that **represents** Canon 06 (the
+"grown model" §6 obliges). Brain-owned DRAFT, proving-ground = African Discoveries (evidence, not owner).
+
+- **Five design principles** (founder-set): canonical-not-minimal · meaning-not-presentation ·
+  depth-not-journey · **every claim sourced at claim granularity** · a justification test (a field enters
+  only if required by Canon 06, a real record, or an already-adopted rule).
+- **The atom is a `Claim { statement, sources[≥1] }`** — prose in Bands 1–3 is `Claim[]`, not `string`,
+  so *"every claim is sourced"* is structural, not a hope. Sources live on claims, not a record-level list.
+- **Validated** against Imhotep · Great Zimbabwe · Wangari Maathai · Tebello Nyokong (all represent).
+  Surfaced finding: the app's `kind` taxonomy (heroes/animals/innovations/timeline) has **no slot for a
+  place** like Great Zimbabwe — an app limitation, not a schema one (`kind` is app-owned).
+- **Deliberately excluded:** journey/progression (`unlocked`, `nextRecord`, sequence), presentation
+  (tab/panel), speculative (versioning/i18n). **Open (flagged, not decided):** reading-level/register vs
+  presentation (entangled with the scope call); exact claim granularity; whether `kind` becomes a World A
+  vocabulary.
+- Still DRAFT; no app implements it yet. Committed under the publication hold; **not pushed.**
+
+---
+
 ## 📚 2026-07-24 (session 45c) — Educational Record Standard adopted as World A canon (D-20, Canon 06)
 
 A play-test of **African Discoveries** (*"why a one-minute read?"*) surfaced that the app optimised for

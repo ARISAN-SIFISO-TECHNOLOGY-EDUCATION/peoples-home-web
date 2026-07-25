@@ -103,6 +103,7 @@ If you are continuing from a previous session → `brain/SESSION_HANDOFF.md`
 | [`architecture/02-world-a-world-b-dna.md`](./architecture/02-world-a-world-b-dna.md) | The World A / World B DNA split and "the bridge" |
 | [`architecture/03-tph-core-and-passport.md`](./architecture/03-tph-core-and-passport.md) | The shared-platform thesis and the Passport mechanism |
 | [`architecture/06-educational-record-standard.md`](./architecture/06-educational-record-standard.md) | **Canon 06.** When may an educational record be declared *complete* — understanding over completion; the four bands; sourced claims. World A canon (D-20); first implemented in African Discoveries. |
+| 📝 [`architecture/educational-record-schema.md`](./architecture/educational-record-schema.md) | **DRAFT.** The canonical structure that represents Canon 06 — per-claim sourcing, depth-not-journey, meaning-not-presentation. Validated against real records; unblocks the content-model gate without touching scope/journey. |
 | 📝 [`architecture/institutional-platform-strategy.md`](./architecture/institutional-platform-strategy.md) | **DRAFT (waiting) — not adopted.** Long-term "platform-first, interfaces-as-adapters" direction. Entry reconciliations resolved by **D-18** (software layer = *Institutional Services*, not "capability") and **D-19** (the platform is never a runtime dependency of World A); still DRAFT pending its §13 decisions. |
 
 ### Applications (World A — all 10 live)

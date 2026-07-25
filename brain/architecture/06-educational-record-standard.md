@@ -126,6 +126,10 @@ text. Truth is the floor; **sufficiency** is this standard's bar.
 An app whose data model cannot yet hold Bands 1–2, misconceptions, a glossary or further-reading must
 **grow the model**, not narrow the standard. The bar does not come down to meet the code.
 
+> **The grown model:** [`educational-record-schema.md`](./educational-record-schema.md) (DRAFT) is the
+> canonical structure that represents this standard — sourcing at claim granularity, depth not journey,
+> meaning not presentation. It implements §5's rule structurally rather than by convention.
+
 ---
 
 ## 7. Implementation is gated per app (adoption is not)
