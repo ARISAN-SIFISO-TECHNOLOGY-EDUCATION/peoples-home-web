@@ -419,6 +419,44 @@
 
 ---
 
+## D-20 · The Educational Record Standard — adopted as World A canon (Canon 06) (2026-07-24)
+
+- **Origin — a small question that became constitutional.** It began as a play-test note on African
+  Discoveries — *"why is this a one-minute read?"* — and surfaced a hidden assumption: the app was
+  optimising for **completion** (a UX reflex) in an **education institution**, which optimises for
+  **understanding.** The founder rejected the premise that a shallow layer must precede a deep one.
+- **What was adopted:** [`../architecture/06-educational-record-standard.md`](../architecture/06-educational-record-standard.md)
+  — the standard that answers *"when may an educational record be declared complete?"* Its spine:
+  **understanding over completion** (no reading-time target); a four-criterion **Definition of
+  Completeness**; four editorial **bands** (Foundation · Context · Connections · Exploration) as author
+  requirements, not screens; **Negative Requirements** (a description/image/achievements/AI prose/word
+  count are inputs, not evidence — the guard against "looks complete"); a required **Misconceptions &
+  Clarifications** element; every claim **sourced** (carrying African Discoveries' Phase 0 discipline).
+- **The three founder rulings (A/B/C):**
+  - **A — Adopt.** Not as an application document; as a **World A constitutional standard.** The rules
+    are subject-independent: they hold for Imhotep or photosynthesis, Mali or fractions, Python or
+    astronomy.
+  - **B — Promote to the Brain** as the canonical **Educational Record Standard** (renamed from
+    "Editorial Standard" — it governs the whole record, not merely the writing), owned under World A.
+    Constitutional sentence placed at the top: *"No educational record may claim completeness unless it
+    satisfies this standard."*
+  - **C — African Discoveries retains a delegated reference,** not a second copy. Ownership is explicitly
+    the Brain's; `african-discoveries/docs/editorial-standard.md` points here. **A reference, not a
+    duplicate — one owner, so the two cannot drift** (D-13).
+- **The governance rule it carries:** *the standard defines the model; the model must evolve to satisfy
+  the standard, never the reverse.* An app whose data model cannot hold Bands 1–2 must grow the model,
+  not narrow the bar.
+- **Adoption ≠ implementation (deliberate separation).** Adoption fixes *what complete means*, across
+  World A, and is founder-approval-gated only. **Implementation is per-app** and gated by scope (e.g.
+  African Discoveries' 9–17 vs fund-3–8 call), the content-model change, and the journey-axis decision.
+  This makes the philosophy canonical **without** committing to rewrite any content immediately.
+- **Not done here:** no record is yet authored to the standard; the African Discoveries content model is
+  unchanged; the "journey axis" (the dead `LEARNING_JOURNEY` vs a Discover→…→Teach path) remains one
+  vocabulary short of a decision. **Completeness principle as a one-line product rule in Canon 03** is a
+  cross-reference (below), not a restatement — the standard owns it.
+
+---
+
 > **Open decisions (not yet resolved):**
 > - The **#FreeForever funding fork** for iKhaya (the one place free-forever needs an answer).
 > - Whether **Digital Creator Academy** ever becomes a real app (parked).

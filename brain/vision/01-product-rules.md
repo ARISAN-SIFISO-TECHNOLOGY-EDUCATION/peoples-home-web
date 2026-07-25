@@ -34,6 +34,17 @@
 - **isiZulu** ships as **DRAFT** until a native-speaker review (batched, ~December 2026). Apps ship
   English-first; zu present but flagged draft.
 
+## 6. Educational completeness over completion *(added 2026-07-24, D-20)*
+- An educational record measures success by **understanding, not completion**. No reading-time or
+  word-count target; the bar is whether a learner reaches meaningful understanding without leaving the
+  app for essential knowledge.
+- **The rule is owned in full by [`../architecture/06-educational-record-standard.md`](../architecture/06-educational-record-standard.md)
+  (Canon 06)** — *no educational record may claim completeness unless it satisfies that standard.* This
+  entry is the pointer; the standard is the owner (D-13). Adoption is World A canon; implementation is
+  per-app and scope-gated.
+- **Why:** The People's Home is an education institution, not a feed. Completion is a UX reflex; it had
+  crept into the design (surfaced by a play-test — *"why a one-minute read?"*).
+
 ---
 
 ## Cross-cutting craft rules (learned the hard way)

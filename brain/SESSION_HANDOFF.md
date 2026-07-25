@@ -41,6 +41,29 @@ founder decision, not cleanup.
 
 ---
 
+## 📚 2026-07-24 (session 45c) — Educational Record Standard adopted as World A canon (D-20, Canon 06)
+
+A play-test of **African Discoveries** (*"why a one-minute read?"*) surfaced that the app optimised for
+**completion**, a UX reflex, in an **education institution** that must optimise for **understanding.**
+That became a constitutional standard.
+
+- **New: `architecture/06-educational-record-standard.md` (Canon 06)** — answers *"when may an
+  educational record be declared complete?"* Understanding over completion · a 4-criterion Definition of
+  Completeness · four author bands (Foundation·Context·Connections·Exploration) · Negative Requirements
+  (fields ≠ completeness) · required Misconceptions element · every claim sourced. Constitutional line:
+  *"No educational record may claim completeness unless it satisfies this standard."*
+- **D-20** records the three founder rulings: **adopt** (as World A canon, not an app doc) · **promote**
+  to the Brain as canonical owner · African Discoveries keeps a **delegated reference, not a copy**
+  (one owner, no drift).
+- **Canon 03 (product-rules) gains rule 6** as a *pointer* to Canon 06 (owner), not a restatement.
+- **Adoption ≠ implementation:** the standard is canon now; authoring records to it is per-app and
+  gated by scope (African Discoveries' 9–17 vs fund-3–8), a content-model change, and the journey-axis
+  decision. **No content rewritten yet.**
+- Committed under the publication hold; **not pushed.** African Discoveries side (the delegated
+  reference + the Level 3 feature) lives on branch `fix/audit-phase-0-content-truth` in that repo.
+
+---
+
 ## 🏛️ 2026-07-24 (session 45b) — Institutional Platform Strategy added (DRAFT) + D-18/D-19
 
 Founder strategic doc **`architecture/institutional-platform-strategy.md`** added — *platform-first*:
