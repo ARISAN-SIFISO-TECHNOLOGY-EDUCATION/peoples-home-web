@@ -160,3 +160,5 @@ to authoring content immediately. Each World A app resolves these before authori
   delegated implementation reference; **this document is the canonical owner.** Future implementers
   (Space Explorer, Early Numeracy, and every later World A app) inherit this rather than reinventing
   "complete."
+- **Gold-standard exemplar:** [`exemplar-imhotep.md`](./exemplar-imhotep.md) — the first record authored
+  to this standard in full. What "complete" reads like, in practice, not in the abstract.

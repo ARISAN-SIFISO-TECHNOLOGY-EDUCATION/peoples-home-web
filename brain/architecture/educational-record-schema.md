@@ -182,7 +182,11 @@ Recorded so a future contributor does not "helpfully" add them:
    per-`ageBand` `Claim` variants) or presentation (belongs in the interface)? Genuinely unresolved, and
    entangled with the **scope decision** (9–17 vs fund-3–8). Left out until that is made.
 2. **Exact claim granularity** — sentence, paragraph, or "assertion"? §3 fixes the *direction* (claim-level);
-   the precise unit is a design call best made against a fully-authored record.
+   the precise unit is a design call best made against a fully-authored record. **→ Answered by evidence:**
+   the Imhotep exemplar ([`exemplar-imhotep.md`](./exemplar-imhotep.md)) authored to Canon 06 shows sources
+   attach naturally to a **passage** (one or more sentences making one educational point), not to every
+   sentence. Proposed refinement: **a `Claim` is a passage + its sources.** Not yet folded into §3 — a
+   founder call on whether one authored record is enough to settle it.
 3. **`kind` taxonomy** — owned by each app, or eventually a World A vocabulary? Deferred; the schema works
    either way today.
 

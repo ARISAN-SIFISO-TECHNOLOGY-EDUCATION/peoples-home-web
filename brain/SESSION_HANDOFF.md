@@ -41,6 +41,28 @@ founder decision, not cleanup.
 
 ---
 
+## ✍️ 2026-07-24 (session 45e) — First record authored to Canon 06: the Imhotep exemplar
+
+`architecture/exemplar-imhotep.md` — the **gold standard**. Real, teaching-quality content authored to
+the full Canon 06 (all four bands), the thing every World A educational record is now measured against.
+The chain that began with *"why a one-minute read?"* ends with an actual educational work worthy of the
+institution.
+
+- **Genuine content, no filler.** A ~10–15 min read: Imhotep's world, life, the Step Pyramid, the honest
+  treatment of his medicine reputation, why he matters, misconceptions, connections, timeline, glossary.
+- **The Misconceptions band did the heaviest lifting** — the record's most important sentence (*"we cannot
+  establish that the historical Imhotep practised medicine"*) exists *only* because Canon 06 requires
+  misconceptions. Without it the record would have repeated the romantic legend as fact. **Proof Canon 06
+  changes the content, not just its container.**
+- **Resolved the schema's open claim-granularity question with evidence:** sources attach to a **passage**
+  (a point), not every sentence → proposed `Claim = passage + sources`. Noted in the schema, not yet
+  folded in (needs a founder call on whether one record settles it).
+- ⚠️ **Sources are `verified: false`** — publication + title, written without live access; independent
+  confirmation is the outstanding human step before this reaches a child (Phase 0 refused to fake it).
+- Committed under the publication hold; **not pushed.**
+
+---
+
 ## 🧱 2026-07-24 (session 45d) — Educational Record **schema** drafted (Brain-owned DRAFT)
 
 `architecture/educational-record-schema.md` — the canonical structure that **represents** Canon 06 (the
