@@ -141,3 +141,8 @@ a future architecture pass — they are not forgotten, just in-progress.
 - [`02-world-a-world-b-dna.md`](./02-world-a-world-b-dna.md) — the DNA split in depth.
 - [`03-tph-core-and-passport.md`](./03-tph-core-and-passport.md) — the shared platform.
 - Per-app memories: [`../apps/`](../apps/).
+- 📝 [`institutional-platform-strategy.md`](./institutional-platform-strategy.md) — **DRAFT, not adopted.**
+  ⚠️ **Term note:** that document reuses **"capability"** in a *software-service* sense
+  (`getVision()`, `getLaunchStatus()`) distinct from **this** document's sense — *what a learner
+  gains* (the eight categories). The collision is flagged there for a founder ruling; until then,
+  "capability" in the Canon means the learner-value sense defined here.
