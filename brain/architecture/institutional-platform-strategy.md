@@ -7,43 +7,42 @@
 # 📝 Institutional Platform Strategy — DRAFT (Waiting), *not adopted*
 
 > **Status in the Brain:** 📝 **DRAFT — PROPOSED, NOT ADOPTED · not scheduled for implementation.**
-> **Entered the Brain:** 2026-07-24 · **Author:** Founder · **Version:** 0.1 (Planning Document).
+> **Entered the Brain:** 2026-07-24 · **Author:** Founder · **Version:** 0.2 (revised 2026-07-24 per **D-18**).
 >
 > This is a **strategic direction**, deliberately non-executable. It is **not Canon** — that is why
 > it carries a descriptive name rather than a `0N-` canon number like its neighbours
 > ([`01-capability-architecture.md`](./01-capability-architecture.md) … `05-…`), which are adopted
 > law. It does not govern any current design decision. It becomes binding only through formal
 > Architecture Decision Records and an implementation roadmap (see the document's §13).
+>
+> **v0.1 → v0.2 (2026-07-24):** the software layer was renamed **"capabilities" → "Institutional
+> Services"** throughout, per **D-18**. The original v0.1 term is preserved only in the git history,
+> not restated here — a living document is corrected, not annotated line-by-line.
 
-## ⚠️ Two reconciliations required before this is adopted — founder rulings, recorded here so a later reader does not miss them
+## ✅ The two entry reconciliations are now RESOLVED by founder ruling — the document nonetheless remains DRAFT
 
-**1. The word "capability" already has an owner in this folder — this document gives it a second, different meaning.**
+Both flags raised when this document entered the Brain have been ruled on. **Neither ruling lets it
+leave DRAFT** — its own §13 still lists the eight decisions required before implementation.
 
-| Term | Existing meaning (Canon) | This document's meaning |
-|---|---|---|
-| **capability** | **What a *learner gains*** — the eight capability *categories* (`01-capability-architecture.md`): Foundations, Curiosity, Thinking… the real unit of educational value. | **A software *service function*** exposed to interfaces — `getVision()`, `recommendApp()`, `getLaunchStatus()`. |
+**1. ✅ RESOLVED by [D-18](../decisions/DECISIONS.md) — the "capability" collision.**
+`01-capability-architecture.md` owns **"capability" = what a *learner gains*** (the eight categories).
+This document originally reused it for a *software service function*. **D-18 renamed the software layer
+to "Institutional Services" and reserved "capability" exclusively for human development** — the same
+mechanism as **Number Kingdom vs Numeria (D-16)** and the **"TPH Core" rename (D-13)**. The rename is
+applied throughout the body below. (Layering the ruling surfaced: **Institutional Services** — *what
+the institution does* — sit above **TPH Core shared services** — *how apps implement their
+responsibilities* — above infrastructure.)
 
-Both senses appear in the Brain the moment this file lands, and a future reader searching *capability*
-hits both. This is the same collision class the project has ruled on before — **Number Kingdom vs
-Numeria** (D-16), the **"TPH Core" → "TPH Learning Engines"** rename (D-13). It wants a disambiguating
-name for the *software* sense (candidates: **institutional service**, **platform service**,
-**capability endpoint**) — **a founder ruling, not made here.** Note the platform already has a
-"services" concept: `01`'s **TPH Core — shared SERVICES**, which this document's *Institutional
-Capability Layer* substantially overlaps and may simply be the meta-scoped extension of.
+**2. ✅ RESOLVED by [D-19](../decisions/DECISIONS.md) — the offline-DNA boundary.**
+The auth/permissions/API machinery describes the institutional meta-layer, not the learning apps.
+**D-19 makes this a constitutional boundary: the Institutional Platform may describe, distribute and
+recommend World A, but is never a *runtime dependency* of it.** §11's *"institutional operating
+platform for the entire ecosystem"* is to be read under D-19 — World A stays #FreeForever, offline and
+account-free; accounts/servers remain a **World B / iKhaya** concern
+([`02-world-a-world-b-dna.md`](./02-world-a-world-b-dna.md)).
 
-**2. It must be reconciled with the offline / no-accounts DNA — which it does not contradict, but is easily read as contradicting.**
-
-Product Rule #3–#4 ([`../vision/01-product-rules.md`](../vision/01-product-rules.md)) make World-A
-learning apps **#FreeForever · offline · no accounts · no server · no tracking**. This document's
-authentication, permissions, multi-tenancy and APIs describe the **institutional platform** (the
-meta-layer: knowledge, governance, launch status — accessed via website / AI / dashboards), **not**
-the learning apps. Read carelessly, *"the institutional operating platform for the entire ecosystem"*
-(§11) reads as putting a server under the learning apps. It must state explicitly that it does **not**
-— accounts/servers remain a **World B / iKhaya** concern (`02-world-a-world-b-dna.md`), and the
-offline learning apps stay sovereign. **Flagged for the same ruling.**
-
-*Neither reconciliation is performed here. A review records what it finds; it does not rewrite the
-document to resolve it. See [`../decisions/DECISIONS.md`](../decisions/DECISIONS.md) when these are ruled.*
+*The rulings were recorded as decisions (D-18, D-19) and the ruled rename applied; the founder's
+strategic content is otherwise unchanged. Everything else in the document remains proposal, not law.*
 
 ---
 
@@ -53,11 +52,12 @@ document to resolve it. See [`../decisions/DECISIONS.md`](../decisions/DECISIONS
 
 ## Institutional Platform Architecture Strategy
 
-### Version 0.1 (Planning Document)
+### Version 0.2 (Planning Document)
 
 **Status:** DRAFT (Waiting)
 **Purpose:** Strategic architecture proposal
 **Decision State:** Not adopted
+**Revised:** 2026-07-24 (D-18 — software layer renamed to *Institutional Services*)
 
 ---
 
@@ -102,7 +102,7 @@ Every interface is simply another way to access it.
 
 # 3. Core Principle
 
-> **The People's Home owns institutional knowledge, institutional behaviour, and institutional governance. Interfaces present those capabilities to different audiences.**
+> **The People's Home owns institutional knowledge, institutional behaviour, and institutional governance. Interfaces present those institutional services to different audiences.**
 
 This means:
 
@@ -118,7 +118,7 @@ Only the platform owns institutional state.
 
 ## Principle 1 — Platform First
 
-Business capability belongs to the platform.
+Business logic belongs to the platform.
 
 Never place business rules inside:
 
@@ -147,7 +147,7 @@ Replacing an interface must not require rewriting institutional behaviour.
 
 ---
 
-## Principle 3 — Expose Capabilities, Not Storage
+## Principle 3 — Expose Institutional Services, Not Storage
 
 Interfaces request services.
 
@@ -211,7 +211,7 @@ Platform
 
 ↓
 
-Capabilities
+Institutional Services
 
 ↓
 
@@ -238,9 +238,13 @@ Everything else
 
 ---
 
-# 5. Institutional Capability Layer
+# 5. Institutional Services Layer
 
-The People's Home exposes capabilities.
+> **Term note (D-18):** these are **Institutional Services** — *what the institution does*. Not to be
+> confused with **capability**, reserved in this project for *what a learner gains*
+> ([`01-capability-architecture.md`](./01-capability-architecture.md)).
+
+The People's Home exposes institutional services.
 
 Examples include:
 
@@ -288,7 +292,7 @@ Examples include:
 
 # 6. Interface Layer
 
-Every interface consumes the same capabilities.
+Every interface consumes the same institutional services.
 
 ```text
                    Interfaces
@@ -305,7 +309,7 @@ Voice
 
         ▼
 
-Institutional Capabilities
+Institutional Services
 ```
 
 No interface owns institutional logic.
@@ -314,7 +318,7 @@ No interface owns institutional logic.
 
 # 7. Access Control Model
 
-Capabilities remain consistent.
+Institutional services remain consistent.
 
 Permissions determine what each audience may see.
 
@@ -353,7 +357,7 @@ Examples:
 * Release pipeline
 * Institutional Brain
 
-The capability remains the same.
+The service remains the same.
 
 The representation changes according to authorisation.
 
@@ -395,7 +399,7 @@ Gate:
 Phase 3 pending
 ```
 
-One capability.
+One service.
 
 Different authorised views.
 
@@ -411,7 +415,7 @@ Different authorised views.
      │            │            │
      └────────────┴────────────┘
                   │
-      Institutional Capability Layer
+      Institutional Services Layer
                   │
       ┌───────────┼───────────┐
       ▼           ▼           ▼
@@ -431,7 +435,7 @@ Different authorised views.
 
 MCP is treated as an interface adapter.
 
-It exposes selected institutional capabilities to AI assistants.
+It exposes selected institutional services to AI assistants.
 
 Examples:
 
@@ -460,7 +464,7 @@ Future interfaces may include:
 * Automation workflows
 * Voice interfaces
 
-Every interface should consume the same institutional capabilities.
+Every interface should consume the same institutional services.
 
 ---
 
@@ -468,14 +472,14 @@ Every interface should consume the same institutional capabilities.
 
 The following decisions remain intentionally unresolved:
 
-* Public capability catalogue.
+* Public service catalogue.
 * Authentication architecture.
-* Capability versioning.
+* Service versioning.
 * Multi-tenant support.
 * Internal vs external APIs.
 * Event architecture.
 * Search indexing strategy.
-* Capability discovery.
+* Service discovery.
 * AI permission model.
 * Observability and auditing.
 * Rate limiting.
@@ -489,7 +493,7 @@ These should be addressed when implementation planning begins.
 
 Implementation should not begin until the following institutional decisions have been adopted:
 
-* Capability taxonomy.
+* Service taxonomy.
 * Identity and permission model.
 * Public information policy.
 * AI interaction policy.
@@ -504,11 +508,11 @@ Implementation should not begin until the following institutional decisions have
 
 This strategy is considered successful when:
 
-* Every interface consumes institutional capabilities rather than storage.
+* Every interface consumes institutional services rather than storage.
 * Business behaviour exists only within the platform.
 * Multiple interfaces can coexist without duplicating logic.
 * New protocols can be supported through adapters rather than architectural change.
-* Public, authenticated, and internal users experience different authorised views of the same institutional capabilities.
+* Public, authenticated, and internal users experience different authorised views of the same institutional services.
 * The People's Home remains the single source of institutional truth.
 
 ---

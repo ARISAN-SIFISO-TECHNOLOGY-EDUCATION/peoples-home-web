@@ -102,7 +102,7 @@ If you are continuing from a previous session → `brain/SESSION_HANDOFF.md`
 | [`architecture/01-capability-architecture.md`](./architecture/01-capability-architecture.md) | Capability → Implementation → DNA; the six pillars |
 | [`architecture/02-world-a-world-b-dna.md`](./architecture/02-world-a-world-b-dna.md) | The World A / World B DNA split and "the bridge" |
 | [`architecture/03-tph-core-and-passport.md`](./architecture/03-tph-core-and-passport.md) | The shared-platform thesis and the Passport mechanism |
-| 📝 [`architecture/institutional-platform-strategy.md`](./architecture/institutional-platform-strategy.md) | **DRAFT (waiting) — not adopted.** Long-term "platform-first, interfaces-as-adapters" direction. Two founder reconciliations flagged before adoption (a "capability" term collision + the offline-DNA boundary). |
+| 📝 [`architecture/institutional-platform-strategy.md`](./architecture/institutional-platform-strategy.md) | **DRAFT (waiting) — not adopted.** Long-term "platform-first, interfaces-as-adapters" direction. Entry reconciliations resolved by **D-18** (software layer = *Institutional Services*, not "capability") and **D-19** (the platform is never a runtime dependency of World A); still DRAFT pending its §13 decisions. |
 
 ### Applications (World A — all 10 live)
 

@@ -79,3 +79,6 @@ See [`../platform/ikhaya.md`](../platform/ikhaya.md) and [`03-product-rules.md`]
 - [`01-capability-architecture.md`](./01-capability-architecture.md) — where this split sits in the whole.
 - [`../platform/ikhaya.md`](../platform/ikhaya.md) — World B, in depth.
 - [`03-product-rules.md`](./03-product-rules.md) — the rules World A must never break.
+- **[`../decisions/DECISIONS.md`](../decisions/DECISIONS.md) → D-19** — the runtime-boundary corollary
+  of this split: the Institutional Platform may *describe / distribute / recommend* World A but is
+  **never a runtime dependency** of it. World A stays offline-sovereign regardless of platform state.

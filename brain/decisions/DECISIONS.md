@@ -366,6 +366,59 @@
 
 ---
 
+## D-18 · The platform's software layer is "Institutional **Services**", not "capabilities" — reserve *capability* for human development (2026-07-24)
+
+- **Context:** the `institutional-platform-strategy.md` DRAFT (added 2026-07-24) used **"capability"**
+  for a *software service function* (`getVision()`, `getLaunchStatus()`). But
+  [`../architecture/01-capability-architecture.md`](../architecture/01-capability-architecture.md)
+  already owns **"capability" = what a *learner gains*** (the eight categories — the real unit of
+  educational value). Same word, two meanings, same folder — flagged on entry as reconciliation #1.
+- **Decision:** the software layer is renamed **Institutional Services** throughout the strategy.
+  **"Capability" is reserved exclusively for human development / learning.** *Institutional services
+  describe what the institution **does**; capabilities describe what a person **becomes**.*
+  - *"Interfaces consume capabilities"* → *"Interfaces consume **institutional services**."*
+  - *"Expose capabilities, not storage"* → *"Expose **institutional services**, not storage."*
+  - *"Institutional Capability Layer"* → *"Institutional Services Layer."* ("Business capability" →
+    "business logic", for the same reason.)
+- **Why not "capability" for the software sense:** technically defensible, but the word already has an
+  established educational meaning central to World A. Overloading it inside the same architecture is
+  the collision this project has ruled on twice before — **Number Kingdom vs Numeria (D-16)** and the
+  **"TPH Core" → "TPH Learning Engines" rename (D-13)**. Same mechanism: when a name collides with a
+  load-bearing one, rename the newcomer.
+- **The layering it exposes** (founder observation, recorded for the eventual implementation ADRs):
+  **Institutional Services** (what the institution does) sit *above* **TPH Core shared services** (how
+  multiple apps implement their responsibilities) sit above infrastructure. Two distinct layers, not
+  one.
+- **Applied 2026-07-24.** The strategy DRAFT is revised to **v0.2**; reconciliation #1 is **RESOLVED**.
+  The document remains DRAFT overall — its §13 still lists the decisions required before implementation.
+
+## D-19 · The Institutional Platform governs World A but is never a *runtime dependency* of it (2026-07-24)
+
+- **Context:** reconciliation #2 flagged on the strategy DRAFT's entry. Its
+  auth/permissions/multi-tenant/API machinery describes the **institutional meta-layer**; read
+  carelessly, §11's *"the institutional operating platform for the entire ecosystem"* reads as
+  putting a server under the offline learning apps — contradicting Product Rules #3–#4 (#FreeForever ·
+  offline · no accounts · no server).
+- **Decision — a constitutional boundary:** **The Institutional Platform may *describe*, *distribute*,
+  and *recommend* World A. It must never become a *runtime dependency* of a World A educational
+  experience.** World A stays sovereign: learning, progression, privacy, local storage, offline
+  operation, the child's experience — all owned by the app, none requiring the platform to be
+  reachable.
+  - **Institutional Platform owns:** governance · documentation · planning · public information ·
+    repository health · release management · AI interfaces · websites · authenticated services.
+  - **World A owns:** learning · progression · privacy · local storage · offline operation · the
+    child experience.
+- **Why it's a rule and not an implication:** it protects the single strongest invariant in the
+  project. An implication can be eroded one convenient feature at a time; a stated boundary cannot be
+  crossed without visibly overturning **D-19**. Accounts/servers remain a **World B / iKhaya** concern
+  ([`../architecture/02-world-a-world-b-dna.md`](../architecture/02-world-a-world-b-dna.md)).
+- **Scope:** this is the platform-vs-World-A runtime boundary specifically. It does not touch the
+  World A / World B split itself (Canon 02 owns that) — it *cites* it.
+- **Status:** reconciliation #2 **RESOLVED**. The strategy DRAFT still does not leave DRAFT — D-18 and
+  D-19 clear the two entry flags, not the eight implementation decisions in its §13.
+
+---
+
 > **Open decisions (not yet resolved):**
 > - The **#FreeForever funding fork** for iKhaya (the one place free-forever needs an answer).
 > - Whether **Digital Creator Academy** ever becomes a real app (parked).

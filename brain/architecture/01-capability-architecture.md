@@ -142,7 +142,7 @@ a future architecture pass — they are not forgotten, just in-progress.
 - [`03-tph-core-and-passport.md`](./03-tph-core-and-passport.md) — the shared platform.
 - Per-app memories: [`../apps/`](../apps/).
 - 📝 [`institutional-platform-strategy.md`](./institutional-platform-strategy.md) — **DRAFT, not adopted.**
-  ⚠️ **Term note:** that document reuses **"capability"** in a *software-service* sense
-  (`getVision()`, `getLaunchStatus()`) distinct from **this** document's sense — *what a learner
-  gains* (the eight categories). The collision is flagged there for a founder ruling; until then,
-  "capability" in the Canon means the learner-value sense defined here.
+  ✅ **Term settled (D-18):** that document's *software-service* layer is now **"Institutional
+  Services"** (`getVision()`, `getLaunchStatus()`), **not** "capability". **"Capability" belongs to
+  *this* document** — *what a learner gains* (the eight categories). Institutional services describe
+  what the institution **does**; capabilities describe what a person **becomes**.

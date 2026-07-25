@@ -41,6 +41,23 @@ founder decision, not cleanup.
 
 ---
 
+## 🏛️ 2026-07-24 (session 45b) — Institutional Platform Strategy added (DRAFT) + D-18/D-19
+
+Founder strategic doc **`architecture/institutional-platform-strategy.md`** added — *platform-first*:
+website/mobile/AI are replaceable adapters over one institutional layer. **DRAFT, not adopted, no
+canon number.** Two entry flags raised, then ruled:
+- **D-18** — the software layer is **"Institutional Services"**, *not* "capability". "Capability"
+  stays reserved for *what a learner gains* (Canon 01's eight categories). Same collision-rename
+  mechanism as D-16 (Numeria) / D-13 (TPH Core). Rename applied throughout; doc → **v0.2**.
+- **D-19** — **the Institutional Platform is never a *runtime dependency* of World A.** It may
+  describe/distribute/recommend World A; World A stays #FreeForever, offline, account-free. Cited from
+  Canon 02.
+
+Doc **stays DRAFT** — D-18/D-19 cleared the two entry flags, not its §13 implementation decisions.
+Committed under the publication hold; **not pushed.**
+
+---
+
 ## ✅ 2026-07-24 (session 45) — R1 CLOSED · Truth Seekers ↔ Critical Thinker verified & recorded
 
 **Mostly a session in a *different* repository** (`sifiso-s-critical-thinking`, external to TPH).
