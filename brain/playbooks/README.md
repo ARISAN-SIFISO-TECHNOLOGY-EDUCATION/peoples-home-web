@@ -19,6 +19,7 @@
 | [`review-checklist.md`](./review-checklist.md) | Pre-ship checklist for any new app or major feature |
 | [`authoring-educational-record.md`](./authoring-educational-record.md) | Editorial workflow for authoring one educational record to Canon 06 (Research → … → Published) — **Track A** |
 | [`independent-review-and-verification.md`](./independent-review-and-verification.md) | Closing the two ⏳ gates every record carries — historian + teacher + source verification; the reviewer brief; the verification tracker — **Track B** |
+| [`release-packaging.md`](./release-packaging.md) | The per-app **Release Package** — identity · G1–G7 · quality/educational/distribution gates · founder G7 · the outstanding **human gates**. One checklist for every launch decision |
 | [`brain-update.md`](./brain-update.md) | How to keep the brain current after any significant session |
 
 ---

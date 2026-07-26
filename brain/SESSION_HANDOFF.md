@@ -136,6 +136,18 @@ stays a Track-B human gate** — the baseline is structural, not observed.
 NOT pushed** (live launch-sensitive apps — founder reviews/merges/deploys). Brain changes committed under
 the publication hold.
 
+**Update — Release Packaging checklist DONE → production side COMPLETE.** [`playbooks/release-packaging.md`](./playbooks/release-packaging.md)
+— the per-app Release Package (identity · G1–G7 cited from §4 · quality/educational/distribution gates ·
+founder-G7 single decision · **Outstanding Human Gates**) + a six-flagship portfolio snapshot. It packages
+evidence; it does not close gates. **This was the last production artifact.** Everything a document can
+produce now exists (standard · schema · playbooks · 3 validation records · readiness review · verification
+pipeline · a11y baseline · release package). **What remains is Section 7 — the human gates**, consolidated
+portfolio-wide: child play-tests (R2) · independent educator review (true G6, all flagships) · independent
+historian + source verification (AD content + the 3 exemplars, all `verified:false`) · observed a11y ·
+real-device performance · **founder G7** (all six) + the AD 9–17-vs-fund-3–8 scope call. None is
+document-closeable. **Production has delivered everything it reasonably can under the hold; the remaining
+work is institutional judgement — reviewers, real children, founder decisions — deliberately not faked.**
+
 ---
 
 ## ✍️ 2026-07-24 (session 45e) — First record authored to Canon 06: the Imhotep exemplar
