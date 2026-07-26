@@ -89,6 +89,23 @@ human gates. Then, in operate mode, authored **validation record #3 — [`archit
 (person · civilisation · innovation); four remain (animal · living figure · natural wonder · cultural
 tradition). All `verified:false`. Hold stands.
 
+**Update — Track B focus (founder ruling).** Leadership attention shifts to **Track B (launch readiness)**;
+Track A stays warm. Rationale (founder): *Track A now has a machine; Track B doesn't.* I grounded this in
+the two authoritative docs — [`launch-readiness-2026-08-09.md`](./launch-readiness-2026-08-09.md) (D-17)
+and African Discoveries' `docs/audit/final-verdict.md` — which **already diagnose** Track B (real-child
+play-tests R2, G5/G6 unevidenced on five flagships, content verification). So rather than duplicate them, I
+built Track B's **first machine**: [`playbooks/independent-review-and-verification.md`](./playbooks/independent-review-and-verification.md)
+— the three certifications (historian · teacher · source), a hand-to-a-reviewer **brief**, the verification
+ledger, and a **tracker** (3 records authored, **0 Verified**). Enshrined the mantra **"Authored ≠
+trustworthy"** in both playbooks (D-21; available for PROJECT_DNA elevation — a founder act). Boundary kept
+honest: this machine *defines* the review, it does **not** recruit the reviewers (founder task) and does
+**not** cover the child play-test (a separate experiential gate). Committed under the hold.
+
+**Next Track B production tasks available (I can do), vs leadership (founder):** *Production* — G5/G6
+evidence sweep on the four un-tested flagships (Tech Makers · Truth Seekers · Mzansi Money · Micro
+Founders), reusing `math-adventure-rpg/scripts/a11y-audit.mjs`; a release-packaging checklist. *Leadership*
+— recruit the historian + teacher, run the child play-tests, the 9–17 vs fund-3–8 scope call, G7 approval.
+
 ---
 
 ## ✍️ 2026-07-24 (session 45e) — First record authored to Canon 06: the Imhotep exemplar

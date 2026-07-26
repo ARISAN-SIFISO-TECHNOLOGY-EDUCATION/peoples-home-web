@@ -9,6 +9,12 @@
 > - **Exemplar (the gold standard):** [`../architecture/exemplar-imhotep.md`](../architecture/exemplar-imhotep.md) — what "complete" reads like.
 >
 > This is the *how*. It does not restate the standard; it operationalises it (D-13: one owner per rule).
+>
+> ## 🔑 Operational mantra (D-21): **Authored ≠ trustworthy.**
+> A record earns trust through **independent verification**, never through the author's self-confidence.
+> Authoring and author self-review are *evidence*; certification is a separate act by a *different person*
+> (see [`independent-review-and-verification.md`](./independent-review-and-verification.md)). Applies to
+> every record, forever. *(Available for elevation to a PROJECT_DNA principle — a founder act.)*
 
 ---
 

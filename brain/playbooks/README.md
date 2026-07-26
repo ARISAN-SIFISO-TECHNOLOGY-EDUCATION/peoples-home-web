@@ -17,7 +17,8 @@
 | [`google-play.md`](./google-play.md) | Google Play — wind-down mode; only Math Adventure + Science Sprouts |
 | [`kilimanjaro-update.md`](./kilimanjaro-update.md) | Updating the WhatsApp bot (new app, new feature, railway redeploy) |
 | [`review-checklist.md`](./review-checklist.md) | Pre-ship checklist for any new app or major feature |
-| [`authoring-educational-record.md`](./authoring-educational-record.md) | Editorial workflow for authoring one educational record to Canon 06 (Research → … → Published) |
+| [`authoring-educational-record.md`](./authoring-educational-record.md) | Editorial workflow for authoring one educational record to Canon 06 (Research → … → Published) — **Track A** |
+| [`independent-review-and-verification.md`](./independent-review-and-verification.md) | Closing the two ⏳ gates every record carries — historian + teacher + source verification; the reviewer brief; the verification tracker — **Track B** |
 | [`brain-update.md`](./brain-update.md) | How to keep the brain current after any significant session |
 
 ---
