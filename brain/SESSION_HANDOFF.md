@@ -101,10 +101,23 @@ trustworthy"** in both playbooks (D-21; available for PROJECT_DNA elevation — 
 honest: this machine *defines* the review, it does **not** recruit the reviewers (founder task) and does
 **not** cover the child play-test (a separate experiential gate). Committed under the hold.
 
-**Next Track B production tasks available (I can do), vs leadership (founder):** *Production* — G5/G6
-evidence sweep on the four un-tested flagships (Tech Makers · Truth Seekers · Mzansi Money · Micro
-Founders), reusing `math-adventure-rpg/scripts/a11y-audit.mjs`; a release-packaging checklist. *Leadership*
-— recruit the historian + teacher, run the child play-tests, the 9–17 vs fund-3–8 scope call, G7 approval.
+**Update — G5/G6 evidence sweep DONE (Track B production).** [`g5-g6-evidence-sweep-2026-07-26.md`](./g5-g6-evidence-sweep-2026-07-26.md)
+— swept the four un-swept flagships, turning D-17's near-universal ❓ on G5/G6 into evidenced marks, one
+consistent format, plus a **portfolio readiness matrix** (single operational view). Verified this session:
+all four `tsc` **clean**; a11y signal counts across every src tree; content real + ages-not-grades (0
+"Grade"). **Key findings:** (1) **Tech Makers** is genuinely accessible (130 aria, skip-links, sr-only,
+semantic buttons) and most launch-prepared (privacy/age-compliance/Play docs); (2) **Truth Seekers · Mzansi
+Money · Micro Founders** share the **Atelier chassis** with near-zero explicit a11y (0 aria/role/focus/
+reduced-motion) but *native-button keyboard operability intact* — so **one chassis a11y pass fixes all
+three**; (3) **G7 is ⏳ for every flagship** — no §4 founder approval recorded anywhere; (4) honest limit
+held — observed a11y + the true G6 educator review are ⏳ for all (repos can't prove them). No app touched;
+evidence only (D-17 discipline).
+
+**Next production (I can do, ungated):** the single **Atelier-chassis a11y pass** (aria-labels on
+icon-buttons · focus-visible · skip link · reduced-motion), landing a11y across three flagships at once,
+using Tech Makers' patterns as template; confirm Tech Makers alt-coverage (38/68) + Atelier icon-button
+names; a release-packaging checklist. **Leadership (founder):** recruit historian + teacher, run child
+play-tests, 9–17 vs fund-3–8 scope call, **G7 approval** (⏳ all six).
 
 ---
 
