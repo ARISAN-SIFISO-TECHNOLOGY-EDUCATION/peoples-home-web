@@ -44,7 +44,7 @@ founder decision, not cleanup.
 ## ✍️ 2026-07-26 (session 46) — Editorial workflow + second exemplar (Great Zimbabwe)
 
 The scholarship phase begins: the bottleneck is no longer software but content. Two artifacts, both
-committed under the publication hold (Brain now **ahead 11**, still NOT pushed).
+committed under the publication hold (several commits **ahead of `origin/main`** — see `git status`; still NOT pushed).
 
 **1. The authoring workflow — [`playbooks/authoring-educational-record.md`](./playbooks/authoring-educational-record.md).**
 Turns Canon 06 from a standard into a repeatable process: the seven-stage pipeline (Research → Author →
