@@ -457,6 +457,47 @@
 
 ---
 
+## D-21 · From *inventing* the institution to *operating* it — industrialise the workflow, never lower the bar (2026-07-26)
+
+- **The mode shift.** This session invented the educational institution: Canon 06, the Educational Record
+  Schema, the authoring playbook, the review gates, and **two validation records of different kinds**
+  (Imhotep = person, Great Zimbabwe = civilisation) that proved the system works. Those were the unknowns;
+  they are no longer unknown. The founder's ruling: **inventing is over; operating begins.** Inventing is
+  deliberately slow because mistakes become constitutional; operating should be faster because the
+  constitution already exists. The mindset changes from *"can Canon 06 do this?"* to **"apply Canon 06."**
+- **Two ways to accelerate — only one is allowed.** ❌ *Bad acceleration:* produce many records fast by
+  relaxing the standard — this destroys everything built. ✅ *Good acceleration:* keep the standard exactly
+  where it is and **industrialise the workflow.** The bar does not move; the throughput does.
+- **The pipeline model.** Records move through queues (Research → Authoring → Self-review → Historian review
+  → Teacher review), so **many records sit at different stages simultaneously** instead of one-at-a-time.
+  Average time per record also falls honestly: Imhotep and Great Zimbabwe were among the *hardest* possible
+  (deep historiographical misconceptions); an endemic animal, a national park, a geological feature or an
+  instrument need careful sourcing but less controversy-resolution. Lower average difficulty, **same bar.**
+- **Two independent tracks, non-blocking.** **Track A — Library Growth** (author the catalogue to Canon 06).
+  **Track B — Launch Readiness** (UI polish, performance, accessibility, testing, release docs, independent
+  reviews). Neither blocks the other. Rationale the founder stressed: **four apps still need preparation**;
+  if African Discoveries consumes all time, the portfolio suffers. Standards exist precisely to stop
+  reinventing the process — the expensive architectural cost is paid, now benefit from it.
+- **⚠️ The honest constraint the pipeline diagram hides — the ceiling is human, not throughput.** The
+  Authoring/Self-review queues are AI-fillable and can run fast. The **Historian-review and Teacher-review
+  queues require independent humans who do not yet exist**, and source-URL verification likewise. So
+  industrialising authoring produces an **authored-but-unverified backlog** — records at `verified: false`,
+  correct-by-construction but **not certifiable, and not shippable to a child on authoring alone.** This is
+  acceptable *by design* only because we name it: raising *records authored* must never be mistaken for
+  raising *records a child can trust.* Sourcing the independent reviewers is the real rate-limiter on
+  "finish the catalogue," and it is a Track-B / founder task, not an authoring one. (This is the
+  proxy-substitution guard applied to throughput: *authored* is a proxy for *trustworthy*; the gap between
+  them is exactly the two human gates.)
+- **Programme.** Continue the **validation-record archetypes** (schema §5.1: person ✅ · civilisation ✅ ·
+  scientific innovation · animal/biodiversity · living figure · natural wonder · cultural tradition) to
+  prove subject-agnosticism across the domain; **then** switch to systematic library authoring. Operating
+  mode starts *now*, within the archetype programme.
+- **Not changed:** Canon 06, the schema, the playbook, and the gates are untouched — accelerating means
+  using them faster, not editing them. All authored records remain `verified: false` until the two human
+  gates close.
+
+---
+
 > **Open decisions (not yet resolved):**
 > - The **#FreeForever funding fork** for iKhaya (the one place free-forever needs an answer).
 > - Whether **Digital Creator Academy** ever becomes a real app (parked).

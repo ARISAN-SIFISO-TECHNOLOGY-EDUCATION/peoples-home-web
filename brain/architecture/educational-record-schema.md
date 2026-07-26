@@ -180,7 +180,7 @@ strongly than many records of one kind would. Only after these does authoring sh
 |---|---|---|---|
 | 1 | Historical person | Imhotep | ✅ authored + self-reviewed |
 | 2 | Civilisation / archaeological site | Great Zimbabwe | ✅ authored + self-reviewed |
-| 3 | Scientific discovery / innovation | — | ⏳ |
+| 3 | Scientific discovery / innovation | The Dolos | ✅ authored + self-reviewed |
 | 4 | Animal / biodiversity | — | ⏳ |
 | 5 | Living historical figure | (candidate: Nyokong / Maathai) | ⏳ |
 | 6 | Natural wonder | — | ⏳ |

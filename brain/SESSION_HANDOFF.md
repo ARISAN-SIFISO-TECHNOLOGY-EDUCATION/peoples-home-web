@@ -77,6 +77,18 @@ Tracked in schema §5.1.
 **Next (founder's call):** author validation record #3 (scientific innovation), or pause the archetype
 programme against the 9-August launch. Nothing here is pushed; the hold stands.
 
+**Update — same session, continued.** Founder ruled the mode shift: **inventing → operating** (D-21).
+Industrialise the workflow (pipeline queues; records at many stages at once; two non-blocking tracks —
+A Library Growth, B Launch Readiness) **without lowering the bar.** I recorded the one honest caveat the
+pipeline hides: the **ceiling is human, not throughput** — Historian/Teacher review and source verification
+need independent people who don't exist yet, so fast authoring builds an *authored-but-unverified* backlog
+(`verified:false`, not shippable to a child on authoring alone). *Authored ≠ trustworthy;* the gap is the two
+human gates. Then, in operate mode, authored **validation record #3 — [`architecture/exemplar-dolos.md`](./architecture/exemplar-dolos.md)**
+(the South African dolos; engineering-innovation archetype). New finding: it fits the app's existing
+`innovations` slot, so the taxonomy gap is specific (needs a `place` type) not general. Three archetypes done
+(person · civilisation · innovation); four remain (animal · living figure · natural wonder · cultural
+tradition). All `verified:false`. Hold stands.
+
 ---
 
 ## ✍️ 2026-07-24 (session 45e) — First record authored to Canon 06: the Imhotep exemplar
