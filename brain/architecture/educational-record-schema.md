@@ -163,6 +163,33 @@ app's current `kind` taxonomy (heroes/animals/innovations/timeline) has no clean
 **application** limitation, not a schema one — the canonical schema leaves `kind` to the app (§4), and this
 is exactly the kind of gap the proving-ground exercise is meant to expose.
 
+> **Now confirmed by full authoring (2026-07-26).** Great Zimbabwe has since been *authored in full*, not
+> merely traced — [`exemplar-great-zimbabwe.md`](./exemplar-great-zimbabwe.md). The prediction held: the
+> canonical schema absorbed a civilisation without strain, while the app's `kind` taxonomy could not. The
+> **canonical educational model is richer than the current application model** — the app grows to meet the
+> schema (Canon 06 §6), never the reverse.
+
+### 5.1 The validation-record programme (founder-set, 2026-07-26)
+
+Before systematic library authoring begins, the standard is validated against **one record per archetype** —
+each exercises a different part of Canon 06, so surviving all of them proves subject-agnosticism far more
+strongly than many records of one kind would. Only after these does authoring shift from *experiment* to
+*application of a proven system*.
+
+| # | Archetype | Exemplar | Status |
+|---|---|---|---|
+| 1 | Historical person | Imhotep | ✅ authored + self-reviewed |
+| 2 | Civilisation / archaeological site | Great Zimbabwe | ✅ authored + self-reviewed |
+| 3 | Scientific discovery / innovation | — | ⏳ |
+| 4 | Animal / biodiversity | — | ⏳ |
+| 5 | Living historical figure | (candidate: Nyokong / Maathai) | ⏳ |
+| 6 | Natural wonder | — | ⏳ |
+| 7 | Cultural tradition | — | ⏳ |
+
+All exemplars remain at the **independent-review** and **source-verification** gates (`verified: false`) —
+authoring is not certification (see each exemplar's editorial-review section and the
+[`../playbooks/authoring-educational-record.md`](../playbooks/authoring-educational-record.md) pipeline).
+
 ---
 
 ## 6. Deliberately excluded (and why)
@@ -185,8 +212,10 @@ Recorded so a future contributor does not "helpfully" add them:
    the precise unit is a design call best made against a fully-authored record. **→ Answered by evidence:**
    the Imhotep exemplar ([`exemplar-imhotep.md`](./exemplar-imhotep.md)) authored to Canon 06 shows sources
    attach naturally to a **passage** (one or more sentences making one educational point), not to every
-   sentence. Proposed refinement: **a `Claim` is a passage + its sources.** Not yet folded into §3 — a
-   founder call on whether one authored record is enough to settle it.
+   sentence. Proposed refinement: **a `Claim` is a passage + its sources.** **Now a second data point:** the
+   Great Zimbabwe exemplar ([`exemplar-great-zimbabwe.md`](./exemplar-great-zimbabwe.md)) resolved to the
+   same passage granularity. Two records of different kinds agree — still a founder call to fold into §3, but
+   the evidence has doubled.
 3. **`kind` taxonomy** — owned by each app, or eventually a World A vocabulary? Deferred; the schema works
    either way today.
 

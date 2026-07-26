@@ -160,5 +160,9 @@ to authoring content immediately. Each World A app resolves these before authori
   delegated implementation reference; **this document is the canonical owner.** Future implementers
   (Space Explorer, Early Numeracy, and every later World A app) inherit this rather than reinventing
   "complete."
-- **Gold-standard exemplar:** [`exemplar-imhotep.md`](./exemplar-imhotep.md) — the first record authored
-  to this standard in full. What "complete" reads like, in practice, not in the abstract.
+- **Gold-standard exemplars:** [`exemplar-imhotep.md`](./exemplar-imhotep.md) (a historical *person*) and
+  [`exemplar-great-zimbabwe.md`](./exemplar-great-zimbabwe.md) (a *civilisation / archaeological site /
+  contested history*). What "complete" reads like, in practice, not in the abstract. Two very different
+  subjects tested against one standard — evidence that this standard is **subject-agnostic**, as §Preamble
+  claims. Authored via the [`../playbooks/authoring-educational-record.md`](../playbooks/authoring-educational-record.md)
+  workflow.

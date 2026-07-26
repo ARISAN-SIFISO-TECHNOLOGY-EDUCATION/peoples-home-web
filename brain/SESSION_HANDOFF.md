@@ -41,6 +41,44 @@ founder decision, not cleanup.
 
 ---
 
+## ✍️ 2026-07-26 (session 46) — Editorial workflow + second exemplar (Great Zimbabwe)
+
+The scholarship phase begins: the bottleneck is no longer software but content. Two artifacts, both
+committed under the publication hold (Brain now **ahead 12**, still NOT pushed).
+
+**1. The authoring workflow — [`playbooks/authoring-educational-record.md`](./playbooks/authoring-educational-record.md).**
+Turns Canon 06 from a standard into a repeatable process: the seven-stage pipeline (Research → Author →
+Self-review → Historian review → Teacher review → Verified → Published), per-stage gate checklists derived
+from Canon 06 §2–§5, and the **four verification boundaries** so *"looks finished"* is never read as *"is
+verified."* Distinct from the pre-ship `review-checklist.md` (that ships apps; this authors records).
+
+**2. The second exemplar — [`architecture/exemplar-great-zimbabwe.md`](./architecture/exemplar-great-zimbabwe.md).**
+Founder chose it deliberately: not to grow the count from 1→2, but to test whether Canon 06 teaches a
+**civilisation** (place, archaeology, contested/colonial history) as well as it taught a *person*. It does.
+Three results worth carrying forward:
+- **Subject-agnosticism confirmed.** Two very different subjects, one standard, both bands filled with real
+  content. The Misconceptions band did the heaviest lifting in both — resisting *romanticisation* (Imhotep)
+  and a *politically-motivated colonial myth* (Great Zimbabwe). Different distortions, same protection.
+- **⚠️ The schema outlives the app's taxonomy — the predicted finding, now proven by full authoring.** The
+  canonical schema absorbed a civilisation without strain, but African Discoveries' `kind` taxonomy
+  (heroes/animals/innovations/timeline) has **no slot for a place/civilisation.** The canonical model is
+  richer than the app model → **the app grows to meet the standard, not the reverse** (Canon 06 §6). Recorded
+  as evidence; the app-side `place`/`civilisation` type is founder-sequenced, not yet actioned.
+- **Passage-granularity now has two agreeing data points** (schema §7.2) — still a founder call to fold in.
+
+**3. The validation-record programme (founder-set).** The first ~7 records are **validation records**, one
+per archetype — person ✅, civilisation ✅, then scientific innovation / animal / living figure / natural
+wonder / cultural tradition. Only after all seven does authoring shift from experiment to systematic library.
+Tracked in schema §5.1.
+
+**Both exemplars remain `verified: false`** — authored + author-self-reviewed, but the independent historian
++ teacher review and source-URL verification are still open. Authoring is not certification.
+
+**Next (founder's call):** author validation record #3 (scientific innovation), or pause the archetype
+programme against the 9-August launch. Nothing here is pushed; the hold stands.
+
+---
+
 ## ✍️ 2026-07-24 (session 45e) — First record authored to Canon 06: the Imhotep exemplar
 
 `architecture/exemplar-imhotep.md` — the **gold standard**. Real, teaching-quality content authored to
