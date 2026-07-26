@@ -32,6 +32,24 @@
 
 ---
 
+## ⚠️ Correction & update (2026-07-26, same day)
+
+Two things changed after first publication; both are recorded here rather than silently edited (evidence
+discipline — annotate, don't overwrite):
+
+1. **Tech Makers' G5 was overstated.** The first version credited it with "130 aria, 13 skip-links, sr-only."
+   Those counts were **substantially lesson content** — `src/content/age15.ts` *teaches* web accessibility.
+   Tech Makers' **own-code** a11y is modest (≈5 aria-labels; 0 skip-links/sr-only in its components) — though
+   it does contribute the one genuinely reusable pattern, a global `:focus-visible` rule. This is the
+   "scanner matched content instead of implementation" failure the AD audit named; caught, corrected below.
+2. **The Atelier baseline has since been applied.** Truth Seekers · Mzansi Money · Micro Founders now carry
+   the shared **Atelier Accessibility Baseline** (focus-visible · skip link · `main` landmark ·
+   reduced-motion) — [`patterns/atelier-accessibility-baseline.md`](./patterns/atelier-accessibility-baseline.md).
+   tsc + production build verified for all three. Their G5 rows below are updated accordingly. *(Observed
+   a11y remains a Track-B human gate for every app — the baseline is structural, not observed.)*
+
+---
+
 ## Portfolio readiness matrix — the single operational view
 
 *Community Release §4 gates. `Tests` and `tsc` verified this session for the four swept apps.*
@@ -40,10 +58,10 @@
 |---|---|---|---|---|---|---|
 | **Math Adventure RPG** | ◑ 📄 `a11y-audit.mjs` (axe) | ⏳ *Expert Approved* rejected 2026-06-17 | ⏳ | 📄 376 | 📄 | Best-evidenced; G6 + G7 open (D-17) |
 | **African Discoveries** | ◑ Phase 6 (repo) done; observed ⏳ | ⏳ child play-test not done | ⏳ | 📄 170 | 📄 | Audit verdict **DO NOT LAUNCH** pending human validation |
-| **Tech Makers** | ◑ **strong** (130 aria, skip-links, sr-only) | ◑ model ✅; educator review ⏳ | ⏳ | ❌ none | ✅ clean | Most launch-prepared of the four; needs educator + observed a11y |
-| **Truth Seekers** | ◑ **weak** (native buttons only; 0 aria/focus) | ◑ model ✅; educator review ⏳ | ⏳ | ❌ none | ✅ clean | a11y remediation on the **Atelier chassis** |
-| **Mzansi Money** | ◑ **weak** (chassis-identical to Truth Seekers) | ◑ model ✅; educator review ⏳ | ⏳ | ❌ none | ✅ clean | Inherits the chassis a11y fix |
-| **Micro Founders** | ◑ **weak** (chassis-identical) | ◑ model ✅; educator review ⏳ | ⏳ | ❌ none | ✅ clean | Inherits the chassis a11y fix |
+| **Tech Makers** | ◑ own-code modest (~5 aria; global focus ring); high raw counts were lesson content | ◑ model ✅; educator review ⏳ | ⏳ | ❌ none | ✅ clean | Most launch-prepared of the four; needs educator + observed a11y |
+| **Truth Seekers** | ◑ **baseline applied** (focus·skip·main·reduced-motion); observed ⏳ | ◑ model ✅; educator review ⏳ | ⏳ | ❌ none | ✅ clean | Atelier baseline landed 2026-07-26 |
+| **Mzansi Money** | ◑ **baseline applied** (chassis, same block) | ◑ model ✅; educator review ⏳ | ⏳ | ❌ none | ✅ clean | Atelier baseline landed 2026-07-26 |
+| **Micro Founders** | ◑ **baseline applied** (chassis, same block) | ◑ model ✅; educator review ⏳ | ⏳ | ❌ none | ✅ clean | Atelier baseline landed 2026-07-26 |
 
 **Two portfolio facts this makes legible:**
 1. **G7 is ⏳ for every flagship** — no founder approval is recorded against §4 for any app. That is the

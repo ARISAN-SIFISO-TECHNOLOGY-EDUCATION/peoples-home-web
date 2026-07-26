@@ -119,6 +119,23 @@ using Tech Makers' patterns as template; confirm Tech Makers alt-coverage (38/68
 names; a release-packaging checklist. **Leadership (founder):** recruit historian + teacher, run child
 play-tests, 9–17 vs fund-3–8 scope call, **G7 approval** (⏳ all six).
 
+**Update — Atelier Accessibility Baseline DONE (Track B production).** Applied the shared baseline to
+**Truth Seekers + Mzansi Money + Micro Founders** (2 files each: `src/index.css` + `src/App.tsx`): global
+`:focus-visible` ring (ported verbatim from Tech Makers), `.skip-link` + `<main id="main-content">`,
+`@media (prefers-reduced-motion)`. Landmarks were already present; icon-only buttons ≈0 (apps use text+icon
+buttons — no manufactured work). **tsc + production build pass for all three**, verified this session; all
+changes additive (no tab-order/handler change). Recorded as a governance pattern —
+[`patterns/atelier-accessibility-baseline.md`](./patterns/atelier-accessibility-baseline.md): *improve the
+chassis before individual apps; keep the three blocks identical (convention, not a shared package).*
+**Honest correction folded in:** the sweep had over-credited Tech Makers' a11y (its high aria/skip counts
+were *lesson content* teaching a11y, not chrome) — corrected in the sweep + pattern (the AD audit's
+"scanner matched content" failure, caught). **Observed a11y (screen-reader, rendered contrast, real device)
+stays a Track-B human gate** — the baseline is structural, not observed.
+
+**App-repo git state:** the three repos each have **2 changed files committed on a branch `a11y/atelier-baseline`,
+NOT pushed** (live launch-sensitive apps — founder reviews/merges/deploys). Brain changes committed under
+the publication hold.
+
 ---
 
 ## ✍️ 2026-07-24 (session 45e) — First record authored to Canon 06: the Imhotep exemplar
