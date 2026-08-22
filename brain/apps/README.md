@@ -15,6 +15,7 @@
 
 | # | App | Category | Memory |
 |---|---|---|---|
+| — | **Parallel Rivers Math Engine** *(institution, not an app — the engine behind the Foundations room)* | Foundations | [`parallel-rivers-math-engine.md`](./parallel-rivers-math-engine.md) |
 | 1 | **Math Adventure RPG** | Foundations | [`math-adventure-rpg.md`](./math-adventure-rpg.md) |
 | 2 | **ReadAfrica** | Foundations | [`read-africa.md`](./read-africa.md) |
 | — | **Everyday Foundations** *(v2 — maps to #3/#4/#30)* | Foundations / Empowerment | [`everyday-foundations.md`](./everyday-foundations.md) |

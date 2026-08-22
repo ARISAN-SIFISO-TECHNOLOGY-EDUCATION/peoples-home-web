@@ -17,6 +17,41 @@ condition: [`SESSION_HANDOFF.md`](./SESSION_HANDOFF.md), newest entry.
 
 ---
 
+## Deployment status — the house is live, and one room is open (2026-08-22)
+
+> This section is current as of **2026-08-22**. Everything from the next heading down is the
+> older snapshot dated at the top of this file.
+
+**The People's Home is live at `https://peopleshome.ikhaya-ai.com/`**, on **Hostinger**, and
+works offline (verified on a device). Until this date the URL returned 200 with the **Hostinger
+parking page** — subdomain and SSL existed, `public_html` was never filled. Do not read a 200
+from that host as "deployed".
+
+**The first institution is open.** The Parallel Rivers Math Engine is live at **`/math/`**,
+reached from the Foundations room. It is a **folder on the same origin**, not a sibling
+subdomain — see **D-22** for why, and for the standing rules that follow (own `.htaccess` per
+room; trailing slashes on every link into a room).
+
+> ⚠️ **Host has changed. `.htaccess`, not Cloudflare `_headers`.** The `.pages.dev` URLs
+> throughout [`../ECOSYSTEM.md`](../ECOSYSTEM.md) and [`../ROADMAP.md`](../ROADMAP.md) describe
+> the **previous** app portfolio, and remain accurate for it.
+
+> ⚠️ **Law 5 currently depends on host configuration.** Neither service worker precaches its own
+> content-hashed JS/CSS — those are fetched before the worker claims the page. Offline works
+> because `.htaccess` serves them with an immutable `Cache-Control`. **A host that cannot set
+> headers would break offline in both apps, silently.** Check this on every new engine; it is a
+> defect class, not a one-off.
+
+**What this does not change.** This is engineering, not evidence. **G6 remains unmet** — no app
+has been observed with a real child — and the real-child play-test is still the critical path.
+Two live URLs are not two pieces of proof. Detail:
+[`session-2026-08-22-tph-and-math-engine-live.md`](./session-2026-08-22-tph-and-math-engine-live.md).
+
+**The publication hold below has passed its date** (2026-08-09) and this repo is still ahead of
+`origin/main`. Releasing is a founder decision; nothing has been pushed.
+
+---
+
 ## The headline — the Portfolio Launch, 9 August 2026 (decided 2026-07-21)
 
 **The date is set: `2026-08-09`.** The public launch of The People's Home **portfolio** — not a

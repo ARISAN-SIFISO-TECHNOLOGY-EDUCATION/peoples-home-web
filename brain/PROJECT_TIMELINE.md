@@ -120,6 +120,27 @@
   **D-14, D-15**. *(This is the setup phase; the actual web enhancements — Living World, Story
   Theatre — come later.)*
 
+### Late July – August 2026 — the halt, the pivot, and the first live institution
+- **2026-07-26 — FOUNDER HALT.** The Launch Experience Review scores the portfolio **0/6 worthy
+  as-is** — *"this whole project is a mess — rethink UI + content."* Findings preserved in
+  [`launch-experience-review-notes-2026-07-26.md`](./launch-experience-review-notes-2026-07-26.md).
+- **2026-08-17 — THE INSTITUTIONS PIVOT.** Founder ruling: *"apps are dying during this era of AI,
+  so we better build systems/institutions."* The six pillars become **institutions with named
+  engines**. The People's Home is **rebuilt as a new repo** (`the-peoples-home`, React 19 + Vite 7,
+  "The Porch Light"). **Hosting moves to Hostinger** under `ikhaya-ai.com`, one subdomain per
+  system — superseding the Cloudflare Pages pattern for everything from here on. Detail:
+  [`session-2026-08-17-institutions-pivot-and-deploy-prep.md`](./session-2026-08-17-institutions-pivot-and-deploy-prep.md).
+- **2026-08-22 — THE HOUSE OPENS, AND SO DOES ITS FIRST ROOM.** The People's Home goes live at
+  `peopleshome.ikhaya-ai.com`, and the **Parallel Rivers Math Engine** — the first pillar with a
+  real engine rather than a shell — goes live at **`/math/`** behind the Foundations room. Decision
+  **D-22**: an institution is a *room in the house*, a folder on one origin, **not a site beside
+  it**. Both apps offline-verified on a device. Four silent defects found and fixed, including the
+  same broken-offline bug in *both* codebases. Detail:
+  [`session-2026-08-22-tph-and-math-engine-live.md`](./session-2026-08-22-tph-and-math-engine-live.md)
+  and [`apps/parallel-rivers-math-engine.md`](./apps/parallel-rivers-math-engine.md).
+  **The 2026-08-09 portfolio launch date passed during this period without a recorded outcome —
+  `Unknown`; see D-17 status updates.**
+
 ---
 
 ## What the timeline shows

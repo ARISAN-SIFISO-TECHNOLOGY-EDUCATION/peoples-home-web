@@ -498,6 +498,37 @@
 
 ---
 
+## D-22 · An institution is a **room in the house**, not a site beside it — one origin, folders per engine (2026-08-22)
+
+- **The decision.** Each Parallel Rivers engine is served from a **folder under
+  `peopleshome.ikhaya-ai.com`**, on the same origin as the house — not from its own subdomain.
+  The first one is live: the Math Engine at **`/math/`**, reached from the Foundations room.
+- **What was rejected, and why.** A sibling subdomain (`math.ikhaya-ai.com`) was proposed first and
+  briefly chosen before the founder corrected the reading. In hPanel a subdomain is a **separate
+  website with its own document root** — a building standing *next to* the house. That contradicts
+  the D-18/D-19 framing of the pillars as **rooms of one connected home**: it would have recreated
+  the "collection of separate apps" that the 2026-07-26 Launch Experience Review rejected outright,
+  differing only in the domain suffix. It also consumes a Hostinger site slot per engine.
+- **Relationship to the 2026-08-17 subdomain rule.** That rule — *every system iKhaya AI builds gets
+  its own subdomain* — is **not superseded**; it is scoped. It governs **systems** (The People's
+  Home, iKhaya, the company site). An **engine behind a room** is not a system; it is part of one.
+- **The cost, accepted knowingly.** Sharing an origin is not free, and the price was paid in this
+  session rather than assumed away: the house's SPA catch-all reaches into any folder that does not
+  declare its own routing; a service worker scoped to `/math/` does not control `/math`; and a
+  careless upload to the root **deleted the room's folder entirely**. Each is now documented in the
+  respective repo. The judgement is that one origin is worth these costs, because it is what makes
+  the house *one home* rather than a portal of links.
+- **The rule that follows.** Every room added to the house needs its **own `.htaccess`** in its
+  folder, and every link from the house into a room **keeps its trailing slash** — offline, there is
+  no redirect available to fix a missing one.
+- **Not changed:** the pillar→institution mapping, the engines' independence as separate repos, or
+  the principle that an engine is never a runtime dependency of the platform (**D-19**).
+
+Evidence and full technical detail: [`../session-2026-08-22-tph-and-math-engine-live.md`](../session-2026-08-22-tph-and-math-engine-live.md),
+and `DEPLOYMENT.md` in each repo.
+
+---
+
 > **Open decisions (not yet resolved):**
 > - The **#FreeForever funding fork** for iKhaya (the one place free-forever needs an answer).
 > - Whether **Digital Creator Academy** ever becomes a real app (parked).

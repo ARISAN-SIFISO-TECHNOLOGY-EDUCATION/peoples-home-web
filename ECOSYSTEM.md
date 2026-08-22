@@ -9,10 +9,21 @@ See also: [`BLUEPRINT.md`](./BLUEPRINT.md) (the capability architecture) ·
 
 ---
 
+> ## ⚠️ Hosting changed 2026-08-17 — read this before trusting the tables below
+>
+> Everything below describes the **previous app portfolio on Cloudflare Pages**, and remains
+> accurate *for it*. The **current** generation of The People's Home is on **Hostinger**
+> (LiteSpeed/Apache) under `ikhaya-ai.com`, where host config is **`.htaccess`, never
+> `_headers`**. See [The current generation](#the-current-generation--hostinger-2026-08-22) below.
+
 ## Org & accounts
 - **GitHub org:** `ARISAN-SIFISO-TECHNOLOGY-EDUCATION` (most repos). A few legacy repos sit under
-  the personal account `SifisoScS`.
-- **Hosting:** Cloudflare Pages — each app is a Pages project, auto-deploys from `main` on push.
+  the personal account `SifisoScS` — including the **Parallel Rivers Math Engine**.
+- **Hosting (legacy portfolio):** Cloudflare Pages — each app is a Pages project, auto-deploys from
+  `main` on push.
+- **Hosting (current):** **Hostinger**, apex `ikhaya-ai.com`. One subdomain per **system**; engines
+  are **folders inside a system's document root**, not subdomains (**D-22**). Deploys are **manual
+  file drags** — zip-and-extract does not work on this host.
 - **Umbrella org:** ARISAN SIFISO Holdings · built by iKhaya AI · supported by The People's Home
   Foundation (NPC).
 
@@ -57,7 +68,40 @@ ReadAfrica has no permanent local checkout (was a temp audit clone).
 
 ---
 
-## The umbrella site
+## The current generation — Hostinger (2026-08-22)
+
+**One origin, one document root. The house at the root; each institution a folder inside it.**
+
+| | Repo | Local | Live | Stack | Build → output |
+|---|---|---|---|---|---|
+| **The People's Home** | `ARISAN-SIFISO-TECHNOLOGY-EDUCATION/the-peoples-home` | `C:\tphrun` *(short path — deep paths break `pnpm install` with `ENAMETOOLONG`)* | **https://peopleshome.ikhaya-ai.com/** ✅ | React 19 · Vite 7 · TS · Tailwind v4 · shadcn/ui · wouter | `pnpm build` · `dist/public` |
+| **Parallel Rivers Math Engine** | `SifisoScS/parallel-rivers-math-engine` | `…\Next-Level-Projects\parallel-rivers-math-engine` | **https://peopleshome.ikhaya-ai.com/math/** ✅ | Next 15 · React 19 · TS · pure TS kernel | `npm run build` in `web/` · `web/out` |
+
+**Company site:** `ikhaya-ai.com` (Hostinger, unchanged).
+
+### Deploy gotchas — current host (hard-won 2026-08-22)
+
+- **Drag the files; do not zip.** Zip-and-extract does not work here.
+- **`.htaccess` is a hidden file.** Enable hidden items in Explorer or it silently never uploads —
+  and the app will look fine until someone goes offline.
+- **⚠️ Dragging into `public_html` deleted the sibling `math/` folder outright.** After any
+  root-level upload, re-check that every institution folder still exists and still serves.
+- **Every institution folder needs its own `.htaccess`**, or the house's SPA catch-all serves the
+  house's shell with a **200** for every missing path inside it — wrong app, no error.
+- **Links into an institution keep the trailing slash.** Service workers are scoped to the slashed
+  path; offline, there is no redirect available to fix a missing one.
+- **A 403 on `.htaccess` does not prove it exists** — Apache denies any `.ht*` path regardless.
+  Prove it is live by checking a header it sets.
+- **Law 5 depends on `.htaccess`.** Neither app's service worker precaches its own hashed JS/CSS;
+  offline works because those are served `immutable`. A host that cannot set headers breaks offline
+  in both, silently.
+
+Authoritative technical detail lives **with each codebase**: `the-peoples-home/DEPLOYMENT.md` and
+`parallel-rivers-math-engine/docs/deployment.md`.
+
+---
+
+## The umbrella site (legacy portfolio — Cloudflare)
 
 | | |
 |---|---|
